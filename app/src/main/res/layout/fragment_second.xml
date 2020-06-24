@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentExample">
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimaryDark">
 
     <!--TextView and Button displayed in First Fragment -->
     <TextView
@@ -12,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:text="This is the Second Fragment"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
     <Button

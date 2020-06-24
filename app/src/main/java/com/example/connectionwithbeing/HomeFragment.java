@@ -1,37 +1,44 @@
 package com.example.connectionwithbeing;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
+
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SimpleFragment extends Fragment {
+import android.app.Fragment;
 
-    View view;
-    Button firstButton;
+
+public class HomeFragment extends Fragment {
+
+    View fragmentView;
+    Button homeButton;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_simple, container, false);
+       fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // get the reference of Button
-        firstButton = (Button) view.findViewById(R.id.firstButton);
+        homeButton = (Button) fragmentView.findViewById(R.id.homeFragment_Button);
 
         // perform setOnClickListener on first Button
-        firstButton.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // display a message by using a Toast
-                Toast.makeText(getActivity(), "Fragment's Button", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Home Fragment", Toast.LENGTH_LONG).show();
             }
         });
-        return view;
+
+
+       return fragmentView;
     }
+
 }

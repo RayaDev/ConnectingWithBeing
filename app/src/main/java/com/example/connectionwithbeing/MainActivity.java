@@ -1,15 +1,17 @@
 package com.example.connectionwithbeing;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import android.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //        Activates the onNavItemSelected to make the items work.
         navigationView.setNavigationItemSelectedListener(this);
+
+        loadFragment(new HomeFragment());
+        mDrawerLayout.closeDrawers();
 
     }
 
@@ -73,15 +78,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.home) {
             Toast.makeText(this, "Home item clicked", Toast.LENGTH_SHORT).show();
+            loadFragment(new HomeFragment());
+            mDrawerLayout.closeDrawers();
         }
         if(id == R.id.first_fragment_menu){
             Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
+            loadFragment(new FirstFragment());
+            mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.second_fragment_menu) {
             Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
+            loadFragment(new SecondFragment());
+            mDrawerLayout.closeDrawers();
         }
 
         return true;
+    }
+
+
+    private void loadFragment(Fragment fragment) {
+// create a FragmentManager
+        FragmentManager fm = getFragmentManager();
+// create a FragmentTransaction to begin the transaction and replace the Fragment
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+// replace the FrameLayout with new Fragment
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit(); // save the changes
     }
 }
