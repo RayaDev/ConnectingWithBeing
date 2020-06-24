@@ -21,20 +21,9 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_second, container, false);
+        view = inflater.inflate(R.layout.exercise2_fragment, container, false);
 
-        // get the reference of Button
-        secondButton = (Button) view.findViewById(R.id.secondButton);
 
-        // perform setOnClickListener on second Button
-        secondButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // display a message by using a Toast
-                Toast.makeText(getActivity(), "Second Fragment", Toast.LENGTH_LONG).show();
-            }
-        });
         return view;
     }
 }
