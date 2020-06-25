@@ -21,7 +21,7 @@ public class AExerciseFragment extends Fragment {
     private View view;
     private ImageView mImageView;
     private Button mButton;
-    private TextWriter textWriter;
+    private TextWriter textWriterLine1, textWriterLine2;
 
 
 
@@ -36,19 +36,22 @@ public class AExerciseFragment extends Fragment {
         mImageView = view.findViewById(R.id.exercise1_footerImage_ImageView);
         mButton = view.findViewById(R.id.exercise1_questionsButton);
 
-        textWriter = view.findViewById(R.id.exercise1_TextWriter);
+        textWriterLine1 = view.findViewById(R.id.exercise1_TextWriter);
+        textWriterLine2 = view.findViewById(R.id.exercise1_TextWriter);
+
 //        String text = getString(R.string.exercise1_centerText).toUpperCase();
 //        text = "LILI IS CLEANING!!!";
 //        Log.i("String", text);
 
-        textWriter
+
+        textWriterLine1
                 .setWidth(1) //Sets how thick the letters are.
                 .setDelay(0) //Sets how fast the letters are draw. 0 is the default and fastest?
                 .setColor(Color.BLACK)
                 .setConfig(TextWriter.Configuration.INTERMEDIATE)
                 .setSizeFactor(30f)
                 .setLetterSpacing(10f)
-                .setText("NATURE") //Must be in upper case to work.
+                .setText("NATURE RUNNING") //Must be in upper case to work. And no String resources.
                 .setListener(new TextWriter.Listener() {
                     @Override
                     public void WritingFinished() {
@@ -56,7 +59,28 @@ public class AExerciseFragment extends Fragment {
                         //do stuff after animation is finished
                     }
                 })
+
                 .startAnimation();
+
+        textWriterLine2
+                .setWidth(1) //Sets how thick the letters are.
+                .setDelay(0) //Sets how fast the letters are draw. 0 is the default and fastest?
+                .setColor(Color.BLACK)
+                .setConfig(TextWriter.Configuration.INTERMEDIATE)
+                .setSizeFactor(30f)
+                .setLetterSpacing(10f)
+                .setText("NATURE IS GOOD FOR YOU") //Must be in upper case to work. And no String resources. Nor special characters.
+                .setListener(new TextWriter.Listener() {
+                    @Override
+                    public void WritingFinished() {
+
+                        //do stuff after animation is finished
+                    }
+                })
+
+                .startAnimation();
+
+
 
 
         mButton.setOnClickListener(new View.OnClickListener() {

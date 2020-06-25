@@ -37,14 +37,16 @@
 
     <com.sarnava.textwriter.TextWriter
         android:id="@+id/exercise1_TextWriter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "@string/exercise1_centerText"
+        android:layout_width="420dp"
+        android:layout_height="200dp"
 
         app:layout_constraintTop_toBottomOf="@id/exercise1_header_ImageView"
         app:layout_constraintBottom_toTopOf="@id/exercise1_questionsButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="256dp">
 
     </com.sarnava.textwriter.TextWriter>
 
@@ -71,4 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exercise1_centerText_TextView" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
