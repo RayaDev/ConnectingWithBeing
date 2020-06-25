@@ -29,11 +29,24 @@
         android:text="@string/exercise1_centerText"
 
 
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/exercise1_questionsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exercise1_header_ImageView" />
+
+    <com.sarnava.textwriter.TextWriter
+        android:id="@+id/exercise1_TextWriter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "@string/exercise1_centerText"
+
         app:layout_constraintTop_toBottomOf="@id/exercise1_header_ImageView"
         app:layout_constraintBottom_toTopOf="@id/exercise1_questionsButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </com.sarnava.textwriter.TextWriter>
 
 
     <ImageView

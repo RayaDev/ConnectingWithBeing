@@ -1,20 +1,17 @@
 package com.example.connectionwithbeing;
 
 
+import android.app.Fragment;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import android.app.Fragment;
-
-
+import com.sarnava.textwriter.TextWriter;
 
 
 public class AExerciseFragment extends Fragment {
@@ -23,6 +20,7 @@ public class AExerciseFragment extends Fragment {
     private View view;
     private ImageView mImageView;
     private Button mButton;
+    private TextWriter textWriter;
 
 
 
@@ -36,6 +34,9 @@ public class AExerciseFragment extends Fragment {
 
         mImageView = view.findViewById(R.id.exercise1_footerImage_ImageView);
         mButton = view.findViewById(R.id.exercise1_questionsButton);
+
+        textWriter = view.findViewById(R.id.exercise1_TextWriter);
+
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
