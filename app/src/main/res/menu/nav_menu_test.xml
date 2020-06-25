@@ -5,10 +5,10 @@
     </item>
 
     <item android:id="@+id/first_fragment_menu"
-        android:title="First Fragment">
+        android:title="1. Nature at the center">
     </item>
 
     <item android:id="@+id/second_fragment_menu"
-        android:title="Second Fragment">
+        android:title="2. You are art">
     </item>
 </menu>

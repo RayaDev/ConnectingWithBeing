@@ -23,7 +23,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       fragmentView = inflater.inflate(R.layout.fragment_home, container, false);
+       fragmentView = inflater.inflate(R.layout.ahome_fragment, container, false);
 
         homeButton = (Button) fragmentView.findViewById(R.id.homeFragment_Button);
 

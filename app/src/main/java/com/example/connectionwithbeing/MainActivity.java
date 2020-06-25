@@ -2,6 +2,7 @@ package com.example.connectionwithbeing;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToggle.syncState();
 //        Adds functionality back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
 
 //        Activates the onNavItemSelected to make the items work.
@@ -79,17 +81,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.home) {
             Toast.makeText(this, "Home item clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new HomeFragment());
+            changeActionBarColor(R.color.colorPrimary);
             mDrawerLayout.closeDrawers();
         }
         if(id == R.id.first_fragment_menu){
-            Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new FirstFragment());
+//            Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
+            loadFragment(new AExerciseFragment());
+            changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
             mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.second_fragment_menu) {
             Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new SecondFragment());
+            loadFragment(new BExerciseFragment());
+            changeActionBarColor(R.color.colorPrimaryDark);
             mDrawerLayout.closeDrawers();
         }
 
@@ -105,5 +110,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 // replace the FrameLayout with new Fragment
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit(); // save the changes
+    }
+
+    public void changeActionBarColor(int color) {
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
 }

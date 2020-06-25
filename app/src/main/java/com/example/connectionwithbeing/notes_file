@@ -4,3 +4,11 @@
 General Notes:
 All of my fragment classes are deprecated.
 Migrate everything to AndroidX sometime soon...
+
+New Concepts:
+To start an activity from a fragment, must call getActivity() for the context.
+
+TODO:
+Add text print out animation.
+Add Questions Activity button, with animation?
+
