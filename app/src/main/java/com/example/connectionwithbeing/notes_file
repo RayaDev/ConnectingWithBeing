@@ -5,10 +5,22 @@ General Notes:
 All of my fragment classes are deprecated.
 Migrate everything to AndroidX sometime soon...
 
+
+List of Deprecated Classes:
+Fragment
+Fragment Manager
+getActivity() in fragment Intent
+
+
 New Concepts:
-To start an activity from a fragment, must call getActivity() for the context.
+To start an activity with Intent from a fragment, must call getActivity() for the context.
+Back button on actionbar functionality. Override methods.
+
 
 TODO:
 Add text print out animation.
 Add Questions Activity button, with animation?
+Format TextViews
+Create a gMail for app dev and sign up for all essential and useful services.
+
 

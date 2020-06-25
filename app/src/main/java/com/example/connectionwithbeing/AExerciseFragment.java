@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import android.app.Fragment;
 
-import androidx.annotation.RequiresApi;
+
 
 
 public class AExerciseFragment extends Fragment {
@@ -21,7 +22,8 @@ public class AExerciseFragment extends Fragment {
 
     private View view;
     private ImageView mImageView;
-    private TextView mTextView;
+    private Button mButton;
+
 
 
     @Override
@@ -33,13 +35,13 @@ public class AExerciseFragment extends Fragment {
 //        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.red)));
 
         mImageView = view.findViewById(R.id.exercise1_footerImage_ImageView);
+        mButton = view.findViewById(R.id.exercise1_questionsButton);
 
-        mImageView.setOnClickListener(new View.OnClickListener() {
-
+        mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent questionIntent = new Intent(getActivity(), AExerciseOneQuestions.class);
-                startActivity(questionIntent);
+                Intent intent = new Intent(getActivity(), AExerciseOneQuestions.class);
+                startActivity(intent);
             }
         });
 

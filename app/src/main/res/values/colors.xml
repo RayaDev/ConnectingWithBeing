@@ -4,8 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name= "textColor">#FFFFFF</color>
-    <color name="AE1_actionBarBackgroundColor">#F3D55B</color>
+
     <!-- All the colors for each exercise actionbar-->
+    <color name="AE1_actionBarBackgroundColor">#ffc400</color>
 
 
 </resources>

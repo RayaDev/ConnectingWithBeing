@@ -5,6 +5,7 @@
     <string name="start_fragment_example_two_button">Fragment Example Two</string>
     <string name="exercise1_centerText">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>
     <string name="exercise2_centerText">Pick a medium you are not comfortable with and just try. Create.</string>
+    <string name="exercise1_questionsButtonText">Reflection</string>
 
 
 </resources>
