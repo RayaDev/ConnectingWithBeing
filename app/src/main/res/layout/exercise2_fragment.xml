@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:visibility="gone"
         android:text= "@string/exercise2_centerText"
         app:layout_constraintTop_toBottomOf="@id/exercise1_header_ImageView"
         app:layout_constraintBottom_toTopOf="@id/exercise1_footerImage_ImageView"
@@ -30,6 +31,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <com.prush.typedtextview.TypedTextView
+        android:id="@+id/typedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textSize="24sp"
+        app:randomize_typing_speed="true"
+        app:randomize_type_seed="50"
+        app:show_cursor="true"
+        app:cursor_blink_speed="530"
+        app:sentence_pause="1500"
+        app:split_sentences="true"
+        app:play_keystrokes_audio="false"
+        app:typed_text="@string/exercise2_centerText"
+        app:typing_speed="175"
+        app:layout_constraintTop_toBottomOf="@id/exercise1_header_ImageView"
+        app:layout_constraintBottom_toTopOf="@id/exercise1_footerImage_ImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <!-- app:play_keystrokes_audio_res="@raw/your_audio_keystroke_res_id" -->
+        <!-- For type speed lower int is faster -->
+
+    </com.prush.typedtextview.TypedTextView>
 
     <ImageView
         android:id="@+id/exercise1_footerImage_ImageView"

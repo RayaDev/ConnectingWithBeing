@@ -11,7 +11,7 @@ import android.widget.Toast;
 import android.app.Fragment;
 
 
-public class BExerciseFragment extends Fragment {
+public class Exercise2Fragment extends Fragment {
 
     View view;
     Button secondButton;

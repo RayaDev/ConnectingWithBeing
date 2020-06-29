@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,9 @@ import android.widget.ImageView;
 
 import com.sarnava.textwriter.TextWriter;
 
+//AE for short hand notation.
 
-public class AExerciseFragment extends Fragment {
+public class Exercise1Fragment extends Fragment {
 
 
     private View view;
@@ -67,7 +67,7 @@ public class AExerciseFragment extends Fragment {
                 .setDelay(0) //Sets how fast the letters are draw. 0 is the default and fastest?
                 .setColor(Color.BLACK)
                 .setConfig(TextWriter.Configuration.INTERMEDIATE)
-                .setSizeFactor(30f)
+                .setSizeFactor(20f)
                 .setLetterSpacing(10f)
                 .setText("NATURE IS GOOD FOR YOU") //Must be in upper case to work. And no String resources. Nor special characters.
                 .setListener(new TextWriter.Listener() {
@@ -86,7 +86,7 @@ public class AExerciseFragment extends Fragment {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AExerciseOneQuestions.class);
+                Intent intent = new Intent(getActivity(), Exercise1Questions.class);
                 startActivity(intent);
             }
         });

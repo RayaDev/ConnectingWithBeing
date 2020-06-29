@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    //    Creates the right hand menu.
+//  Creates the right hand menu.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.settings_menu, menu);
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    //    Method needed for the left hand nav menu as well as setting the item actions for the right hand.
+//  Method needed for the left hand nav menu as well as setting the item actions for the right hand.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(mToggle.onOptionsItemSelected(item))
@@ -74,7 +73,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-    //Makes items clickable and perform actions for nav menu.
+//    Makes items clickable and perform actions for nav menu.
+//    Sets a unique action bar color for each exercise.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -88,14 +88,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if(id == R.id.first_fragment_menu){
 //            Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new AExerciseFragment());
+            loadFragment(new Exercise1Fragment());
             changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
             mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.second_fragment_menu) {
             Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new BExerciseFragment());
+            loadFragment(new Exercise2Fragment());
             changeActionBarColor(R.color.colorPrimaryDark);
             mDrawerLayout.closeDrawers();
         }

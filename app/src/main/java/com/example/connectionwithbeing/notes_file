@@ -1,26 +1,54 @@
 
-
+******///// CWB Notes File \\\\\******
 
 General Notes:
 All of my fragment classes are deprecated.
 Migrate everything to AndroidX sometime soon...
+Create a gMail for app dev and sign up for all essential and useful services (gitHub, back4App, ect).
 
-
+***************************************************************************************************
 List of Deprecated Classes:
 Fragment
 Fragment Manager
 getActivity() in fragment Intent
 
 
+***************************************************************************************************
 New Concepts:
 To start an activity with Intent from a fragment, must call getActivity() for the context.
 Back button on actionbar functionality. Override methods.
 
+****************************************************************************************************
+General TODO:
 
-TODO:
-Add text print out animation.
-Add Questions Activity button, with animation?
 Format TextViews
-Create a gMail for app dev and sign up for all essential and useful services.
+
+
+Add daily notification
+
+Credits
+
+Contact info
+
+Working TODO:
+
+A tracker for how many exercises you have completed.
+    > Competed Button for EQ.
+    > Achievements
+
+
+Completed TODO:
+Add text print out animation for exercise.
+
+***************************************************************************************************
+Exercise Ideas:
+
+Call someone you love that you haven't spoken to for a long time.
+
+How many dreams do you have that you assume you could fulfill of only and only if you had the money?
+
+What are the things that money can't buy?
+
+
 
 
