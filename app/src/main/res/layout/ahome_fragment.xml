@@ -5,28 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/design_default_color_primary_variant">
+    android:background="@drawable/mondrian">
 
-    <Button
-        android:id="@+id/homeFragment_Button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/masterProgressBar_LinearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="327dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/homeFragment_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        app:layout_constraintBottom_toTopOf="@id/homeFragment_Button"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="34sp"
-        android:textColor="#FFFFFF"
-         />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="2"
+
+
+        >
+
+        <LinearLayout
+            android:id="@+id/E1_nature_progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginBottom="64dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/hiking" />
+
+            <ProgressBar
+                android:id="@+id/determinateBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:progress="75"
+                android:progressBackgroundTint="@color/colorPrimary"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/E2_art_progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/AE1_actionBarBackgroundColor"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/paint"
+                />
+
+            <ProgressBar
+                android:id="@id/determinateBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:progress="25"
+                android:progressBackgroundTint="@color/colorPrimary"
+                android:secondaryProgressTint="@color/colorAccent"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

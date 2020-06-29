@@ -15,30 +15,17 @@ import android.app.Fragment;
 
 public class HomeFragment extends Fragment {
 
-    View fragmentView;
-    Button homeButton;
+    private View mFragmentView;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       fragmentView = inflater.inflate(R.layout.ahome_fragment, container, false);
-
-        homeButton = (Button) fragmentView.findViewById(R.id.homeFragment_Button);
-
-        // perform setOnClickListener on first Button
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // display a message by using a Toast
-                Toast.makeText(getActivity(), "Home Fragment", Toast.LENGTH_LONG).show();
-            }
-        });
+       mFragmentView = inflater.inflate(R.layout.ahome_fragment, container, false);
 
 
-       return fragmentView;
+       return mFragmentView;
     }
 
 }

@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="Main Activity"
+            android:visibility="gone"
             >
         </TextView>
 
