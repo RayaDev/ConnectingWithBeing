@@ -24,7 +24,7 @@
         <LinearLayout
             android:id="@+id/E1_nature_progressBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:layout_weight="1"
@@ -53,7 +53,7 @@
         <LinearLayout
             android:id="@+id/E2_art_progressBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:background="@color/AE1_actionBarBackgroundColor"
             android:orientation="horizontal"
             android:layout_weight="1">
