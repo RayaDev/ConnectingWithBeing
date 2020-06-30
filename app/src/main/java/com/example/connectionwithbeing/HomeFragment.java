@@ -2,12 +2,17 @@ package com.example.connectionwithbeing;
 
 
 import android.app.Fragment;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 
 
 public class HomeFragment extends Fragment{
@@ -53,10 +58,12 @@ public class HomeFragment extends Fragment{
         LBeCC = 0;
 
         mRTimageView.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
                 updateRTtextView();
+                Toast.makeText(getContext(), "RTClicked", Toast.LENGTH_SHORT).show();
             }
         });
 
