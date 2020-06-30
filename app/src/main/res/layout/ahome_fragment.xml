@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/mondrian">
+
+    >
 
     <LinearLayout
         android:id="@+id/masterProgressBar_LinearLayout"
@@ -16,9 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:weightSum="2"
-
-
         >
 
         <LinearLayout
@@ -36,45 +34,96 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.75"
+                android:layout_marginEnd="8dp"
                 app:srcCompat="@drawable/hiking" />
 
-            <ProgressBar
-                android:id="@+id/determinateBar"
-                style="@android:style/Widget.ProgressBar.Horizontal"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:progress="75"
-                android:progressBackgroundTint="@color/colorPrimary"
-                />
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/E2_art_progressBar"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/AE1_actionBarBackgroundColor"
+            android:background="@color/colorAccent"
             android:orientation="horizontal"
             android:layout_weight="1">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+
                 app:srcCompat="@drawable/paint"
+                android:layout_weight="0.75"
                 />
 
-            <ProgressBar
-                android:id="@id/determinateBar"
-                style="@android:style/Widget.ProgressBar.Horizontal"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:progress="25"
-                android:progressBackgroundTint="@color/colorPrimary"
-                android:secondaryProgressTint="@color/colorAccent"
-                />
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:background="@color/AE1_actionBarBackgroundColor"/>
         </LinearLayout>
     </LinearLayout>
 
