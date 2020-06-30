@@ -17,7 +17,6 @@ public class HomeFragment extends Fragment {
 
     private View mFragmentView;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

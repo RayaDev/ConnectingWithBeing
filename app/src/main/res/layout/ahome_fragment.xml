@@ -5,126 +5,159 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-
     >
 
     <LinearLayout
-        android:id="@+id/masterProgressBar_LinearLayout"
-        android:layout_width="match_parent"
+        android:id="@+id/homeFragment_LeftHandCategories"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/homeFragment_RightHandCategories">
+
+        <LinearLayout
+            android:id="@+id/connectionWithSociety_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            android:layout_marginBottom="46dp"
+
+            app:layout_constraintBottom_toTopOf="@id/connectionWithSelf_Category"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:background="@drawable/paint" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="bottom"
+                android:gravity="center"
+
+                android:text="Exercises Completed = 0/5"
+                android:textSize="8sp"
+
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/connectionWithSelf_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:background="@drawable/hiking" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="bottom"
+                android:gravity="center"
+
+                android:text="Exercises Completed = 0/5"
+                android:textSize="8sp"
+
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/homeFragment_RightHandCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="4dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/homeFragment_LeftHandCategories"
+
         >
 
         <LinearLayout
-            android:id="@+id/E1_nature_progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/colorPrimary"
-            android:orientation="horizontal"
+            android:id="@+id/connectionWithNature_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginBottom="64dp"
 
-            >
+            android:layout_marginBottom="46dp"
+
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/connectionWithSelf_Category"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:background="@drawable/hiking" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.75"
-                android:layout_marginEnd="8dp"
-                app:srcCompat="@drawable/hiking" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:layout_gravity="bottom"
+                android:gravity="center"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:text="Exercises Completed = 0/5"
+                android:textSize="8sp"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:layout_marginTop="8dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/E2_art_progressBar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:id="@+id/connectionWithOthers_Category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                app:srcCompat="@drawable/paint"
-                android:layout_weight="0.75"
-                />
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:background="@drawable/mondrian" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:layout_gravity="bottom"
+                android:gravity="center"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:text="Exercises Completed = 0/5"
+                android:textSize="8sp"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
+                android:layout_marginTop="8dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="8dp"
-                android:background="@color/AE1_actionBarBackgroundColor"/>
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
