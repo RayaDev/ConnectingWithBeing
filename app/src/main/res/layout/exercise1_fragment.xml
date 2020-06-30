@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="@string/exercise1_centerText"
+        android:text="@string/exercise1_center_text_string"
 
 
         android:visibility="gone"
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/roundedbutton"
 
-        android:text="@string/exercise1_questionsButtonText"
+        android:text="@string/exercise1_questions_button_string"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

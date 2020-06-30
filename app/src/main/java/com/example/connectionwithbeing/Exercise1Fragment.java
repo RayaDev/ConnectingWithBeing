@@ -18,9 +18,12 @@ import com.sarnava.textwriter.TextWriter;
 public class Exercise1Fragment extends Fragment {
 
 
-    private View view;
+    private View mFragmentView;
+    
     private ImageView mImageView;
+    
     private Button mButton;
+
     private TextWriter textWriterLine1, textWriterLine2;
 
 
@@ -30,14 +33,14 @@ public class Exercise1Fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.exercise1_fragment, container, false);
+        mFragmentView = inflater.inflate(R.layout.exercise1_fragment, container, false);
 //        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.red)));
 
-        mImageView = view.findViewById(R.id.exercise1_footerImage_ImageView);
-        mButton = view.findViewById(R.id.exercise1_questionsButton);
+        mImageView = mFragmentView.findViewById(R.id.exercise1_footerImage_ImageView);
+        mButton = mFragmentView.findViewById(R.id.exercise1_questionsButton);
 
-        textWriterLine1 = view.findViewById(R.id.exercise1_TextWriter);
-        textWriterLine2 = view.findViewById(R.id.exercise1_TextWriter);
+        textWriterLine1 = mFragmentView.findViewById(R.id.exercise1_TextWriter);
+        textWriterLine2 = mFragmentView.findViewById(R.id.exercise1_TextWriter);
 
 //        String text = getString(R.string.exercise1_centerText).toUpperCase();
 //        text = "LILI IS CLEANING!!!";
@@ -93,7 +96,7 @@ public class Exercise1Fragment extends Fragment {
 
 
 
-        return view;
+        return mFragmentView;
     }
 }
 

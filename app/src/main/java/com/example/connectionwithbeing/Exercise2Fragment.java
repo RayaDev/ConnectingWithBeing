@@ -13,17 +13,17 @@ import android.app.Fragment;
 
 public class Exercise2Fragment extends Fragment {
 
-    View view;
-    Button secondButton;
+    private View mFragmentView;
+    private Button mButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.exercise2_fragment, container, false);
+        mFragmentView = inflater.inflate(R.layout.exercise2_fragment, container, false);
 
 
-        return view;
+        return mFragmentView;
     }
 }
