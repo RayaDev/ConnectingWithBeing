@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/treelord"
-
     >
 
     <LinearLayout
@@ -36,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/RT_image"
+                android:id="@+id/LT_image"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
                 android:background="@drawable/paint" />
@@ -45,12 +43,13 @@
                 android:id="@+id/RT_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
 
                 android:layout_gravity="bottom"
                 android:gravity="center"
 
                 android:text="@string/home_fragment_exercises__completed_default__string"
-                android:textSize="8sp"
+                android:textSize="12sp"
 
                 android:layout_marginTop="8dp"/>
 
@@ -67,7 +66,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/RB_image"
+                android:id="@+id/LB_image"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
                 android:background="@drawable/hiking" />
@@ -77,11 +76,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+
                 android:layout_gravity="bottom"
                 android:gravity="center"
 
                 android:text="@string/home_fragment_exercises__completed_default__string"
-                android:textSize="8sp"
+                android:textSize="12sp"
+                android:textColor="@color/textColor"
 
                 android:layout_marginTop="8dp"/>
 
@@ -118,7 +119,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/LT_image"
+                android:id="@+id/RT_image"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
                 android:background="@drawable/hiking" />
@@ -132,7 +133,8 @@
                 android:gravity="center"
 
                 android:text="@string/home_fragment_exercises__completed_default__string"
-                android:textSize="8sp"
+                android:textSize="12sp"
+                android:textColor="@color/textColor"
 
                 android:layout_marginTop="8dp"/>
 
@@ -149,7 +151,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/LB_image"
+                android:id="@+id/RB_image"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
                 android:background="@drawable/mondrian" />
@@ -162,7 +164,8 @@
                 android:gravity="center"
 
                 android:text="@string/home_fragment_exercises__completed_default__string"
-                android:textSize="8sp"
+                android:textSize="12sp"
+                android:textColor="@color/textColor"
 
                 android:layout_marginTop="8dp"/>
 

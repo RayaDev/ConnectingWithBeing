@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close);
 
+
 //       Listens to the toggle button, which is the hamburger for the nav menu?
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
+
 
 //        Activates the onNavItemSelected to make the items work.
         navigationView.setNavigationItemSelectedListener(this);

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">@color/logo_Color</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name= "textColor">#FFFFFF</color>
 
     <!-- All the colors for each exercise actionbar-->
     <color name="AE1_actionBarBackgroundColor">#ffc400</color>
+    <color name="logo_Color">#2784d2</color>
 
 
 </resources>
