@@ -51,7 +51,7 @@ public class Exercise1Fragment extends Fragment {
                 .setWidth(1) //Sets how thick the letters are.
                 .setDelay(0) //Sets how fast the letters are draw. 0 is the default and fastest?
                 .setColor(Color.BLACK)
-                .setConfig(TextWriter.Configuration.INTERMEDIATE)
+                .setConfig(TextWriter.Configuration.SQUARE)
                 .setSizeFactor(30f)
                 .setLetterSpacing(10f)
                 .setText("NATURE RUNNING") //Must be in upper case to work. And no String resources.
@@ -90,6 +90,7 @@ public class Exercise1Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Exercise1Questions.class);
+
                 startActivity(intent);
             }
         });

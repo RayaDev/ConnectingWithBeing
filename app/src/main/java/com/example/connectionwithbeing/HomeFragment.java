@@ -2,6 +2,7 @@ package com.example.connectionwithbeing;
 
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +24,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
      */
 
+    //Home Fragment Views
     private View mFragmentView;
-
     private ImageView mRTimageView, mRBimageView, mLTimageView, mLBimageView;
     private TextView mRTtextView, mRBtextView, mLTtextView, mLBtextView;
+
+
+    //Shared Preferences
+    public SharedPreferences mSharedPreferences;
+    public static final String userActivityProgress = "Exercises Completed";
+
+    public static final String RTProgress = "RTProgress";
+    public static final String RBProgress = "RBProgress";
+    public static final String LTPrgoress = "LTProgress";
+    public static final String LBProgress = "LBProgress";
+
     public int RTeCC, RBeCC, LTeCC, LBeCC;
 
 
@@ -57,6 +69,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         LTeCC = 0;
         LBeCC = 0;
 
+
+
+
        return mFragmentView;
     }
 
@@ -67,22 +82,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch(v.getId()) {
             case R.id.RT_image:
                 RTeCC += 1;
-                mRTtextView.setText("Completed Exercises: " + RTeCC+"/5");
+                mRTtextView.setText(RTeCC+"/5");
                 break;
 
             case R.id.RB_image:
                 RBeCC += 1;
-                mRBtextView.setText("Completed Exercises: " + RBeCC+"/5");
+                mRBtextView.setText(RBeCC+"/5");
                 break;
 
             case R.id.LT_image:
                 LTeCC += 1;
-                mLTtextView.setText("Completed Exercises: " + LTeCC+"/5");
+                mLTtextView.setText(LTeCC+"/5");
                 break;
 
             case R.id.LB_image:
                 LBeCC += 1;
-                mLBtextView.setText("Completed Exercises: " + LBeCC+"/5");
+                mLBtextView.setText(LBeCC+"/5");
                 break;
         }
     }

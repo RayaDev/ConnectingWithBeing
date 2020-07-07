@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.home) {
             Toast.makeText(this, "Home item clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new HomeFragment());
-            changeActionBarColor(R.color.colorPrimary);
+            changeActionBarColor(R.color.homeScreenActionbarColor);
 
             mDrawerLayout.closeDrawers();
         }
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.second_fragment_menu) {
             Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new Exercise2Fragment());
-            changeActionBarColor(R.color.colorPrimaryDark);
+            changeActionBarColor(R.color.AE2_actionBarBackgroundColor);
 
             mDrawerLayout.closeDrawers();
         }

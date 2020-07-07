@@ -69,7 +69,7 @@
                 android:id="@+id/LB_image"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
-                android:background="@drawable/hiking" />
+                android:background="@drawable/waterfall" />
 
             <TextView
                 android:id="@+id/LB_text"
