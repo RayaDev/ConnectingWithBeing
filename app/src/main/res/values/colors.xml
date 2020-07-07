@@ -3,7 +3,7 @@
     <color name="colorPrimary">@color/logo_Color</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name= "textColor">#FFFFFF</color>
+    <color name= "textColor">#070707</color>
 
     <!-- All the colors for each exercise actionbar-->
     <color name="AE1_actionBarBackgroundColor">#ffc400</color>

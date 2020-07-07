@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
@@ -12,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import android.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close);
+
 
 
 //       Listens to the toggle button, which is the hamburger for the nav menu?
@@ -86,11 +88,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Home item clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new HomeFragment());
             changeActionBarColor(R.color.colorPrimary);
+
             mDrawerLayout.closeDrawers();
         }
         if(id == R.id.first_fragment_menu){
 //            Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new Exercise1Fragment());
+
+
             changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
             mDrawerLayout.closeDrawers();
         }
@@ -99,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
             loadFragment(new Exercise2Fragment());
             changeActionBarColor(R.color.colorPrimaryDark);
+
             mDrawerLayout.closeDrawers();
         }
 

@@ -40,7 +40,7 @@
                 android:background="@drawable/paint" />
 
             <TextView
-                android:id="@+id/RT_text"
+                android:id="@+id/LT_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textColor"
@@ -72,7 +72,7 @@
                 android:background="@drawable/hiking" />
 
             <TextView
-                android:id="@+id/RB_text"
+                android:id="@+id/LB_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -125,8 +125,8 @@
                 android:background="@drawable/hiking" />
 
             <TextView
-                android:id="@+id/LT_text"
-                android:layout_width="match_parent"
+                android:id="@+id/RT_text"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_gravity="bottom"
@@ -157,7 +157,7 @@
                 android:background="@drawable/mondrian" />
 
             <TextView
-                android:id="@+id/LB_text"
+                android:id="@+id/RB_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="bottom"

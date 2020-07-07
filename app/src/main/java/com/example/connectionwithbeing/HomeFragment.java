@@ -2,20 +2,15 @@ package com.example.connectionwithbeing;
 
 
 import android.app.Fragment;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.RequiresApi;
 
 
-public class HomeFragment extends Fragment{
+public class HomeFragment extends Fragment implements View.OnClickListener {
     /*
 
     Short Hand Key
@@ -47,6 +42,11 @@ public class HomeFragment extends Fragment{
         mLTimageView = mFragmentView.findViewById(R.id.LT_image);
         mLBimageView = mFragmentView.findViewById(R.id.LB_image);
 
+        mRTimageView.setOnClickListener(this);
+        mRBimageView.setOnClickListener(this);
+        mLTimageView.setOnClickListener(this);
+        mLBimageView.setOnClickListener(this);
+
         mRTtextView = mFragmentView.findViewById(R.id.RT_text);
         mRBtextView = mFragmentView.findViewById(R.id.RB_text);
         mLTtextView = mFragmentView.findViewById(R.id.LT_text);
@@ -57,71 +57,33 @@ public class HomeFragment extends Fragment{
         LTeCC = 0;
         LBeCC = 0;
 
-        mRTimageView.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View v) {
-
-                updateRTtextView();
-                Toast.makeText(getContext(), "RTClicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mRBimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                updateRBtextView();
-
-            }
-        });
-
-        mLTimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                updateLTtextView();
-
-            }
-        });
-
-        mLBimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                updateLBtextView();
-
-            }
-        });
-
-
        return mFragmentView;
     }
 
-    private void updateRTtextView() {
 
-        mRTtextView.setText(Integer.toString(RTeCC));
+    @Override
+    public void onClick(View v) {
 
+        switch(v.getId()) {
+            case R.id.RT_image:
+                RTeCC += 1;
+                mRTtextView.setText("Completed Exercises: " + RTeCC+"/5");
+                break;
 
+            case R.id.RB_image:
+                RBeCC += 1;
+                mRBtextView.setText("Completed Exercises: " + RBeCC+"/5");
+                break;
+
+            case R.id.LT_image:
+                LTeCC += 1;
+                mLTtextView.setText("Completed Exercises: " + LTeCC+"/5");
+                break;
+
+            case R.id.LB_image:
+                LBeCC += 1;
+                mLBtextView.setText("Completed Exercises: " + LBeCC+"/5");
+                break;
+        }
     }
-
-    private void updateRBtextView() {
-
-        mRTtextView.setText(Integer.toString(RBeCC));
-
-    }
-
-    private void updateLTtextView() {
-
-        mRTtextView.setText(Integer.toString(LTeCC));
-
-    }
-
-    private  void updateLBtextView() {
-
-        mRTtextView.setText(Integer.toString(LBeCC));
-
-    }
-
-
 }
