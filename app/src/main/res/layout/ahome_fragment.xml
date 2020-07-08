@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@color/homeScreenBackgroundColor"
     >
 
     <LinearLayout
@@ -64,7 +65,16 @@
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nature"
+                android:background="@color/myWhite"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:textColor="@color/myBlack">
 
+            </TextView>
             <ImageView
                 android:id="@+id/LB_image"
                 android:layout_width="124dp"

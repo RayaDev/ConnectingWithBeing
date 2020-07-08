@@ -10,7 +10,7 @@
     <!-- All the colors for each exercise actionbar-->
     <color name="AE1_actionBarBackgroundColor">#43af3e</color>
     <color name="AE2_actionBarBackgroundColor">#2784d2</color>
-    <color name= "homeScreenBackgroundColor">#ffc400</color>
+    <color name= "homeScreenBackgroundColor">#FFE691</color>
     <color name= "homeScreenActionbarColor">#ffc400</color>
 
 

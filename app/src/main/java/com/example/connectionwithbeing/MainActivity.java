@@ -3,6 +3,7 @@ package com.example.connectionwithbeing;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,9 +18,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    //Shared Preferences
+    public SharedPreferences mSharedPreferences;
+    public static final String userActivityProgress = "Exercises Completed";
+
+    public static final String RTProgress = "RTProgress";
+    public static final String RBProgress = "RBProgress";
+    public static final String LTPrgoress = "LTProgress";
+    public static final String LBProgress = "LBProgress";
+
+    public int RTeCC, RBeCC, LTeCC, LBeCC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,24 +39,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_nav_drawer);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close);
-
-
+//        mSharedPreferences = getSharedPreferences()
 
 //       Listens to the toggle button, which is the hamburger for the nav menu?
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
+
+
 //        Adds functionality back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
-
-
 //        Activates the onNavItemSelected to make the items work.
         navigationView.setNavigationItemSelectedListener(this);
 
+
         loadFragment(new HomeFragment());
         mDrawerLayout.closeDrawers();
-
 
     }
 
