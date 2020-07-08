@@ -1,19 +1,23 @@
 package com.example.connectionwithbeing;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    private LinearLayout mLinearLayout;
+    private ImageView mImageView;
 
     //Shared Preferences
     public SharedPreferences mSharedPreferences;
@@ -37,26 +43,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close);
+
+        mLinearLayout = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button.
+        mImageView = findViewById(R.id.bottomHomeButton); //The actual button itself.
+
 //        mSharedPreferences = getSharedPreferences()
 
-//       Listens to the toggle button, which is the hamburger for the nav menu?
-        mDrawerLayout.addDrawerListener(mToggle);
+        //Action bar settings.
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
+        getSupportActionBar().setElevation(0); //Removes shadow on action bar
+        getSupportActionBar().setTitle(""); //Sets the title to be blank on create.
+
+        //Navigation View Settings
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
+        navigationView.setNavigationItemSelectedListener(this); // Activates the onNavItemSelected to make the items work.
+
+        //Creates the actuall menu functionality.
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close); //The toggle is the hamburger.
+
+        mDrawerLayout.addDrawerListener(mToggle); // Listens to the toggle button, which is the hamburger for the nav menu?
         mToggle.syncState();
 
-
-//        Adds functionality back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setElevation(0);
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
-//        Activates the onNavItemSelected to make the items work.
-        navigationView.setNavigationItemSelectedListener(this);
-
-
-        loadFragment(new HomeFragment());
         mDrawerLayout.closeDrawers();
+
+        //Starts the Home Fragment
+        final FragmentTransaction mFragmentTransaction = getSupportFragmentManager().beginTransaction();
+        mFragmentTransaction.add(R.id.frameLayout, new HomeFragment());
+        mFragmentTransaction.commit();
+
+
+        //Provides the functionality for the bottom home button.
+        mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction home = getSupportFragmentManager().beginTransaction();
+                home.add(R.id.frameLayout, new HomeFragment());
+                home.commit();
+
+                changeActionBarColor(R.color.homeScreenActionbarColor);
+                mLinearLayout.setBackgroundColor(getResources().getColor(R.color.homeScreenActionbarColor));
+
+            }
+        });
 
     }
 
@@ -97,25 +127,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         if(id == R.id.home) {
-            Toast.makeText(this, "Home item clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new HomeFragment());
+
+//            loadFragment(new HomeFragment());
+
             changeActionBarColor(R.color.homeScreenActionbarColor);
+            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.homeScreenActionbarColor));
 
             mDrawerLayout.closeDrawers();
         }
-        if(id == R.id.first_fragment_menu){
-//            Toast.makeText(this, "First Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new Exercise1Fragment());
 
+        if(id == R.id.first_fragment_menu){
+
+//            loadFragment(new Exercise1Fragment());
 
             changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
+
+            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.AE1_actionBarBackgroundColor));
+
             mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.second_fragment_menu) {
-            Toast.makeText(this, "Second Fragment Clicked", Toast.LENGTH_SHORT).show();
-            loadFragment(new Exercise2Fragment());
+
+//            loadFragment(new Exercise2Fragment());
+
             changeActionBarColor(R.color.AE2_actionBarBackgroundColor);
+            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.AE2_actionBarBackgroundColor));
 
             mDrawerLayout.closeDrawers();
         }
@@ -125,16 +162,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void loadFragment(Fragment fragment) {
-// create a FragmentManager
-        FragmentManager fm = getFragmentManager();
-// create a FragmentTransaction to begin the transaction and replace the Fragment
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-// replace the FrameLayout with new Fragment
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit(); // save the changes
+
     }
 
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
+
 }

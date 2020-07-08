@@ -1,14 +1,21 @@
 package com.example.connectionwithbeing;
 
 
-import android.app.Fragment;
+import android.app.ActionBar;
+
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -43,11 +50,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        mFragmentView = inflater.inflate(R.layout.ahome_fragment, container, false);
+
 
         mRTimageView = mFragmentView.findViewById(R.id.RT_image);
         mRBimageView = mFragmentView.findViewById(R.id.RB_image);
@@ -70,8 +79,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         LBeCC = 0;
 
 
-
-
        return mFragmentView;
     }
 
@@ -83,6 +90,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.RT_image:
                 RTeCC += 1;
                 mRTtextView.setText(RTeCC+"/5");
+
+                FragmentTransaction mFragmentTransaction = getFragmentManager().beginTransaction();
+                mFragmentTransaction.replace(R.id.frameLayout, new Exercise1Fragment());
+                mFragmentTransaction.commit();
+
+
+                changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
+
+
                 break;
 
             case R.id.RB_image:
@@ -101,4 +117,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    public void changeActionBarColor(int color) {
+        ((AppCompatActivity)getActivity()).getSupportActionBar().
+                setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+    }
+
 }

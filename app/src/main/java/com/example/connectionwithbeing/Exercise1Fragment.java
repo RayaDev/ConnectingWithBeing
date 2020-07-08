@@ -1,7 +1,6 @@
 package com.example.connectionwithbeing;
 
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
 
 import com.sarnava.textwriter.TextWriter;
 

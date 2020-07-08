@@ -9,29 +9,32 @@
     >
 
     <LinearLayout
-        android:gravity="bottom"
-        android:layout_width="wrap_content"
+       android:gravity="bottom"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/homeScreenActionbarColor"
+        android:id="@+id/bottomHomeButtonBar"
 
         >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:padding="8dp"
-            android:layout_height="56dp"
-            android:background="@color/homeScreenActionbarColor"
-            app:srcCompat="@drawable/home"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
         <FrameLayout
+            android:layout_marginTop="56dp"
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="56dp"
+
             />
+
+        <ImageView
+            android:id="@+id/bottomHomeButton"
+            android:layout_width="85dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            app:srcCompat="@drawable/home" />
+    </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
