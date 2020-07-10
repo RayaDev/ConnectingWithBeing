@@ -5,14 +5,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:label="Connection With Being"
-        android:theme="@style/AppTheme"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
-        >
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +21,29 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Exercise1Questions"
+        <!-- Exercise Menus -->
+        <activity android:name=".NatureMenuActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:label="With Nature...">
+        </activity>
+
+        <activity android:name=".SocietyMenuActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="With Society..."/>
+
+        <activity android:name=".OthersMenuActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="With Others..."/>
+
+        <activity android:name=".SelfMenuActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="With Self..."/>
+
+        <!-- Exercise Questions -->
+        <activity
+            android:name=".Exercise1Questions"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 
