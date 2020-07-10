@@ -18,7 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
     //Declaring all Views
     private DrawerLayout mDrawerLayout;
@@ -165,6 +165,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+    }
+
+    @Override
+    public void onClick(View v) {
+
+
     }
 
 //**************************************************************************************************
