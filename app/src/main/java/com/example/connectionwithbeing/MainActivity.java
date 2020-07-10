@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(item.getItemId() == R.id.infoItem) {
-            String version = "Current Game Version: " + BuildConfig.VERSION_NAME;
+            String version = "Current Version: " + BuildConfig.VERSION_NAME;
             Toast.makeText(this, version,Toast.LENGTH_SHORT ).show();
 
         }
