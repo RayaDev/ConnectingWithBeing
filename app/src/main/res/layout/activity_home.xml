@@ -87,7 +87,7 @@
                                 />
 
                             <TextView
-                                android:id="@+id/othersSelfTextView"
+                                android:id="@+id/selfCompletedTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
 
