@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,10 +20,12 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    //Declaring all Views
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private LinearLayout mLinearLayout;
-    private ImageView mHomeButton;
+    private LinearLayout mHomeButtonBar;
+    private ImageView mHomeButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
+    private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
     //Shared Preferences
     public SharedPreferences mSharedPreferences;
@@ -35,58 +38,70 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public int RTeCC, RBeCC, LTeCC, LBeCC;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        mLinearLayout = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button.
+//IMPLEMENTING ALL VIEWS
+        mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button.
         mHomeButton = findViewById(R.id.bottomHomeButton); //The actual button itself.
 
+        mSelfImageView = findViewById(R.id.selfImageView);
+        mOthersImageView = findViewById(R.id.othersImageView);
+        mSocietyImageView = findViewById(R.id.societyImageView);
+        mNatureImageView = findViewById(R.id.natureImageView);
+
+        mSelfTextView = findViewById(R.id.selfCompletedTextView);
+        mOthersTextView = findViewById(R.id.othersCompletedTextView);
+        mNatureTextView = findViewById(R.id.natureCompletedTextView);
+        mSocietyTextView = findViewById(R.id.societyCompletedTextView);
+
+
+//**************************************************************************************************
+//SETTING UP SHARED PREFERENCES
+
 //        mSharedPreferences = getSharedPreferences()
+
+//**************************************************************************************************
+// ACTION BAR AND NAVIGATION
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
         getSupportActionBar().setElevation(0); //Removes shadow on action bar
-        getSupportActionBar().setTitle(""); //Sets the title to be blank on create.
+        getSupportActionBar().setTitle("Connection With..."); //Sets the title to be blank on create.
 
         //Navigation View Settings
         NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
         navigationView.setNavigationItemSelectedListener(this); // Activates the onNavItemSelected to make the items work.
 
-        //Creates the actuall menu functionality.
+        //Creates the actual menu functionality.
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close); //The toggle is the hamburger.
-
         mDrawerLayout.addDrawerListener(mToggle); // Listens to the toggle button, which is the hamburger for the nav menu?
         mToggle.syncState();
-
         mDrawerLayout.closeDrawers();
 
-//        //Starts the Home Fragment
-//        final FragmentTransaction mFragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        mFragmentTransaction.add(R.id.frameLayout, new HomeFragment());
-//        mFragmentTransaction.commit();
-
+//**************************************************************************************************
+//VARIOUS MAIN ACTIVITY FUNCTIONALITY
 
         //Provides the functionality for the bottom home button.
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//                FragmentTransaction home = getSupportFragmentManager().beginTransaction();
-//                home.add(R.id.frameLayout, new HomeFragment());
-//                home.commit();
-//
-//                changeActionBarColor(R.color.homeScreenActionbarColor);
-//                mLinearLayout.setBackgroundColor(getResources().getColor(R.color.homeScreenActionbarColor));
+                Toast.makeText(MainActivity.this, R.string.home_button_toast,Toast.LENGTH_SHORT).show();
 
             }
         });
 
     }
 
-//  Creates the right hand menu.
+//**************************************************************************************************
+//ACTION BAR AND NAVIGATION METHOD IMPLEMENTATIONS
+
+    //  Creates the right hand menu.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.settings_menu, menu);
@@ -94,7 +109,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-//  Method needed for the left hand nav menu as well as setting the item actions for the right hand.
+
+    //  Method needed for the left hand nav menu as well as setting the item actions for the right hand.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(mToggle.onOptionsItemSelected(item))
@@ -115,8 +131,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-//    Makes items clickable and perform actions for nav menu.
-//    Sets a unique action bar color for each exercise.
+
+    //    Makes items clickable and perform actions for nav menu.
+
+    //    Sets a unique action bar color for each exercise.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -125,40 +143,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.home) {
 
 
-//
-//            changeActionBarColor(R.color.homeScreenActionbarColor);
-//            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.homeScreenActionbarColor));
-
             mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.first_fragment_menu){
 
 
-//
-//            changeActionBarColor(R.color.AE1_actionBarBackgroundColor);
-//
-//            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.AE1_actionBarBackgroundColor));
-
             mDrawerLayout.closeDrawers();
         }
 
         if(id == R.id.second_fragment_menu) {
 
-//            loadFragment(new Exercise2Fragment());
-
-//            changeActionBarColor(R.color.AE2_actionBarBackgroundColor);
-//            mLinearLayout.setBackgroundColor(getResources().getColor(R.color.AE2_actionBarBackgroundColor));
-//
-//            mDrawerLayout.closeDrawers();
+            mDrawerLayout.closeDrawers();
         }
 
         return true;
     }
 
+//**************************************************************************************************
+//VARIOUS MAIN ACTIVITY METHODS
 
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
+
+//**************************************************************************************************
 
 }
