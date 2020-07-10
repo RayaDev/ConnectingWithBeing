@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Declaring all Views
     private DrawerLayout mDrawerLayout;
@@ -78,26 +79,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Creates the actual menu functionality.
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open, R.string.close); //The toggle is the hamburger.
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close); //The toggle is the hamburger.
         mDrawerLayout.addDrawerListener(mToggle); // Listens to the toggle button, which is the hamburger for the nav menu?
         mToggle.syncState();
         mDrawerLayout.closeDrawers();
 
-//**************************************************************************************************
-//VARIOUS MAIN ACTIVITY FUNCTIONALITY
 
-        //Provides the functionality for the bottom home button.
+//**************************************************************************************************
+//ON CLICK METHOD FOR HOME ITEMS
+
+        mSelfImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startSelfMenu = new Intent(MainActivity.this, SelfMenuActivity.class);
+                startActivity(startSelfMenu);
+            }
+        });
+
+        mOthersImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startOthersMenu = new Intent(MainActivity.this, OthersMenuActivity.class);
+                startActivity(startOthersMenu);
+            }
+        });
+
+        mNatureImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startNatureMenu = new Intent(MainActivity.this, NatureMenuActivity.class);
+                startActivity(startNatureMenu);
+            }
+        });
+
+        mSocietyImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startSocietyMenu = new Intent(MainActivity.this, SocietyMenuActivity.class);
+                startActivity(startSocietyMenu);
+            }
+        });
+
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(MainActivity.this, R.string.home_button_toast,Toast.LENGTH_SHORT).show();
-
             }
         });
 
     }
-
 //**************************************************************************************************
 //ACTION BAR AND NAVIGATION METHOD IMPLEMENTATIONS
 
@@ -166,6 +196,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
+
+
 
 //**************************************************************************************************
 
