@@ -3,7 +3,7 @@
     <string name="open">test1</string>
     <string name="close">test2</string>
     <string name="home_button_toast">You are already home!</string>
-    <string name="exercise_completed_default">"X 0/5"</string>
+    <string name="exercise_completed_default">"X 0/6"</string>
 
 
     <string name="exercise1_center_text_string">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>

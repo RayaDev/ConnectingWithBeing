@@ -58,7 +58,7 @@
                         android:id="@+id/selfImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:background="@drawable/paint" />
+                        android:background="@drawable/selfhomepng" />
 
                     <!--Self Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -232,7 +232,7 @@
                         android:id="@+id/othersImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:background="@drawable/hiking" />
+                        android:background="@drawable/othershomepng" />
 
                     <!--Others Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -309,7 +309,7 @@
                         android:id="@+id/societyImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:background="@drawable/mondrian" />
+                        android:background="@drawable/societyhomepng" />
 
                     <!--Society Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
