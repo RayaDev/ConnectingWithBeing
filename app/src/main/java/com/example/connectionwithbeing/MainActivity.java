@@ -1,9 +1,11 @@
 package com.example.connectionwithbeing;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static final String LBProgress = "LBProgress";
 
     public int RTeCC, RBeCC, LTeCC, LBeCC;
+
+    boolean HARD_BACK_BUTTON_EXIT;
 
 
     @Override
@@ -127,7 +131,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-    }
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            return;
+        }
+
+        HARD_BACK_BUTTON_EXIT = true;
+
+    } //End of onCreate()
+
+
 //**************************************************************************************************
 //ACTION BAR AND NAVIGATION METHOD IMPLEMENTATIONS
 
@@ -156,6 +170,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(item.getItemId() == R.id.settingsItem) {
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
+        }
+
+        if(item.getItemId() == android.R.id.home) {
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -197,6 +215,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
 
+
+    //Exist the app of the back button is pressed from the home screen.
+    @Override
+    public void onBackPressed()
+    {
+        if (HARD_BACK_BUTTON_EXIT = true)
+                moveTaskToBack(true); // exist app
+        else
+                finish();
+    }
 
 
 //**************************************************************************************************
