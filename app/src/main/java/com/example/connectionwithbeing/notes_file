@@ -1,11 +1,25 @@
 
+
+General TODO:
+Learn Dart and Flutter
+Format TextViews
+Add daily notification
+Credits
+Contact info
+Create all exercises/questions content
+Change git repository to RayaDev and not cawoolf89 gmail
+
+
+Working TODO:
+Create menu with scroll view for each catagory
+
+
+
+
+
 ******///// CWB Notes File \\\\\******
 
-General Notes:
-All of my fragment classes are deprecated.
-Migrate everything to AndroidX sometime soon...
-Create a gMail for app dev and sign up for all essential and useful services (gitHub, back4App, ect).
-Learn Kotlin
+
 
 
 ***************************************************************************************************
@@ -20,23 +34,8 @@ New Concepts:
 To start an activity with Intent from a fragment, must call getActivity() for the context.
 Back button on actionbar functionality. Override methods.
 
-****************************************************************************************************
-General TODO:
+For constraint layout always set width and parent to 0dp.. essentially means match constraints.
 
-Format TextViews
-
-Add daily notification
-
-Credits
-
-Contact info
-
-Working TODO:
-Transitions all Fragments and functionality into activities.
-
-
-Completed TODO:
-Add text print out animation for exercise.
 
 ***************************************************************************************************
 Exercise Ideas:

@@ -34,15 +34,15 @@ public class OthersMenuActivity extends AppCompatActivity {
         });
     }
 
-    //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
-                super.onBackPressed(); //This replicates the hard back button on the phone. Could just replace this with an Intent
-                break;
-        }
-        return true;
-    }
+//    //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed. Needed for Questions.
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case android.R.id.home:
+//                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
+//                super.onBackPressed(); //This replicates the hard back button on the phone. Could just replace this with an Intent
+//                break;
+//        }
+//        return true;
+//    }
 }

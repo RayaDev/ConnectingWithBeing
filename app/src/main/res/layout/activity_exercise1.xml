@@ -20,7 +20,7 @@
         >
 
         <ImageView
-            android:id="@+id/Q1HomeButton"
+            android:id="@+id/E1HomeButton"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -42,23 +42,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         >
 
-        <TextView
-            android:id="@+id/selfTitleTextView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Question 1"
-            android:background="@color/myWhite"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:textColor="@color/myBlack">
+    <TextView
+        android:id="@+id/selfTitleTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercise1"
+        android:background="@color/myWhite"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textColor="@color/myBlack">
 
-        </TextView>
+    </TextView>
 
-        <ImageView
-            android:id="@+id/question1Image"
-            android:layout_width="124dp"
-            android:layout_height="124dp"
-            android:background="@drawable/waterfall" />
+    <ImageView
+        android:id="@+id/question1Image"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:background="@drawable/waterfall" />
     </LinearLayout>
 
 
