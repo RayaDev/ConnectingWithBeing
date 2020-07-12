@@ -74,7 +74,7 @@
                   android:id="@+id/selfImageView1"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:background="@drawable/waterfall" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout

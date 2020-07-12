@@ -39,7 +39,13 @@
             android:parentActivityName=".MainActivity"
             android:label="With Self..."/>
 
-        <!-- Exercise Questions -->
+        <!-- Exercises Activities -->
+        <activity
+            android:name=".Exercise1Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Questions Activities-->
         <activity
             android:name=".Exercise1Questions"
             android:parentActivityName=".MainActivity"
