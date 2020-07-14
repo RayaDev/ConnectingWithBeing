@@ -1,20 +1,14 @@
 package com.example.connectionwithbeing;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class NatureMenuActivity extends AppCompatActivity {
-
 
     private LinearLayout mHomeButtonBar;
     private ImageView mHomeButton;
@@ -26,7 +20,6 @@ public class NatureMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nature_menu);
 
-
         mStartExercise1 = findViewById(R.id.selfImageView1);
 
         mHomeButtonBar = findViewById(R.id.bottomNatureHomeButtonBar);
@@ -36,7 +29,7 @@ public class NatureMenuActivity extends AppCompatActivity {
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startExercise1 = new Intent(NatureMenuActivity.this, Exercise1Activity.class);
+                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
                 startActivity(startExercise1);
             }
         });
