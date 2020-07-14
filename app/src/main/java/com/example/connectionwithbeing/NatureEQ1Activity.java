@@ -8,6 +8,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,12 +24,15 @@ public class NatureEQ1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nature_eq1);
 
+
+
+
         mHomeButton = findViewById(R.id.Q1HomeButton);
 
 //        Sets the AEQ action bar to have the same color as AE action bar.
 //        Make sure the actionbar versions are the same.
         ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Nature_E1_actionBarBackgroundColor)));
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +44,10 @@ public class NatureEQ1Activity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override

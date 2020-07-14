@@ -6,15 +6,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.prush.typedtextview.TypedTextView;
 
 public class NatureE1Activity extends AppCompatActivity {
 
     private ImageView mStartQuestion1;
     private ImageView mHomeButton;
+    private TypedTextView mTypedTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +29,13 @@ public class NatureE1Activity extends AppCompatActivity {
 
         //Set Actionbar color
         ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.Nature_E1_actionBarBackgroundColor)));
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
 
         mStartQuestion1 = findViewById(R.id.question1Image);
+        mTypedTextView = findViewById(R.id.natureE1TextView);
         mHomeButton = findViewById(R.id.E1HomeButton);
 
 
-        mStartQuestion1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
-                startActivity(startQuestions);
-            }
-        });
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +46,45 @@ public class NatureE1Activity extends AppCompatActivity {
 
             }
         });
+
+        String mExerciseString = getString(R.string.nature_e1_text);
+        final int mIndex = mExerciseString.length() -1;
+        final char mChar = '.';
+
+
+        mTypedTextView.setOnCharacterTypedListener(new TypedTextView.OnCharacterTypedListener() {
+            @Override
+            public void onCharacterTyped(char character, int index) {
+                if(index == mIndex) {
+
+                    mStartQuestion1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
+                            startActivity(startQuestions);
+                        }
+                    });
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            blink();
+                        }
+                    }, 2000);
+
+                }
+
+            }
+        });
+    }
+
+
+    public void blink(){
+        ImageView image = (ImageView)findViewById(R.id.question1Image);
+        Animation animation1 =
+                AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.blink);
+        image.startAnimation(animation1);
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.

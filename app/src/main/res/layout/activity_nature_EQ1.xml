@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:background="@color/Nature_E1_actionBarBackgroundColor"
+        android:background="@color/nature_primary"
         android:id="@+id/bottomNatureHomeButtonBar"
 
 

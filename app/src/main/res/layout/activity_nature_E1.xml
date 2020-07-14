@@ -5,7 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+
+    android:background="@color/nature_primary_dark">
 
     <ImageView
         android:id="@+id/natureE1_Image"
@@ -20,16 +22,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/natureE1TextView"/>
 
-    <TextView
+    <com.prush.typedtextview.TypedTextView
         android:id="@+id/natureE1TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/nature_e1_text"
+        app:typed_text="@string/nature_e1_text"
         android:gravity="center"
-        android:textSize="16dp"
+        android:textColor="@color/nature_icons"
+
+        android:textSize="16sp"
+        app:randomize_typing_speed="true"
+        app:randomize_type_seed="25"
+        app:play_keystrokes_audio="false"
 
         android:layout_marginBottom="12dp"
-
         app:layout_constraintTop_toBottomOf="@id/natureE1_Image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +76,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:background="@color/Nature_E1_actionBarBackgroundColor"
+        android:background="@color/nature_primary"
         android:id="@+id/bottomNatureHomeButtonBar"
 
 
