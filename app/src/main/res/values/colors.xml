@@ -7,11 +7,18 @@
     <color name= "myBlack">#070707</color>
     <color name="topOfPhoneStatusBarColor">#A0A0A0</color>
 
-    <!-- All the colors for each exercise actionbar-->
-    <color name="AE1_actionBarBackgroundColor">#43af3e</color>
-    <color name="AE2_actionBarBackgroundColor">#2784d2</color>
     <color name= "homeScreenBackgroundColor">#FFE691</color>
     <color name= "homeScreenActionbarColor">#ffc400</color>
+
+    <!-- All the colors for each exercise actionbar-->
+    <color name="nature_primary">#4CAF50</color>
+    <color name="nature_primary_dark">#388E3C</color>
+    <color name="nature_primary_light">#C8E6C9</color>
+    <color name="nature_accent">#4CAF50</color>
+    <color name="nature_primary_text">#212121</color>
+    <color name="nature_secondary_text">#757575</color>
+    <color name="nature_icons">#FFFFFF</color>
+    <color name="nature_divider">#BDBDBD</color>
 
 
 </resources>

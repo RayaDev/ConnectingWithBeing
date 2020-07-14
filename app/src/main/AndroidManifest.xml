@@ -41,13 +41,15 @@
 
         <!-- Exercises Activities -->
         <activity
-            android:name=".Exercise1Activity"
+            android:name=".NatureE1Activity"
+            android:label="Hug A Tree!"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
         <!-- Questions Activities-->
         <activity
-            android:name=".Exercise1Questions"
+            android:name=".NatureEQ1Activity"
+            android:label="Reflections"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 

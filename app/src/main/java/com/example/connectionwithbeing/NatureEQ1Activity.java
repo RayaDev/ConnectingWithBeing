@@ -1,46 +1,53 @@
 package com.example.connectionwithbeing;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Exercise1Activity extends AppCompatActivity {
+//AEQ for short hand notation.
 
-    private ImageView mStartQuestion1;
+public class NatureEQ1Activity extends AppCompatActivity {
+
     private ImageView mHomeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise1);
-
-        mStartQuestion1 = findViewById(R.id.question1Image);
-        mHomeButton = findViewById(R.id.E1HomeButton);
+        setContentView(R.layout.activity_nature_eq1);
 
 
-        mStartQuestion1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startQuestions = new Intent(Exercise1Activity.this, Exercise1Questions.class);
-                startActivity(startQuestions);
-            }
-        });
+
+
+        mHomeButton = findViewById(R.id.Q1HomeButton);
+
+//        Sets the AEQ action bar to have the same color as AE action bar.
+//        Make sure the actionbar versions are the same.
+        ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent returnHome = new Intent(Exercise1Activity.this, MainActivity.class);
+                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
                 startActivity(returnHome);
 
             }
         });
+
+
+
     }
+
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override

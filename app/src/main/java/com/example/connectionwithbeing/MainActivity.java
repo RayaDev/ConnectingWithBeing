@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    //Exist the app of the back button is pressed from the home screen.
+    //Exits the app if the back button is pressed from the home screen.
     @Override
     public void onBackPressed()
     {
