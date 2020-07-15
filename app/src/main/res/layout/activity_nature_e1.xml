@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
 
-    android:background="@color/nature_primary_dark">
+    android:background="@color/nature_primary">
 
     <ImageView
         android:id="@+id/natureE1_ImageView"
@@ -52,8 +52,8 @@
         android:layout_height="wrap_content"
         android:text="@string/nature_e1_text"
 
-        android:background="@color/nature_primary_dark"
-        android:textColor="@color/nature_primary_dark"
+        android:background="@color/nature_primary"
+        android:textColor="@color/nature_primary"
         android:textSize="16sp"
 
         android:gravity="center"
@@ -97,7 +97,7 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:background="@color/nature_primary"
+        android:background="@color/nature_primary_dark"
         android:id="@+id/bottomNatureHomeButtonBar"
 
 

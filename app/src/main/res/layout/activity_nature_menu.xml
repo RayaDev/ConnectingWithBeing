@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NatureMenuActivity">
+    tools:context=".NatureMenuActivity"
+    android:background="@color/nature_primary">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:orientation="vertical"
-        android:background="@color/homeScreenActionbarColor"
+        android:background="@color/nature_primary_dark"
         android:id="@+id/bottomNatureHomeButtonBar"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -43,458 +44,282 @@
           android:layout_height="wrap_content"
           android:columnCount="2"
           android:rowCount="3"
-          android:layout_gravity="center_horizontal"
+          android:layout_gravity="center"
 
+          android:layout_marginTop="16dp"
 
           >
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout1"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
+              android:id="@+id/natureMenuE1_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
+
               android:orientation="vertical"
               android:layout_marginEnd="32dp"
+              android:background="@drawable/roundedbutton"
 
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView1"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#1"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
 
               <ImageView
-                  android:id="@+id/selfImageView1"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/waterfall" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout1"
+                  android:id="@+id/natureMenuE1_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
+                  android:layout_weight="50"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout1"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout1"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout1">
+                  android:layout_margin="8dp"/>
 
+              <ImageView
+                  android:id="@+id/natureMenuE1Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                      <ImageView
-                          android:id="@+id/selfStar1"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
-
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView1"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout2"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
+              android:id="@+id/natureMenuE2_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
+
               android:orientation="vertical"
+              android:background="@drawable/roundedbutton"
+
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
 
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView2"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#2"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
+
 
               <ImageView
-                  android:id="@+id/selfImageView2"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/selfhomepng" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout2"
+                  android:id="@+id/natureMenuE2_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout2"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout2"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout2">
+                  android:layout_weight="50"
+
+                  android:layout_margin="8dp"/>
 
 
-                      <ImageView
-                          android:id="@+id/selfStar2"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
+              <ImageView
+                  android:id="@+id/natureMenuE2Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView2"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout3"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
+              android:id="@+id/natureMenuE3_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
               android:orientation="vertical"
+              android:background="@drawable/roundedbutton"
 
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView3"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#3"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
+
 
               <ImageView
-                  android:id="@+id/selfImageView3"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/selfhomepng" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout3"
+                  android:id="@+id/natureMenuE3_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
+                  android:layout_weight="50"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout3"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout3"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout3">
+                  android:layout_margin="8dp"/>
 
 
-                      <ImageView
-                          android:id="@+id/selfStar3"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
+              <ImageView
+                  android:id="@+id/natureMenuE3Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView3"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout4"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:orientation="vertical"
+              android:id="@+id/natureMenuE4_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
 
+              android:orientation="vertical"
+              android:background="@drawable/roundedbutton"
+
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
 
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView4"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#4"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
+
 
               <ImageView
-                  android:id="@+id/selfImageView4"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/selfhomepng" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout4"
+                  android:id="@+id/natureMenuE4_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
+                  android:layout_weight="50"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout4"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout4"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout4">
+                  android:layout_margin="8dp"/>
 
 
-                      <ImageView
-                          android:id="@+id/selfStar4"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
+              <ImageView
+                  android:id="@+id/natureMenuE4Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView4"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout5"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
+              android:id="@+id/natureMenuE5_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
+
               android:orientation="vertical"
+              android:background="@drawable/roundedbutton"
+
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
 
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView5"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#5"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
 
               <ImageView
-                  android:id="@+id/selfImageView5"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/selfhomepng" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout5"
+                  android:id="@+id/natureMenuE5_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
+                  android:layout_weight="50"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout5"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout5"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout5">
+                  android:layout_margin="8dp"/>
 
 
-                      <ImageView
-                          android:id="@+id/selfStar5"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
+              <ImageView
+                  android:id="@+id/natureMenuE5Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView5"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
 
           <LinearLayout
-              android:id="@+id/selfLinearLayout"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:orientation="vertical"
+              android:id="@+id/natureMenuE6_LinearLayout"
+              android:layout_width="125dp"
+              android:layout_height="125dp"
 
+              android:orientation="vertical"
+              android:background="@drawable/roundedbutton"
+
+              android:layout_marginBottom="32dp"
+              android:layout_marginTop="32dp"
 
               >
 
               <TextView
-                  android:id="@+id/selfTitleTextView"
-                  android:layout_width="match_parent"
+                  android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="Self"
-                  android:background="@color/myWhite"
-                  android:layout_marginBottom="8dp"
-                  android:gravity="center"
-                  android:textColor="@color/myBlack">
 
-              </TextView>
+                  android:text="#6"
+                  android:textSize="18sp"
+                  android:textColor="@color/nature_primary_dark"
+
+                  android:layout_gravity="center_horizontal"/>
 
               <ImageView
-                  android:id="@+id/selfImageView"
-                  android:layout_width="124dp"
-                  android:layout_height="124dp"
-                  android:src="@drawable/selfhomepng" />
-
-              <!--Self Completed Exercises Layout-->
-              <androidx.constraintlayout.widget.ConstraintLayout
-                  android:id="@+id/completedSelfConstraintLayout"
+                  android:id="@+id/natureMenuE6_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="4dp"
-                  >
+                  android:layout_height="match_parent"
 
-                  <LinearLayout
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
+                  android:src="@drawable/leaves"
+                  android:scaleType="fitCenter"
+                  android:layout_weight="50"
 
-                      app:layout_constraintStart_toStartOf="@id/completedSelfConstraintLayout"
-                      app:layout_constraintEnd_toEndOf="@id/completedSelfConstraintLayout"
-                      app:layout_constraintBottom_toBottomOf="@id/completedSelfConstraintLayout">
+                  android:layout_margin="8dp"/>
 
 
-                      <ImageView
-                          android:id="@+id/selfStar"
-                          android:layout_width="34dp"
-                          android:layout_height="34dp"
-                          android:src="@drawable/star"
+              <ImageView
+                  android:id="@+id/natureMenuE6Star_ImageView"
+                  android:layout_width="34dp"
+                  android:layout_height="34dp"
 
-                          android:layout_weight="1"
-                          />
-
-                      <TextView
-                          android:id="@+id/selfCompletedTextView"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-
-                          android:text="@string/exercise_completed_default"
-                          android:textSize="12sp"
-                          android:textColor="@color/textColor"
-
-                          android:layout_weight="1"
-                          android:layout_gravity="center_vertical"
-                          android:layout_marginStart="8dp"
-
-
-                          />
-                  </LinearLayout>
-
-              </androidx.constraintlayout.widget.ConstraintLayout>
-
+                  android:src="@drawable/greystar"
+                  android:layout_gravity="center"
+                  />
           </LinearLayout>
-
 
 
       </GridLayout>
