@@ -1,11 +1,13 @@
 package com.example.connectionwithbeing;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NatureMenuActivity extends AppCompatActivity {
@@ -20,7 +22,10 @@ public class NatureMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nature_menu);
 
-        mStartExercise1 = findViewById(R.id.selfImageView1);
+        ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+
+        mStartExercise1 = findViewById(R.id.natureMenuE1_ImageView);
 
         mHomeButtonBar = findViewById(R.id.bottomNatureHomeButtonBar);
         mHomeButton = findViewById(R.id.bottomNatureHomeButton);

@@ -34,7 +34,7 @@ public class NatureE1Activity extends AppCompatActivity {
 
         //Set Actionbar color
         ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
         mStartQuestion1 = findViewById(R.id.question1Image);
         mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
