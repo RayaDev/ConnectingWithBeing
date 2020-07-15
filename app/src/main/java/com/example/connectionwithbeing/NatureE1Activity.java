@@ -1,17 +1,22 @@
 package com.example.connectionwithbeing;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.prush.typedtextview.TypedTextView;
@@ -32,9 +37,8 @@ public class NatureE1Activity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
 
         mStartQuestion1 = findViewById(R.id.question1Image);
-        mTypedTextView = findViewById(R.id.natureE1TextView);
+        mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
         mHomeButton = findViewById(R.id.E1HomeButton);
-
 
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +56,8 @@ public class NatureE1Activity extends AppCompatActivity {
         final char mChar = '.';
 
 
+        mTypedTextView.bringToFront();
+
         mTypedTextView.setOnCharacterTypedListener(new TypedTextView.OnCharacterTypedListener() {
             @Override
             public void onCharacterTyped(char character, int index) {
@@ -60,8 +66,26 @@ public class NatureE1Activity extends AppCompatActivity {
                     mStartQuestion1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
-                            startActivity(startQuestions);
+
+                            new AlertDialog.Builder(NatureE1Activity.this)
+                                    .setTitle("Continue to reflections..")
+                                    .setMessage("Have you completed the exercise?")
+
+                                    // Specifying a listener allows you to take an action before dismissing the dialog.
+                                    // The dialog is automatically dismissed when a dialog button is clicked.
+                                    .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
+                                            startActivity(startQuestions);
+                                        }
+                                    })
+
+                                    // A null listener allows the button to dismiss the dialog and take no further action.
+                                    .setNegativeButton("Take more time", null)
+                                    .setIcon(R.drawable.star)
+                                    .show();
+
+
                         }
                     });
 
@@ -70,7 +94,7 @@ public class NatureE1Activity extends AppCompatActivity {
                         public void run() {
                             blink();
                         }
-                    }, 2000);
+                    }, 1750);
 
                 }
 
@@ -78,6 +102,19 @@ public class NatureE1Activity extends AppCompatActivity {
         });
     }
 
+    public void onWindowFocusChanged(boolean hasFocus){
+        super.onWindowFocusChanged(hasFocus);
+        View v = (View) findViewById(R.id.natureE1_ImageView);
+        String x = Integer.toString(v.getWidth());
+        String y = Integer.toString(v.getHeight());
+
+//        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+//        int width = metrics.widthPixels;
+//        int height = metrics.heightPixels;
+
+        //show ImageView width and height
+        Log.i("ViewSize", x + ":" + y);
+    }
 
     public void blink(){
         ImageView image = (ImageView)findViewById(R.id.question1Image);
