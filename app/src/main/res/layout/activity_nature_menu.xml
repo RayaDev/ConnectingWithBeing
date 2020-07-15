@@ -74,7 +74,7 @@
                   android:id="@+id/selfImageView1"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/waterfall" />
+                  android:src="@drawable/waterfall" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout
@@ -148,7 +148,7 @@
                   android:id="@+id/selfImageView2"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:src="@drawable/selfhomepng" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout
@@ -222,7 +222,7 @@
                   android:id="@+id/selfImageView3"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:src="@drawable/selfhomepng" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout
@@ -297,7 +297,7 @@
                   android:id="@+id/selfImageView4"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:src="@drawable/selfhomepng" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout
@@ -371,7 +371,7 @@
                   android:id="@+id/selfImageView5"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:src="@drawable/selfhomepng" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout
@@ -446,7 +446,7 @@
                   android:id="@+id/selfImageView"
                   android:layout_width="124dp"
                   android:layout_height="124dp"
-                  android:background="@drawable/selfhomepng" />
+                  android:src="@drawable/selfhomepng" />
 
               <!--Self Completed Exercises Layout-->
               <androidx.constraintlayout.widget.ConstraintLayout

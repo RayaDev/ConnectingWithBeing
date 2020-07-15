@@ -88,8 +88,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
 
-
-            android:background="@drawable/naturequestionbuttonimage" />
+            android:src="@drawable/naturequestionbuttonimage" />
 
     </LinearLayout>
 
