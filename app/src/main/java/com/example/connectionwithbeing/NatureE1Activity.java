@@ -9,11 +9,14 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.prush.typedtextview.TypedTextView;
@@ -34,7 +37,7 @@ public class NatureE1Activity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
 
         mStartQuestion1 = findViewById(R.id.question1Image);
-        mTypedTextView = findViewById(R.id.natureE1TextView);
+        mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
         mHomeButton = findViewById(R.id.E1HomeButton);
 
 
@@ -80,6 +83,7 @@ public class NatureE1Activity extends AppCompatActivity {
                                     .setIcon(R.drawable.star)
                                     .show();
 
+
                         }
                     });
 
@@ -96,6 +100,19 @@ public class NatureE1Activity extends AppCompatActivity {
         });
     }
 
+    public void onWindowFocusChanged(boolean hasFocus){
+        super.onWindowFocusChanged(hasFocus);
+        View v = (View) findViewById(R.id.natureE1_ImageView);
+        String x = Integer.toString(v.getWidth());
+        String y = Integer.toString(v.getHeight());
+
+//        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+//        int width = metrics.widthPixels;
+//        int height = metrics.heightPixels;
+
+        //show ImageView width and height
+        Log.i("ViewSize", x + ":" + y);
+    }
 
     public void blink(){
         ImageView image = (ImageView)findViewById(R.id.question1Image);
