@@ -56,6 +56,8 @@ public class NatureE1Activity extends AppCompatActivity {
         final char mChar = '.';
 
 
+        mTypedTextView.bringToFront();
+
         mTypedTextView.setOnCharacterTypedListener(new TypedTextView.OnCharacterTypedListener() {
             @Override
             public void onCharacterTyped(char character, int index) {
