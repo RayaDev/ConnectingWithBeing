@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,14 +33,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //Shared Preferences
     public SharedPreferences mSharedPreferences;
-    public static final String userActivityProgress = "Exercises Completed";
+    public static final String userActivityProgress = "exercises_completed";
 
-    public static final String RTProgress = "RTProgress";
-    public static final String RBProgress = "RBProgress";
-    public static final String LTPrgoress = "LTProgress";
-    public static final String LBProgress = "LBProgress";
+    public static final String selfProgress = "self_progress";
+    public static final String othersProgress = "others_progress";
+    public static final String natureProgress = "nature_progress";
+    public static final String societyProgress= "society_progress";
 
-    public int RTeCC, RBeCC, LTeCC, LBeCC;
+    public static int natureCompletedInt, othersCompletedInt, selfCompletedInt, societyCompletedInt;
 
     boolean HARD_BACK_BUTTON_EXIT;
 
@@ -67,7 +68,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //**************************************************************************************************
 //SETTING UP SHARED PREFERENCES
 
-//        mSharedPreferences = getSharedPreferences()
+          mSharedPreferences = getApplicationContext().getSharedPreferences(userActivityProgress, MODE_PRIVATE);
+          final SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+          setProgressStars();
 
 //**************************************************************************************************
 // ACTION BAR AND NAVIGATION
@@ -112,6 +115,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent startNatureMenu = new Intent(MainActivity.this, NatureMenuActivity.class);
+
+//                natureCompletedInt = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
+//
+//                natureCompletedInt += 1;
+//
+//                mSharedPreferencesEditor.putInt(natureProgress, natureCompletedInt);
+//
+//                mSharedPreferencesEditor.commit();
+
                 startActivity(startNatureMenu);
             }
         });
@@ -215,6 +227,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
 
+    public void setProgressStars() {
+
+        int stars = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
+        String progressStars = "X "+ stars+"/6";
+        Log.i("Prefs", progressStars);
+
+        mNatureTextView = findViewById(R.id.natureCompletedTextView);
+        mNatureTextView.setText(progressStars);
+
+    }
 
     //Exits the app if the back button is pressed from the home screen.
     @Override

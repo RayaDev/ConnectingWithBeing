@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -39,6 +40,19 @@ public class NatureEQ1Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+
+                SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
+                SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+                MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+
+                MainActivity.natureCompletedInt += 1;
+
+                mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+
+                mSharedPreferencesEditor.commit();
+
+
                 startActivity(returnHome);
 
             }

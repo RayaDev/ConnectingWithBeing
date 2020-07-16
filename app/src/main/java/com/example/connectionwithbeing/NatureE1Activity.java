@@ -56,7 +56,7 @@ public class NatureE1Activity extends AppCompatActivity {
         final char mChar = '.';
 
 
-        mTypedTextView.bringToFront();
+        mTypedTextView.bringToFront(); //Needed for formatting the typed text. Otherwise gets lost in the background text.
 
         mTypedTextView.setOnCharacterTypedListener(new TypedTextView.OnCharacterTypedListener() {
             @Override
