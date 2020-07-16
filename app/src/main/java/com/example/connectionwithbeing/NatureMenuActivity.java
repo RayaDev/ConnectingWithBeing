@@ -1,8 +1,10 @@
 package com.example.connectionwithbeing;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +19,21 @@ public class NatureMenuActivity extends AppCompatActivity {
 
     private ImageView mStartExercise1;
 
+    public static SharedPreferences mSharedPreferences;
+    public static final String userNatureProgress = "nature_exercises_completed";
+
+    public static final String natureE1 = "natureE1";
+    public static final String natureE2 = "natureE2";
+    public static final String natureE3 = "natureE3";
+    public static final String natureE4 = "natureE4";
+    public static final String natureE5 = "natureE5";
+    public static final String natureE6 = "natureE6";
+
+    public static int natureE1Completed = 0;
+
+//    natureE2Completed, natureE3Completed,
+//    natureE4Completed, natureE5Completed, natureE6Completed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +47,7 @@ public class NatureMenuActivity extends AppCompatActivity {
         mHomeButtonBar = findViewById(R.id.bottomNatureHomeButtonBar);
         mHomeButton = findViewById(R.id.bottomNatureHomeButton);
 
+        checkForCompletedExercises();
 
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,15 +68,17 @@ public class NatureMenuActivity extends AppCompatActivity {
         });
     }
 
-    //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
-//                super.onBackPressed(); //This replicates the hard back button on the phone. Could just replace this with an Intent
-//                break;
-//        }
-//        return true;
-//    }
+    public void checkForCompletedExercises() {
+
+
+        mSharedPreferences = getApplicationContext().getSharedPreferences(userNatureProgress, MODE_PRIVATE);
+
+        int lightUpStar = mSharedPreferences.getInt(natureE1, natureE1Completed);
+
+        if(lightUpStar == 1) {
+            ImageView mStar = findViewById(R.id.natureMenuE1Star_ImageView);
+            mStar.setImageResource(R.drawable.star);
+        }
+
+    }
 }

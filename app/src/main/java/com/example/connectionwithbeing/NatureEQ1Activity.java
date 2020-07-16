@@ -39,8 +39,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
-
+                //Saves and sets the Star progress on the home screen.
                 SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
                 SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
@@ -52,6 +51,20 @@ public class NatureEQ1Activity extends AppCompatActivity {
 
                 mSharedPreferencesEditor.commit();
 
+                //Saves and sets the exercise progress star color on the nature menu.
+                SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
+                SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+
+                NatureMenuActivity.natureE1Completed = 1;
+
+                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
+
+                mSharedPreferencesEditor2.commit();
+
+                //Returns to the home screen and activates an animation on the stars.
+                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+
+                returnHome.putExtra("play_animation",1);
 
                 startActivity(returnHome);
 

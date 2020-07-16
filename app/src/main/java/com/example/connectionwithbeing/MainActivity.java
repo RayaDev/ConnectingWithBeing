@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -71,13 +73,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
           mSharedPreferences = getApplicationContext().getSharedPreferences(userActivityProgress, MODE_PRIVATE);
           final SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
           setProgressStars();
-
+          playProgressAnimation();
 //**************************************************************************************************
 // ACTION BAR AND NAVIGATION
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
-        getSupportActionBar().setElevation(0); //Removes shadow on action bar
+//        getSupportActionBar().setElevation(0); //Removes shadow on action bar
         getSupportActionBar().setTitle("Connection With..."); //Sets the title to be blank on create.
 
         //Navigation View Settings
@@ -227,6 +229,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
 
+    public void playProgressAnimation() {
+        Intent playAnimation = getIntent();
+        int i = playAnimation.getIntExtra("play_animation",0);
+        if(i == 1) {
+
+            ImageView natureStarImage = findViewById(R.id.natureStar);
+            Animation rotateAnimation =
+                    AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.rotate);
+
+            rotateAnimation.setRepeatCount(3);
+            rotateAnimation.setRepeatMode(Animation.RESTART);
+
+            natureStarImage.startAnimation(rotateAnimation);
+
+//            Animation shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
+//            natureStarImage.startAnimation(shakeAnimation);
+
+        }
+
+    }
+
     public void setProgressStars() {
 
         int stars = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
@@ -243,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed()
     {
         if (HARD_BACK_BUTTON_EXIT = true)
-                moveTaskToBack(true); // exist app
+                moveTaskToBack(true); // exits app
         else
                 finish();
     }

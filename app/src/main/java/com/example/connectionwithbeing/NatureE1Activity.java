@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +27,7 @@ public class NatureE1Activity extends AppCompatActivity {
     private ImageView mStartQuestion1;
     private ImageView mHomeButton;
     private TypedTextView mTypedTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +94,7 @@ public class NatureE1Activity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            blink();
+                            playBlinkAnimation();
                         }
                     }, 1750);
 
@@ -102,21 +104,9 @@ public class NatureE1Activity extends AppCompatActivity {
         });
     }
 
-    public void onWindowFocusChanged(boolean hasFocus){
-        super.onWindowFocusChanged(hasFocus);
-        View v = (View) findViewById(R.id.natureE1_ImageView);
-        String x = Integer.toString(v.getWidth());
-        String y = Integer.toString(v.getHeight());
 
-//        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
-//        int width = metrics.widthPixels;
-//        int height = metrics.heightPixels;
 
-        //show ImageView width and height
-        Log.i("ViewSize", x + ":" + y);
-    }
-
-    public void blink(){
+    public void playBlinkAnimation(){
         ImageView image = (ImageView)findViewById(R.id.question1Image);
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(),
