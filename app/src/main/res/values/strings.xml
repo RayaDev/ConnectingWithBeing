@@ -11,10 +11,14 @@
     <string name="exercise1_questions_button_string">Reflection</string>
 
 
+    <!--NatureE1 Strings-->
     <string name="nature_e1_text">"Find the most inspiring tree around your area, and give it a big hug.
 
 While you’re there take a long breath, and thank that tree for the air you are breathing."
     </string>
+    <string name="nature_e1_q1_text">Was it your first experience of hugging a tree? How did you feel?</string>
+    <string name="nature_e1_q2_text">How do you feel about doing this exercise in public?</string>
+    <string name="nature_e1_q3_text">What did this exercise bring you?</string>
 
 
 </resources>

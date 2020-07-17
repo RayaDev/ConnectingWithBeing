@@ -1,9 +1,11 @@
 package com.example.connectionwithbeing;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -151,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return;
         }
 
-        HARD_BACK_BUTTON_EXIT = true;
+
 
     } //End of onCreate()
 
@@ -234,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int i = playAnimation.getIntExtra("play_animation",0);
         if(i == 1) {
 
+            //Rotates the stars
             ImageView natureStarImage = findViewById(R.id.natureStar);
             Animation rotateAnimation =
                     AnimationUtils.loadAnimation(getApplicationContext(),
@@ -241,12 +245,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             rotateAnimation.setRepeatCount(3);
             rotateAnimation.setRepeatMode(Animation.RESTART);
-
             natureStarImage.startAnimation(rotateAnimation);
 
-//            Animation shakeAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.shake);
-//            natureStarImage.startAnimation(shakeAnimation);
+            //Plays bell sound
+            final MediaPlayer mMediaPlayer = MediaPlayer.create(this, R.raw.finishbells);
 
+            int MAX_VOLUME = 100;
+            int soundVolume = 50;
+
+            final float volume = (float) (1 - (Math.log(MAX_VOLUME - soundVolume) / Math.log(MAX_VOLUME)));
+            mMediaPlayer.setVolume(volume, volume);
+            mMediaPlayer.start();
         }
 
     }
@@ -266,10 +275,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed()
     {
-        if (HARD_BACK_BUTTON_EXIT = true)
-                moveTaskToBack(true); // exits app
-        else
-                finish();
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Exit")
+                .setMessage("Close the App?")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(true);
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setIcon(R.drawable.star)
+                .show();
     }
 
 

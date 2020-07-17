@@ -24,7 +24,7 @@ import com.prush.typedtextview.TypedTextView;
 
 public class NatureE1Activity extends AppCompatActivity {
 
-    private ImageView mStartQuestion1;
+    private ImageView mStartNatureReflections;
     private ImageView mHomeButton;
     private TypedTextView mTypedTextView;
 
@@ -38,7 +38,7 @@ public class NatureE1Activity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
-        mStartQuestion1 = findViewById(R.id.question1Image);
+        mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
         mHomeButton = findViewById(R.id.E1HomeButton);
 
@@ -65,7 +65,7 @@ public class NatureE1Activity extends AppCompatActivity {
             public void onCharacterTyped(char character, int index) {
                 if(index == mIndex) {
 
-                    mStartQuestion1.setOnClickListener(new View.OnClickListener() {
+                    mStartNatureReflections.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
 
@@ -83,10 +83,15 @@ public class NatureE1Activity extends AppCompatActivity {
                                     })
 
                                     // A null listener allows the button to dismiss the dialog and take no further action.
-                                    .setNegativeButton("Take more time", null)
+                                    .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            mStartNatureReflections.clearAnimation();
+
+                                        }
+                                    })
                                     .setIcon(R.drawable.star)
                                     .show();
-
 
                         }
                     });
@@ -99,19 +104,16 @@ public class NatureE1Activity extends AppCompatActivity {
                     }, 1750);
 
                 }
-
             }
         });
     }
 
-
-
     public void playBlinkAnimation(){
-        ImageView image = (ImageView)findViewById(R.id.question1Image);
+
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.blink);
-        image.startAnimation(animation1);
+        mStartNatureReflections.startAnimation(animation1);
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.

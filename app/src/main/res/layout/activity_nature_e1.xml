@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/natureE1_ImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/selfLinearLayout1">
+        app:layout_constraintBottom_toTopOf="@id/natureTransitionToReflections_LinearLayout">
 
     </com.prush.typedtextview.TypedTextView>
 
@@ -62,27 +62,28 @@
         app:layout_constraintTop_toBottomOf="@id/natureE1_ImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/selfLinearLayout1"
+        app:layout_constraintBottom_toTopOf="@id/natureTransitionToReflections_LinearLayout"
         />
 
     <LinearLayout
-        android:id="@+id/selfLinearLayout1"
+        android:id="@+id/natureTransitionToReflections_LinearLayout"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
         android:background="@drawable/roundedbutton"
 
         android:orientation="vertical"
-        android:layout_marginBottom="32dp"
 
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNatureHomeButtonBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/natureE1_TextView"
 
         >
 
         <ImageView
-            android:id="@+id/question1Image"
+            android:id="@+id/startNatureReflections_ImageView"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_gravity="center"

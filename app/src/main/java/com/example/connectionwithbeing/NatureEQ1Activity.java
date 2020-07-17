@@ -1,12 +1,15 @@
 package com.example.connectionwithbeing;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -18,7 +21,7 @@ import android.widget.Toast;
 
 public class NatureEQ1Activity extends AppCompatActivity {
 
-    private ImageView mHomeButton;
+    private ImageView mHomeButton, mCompletedQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,52 +29,81 @@ public class NatureEQ1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_nature_eq1);
 
 
-
-
         mHomeButton = findViewById(R.id.Q1HomeButton);
+        mCompletedQuestions = findViewById(R.id.natureQ1Completed_ImageView);
 
 //        Sets the AEQ action bar to have the same color as AE action bar.
 //        Make sure the actionbar versions are the same.
         ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary)));
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
+       mCompletedQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //Saves and sets the Star progress on the home screen.
-                SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
-                SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+                new AlertDialog.Builder(NatureEQ1Activity.this)
+                        .setTitle("Finish Reflecting..")
+                        .setMessage("Have you thought about all the questions?")
 
-                MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+                        .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
 
-                MainActivity.natureCompletedInt += 1;
+                                //Increments the number of nature exercises completed on the home menu.
+                                SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
+                                SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-                mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+                                MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
 
-                mSharedPreferencesEditor.commit();
+                                MainActivity.natureCompletedInt += 1;
 
-                //Saves and sets the exercise progress star color on the nature menu.
-                SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
-                SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+                                mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
 
-                NatureMenuActivity.natureE1Completed = 1;
+                                mSharedPreferencesEditor.commit();
 
-                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
+                                //Saves and sets the exercise progress star color to yellow on the nature menu.
+                                SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
+                                SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
 
-                mSharedPreferencesEditor2.commit();
+                                NatureMenuActivity.natureE1Completed = 1;
 
-                //Returns to the home screen and activates an animation on the stars.
-                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+                                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
 
-                returnHome.putExtra("play_animation",1);
+                                mSharedPreferencesEditor2.commit();
 
-                startActivity(returnHome);
+                                //Returns to the home screen and activates an animation on the stars.
+                                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
 
+                                returnHome.putExtra("play_animation",1);
+
+                                startActivity(returnHome);
+                            }
+                        })
+
+                        // A null listener allows the button to dismiss the dialog and take no further action.
+                        .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mCompletedQuestions.clearAnimation();
+                            }
+                        })
+                        .setIcon(R.drawable.star)
+                        .show();
             }
         });
 
 
+       //Starts the blink animation on the mirror image after 5 seconds.
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation blinkAnimation =
+                        AnimationUtils.loadAnimation(getApplicationContext(),
+                                R.anim.blink);
+
+                mCompletedQuestions.startAnimation(blinkAnimation);
+
+            }
+        }, 5000);
 
     }
 

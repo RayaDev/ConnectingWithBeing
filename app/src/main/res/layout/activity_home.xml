@@ -58,7 +58,7 @@
                         android:id="@+id/selfImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:src="@drawable/selfhomepng" />
+                        android:src="@drawable/yoga" />
 
                     <!--Self Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
