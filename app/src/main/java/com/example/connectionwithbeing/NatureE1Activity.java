@@ -53,6 +53,37 @@ public class NatureE1Activity extends AppCompatActivity {
             }
         });
 
+        mStartNatureReflections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new AlertDialog.Builder(NatureE1Activity.this)
+                        .setTitle("Continue to reflections..")
+                        .setMessage("Have you completed the exercise?")
+
+                        // Specifying a listener allows you to take an action before dismissing the dialog.
+                        // The dialog is automatically dismissed when a dialog button is clicked.
+                        .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
+                                startActivity(startQuestions);
+                            }
+                        })
+
+                        // A null listener allows the button to dismiss the dialog and take no further action.
+                        .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mStartNatureReflections.clearAnimation();
+
+                            }
+                        })
+                        .setIcon(R.drawable.star)
+                        .show();
+
+            }
+        });
+
         String mExerciseString = getString(R.string.nature_e1_text);
         final int mIndex = mExerciseString.length() -1;
         final char mChar = '.';
@@ -64,37 +95,6 @@ public class NatureE1Activity extends AppCompatActivity {
             @Override
             public void onCharacterTyped(char character, int index) {
                 if(index == mIndex) {
-
-                    mStartNatureReflections.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            new AlertDialog.Builder(NatureE1Activity.this)
-                                    .setTitle("Continue to reflections..")
-                                    .setMessage("Have you completed the exercise?")
-
-                                    // Specifying a listener allows you to take an action before dismissing the dialog.
-                                    // The dialog is automatically dismissed when a dialog button is clicked.
-                                    .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
-                                            startActivity(startQuestions);
-                                        }
-                                    })
-
-                                    // A null listener allows the button to dismiss the dialog and take no further action.
-                                    .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            mStartNatureReflections.clearAnimation();
-
-                                        }
-                                    })
-                                    .setIcon(R.drawable.star)
-                                    .show();
-
-                        }
-                    });
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -128,3 +128,4 @@ public class NatureE1Activity extends AppCompatActivity {
         return true;
     }
 }
+

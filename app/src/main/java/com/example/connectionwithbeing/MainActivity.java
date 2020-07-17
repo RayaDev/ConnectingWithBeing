@@ -243,8 +243,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     AnimationUtils.loadAnimation(getApplicationContext(),
                             R.anim.rotate);
 
-            rotateAnimation.setRepeatCount(3);
-            rotateAnimation.setRepeatMode(Animation.RESTART);
             natureStarImage.startAnimation(rotateAnimation);
 
             //Plays bell sound
