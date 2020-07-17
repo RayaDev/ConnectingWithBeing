@@ -363,11 +363,13 @@
 
             <!-- Bottom home button -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:orientation="vertical"
-                android:background="@color/homeScreenActionbarColor"
                 android:id="@+id/bottomHomeButtonBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                android:orientation="horizontal"
+                android:background="@color/homeScreenActionbarColor"
+                android:gravity="center"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -375,12 +377,33 @@
                 >
 
                 <ImageView
-                    android:id="@+id/bottomHomeButton"
-                    android:layout_width="56dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/homeBookmarkButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:src="@drawable/bookmark"
                     android:layout_gravity="center"
-                    android:padding="8dp"
-                    android:src="@drawable/home" />
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/homeHomeButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:src="@drawable/home"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/homeToDoButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:src="@drawable/todolist"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    />
             </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

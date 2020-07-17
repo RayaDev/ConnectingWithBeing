@@ -20,8 +20,8 @@ public class OthersMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_others_menu);
 
-        mHomeButtonBar = findViewById(R.id.bottomOthersHomeButtonBar);
-        mHomeButton = findViewById(R.id.bottomOthersHomeButton);
+        mHomeButtonBar = findViewById(R.id.othersBottomActionBar_Menu);
+        mHomeButton = findViewById(R.id.othersHomeButton_Menu);
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -75,7 +75,7 @@
         android:orientation="vertical"
 
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomNatureHomeButtonBar"
+        app:layout_constraintBottom_toTopOf="@id/natureBottomActionBar_E1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/natureE1_TextView"
@@ -94,13 +94,15 @@
     </LinearLayout>
 
 
+    <!-- Nature bottom ActionBar -->
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:orientation="vertical"
-        android:background="@color/nature_primary_dark"
-        android:id="@+id/bottomNatureHomeButtonBar"
+        android:id="@+id/natureBottomActionBar_E1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
 
+        android:orientation="horizontal"
+        android:background="@color/nature_primary_dark"
+        android:gravity="center"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,12 +110,32 @@
         >
 
         <ImageView
-            android:id="@+id/E1HomeButton"
-            android:layout_width="56dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/natureBookmarkButton_E1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/bookmark"
             android:layout_gravity="center"
-            android:padding="8dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/natureHomeButton_E1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
             android:src="@drawable/home"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/natureToDoButton_E1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/todolist"
+            android:layout_gravity="center"
+            android:layout_weight="1"
             />
     </LinearLayout>
 

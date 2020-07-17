@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
 //IMPLEMENTING ALL VIEWS
-        mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button.
-        mHomeButton = findViewById(R.id.bottomHomeButton); //The actual button itself.
+        mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
+        mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
 
         mSelfImageView = findViewById(R.id.selfImageView);
         mOthersImageView = findViewById(R.id.othersImageView);
@@ -82,9 +83,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
-//        getSupportActionBar().setElevation(0); //Removes shadow on action bar
         getSupportActionBar().setTitle("Connection With..."); //Sets the title to be blank on create.
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mHomeButtonBar.setElevation(100);
+        }
         //Navigation View Settings
         NavigationView navigationView = (NavigationView) findViewById(R.id.navView);
         navigationView.setNavigationItemSelectedListener(this); // Activates the onNavItemSelected to make the items work.

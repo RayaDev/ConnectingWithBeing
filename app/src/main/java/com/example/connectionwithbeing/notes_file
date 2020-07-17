@@ -9,15 +9,16 @@ Credits
 Contact info
 Create all exercises/questions content
 
+Create a java class that just handles the functionality of the bottom action bar.
+All other classes just call a constructor of that java class to make things easier.
+
 
 Working TODO:
 Create menu with scroll view for each catagory
+Bookmarks and Todolists classes/layouts
+
 Format alertDialogs on home screen
-
-
-
-
-
+    >On back gives option to exit or go to back to questions?
 
 
 

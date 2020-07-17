@@ -20,8 +20,8 @@ public class SelfMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_self_menu);
 
-        mHomeButtonBar = findViewById(R.id.bottomSelfHomeButtonBar);
-        mHomeButton = findViewById(R.id.bottomSelfHomeButton);
+        mHomeButtonBar = findViewById(R.id.selfBottomActionBar_Menu);
+        mHomeButton = findViewById(R.id.selfHomeButton_Menu);
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override

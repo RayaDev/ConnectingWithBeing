@@ -40,7 +40,7 @@ public class NatureE1Activity extends AppCompatActivity {
 
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
-        mHomeButton = findViewById(R.id.E1HomeButton);
+        mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {

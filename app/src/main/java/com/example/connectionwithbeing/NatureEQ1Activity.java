@@ -29,7 +29,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_nature_eq1);
 
 
-        mHomeButton = findViewById(R.id.Q1HomeButton);
+        mHomeButton = findViewById(R.id.natureHomeButton_EQ1);
         mCompletedQuestions = findViewById(R.id.natureQ1Completed_ImageView);
 
 //        Sets the AEQ action bar to have the same color as AE action bar.
@@ -103,7 +103,18 @@ public class NatureEQ1Activity extends AppCompatActivity {
                 mCompletedQuestions.startAnimation(blinkAnimation);
 
             }
-        }, 5000);
+        }, 3000);
+
+
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+                startActivity(returnHome);
+
+            }
+        });
 
     }
 

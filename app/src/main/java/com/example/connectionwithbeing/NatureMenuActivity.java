@@ -44,8 +44,8 @@ public class NatureMenuActivity extends AppCompatActivity {
 
         mStartExercise1 = findViewById(R.id.natureMenuE1_ImageView);
 
-        mHomeButtonBar = findViewById(R.id.bottomNatureHomeButtonBar);
-        mHomeButton = findViewById(R.id.bottomNatureHomeButton);
+        mHomeButtonBar = findViewById(R.id.natureBottomActionBar_Menu);
+        mHomeButton = findViewById(R.id.natureHomeButton_Menu);
 
         checkForCompletedExercises();
 

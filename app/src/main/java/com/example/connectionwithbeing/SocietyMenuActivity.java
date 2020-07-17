@@ -20,8 +20,8 @@ public class SocietyMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_society_menu);
 
-        mHomeButtonBar = findViewById(R.id.bottomSocietyHomeButtonBar);
-        mHomeButton = findViewById(R.id.bottomSocietyHomeButton);
+        mHomeButtonBar = findViewById(R.id.societyBottomActionBar_Menu);
+        mHomeButton = findViewById(R.id.societyHomeButton_Menu);
 
 
         mHomeButton.setOnClickListener(new View.OnClickListener() {
