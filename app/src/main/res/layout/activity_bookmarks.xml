@@ -7,6 +7,7 @@
     tools:context=".BookmarksActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookmark_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
 

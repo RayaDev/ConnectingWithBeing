@@ -16,8 +16,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.prush.typedtextview.TypedTextView;
+
+import java.util.ArrayList;
 
 public class NatureE1Activity extends AppCompatActivity {
 
@@ -26,6 +29,8 @@ public class NatureE1Activity extends AppCompatActivity {
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
 
+    //For passing into the Bookmarks Adapter
+    private ArrayList<NatureE1Activity> mBookmarkedActitiestList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +61,23 @@ public class NatureE1Activity extends AppCompatActivity {
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
+        setupBookmarksAdapter();
         mOnClickListeners(exerciseText, exerciseNumber);
 
     }
 
-    public void mOnClickListeners(int exerciseText, final int exerciseNumber) {
+    private void setupBookmarksAdapter() {
+        RecyclerView mRecyclerView = findViewById(R.id.bookmark_RecyclerView);
+
+        //Initialize the Exercise List
+      //  mBookmarkedActitiestList = NatureE1Activity.buildBookmarkList();
+    }
+
+    private void buildBookmarkList() {
+
+    }
+
+    private void mOnClickListeners(int exerciseText, final int exerciseNumber) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +143,7 @@ public class NatureE1Activity extends AppCompatActivity {
 
     }
 
-    public void playBlinkAnimation(){
+    private void playBlinkAnimation(){
 
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(),

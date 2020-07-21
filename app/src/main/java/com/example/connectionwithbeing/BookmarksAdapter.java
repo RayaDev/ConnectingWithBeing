@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+
+// Create the basic adapter extending from RecyclerView.Adapter
+// Note that we specify the custom ViewHolder which gives us access to our views
 public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.ViewHolder> {
 
 //    public BookmarksAdapter() {
@@ -28,9 +31,11 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
 
 
     //Generated Methods
+
+    // Usually involves inflating a layout from XML and returning the holder
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BookmarksAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context); //What does LayoutInflater actually do?
         View contactView = inflater.inflate(R.layout.bookmark_item, parent, false);
@@ -40,14 +45,27 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
         return viewHolder;
     }
 
+    // Involves populating data into the item through holder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
+        // Get the data model based on position
+        NatureE1Activity mExercise = mBookmarkedActivity.get(position);
+
+        // Set item views based on your views and data model
+        ImageView mExerciseImage = holder.mImageView;
+        mExerciseImage.setImageResource(R.drawable.bigtree);
+
+        TextView mExerciseText = holder.mTextView;
+        mExerciseText.setText(R.string.exercise1_center_text_string);
+
+        Button mButton = holder.mButton;
+        mButton.setText("Success!");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mBookmarkedActivity.size();
     }
 
     //Custom created ViewHolder class
@@ -62,7 +80,7 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
-        public ViewHolder(View itemView) {
+        public ViewHolder (View itemView) {
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
             super(itemView);
