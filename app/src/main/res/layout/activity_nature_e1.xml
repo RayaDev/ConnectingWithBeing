@@ -29,17 +29,18 @@
         android:id="@+id/natureE1_TypedTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:typed_text="@string/nature_e1_text"
+
+
         android:gravity="center"
         android:textColor="@color/nature_icons"
-
         android:textSize="16sp"
+
         app:randomize_typing_speed="true"
         app:randomize_type_seed="25"
         app:play_keystrokes_audio="false"
 
         android:layout_marginBottom="12dp"
-        app:layout_constraintTop_toBottomOf="@id/natureE1_ImageView"
+        app:layout_constraintTop_toTopOf="@id/natureE1_TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/natureTransitionToReflections_LinearLayout">
@@ -50,7 +51,7 @@
     <TextView android:id="@+id/natureE1_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nature_e1_text"
+
 
         android:background="@color/nature_primary"
         android:textColor="@color/nature_primary"
@@ -59,6 +60,8 @@
         android:gravity="center"
 
         android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+
         app:layout_constraintTop_toBottomOf="@id/natureE1_ImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

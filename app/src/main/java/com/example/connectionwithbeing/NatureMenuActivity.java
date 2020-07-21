@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,7 +11,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NatureMenuActivity extends AppCompatActivity implements View.OnClickListener {
+public class NatureMenuActivity extends AppCompatActivity {
 
     //Views for the custom bottom navigation
     private LinearLayout mHomeButtonBar;
@@ -57,7 +56,41 @@ public class NatureMenuActivity extends AppCompatActivity implements View.OnClic
         mHomeButton = findViewById(R.id.natureHomeButton_Menu);
 
         checkForCompletedExercises();
+        mOnClickListeners();
 
+    }
+
+    public void mOnClickListeners() {
+
+        mStartExercise1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+                startExercise1.putExtra(exerciseImageView, R.drawable.bigtree);
+                startExercise1.putExtra(exerciseTextView, R.string.exercise1_center_text_string);
+                startActivity(startExercise1);
+            }
+        });
+
+        mStartExercise2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent startExercise2 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+                startExercise2.putExtra(exerciseImageView, R.drawable.naturemenuicon);
+                startExercise2.putExtra(exerciseTextView, R.string.exercise2_center_text_string);
+                startActivity(startExercise2);
+
+            }
+        });
+
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent returnHome = new Intent(NatureMenuActivity.this, MainActivity.class);
+                startActivity(returnHome);
+            }
+        });
     }
 
     public void checkForCompletedExercises() {
@@ -74,26 +107,26 @@ public class NatureMenuActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    //Switch statement for starting activities.
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.natureMenuE1_ImageView:
-                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
-                startExercise1.putExtra(exerciseImageView, R.drawable.bigtree);
-                startExercise1.putExtra(exerciseTextView, R.string.exercise1_center_text_string);
-                startActivity(startExercise1);
-
-            case R.id.natureMenuE2_ImageView:
-                Intent startExercise2 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
-                startExercise2.putExtra(exerciseImageView, R.drawable.naturemenuicon);
-                startExercise2.putExtra(exerciseTextView, R.string.exercise2_center_text_string);
-                startActivity(startExercise2);
-
-            case R.id.natureHomeButton_Menu:
-                Intent returnHome = new Intent(NatureMenuActivity.this, MainActivity.class);
-                startActivity(returnHome);
-        }
-
-    }
+//    //Switch statement for starting activities.
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.natureMenuE1_ImageView:
+//                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+//                startExercise1.putExtra(exerciseImageView, R.drawable.bigtree);
+//                startExercise1.putExtra(exerciseTextView, R.string.exercise1_center_text_string);
+//                startActivity(startExercise1);
+//
+//            case R.id.natureMenuE2_ImageView:
+//                Intent startExercise2 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+//                startExercise2.putExtra(exerciseImageView, R.drawable.naturemenuicon);
+//                startExercise2.putExtra(exerciseTextView, R.string.exercise2_center_text_string);
+//                startActivity(startExercise2);
+//
+//            case R.id.natureHomeButton_Menu:
+//                Intent returnHome = new Intent(NatureMenuActivity.this, MainActivity.class);
+//                startActivity(returnHome);
+//        }
+//
+//    }
 }
