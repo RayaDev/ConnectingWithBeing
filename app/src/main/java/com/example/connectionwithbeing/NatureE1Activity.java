@@ -42,8 +42,10 @@ public class NatureE1Activity extends AppCompatActivity {
         int exerciseText = (int) extras.get(NatureMenuActivity.exerciseTextView);
 
         //Declare Views
-        mExerciseImage = findViewById(exerciseImage);
+        mExerciseImage = findViewById(R.id.natureE1_ImageView);
+        mExerciseImage.setImageResource(exerciseImage);
         mTypedTextView = findViewById(exerciseText);
+        mTypedTextView.setText(exerciseText);
 
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
