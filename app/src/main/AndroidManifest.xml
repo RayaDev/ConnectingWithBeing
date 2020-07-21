@@ -21,23 +21,32 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".BookmarksActivity"
+            android:label="Bookmarks..."
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+
         <!-- Exercise Menus -->
-        <activity android:name=".NatureMenuActivity"
+        <activity
+            android:name=".NatureMenuActivity"
+            android:label="With Nature..."
             android:parentActivityName=".MainActivity"
-            android:label="With Nature...">
-        </activity>
-
-        <activity android:name=".SocietyMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SocietyMenuActivity"
+            android:label="With Society..."
             android:parentActivityName=".MainActivity"
-            android:label="With Society..."/>
-
-        <activity android:name=".OthersMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".OthersMenuActivity"
+            android:label="With Others..."
             android:parentActivityName=".MainActivity"
-            android:label="With Others..."/>
-
-        <activity android:name=".SelfMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SelfMenuActivity"
+            android:label="With Self..."
             android:parentActivityName=".MainActivity"
-            android:label="With Self..."/>
+            android:screenOrientation="portrait"/>
 
         <!-- Exercises Activities -->
         <activity
@@ -46,16 +55,16 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
-        <!-- Questions Activities-->
+        <!-- Questions Activities -->
         <activity
             android:name=".NatureEQ1Activity"
             android:label="Reflections"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

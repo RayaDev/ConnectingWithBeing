@@ -40,6 +40,7 @@ public class NatureE1Activity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         int exerciseImage = (int) extras.get(NatureMenuActivity.exerciseImageView);
         int exerciseText = (int) extras.get(NatureMenuActivity.exerciseTextView);
+        int exerciseNumber = (int) extras.get(NatureMenuActivity.exerciseNumber);
 
         //Declare Views, and Set resources from extras.
         mExerciseImage = findViewById(R.id.natureE1_ImageView);
@@ -51,10 +52,15 @@ public class NatureE1Activity extends AppCompatActivity {
         mPlaceHolderTextView = findViewById(R.id.natureE1_TextView);
         mPlaceHolderTextView.setText(exerciseText);
 
+        //Reflections Button
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
+        mOnClickListeners(exerciseText, exerciseNumber);
 
+    }
+
+    public void mOnClickListeners(int exerciseText, final int exerciseNumber) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,11 +79,12 @@ public class NatureE1Activity extends AppCompatActivity {
                         .setTitle("Continue to reflections..")
                         .setMessage("Have you completed the exercise?")
 
-                        // Specifying a listener allows you to take an action before dismissing the dialog.
-                        // The dialog is automatically dismissed when a dialog button is clicked.
                         .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
+
+                                //Need intents here with extras for the questions!
                                 Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
+                                startQuestions.putExtra(NatureMenuActivity.exerciseNumber, exerciseNumber);
                                 startActivity(startQuestions);
                             }
                         })
@@ -116,6 +123,7 @@ public class NatureE1Activity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public void playBlinkAnimation(){

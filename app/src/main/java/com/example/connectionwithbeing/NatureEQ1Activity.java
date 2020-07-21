@@ -28,14 +28,18 @@ public class NatureEQ1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nature_eq1);
 
+        // Sets the AEQ action bar to have the same color as AE action bar.
+//        Make sure the actionbar versions are the same.
+        ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+
+        Bundle extras = getIntent().getExtras();
+        final int exerciseNumber = (int)extras.get(NatureMenuActivity.exerciseNumber);
 
         mHomeButton = findViewById(R.id.natureHomeButton_EQ1);
         mCompletedQuestions = findViewById(R.id.natureQ1Completed_ImageView);
 
-//        Sets the AEQ action bar to have the same color as AE action bar.
-//        Make sure the actionbar versions are the same.
-        ActionBar bar = getSupportActionBar();
-        bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+
 
        mCompletedQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,33 +52,12 @@ public class NatureEQ1Activity extends AppCompatActivity {
                         .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
-                                //Increments the number of nature exercises completed on the home menu.
-                                SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
-                                SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-                                MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
-
-                                MainActivity.natureCompletedInt += 1;
-
-                                mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
-
-                                mSharedPreferencesEditor.commit();
-
-                                //Saves and sets the exercise progress star color to yellow on the nature menu.
-                                SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
-                                SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
-
-                                NatureMenuActivity.natureE1Completed = 1;
-
-                                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
-
-                                mSharedPreferencesEditor2.commit();
+                                sharedPrefs1(); //Increments menu completed count
+                                sharedPrefs2(exerciseNumber); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
                                 Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
-
                                 returnHome.putExtra("play_animation",1);
-
                                 startActivity(returnHome);
                             }
                         })
@@ -115,6 +98,48 @@ public class NatureEQ1Activity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void sharedPrefs1() {
+
+        //Increments the number of nature exercises completed on the home menu.
+        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(MainActivity.userActivityProgress, MODE_PRIVATE);
+        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+        MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+
+        MainActivity.natureCompletedInt += 1;
+
+        mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+
+        mSharedPreferencesEditor.commit();
+
+    }
+
+    public void sharedPrefs2(int exerciseNumber) {
+        //Saves and sets the exercise progress star color to yellow on the nature menu.
+        SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
+        SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+
+        switch (exerciseNumber) {
+
+            case 1:
+                NatureMenuActivity.natureE1Completed = 1; //Right here is where the intent needs to be passed to.
+                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
+
+                mSharedPreferencesEditor2.commit();
+                break;
+
+            case 2:
+                NatureMenuActivity.natureE2Completed = 1; //Right here is where the intent needs to be passed to.
+                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE2, NatureMenuActivity.natureE2Completed);
+
+                mSharedPreferencesEditor2.commit();
+                break;
+
+        }
+
 
     }
 

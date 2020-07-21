@@ -15,7 +15,7 @@ public class NatureMenuActivity extends AppCompatActivity {
 
     //Views for the custom bottom navigation
     private LinearLayout mHomeButtonBar;
-    private ImageView mHomeButton;
+    private ImageView mHomeButton, mToDoButton;
 
     //Image Views for the UI Activity "Menu"
     private ImageView mStartExercise1, mStartExercise2;
@@ -23,6 +23,7 @@ public class NatureMenuActivity extends AppCompatActivity {
     //Intent Extras for setting exercise UI Views
     public static final String exerciseImageView = "exercise_image";
     public static final String exerciseTextView = "exercise_text";
+    public static final String exerciseNumber = "exercise_number";
 
 
     //Shared Preferences for the Activity. User progress
@@ -37,6 +38,12 @@ public class NatureMenuActivity extends AppCompatActivity {
     public static final String natureE6 = "natureE6";
 
     public static int natureE1Completed = 0;
+    public static int natureE2Completed = 0;
+    public static int natureE3Completed = 0;
+    public static int natureE4Completed = 0;
+    public static int natureE5Completed = 0;
+    public static int natureE6Completed = 0;
+
 
 //    natureE2Completed, natureE3Completed,
 //    natureE4Completed, natureE5Completed, natureE6Completed;
@@ -54,6 +61,7 @@ public class NatureMenuActivity extends AppCompatActivity {
 
         mHomeButtonBar = findViewById(R.id.natureBottomActionBar_Menu);
         mHomeButton = findViewById(R.id.natureHomeButton_Menu);
+        mToDoButton = findViewById(R.id.natureToDoButton_Menu);
 
         checkForCompletedExercises();
         mOnClickListeners();
@@ -68,6 +76,7 @@ public class NatureMenuActivity extends AppCompatActivity {
                 Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
                 startExercise1.putExtra(exerciseImageView, R.drawable.bigtree);
                 startExercise1.putExtra(exerciseTextView, R.string.exercise1_center_text_string);
+                startExercise1.putExtra(exerciseNumber,1);
                 startActivity(startExercise1);
             }
         });
@@ -79,6 +88,7 @@ public class NatureMenuActivity extends AppCompatActivity {
                 Intent startExercise2 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
                 startExercise2.putExtra(exerciseImageView, R.drawable.naturemenuicon);
                 startExercise2.putExtra(exerciseTextView, R.string.exercise2_center_text_string);
+                startExercise2.putExtra(exerciseNumber,2);
                 startActivity(startExercise2);
 
             }
@@ -91,18 +101,39 @@ public class NatureMenuActivity extends AppCompatActivity {
                 startActivity(returnHome);
             }
         });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startToDo = new Intent(NatureMenuActivity.this, BookmarksActivity.class);
+                startActivity(startToDo);
+            }
+        });
     }
 
     public void checkForCompletedExercises() {
 
-
         mSharedPreferences = getApplicationContext().getSharedPreferences(userNatureProgress, MODE_PRIVATE);
 
-        int lightUpStar = mSharedPreferences.getInt(natureE1, natureE1Completed);
+        //Order of these arrays is very important... must be maintained.
+        String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
 
-        if(lightUpStar == 1) {
-            ImageView mStar = findViewById(R.id.natureMenuE1Star_ImageView);
-            mStar.setImageResource(R.drawable.star);
+        int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
+                natureE4Completed, natureE5Completed, natureE6Completed};
+
+        int[] natureImageViews = {R.id.natureMenuE1Star_ImageView, R.id.natureMenuE2Star_ImageView, R.id.natureMenuE3Star_ImageView,
+        R.id.natureMenuE4Star_ImageView, R.id.natureMenuE5Star_ImageView, R.id.natureMenuE6Star_ImageView};
+
+        int i = 0;
+        while(i < natureKeys.length) {
+            int lightUpStar = mSharedPreferences.getInt(natureKeys[i], natureValues[i]);
+
+            if (lightUpStar == 1) {
+                ImageView mStar = findViewById(natureImageViews[i]);
+                mStar.setImageResource(R.drawable.star);
+            }
+
+            i++;
         }
 
     }
