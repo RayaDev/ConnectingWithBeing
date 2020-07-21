@@ -1,5 +1,7 @@
 package com.example.connectionwithbeing;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -9,17 +11,37 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.ViewHolder> {
 
+//    public BookmarksAdapter() {
+//
+//    } Empty default constructor
+
+    private List<NatureE1Activity> mBookmarkedActivity;
+
+    public BookmarksAdapter(List<NatureE1Activity> bookmarkedActivity) {
+
+        mBookmarkedActivity = bookmarkedActivity;
+    }
+
+
+    //Generated Methods
     @NonNull
     @Override
-    public BookmarksAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context); //What does LayoutInflater actually do?
+        View contactView = inflater.inflate(R.layout.bookmark_item, parent, false);
 
-        return null;
+        // Return a new holder instance
+        ViewHolder viewHolder = new ViewHolder(contactView);
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookmarksAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
     }
 
@@ -28,6 +50,8 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
         return 0;
     }
 
+    //Custom created ViewHolder class
+    // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
     public class ViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
@@ -46,7 +70,6 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
             mImageView = itemView.findViewById(R.id.exerciseImage_Bookmark);
             mTextView = itemView.findViewById(R.id.exerciseName_Bookmark);
             mButton = itemView.findViewById(R.id.exerciseRemove_Button);
-
 
         }
     }
