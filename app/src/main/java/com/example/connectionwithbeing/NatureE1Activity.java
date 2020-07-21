@@ -1,17 +1,10 @@
 package com.example.connectionwithbeing;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,13 +13,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.prush.typedtextview.TypedTextView;
 
 public class NatureE1Activity extends AppCompatActivity {
 
     private ImageView mStartNatureReflections;
-    private ImageView mHomeButton;
+    private ImageView mHomeButton, mExerciseImage;
     private TypedTextView mTypedTextView;
+    private TextView mPlaceHolderTextView;
 
 
     @Override
@@ -38,8 +36,16 @@ public class NatureE1Activity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
+        //Get Intents
+        Bundle extras = getIntent().getExtras();
+        int exerciseImage = (int) extras.get(NatureMenuActivity.exerciseImageView);
+        int exerciseText = (int) extras.get(NatureMenuActivity.exerciseTextView);
+
+        //Declare Views
+        mExerciseImage = findViewById(exerciseImage);
+        mTypedTextView = findViewById(exerciseText);
+
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
-        mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
 
@@ -84,10 +90,8 @@ public class NatureE1Activity extends AppCompatActivity {
             }
         });
 
-        String mExerciseString = getString(R.string.nature_e1_text);
+        String mExerciseString = getString(exerciseText);
         final int mIndex = mExerciseString.length() -1;
-        final char mChar = '.';
-
 
         mTypedTextView.bringToFront(); //Needed for formatting the typed text. Otherwise gets lost in the background text.
 

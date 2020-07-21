@@ -12,13 +12,21 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NatureMenuActivity extends AppCompatActivity {
+public class NatureMenuActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //Views for the custom bottom navigation
     private LinearLayout mHomeButtonBar;
     private ImageView mHomeButton;
 
-    private ImageView mStartExercise1;
+    //Image Views for the UI Activity "Menu"
+    private ImageView mStartExercise1, mStartExercise2;
 
+    //Intent Extras for setting exercise UI Views
+    public static final String exerciseImageView = "exercise_image";
+    public static final String exerciseTextView = "exercise_text";
+
+
+    //Shared Preferences for the Activity. User progress
     public static SharedPreferences mSharedPreferences;
     public static final String userNatureProgress = "nature_exercises_completed";
 
@@ -43,29 +51,13 @@ public class NatureMenuActivity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
         mStartExercise1 = findViewById(R.id.natureMenuE1_ImageView);
+        mStartExercise2 = findViewById(R.id.natureMenuE2_ImageView);
 
         mHomeButtonBar = findViewById(R.id.natureBottomActionBar_Menu);
         mHomeButton = findViewById(R.id.natureHomeButton_Menu);
 
         checkForCompletedExercises();
 
-        mStartExercise1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
-                startActivity(startExercise1);
-            }
-        });
-
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent returnHome = new Intent(NatureMenuActivity.this, MainActivity.class);
-                startActivity(returnHome);
-
-            }
-        });
     }
 
     public void checkForCompletedExercises() {
@@ -78,6 +70,29 @@ public class NatureMenuActivity extends AppCompatActivity {
         if(lightUpStar == 1) {
             ImageView mStar = findViewById(R.id.natureMenuE1Star_ImageView);
             mStar.setImageResource(R.drawable.star);
+        }
+
+    }
+
+    //Switch statement for starting activities.
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.natureMenuE1_ImageView:
+                Intent startExercise1 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+                startExercise1.putExtra(exerciseImageView, R.drawable.bigtree);
+                startExercise1.putExtra(exerciseTextView, R.string.exercise1_center_text_string);
+                startActivity(startExercise1);
+
+            case R.id.natureMenuE2_ImageView:
+                Intent startExercise2 = new Intent(NatureMenuActivity.this, NatureE1Activity.class);
+                startExercise2.putExtra(exerciseImageView, R.drawable.naturemenuicon);
+                startExercise2.putExtra(exerciseTextView, R.string.exercise2_center_text_string);
+                startActivity(startExercise2);
+
+            case R.id.natureHomeButton_Menu:
+                Intent returnHome = new Intent(NatureMenuActivity.this, MainActivity.class);
+                startActivity(returnHome);
         }
 
     }
