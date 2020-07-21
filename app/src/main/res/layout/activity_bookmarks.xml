@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".BookmarksActivity">
 
-    <!-- Nature bottom Action Bar -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionBar_BookMark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       />
+
+    <!-- Bookmark bottom Action Bar -->
     <LinearLayout
-        android:id="@+id/natureBottomActionBar_Menu"
+        android:id="@+id/bottomActionBar_BookMark"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
 
@@ -23,7 +33,7 @@
 
 
         <ImageView
-            android:id="@+id/natureHomeButton_Menu"
+            android:id="@+id/homeButton_Bookmark"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
@@ -33,7 +43,7 @@
             />
 
         <ImageView
-            android:id="@+id/natureToDoButton_Menu"
+            android:id="@+id/todoButton_Bookmark"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
