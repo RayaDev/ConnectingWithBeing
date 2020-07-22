@@ -68,11 +68,9 @@ public class NatureE1Activity extends AppCompatActivity {
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
-        setupBookmarksAdapter();
         mOnClickListeners(exerciseText, exerciseNumber);
 
     }
-
 
     private void mOnClickListeners(int exerciseText, final int exerciseNumber) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
@@ -161,42 +159,5 @@ public class NatureE1Activity extends AppCompatActivity {
         return true;
     }
 
-
-    //Methods, Constructor and Getters for bookmarks.
-    private void setupBookmarksAdapter() {
-        RecyclerView mRecyclerView = findViewById(R.id.bookmark_RecyclerView);
-
-        //Initialize the Exercise List
-        mBookmarkedActivityList = NatureE1Activity.buildBookmarkList();
-
-        BookmarksAdapter mBookmarksAdapter = new BookmarksAdapter(mBookmarkedActivityList);
-        mRecyclerView.setAdapter(mBookmarksAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-    }
-
-    private static ArrayList<NatureE1Activity> buildBookmarkList() {
-
-        ArrayList<NatureE1Activity> mBookmarkList = new ArrayList<>();
-
-        mBookmarkList.add(new NatureE1Activity(R.drawable.bigtree,R.string.app_name));
-
-        return mBookmarkList;
-
-    }
-    public NatureE1Activity(int exerciseImage, int exerciseName) {
-
-        mBookmarkExerciseImageID = exerciseImage;
-        mBookmarkExerciseNameID = exerciseName;
-    }
-
-    public int getExerciseImageID(){
-        return mBookmarkExerciseImageID;
-    }
-
-    public int getBookmarkExerciseNameID() {
-        return mBookmarkExerciseNameID;
-    }
 }
 

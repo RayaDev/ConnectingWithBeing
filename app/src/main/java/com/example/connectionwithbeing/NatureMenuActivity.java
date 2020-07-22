@@ -105,8 +105,7 @@ public class NatureMenuActivity extends AppCompatActivity {
         mToDoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startToDo = new Intent(NatureMenuActivity.this, BookmarksActivity.class);
-                startActivity(startToDo);
+
             }
         });
     }

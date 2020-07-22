@@ -21,11 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BookmarksActivity"
-            android:label="Bookmarks..."
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-
         <!-- Exercise Menus -->
         <activity
             android:name=".NatureMenuActivity"
