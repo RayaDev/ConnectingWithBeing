@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.prush.typedtextview.TypedTextView;
@@ -24,13 +25,19 @@ import java.util.ArrayList;
 
 public class NatureE1Activity extends AppCompatActivity {
 
+    //Default constructor
+    public NatureE1Activity() {
+
+    }
     private ImageView mStartNatureReflections;
     private ImageView mHomeButton, mExerciseImage;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
 
     //For passing into the Bookmarks Adapter
-    private ArrayList<NatureE1Activity> mBookmarkedActitiestList;
+    private ArrayList<NatureE1Activity> mBookmarkedActivityList;
+    int mBookmarkExerciseImageID;
+    int mBookmarkExerciseNameID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,16 +73,6 @@ public class NatureE1Activity extends AppCompatActivity {
 
     }
 
-    private void setupBookmarksAdapter() {
-        RecyclerView mRecyclerView = findViewById(R.id.bookmark_RecyclerView);
-
-        //Initialize the Exercise List
-      //  mBookmarkedActitiestList = NatureE1Activity.buildBookmarkList();
-    }
-
-    private void buildBookmarkList() {
-
-    }
 
     private void mOnClickListeners(int exerciseText, final int exerciseNumber) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +140,7 @@ public class NatureE1Activity extends AppCompatActivity {
 
     }
 
+
     private void playBlinkAnimation(){
 
         Animation animation1 =
@@ -161,6 +159,44 @@ public class NatureE1Activity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+
+    //Methods, Constructor and Getters for bookmarks.
+    private void setupBookmarksAdapter() {
+        RecyclerView mRecyclerView = findViewById(R.id.bookmark_RecyclerView);
+
+        //Initialize the Exercise List
+        mBookmarkedActivityList = NatureE1Activity.buildBookmarkList();
+
+        BookmarksAdapter mBookmarksAdapter = new BookmarksAdapter(mBookmarkedActivityList);
+        mRecyclerView.setAdapter(mBookmarksAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+    }
+
+    private static ArrayList<NatureE1Activity> buildBookmarkList() {
+
+        ArrayList<NatureE1Activity> mBookmarkList = new ArrayList<>();
+
+        mBookmarkList.add(new NatureE1Activity(R.drawable.bigtree,R.string.app_name));
+
+        return mBookmarkList;
+
+    }
+    public NatureE1Activity(int exerciseImage, int exerciseName) {
+
+        mBookmarkExerciseImageID = exerciseImage;
+        mBookmarkExerciseNameID = exerciseName;
+    }
+
+    public int getExerciseImageID(){
+        return mBookmarkExerciseImageID;
+    }
+
+    public int getBookmarkExerciseNameID() {
+        return mBookmarkExerciseNameID;
     }
 }
 

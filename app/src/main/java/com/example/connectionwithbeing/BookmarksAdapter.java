@@ -18,9 +18,9 @@ import java.util.List;
 // Note that we specify the custom ViewHolder which gives us access to our views
 public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.ViewHolder> {
 
-//    public BookmarksAdapter() {
-//
-//    } Empty default constructor
+    public BookmarksAdapter() {
+
+    }
 
     private List<NatureE1Activity> mBookmarkedActivity;
 
