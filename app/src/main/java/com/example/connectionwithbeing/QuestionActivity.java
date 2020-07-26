@@ -19,14 +19,14 @@ import android.widget.Toast;
 
 //AEQ for short hand notation.
 
-public class NatureEQ1Activity extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
 
     private ImageView mHomeButton, mCompletedQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nature_eq1);
+        setContentView(R.layout.activity_questions);
 
         // Sets the AEQ action bar to have the same color as AE action bar.
 //        Make sure the actionbar versions are the same.
@@ -34,7 +34,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
         Bundle extras = getIntent().getExtras();
-        final int exerciseNumber = (int)extras.get(NatureMenuActivity.exerciseNumber);
+        final int exerciseNumber = (int)extras.get(ExerciseMenuActivity.exerciseNumber);
 
         mHomeButton = findViewById(R.id.natureHomeButton_EQ1);
         mCompletedQuestions = findViewById(R.id.natureQ1Completed_ImageView);
@@ -45,7 +45,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new AlertDialog.Builder(NatureEQ1Activity.this)
+                new AlertDialog.Builder(QuestionActivity.this)
                         .setTitle("Finish Reflecting..")
                         .setMessage("Have you thought about all the questions?")
 
@@ -56,7 +56,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
                                 sharedPrefs2(exerciseNumber); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
-                                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
                                 returnHome.putExtra("play_animation",1);
                                 startActivity(returnHome);
                             }
@@ -93,7 +93,7 @@ public class NatureEQ1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent returnHome = new Intent(NatureEQ1Activity.this, MainActivity.class);
+                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
                 startActivity(returnHome);
 
             }
@@ -119,30 +119,27 @@ public class NatureEQ1Activity extends AppCompatActivity {
 
     public void sharedPrefs2(int exerciseNumber) {
         //Saves and sets the exercise progress star color to yellow on the nature menu.
-        SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(NatureMenuActivity.userNatureProgress, MODE_PRIVATE);
+        SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(ExerciseMenuActivity.userNatureProgress, MODE_PRIVATE);
         SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
 
         switch (exerciseNumber) {
 
             case 1:
-                NatureMenuActivity.natureE1Completed = 1; //Right here is where the intent needs to be passed to.
-                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE1, NatureMenuActivity.natureE1Completed);
+                ExerciseMenuActivity.natureE1Completed = 1; //Right here is where the intent needs to be passed to.
+                mSharedPreferencesEditor2.putInt(ExerciseMenuActivity.natureE1, ExerciseMenuActivity.natureE1Completed);
 
                 mSharedPreferencesEditor2.commit();
                 break;
 
             case 2:
-                NatureMenuActivity.natureE2Completed = 1; //Right here is where the intent needs to be passed to.
-                mSharedPreferencesEditor2.putInt(NatureMenuActivity.natureE2, NatureMenuActivity.natureE2Completed);
+                ExerciseMenuActivity.natureE2Completed = 1; //Right here is where the intent needs to be passed to.
+                mSharedPreferencesEditor2.putInt(ExerciseMenuActivity.natureE2, ExerciseMenuActivity.natureE2Completed);
 
                 mSharedPreferencesEditor2.commit();
                 break;
 
         }
-
-
     }
-
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override

@@ -1,12 +1,12 @@
 
 
 General TODO:
-**Learn Dart and Flutter**
+**Kotlin? AI..**
 Read/Scan Through entire android dev guide
 
-Add bookmark/tdlist notifications
 Credits
 Contact info
+Introduction
 Create all exercises/questions content
 
 Create a java class that just handles the functionality of the bottom action bar.
@@ -25,14 +25,8 @@ Format alertDialogs on home screen
 
 ******///// CWB Notes File \\\\\******
 
+In general how do you prevent duplicated code?
 
-
-
-***************************************************************************************************
-List of Deprecated Classes:
-Fragment
-Fragment Manager
-getActivity() in fragment Intent
 
 
 ***************************************************************************************************

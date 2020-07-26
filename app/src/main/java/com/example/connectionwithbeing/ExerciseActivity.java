@@ -16,17 +16,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.prush.typedtextview.TypedTextView;
 
 import java.util.ArrayList;
 
-public class NatureE1Activity extends AppCompatActivity {
+public class ExerciseActivity extends AppCompatActivity {
 
     //Default constructor
-    public NatureE1Activity() {
+    public ExerciseActivity() {
 
     }
     private ImageView mStartNatureReflections;
@@ -35,14 +33,14 @@ public class NatureE1Activity extends AppCompatActivity {
     private TextView mPlaceHolderTextView;
 
     //For passing into the Bookmarks Adapter
-    private ArrayList<NatureE1Activity> mBookmarkedActivityList;
+    private ArrayList<ExerciseActivity> mBookmarkedActivityList;
     int mBookmarkExerciseImageID;
     int mBookmarkExerciseNameID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nature_e1);
+        setContentView(R.layout.activity_exercise);
 
         //Set Actionbar color
         ActionBar bar = getSupportActionBar();
@@ -50,9 +48,9 @@ public class NatureE1Activity extends AppCompatActivity {
 
         //Get Intents
         Bundle extras = getIntent().getExtras();
-        int exerciseImage = (int) extras.get(NatureMenuActivity.exerciseImageView);
-        int exerciseText = (int) extras.get(NatureMenuActivity.exerciseTextView);
-        int exerciseNumber = (int) extras.get(NatureMenuActivity.exerciseNumber);
+        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageView);
+        int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextView);
+        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
 
         //Declare Views, and Set resources from extras.
         mExerciseImage = findViewById(R.id.natureE1_ImageView);
@@ -77,7 +75,7 @@ public class NatureE1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent returnHome = new Intent(NatureE1Activity.this, MainActivity.class);
+                Intent returnHome = new Intent(ExerciseActivity.this, MainActivity.class);
                 startActivity(returnHome);
 
             }
@@ -87,7 +85,7 @@ public class NatureE1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new AlertDialog.Builder(NatureE1Activity.this)
+                new AlertDialog.Builder(ExerciseActivity.this)
                         .setTitle("Continue to reflections..")
                         .setMessage("Have you completed the exercise?")
 
@@ -95,8 +93,8 @@ public class NatureE1Activity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Need intents here with extras for the questions!
-                                Intent startQuestions = new Intent(NatureE1Activity.this, NatureEQ1Activity.class);
-                                startQuestions.putExtra(NatureMenuActivity.exerciseNumber, exerciseNumber);
+                                Intent startQuestions = new Intent(ExerciseActivity.this, QuestionActivity.class);
+                                startQuestions.putExtra(ExerciseMenuActivity.exerciseNumber, exerciseNumber);
                                 startActivity(startQuestions);
                             }
                         })
@@ -137,7 +135,6 @@ public class NatureE1Activity extends AppCompatActivity {
         });
 
     }
-
 
     private void playBlinkAnimation(){
 

@@ -1,6 +1,5 @@
 package com.example.connectionwithbeing;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,8 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,17 +34,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ImageView mHomeButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
     private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
-    //Shared Preferences
+    //Shared Preferences for the number of exercises completed, and menu creation
     public SharedPreferences mSharedPreferences;
     public static final String userActivityProgress = "exercises_completed";
 
+    //Keys
     public static final String selfProgress = "self_progress";
     public static final String othersProgress = "others_progress";
     public static final String natureProgress = "nature_progress";
     public static final String societyProgress= "society_progress";
 
+    //Values
     public static int natureCompletedInt, othersCompletedInt, selfCompletedInt, societyCompletedInt;
 
+    //Keys
+    public static final String menuCategory = "menu_category";
+
+    //Values
+    public static final int selfMenu = 1;
+    public static final int othersMenu = 2;
+    public static final int natureMenu = 3;
+    public static final int societyMenu = 4;
+
+
+    //Used for back button nav
     boolean HARD_BACK_BUTTON_EXIT;
 
 
@@ -99,39 +109,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToggle.syncState();
         mDrawerLayout.closeDrawers();
 
+        setOnClickListeners();
 
-//**************************************************************************************************
-//ON CLICK METHOD FOR HOME ITEMS
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            return;
+        }
+
+    } //End of onCreate()
+
+    //ON CLICK METHOD FOR HOME ITEMS
+    private void setOnClickListeners() {
+
 
         mSelfImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startSelfMenu = new Intent(MainActivity.this, SelfMenuActivity.class);
-                startActivity(startSelfMenu);
+
             }
         });
 
         mOthersImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startOthersMenu = new Intent(MainActivity.this, OthersMenuActivity.class);
-                startActivity(startOthersMenu);
+
             }
         });
 
         mNatureImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startNatureMenu = new Intent(MainActivity.this, NatureMenuActivity.class);
+                Intent startNatureMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
 
-//                natureCompletedInt = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
-//
-//                natureCompletedInt += 1;
-//
-//                mSharedPreferencesEditor.putInt(natureProgress, natureCompletedInt);
-//
-//                mSharedPreferencesEditor.commit();
-
+                startNatureMenu.putExtra(menuCategory, natureMenu);
+                //Pass the appropriate extras through the intent to build the menu layout.
                 startActivity(startNatureMenu);
             }
         });
@@ -139,8 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mSocietyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startSocietyMenu = new Intent(MainActivity.this, SocietyMenuActivity.class);
-                startActivity(startSocietyMenu);
+
             }
         });
 
@@ -151,16 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
-        if (getIntent().getBooleanExtra("EXIT", false)) {
-            finish();
-            return;
-        }
-
-
-
-    } //End of onCreate()
-
+    }
 
 //**************************************************************************************************
 //ACTION BAR AND NAVIGATION METHOD IMPLEMENTATIONS
@@ -263,12 +264,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setProgressStars() {
 
+        //Need this for all categories.
         int stars = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
         String progressStars = "X "+ stars+"/6";
-        Log.i("Prefs", progressStars);
-
         mNatureTextView = findViewById(R.id.natureCompletedTextView);
         mNatureTextView.setText(progressStars);
+
+        stars = mSharedPreferences.getInt(othersProgress, othersCompletedInt);
+        progressStars = "X "+ stars+"/6";
+        mOthersTextView = findViewById(R.id.othersCompletedTextView);
+        mOthersTextView.setText(progressStars);
+
+        stars = mSharedPreferences.getInt(selfProgress, selfCompletedInt);
+        progressStars = "X "+ stars+"/6";
+        mSelfTextView = findViewById(R.id.selfCompletedTextView);
+        mSelfTextView.setText(progressStars);
+
+        stars = mSharedPreferences.getInt(societyProgress, societyCompletedInt);
+        progressStars = "X "+ stars+"/6";
+        mSocietyTextView = findViewById(R.id.societyCompletedTextView);
+        mSocietyTextView.setText(progressStars);
 
     }
 

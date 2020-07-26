@@ -23,36 +23,21 @@
 
         <!-- Exercise Menus -->
         <activity
-            android:name=".NatureMenuActivity"
+            android:name=".ExerciseMenuActivity"
             android:label="With Nature..."
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".SocietyMenuActivity"
-            android:label="With Society..."
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".OthersMenuActivity"
-            android:label="With Others..."
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".SelfMenuActivity"
-            android:label="With Self..."
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
 
         <!-- Exercises Activities -->
         <activity
-            android:name=".NatureE1Activity"
+            android:name=".ExerciseActivity"
             android:label="Hug A Tree!"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
         <!-- Questions Activities -->
         <activity
-            android:name=".NatureEQ1Activity"
+            android:name=".QuestionActivity"
             android:label="Reflections"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
