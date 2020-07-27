@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Keys
     public static final String menuCategory = "menu_category";
 
-    //Values
+    //Values, passed as extra for determing which menu to construct.
     public static final int selfMenu = 1;
     public static final int othersMenu = 2;
     public static final int natureMenu = 3;
