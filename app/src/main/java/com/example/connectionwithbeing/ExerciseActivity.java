@@ -23,19 +23,10 @@ import java.util.ArrayList;
 
 public class ExerciseActivity extends AppCompatActivity {
 
-    //Default constructor
-    public ExerciseActivity() {
-
-    }
     private ImageView mStartNatureReflections;
     private ImageView mHomeButton, mExerciseImage;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
-
-    //For passing into the Bookmarks Adapter
-    private ArrayList<ExerciseActivity> mBookmarkedActivityList;
-    int mBookmarkExerciseImageID;
-    int mBookmarkExerciseNameID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +41,7 @@ public class ExerciseActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageView);
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextView);
-        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
+        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber); //Coming from the menu activity.
 
         //Declare Views, and Set resources from extras.
         mExerciseImage = findViewById(R.id.natureE1_ImageView);
@@ -66,11 +57,11 @@ public class ExerciseActivity extends AppCompatActivity {
         mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
         mHomeButton = findViewById(R.id.natureHomeButton_E1);
 
-        mOnClickListeners(exerciseText, exerciseNumber);
+        onClickListeners(exerciseText, exerciseNumber);
 
     }
 
-    private void mOnClickListeners(int exerciseText, final int exerciseNumber) {
+    private void onClickListeners(int exerciseText, final int exerciseNumber) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

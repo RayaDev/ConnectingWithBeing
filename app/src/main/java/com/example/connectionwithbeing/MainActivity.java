@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mOthersImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent startOthersMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
+                startOthersMenu.putExtra(menuCategory, othersMenu);
+                startActivity(startOthersMenu);
             }
         });
 
