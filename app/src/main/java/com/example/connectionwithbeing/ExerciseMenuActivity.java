@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -23,7 +24,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private ImageView mHomeButton, mToDoButton;
 
     //Image Views for the UI Activity "Menu"
-    private ImageView mStartExercise1, mStartExercise2;
+    private ImageView mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private ScrollView mScrollView;
 
     //Intent Extras for setting exercise UI Views
     public static final String exerciseImageView = "exercise_image";
@@ -51,6 +53,15 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mHomeButtonBar = findViewById(R.id.ExerciseBottomActionBar_Menu);
         mHomeButton = findViewById(R.id.ExerciseHomeButton_Menu);
         mToDoButton = findViewById(R.id.ExerciseToDoButton_Menu);
+
+        mScrollView = findViewById(R.id.ExerciseScrollView);
+
+        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_ImageView);
+        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_ImageView);
+        mStartExercise3 = findViewById(R.id.ExerciseMenuE3_ImageView);
+        mStartExercise4 = findViewById(R.id.ExerciseMenuE4_ImageView);
+        mStartExercise5 = findViewById(R.id.ExerciseMenuE5_ImageView);
+        mStartExercise6 = findViewById(R.id.ExerciseMenuE6_ImageView);
 
 
         Bundle extras = getIntent().getExtras();
@@ -105,13 +116,22 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     //Sets the images for the menu.
     private void setMenuDrawables(int menuCategory) {
+        //Create references for all views
 
+        //Others Menu
+        if(menuCategory == 2) {
+            mStartExercise1.setImageResource(R.drawable.societyhomepng);
+            mStartExercise2.setImageResource(R.drawable.othershomepng);
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.topOfPhoneStatusBarColor));
+
+            changeActionBarColor(R.color.homeScreenActionbarColor);
+        }
     }
 
     private void checkForCompletedExercises(String exerciseCategory, String[] exerciseKeys, int[] exerciseValues) {
 
         //Sets color of stars for each exercise.
-        SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(exerciseCategory, MODE_PRIVATE); //Polymorph this
+        SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(exerciseCategory, MODE_PRIVATE);
 
         int[] exerciseStarImageViews = {R.id.ExerciseMenuE1Star_ImageView, R.id.ExerciseMenuE2Star_ImageView, R.id.ExerciseMenuE3Star_ImageView,
                 R.id.ExerciseMenuE4Star_ImageView, R.id.ExerciseMenuE5Star_ImageView, R.id.ExerciseMenuE6Star_ImageView};
@@ -133,8 +153,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     private void onClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
 
-        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_ImageView);
-        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_ImageView);
 
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,4 +197,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         });
     }
 
+    public void changeActionBarColor(int color) {
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+    }
 }

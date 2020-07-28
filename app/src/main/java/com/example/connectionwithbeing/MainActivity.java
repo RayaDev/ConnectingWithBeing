@@ -60,16 +60,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static final int societyMenu = 4;
 
 
-    //Used for back button nav
-    boolean HARD_BACK_BUTTON_EXIT;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//IMPLEMENTING ALL VIEWS
+//Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
         mToDoButton = findViewById(R.id.homeToDoButton);
@@ -86,13 +82,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 //**************************************************************************************************
-//SETTING UP SHARED PREFERENCES
+//Setting up Shared Preferences
 
           mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
           setProgressStars();
           playProgressAnimation();
 //**************************************************************************************************
-// ACTION BAR AND NAVIGATION
+// Action Bar and Navigation
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
@@ -255,9 +251,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //**************************************************************************************************
 //Various main activity methods for Shared preferences
 
-    public void changeActionBarColor(int color) {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
-    }
 
     public void playProgressAnimation() {
         Intent playAnimation = getIntent();
