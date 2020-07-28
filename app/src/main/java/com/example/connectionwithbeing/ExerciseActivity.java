@@ -19,8 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.prush.typedtextview.TypedTextView;
 
-import java.util.ArrayList;
-
 public class ExerciseActivity extends AppCompatActivity {
 
     private ImageView mStartQuestions;

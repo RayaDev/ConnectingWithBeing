@@ -4,11 +4,21 @@
         android:title="Home">
     </item>
 
-    <item android:id="@+id/first_fragment_menu"
-        android:title="1. Nature at the center">
+    <item android:id="@+id/introduction_item"
+        android:title="Introduction">
     </item>
 
-    <item android:id="@+id/second_fragment_menu"
-        android:title="2. You are art">
+    <item android:id="@+id/credits_item"
+        android:title="Credits">
     </item>
+
+    <item android:id="@+id/contacts_item"
+        android:title="Contacts">
+    </item>
+
+    <item android:id="@+id/about_item"
+        android:title="About">
+
+    </item>
+
 </menu>

@@ -32,7 +32,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     public static final String exerciseCategory = "exercise_category";
     public static int menuCategory;
 
-//    //Values, passed as extra for determing which menu to construct. Notes from main activity
+//    //Values, passed as extra for determing which menu to construct. Notes from main activity ***
 //    private static final int selfMenu = 1;
 //    private static final int othersMenu = 2;
 //    private static final int natureMenu = 3;
@@ -60,8 +60,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         setMenuDrawables(menuCategory);
         createExerciseMenu(menuCategory);
 
-//        checkForNatureCompletedExercises();
-//        mOnClickListeners();
 
     }
 
@@ -114,12 +112,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         //Sets color of stars for each exercise.
         SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(exerciseCategory, MODE_PRIVATE); //Polymorph this
-
-        //Order of these arrays is very important... must be maintained.
-//        String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
-//
-//        int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
-//                natureE4Completed, natureE5Completed, natureE6Completed};
 
         int[] exerciseStarImageViews = {R.id.ExerciseMenuE1Star_ImageView, R.id.ExerciseMenuE2Star_ImageView, R.id.ExerciseMenuE3Star_ImageView,
                 R.id.ExerciseMenuE4Star_ImageView, R.id.ExerciseMenuE5Star_ImageView, R.id.ExerciseMenuE6Star_ImageView};

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Keys
     public static final String menuCategory = "menu_category";
 
-    //Values, passed as extra for determing which menu to construct.
+    //Values, passed as extra for determining which menu to construct.
     public static final int selfMenu = 1;
     public static final int othersMenu = 2;
     public static final int natureMenu = 3;
@@ -119,9 +119,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return;
         }
 
-    } //End of onCreate()
+    }
+    //End of onCreate()
 
-    //ON CLICK METHOD FOR HOME ITEMS
+    //On click methods for home menu items
     private void setOnClickListeners() {
 
 
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 //**************************************************************************************************
-//ACTION BAR AND NAVIGATION METHOD IMPLEMENTATIONS
+//Actionbar and navigation method implementations
 
     //  Creates the right hand menu.
     @Override
@@ -205,17 +206,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
         }
 
-        if(item.getItemId() == android.R.id.home) {
-            finish();
-        }
+//        if(item.getItemId() == android.R.id.home) {
+//            finish();
+//        }
 
         return super.onOptionsItemSelected(item);
     }
 
 
-    //    Makes items clickable and perform actions for nav menu.
-
-    //    Sets a unique action bar color for each exercise.
+    // Makes items clickable and perform actions for nav menu.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -223,26 +222,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.home) {
 
-
             mDrawerLayout.closeDrawers();
+            Toast.makeText(MainActivity.this, "Home item clicked", Toast.LENGTH_SHORT).show();
         }
 
-        if(id == R.id.first_fragment_menu){
+        if(id == R.id.introduction_item){
 
 
             mDrawerLayout.closeDrawers();
+            Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
         }
 
-        if(id == R.id.second_fragment_menu) {
+        if(id == R.id.credits_item) {
 
             mDrawerLayout.closeDrawers();
+            Toast.makeText(MainActivity.this, "Credits item clicked", Toast.LENGTH_SHORT).show();
+        }
+
+        if(id == R.id.about_item) {
+            mDrawerLayout.closeDrawers();
+            Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
         return true;
     }
 
 //**************************************************************************************************
-//VARIOUS MAIN ACTIVITY METHODS
+//Various main activity methods for Shared preferences
 
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
