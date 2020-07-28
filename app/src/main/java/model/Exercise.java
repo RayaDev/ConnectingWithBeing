@@ -18,7 +18,7 @@ public class Exercise {
     public Exercise() {}
 
     //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category.
-    public static final String userActivityProgress = "exercises_completed"; //This is the main references for all shared prefs.
+    public static final String userActivityProgress = "exercises_completed"; //This is the main references key for all shared prefs.
 
 //    public static SharedPreferences natureSharedPreferences;
     public static final String userNatureProgress = "nature_exercises_completed";
