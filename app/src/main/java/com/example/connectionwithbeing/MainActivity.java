@@ -244,6 +244,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
+        if(id == R.id.contacts_item) {
+            mDrawerLayout.closeDrawers();
+            Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
+        }
+
         return true;
     }
 
