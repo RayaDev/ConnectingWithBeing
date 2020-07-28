@@ -24,21 +24,21 @@
         <!-- Exercise Menus -->
         <activity
             android:name=".ExerciseMenuActivity"
-            android:label="With Nature..."
+            android:label="Menu Activity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
 
         <!-- Exercises Activities -->
         <activity
             android:name=".ExerciseActivity"
-            android:label="Hug A Tree!"
+            android:label="Exercise Activity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
         <!-- Questions Activities -->
         <activity
             android:name=".QuestionActivity"
-            android:label="Reflections"
+            android:label="Question Activity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 

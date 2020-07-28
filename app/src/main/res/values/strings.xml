@@ -1,17 +1,23 @@
 <resources>
     <string name="app_name">ConnectionWithBeing</string>
-    <string name="open">test1</string>
-    <string name="close">test2</string>
+
+
+    <!-- Main Activity Strings-->
+    <string name = "open">open toggle</string>
+    <string name = "close">close toggle</string>
     <string name="home_button_toast">You are already home!</string>
     <string name="exercise_completed_default">"X 0/6"</string>
-
 
     <string name="exercise1_center_text_string">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>
     <string name="exercise2_center_text_string">Pick an artistic medium you are not comfortable with and just create. Try not to judge or compare yourself to others!</string>
     <string name="exercise1_questions_button_string">Reflection</string>
 
+    <!--Others Exercise Strings-->
+    <string name = "others_menu_title">With Others...</string>
 
-    <!--NatureE1 Strings-->
+    <!--Nature Exercise Strings-->
+    <string name = "nature_menu_title">With Nature...</string>
+
     <string name="nature_e1_text">"Find the most inspiring tree around your area, and give it a big hug.
 
 While you’re there take a long breath, and thank that tree for the air you are breathing."

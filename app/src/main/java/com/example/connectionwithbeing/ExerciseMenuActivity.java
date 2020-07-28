@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
+
+import model.Exercise;
 
 public class ExerciseMenuActivity extends AppCompatActivity {
 
@@ -26,86 +29,14 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     public static final String exerciseImageView = "exercise_image";
     public static final String exerciseTextView = "exercise_text";
     public static final String exerciseNumber = "exercise_number";
+    public static final String exerciseCategory = "exercise_category";
+    public static int menuCategory;
 
-    //HashMaps holding all drawable and String ids for exercises
-
-    public static final HashMap<String, Integer> mNatureExerciseImages = new HashMap<>();
-
-    static {
-        mNatureExerciseImages.put("exercise1_image", R.drawable.bigtree);
-        mNatureExerciseImages.put("exercise2_image", R.drawable.bookmark);
-    }
-
-    public static final HashMap<String, Integer> mNatureExerciseStrings = new HashMap<>();
-
-    static {
-        mNatureExerciseStrings.put("exercise1_text", R.string.exercise1_center_text_string);
-        mNatureExerciseStrings.put("exercise2_text", R.string.exercise2_center_text_string);
-        mNatureExerciseStrings.put("exercise3_text", R.string.app_name);
-    }
-
-    public static final HashMap<String, Integer> mOtherExerciseImages = new HashMap<>();
-
-    static {
-        mOtherExerciseImages.put("exercise1_image", R.drawable.cwblogotest);
-        mOtherExerciseImages.put("exercise2_image", R.drawable.othershomepng);
-    }
-
-    public static final HashMap<String, Integer> mOtherExerciseStrings = new HashMap<>();
-
-    static {
-        mOtherExerciseStrings.put("exercise1_text", R.string.nature_e1_q3_text);
-        mOtherExerciseStrings.put("exercise2_text", R.string.nature_e1_q1_text);
-        mOtherExerciseStrings.put("exercise2_text", R.string.nature_e1_q3_text);
-    }
-
-    //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category.
-    public static SharedPreferences mSharedPreferences;
-
-
-    public static final String userNatureProgress = "nature_exercises_completed";
-
-    //Keys
-    public static final String natureE1 = "natureE1";
-    public static final String natureE2 = "natureE2";
-    public static final String natureE3 = "natureE3";
-    public static final String natureE4 = "natureE4";
-    public static final String natureE5 = "natureE5";
-    public static final String natureE6 = "natureE6";
-
-    //Values
-    public static int natureE1Completed = 0;
-    public static int natureE2Completed = 0;
-    public static int natureE3Completed = 0;
-    public static int natureE4Completed = 0;
-    public static int natureE5Completed = 0;
-    public static int natureE6Completed = 0;
-
-    public static String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
-
-    public static int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
-            natureE4Completed, natureE5Completed, natureE6Completed};
-
-
-    public static final String userOthersProgress = "others_exercises_completed";
-
-    public static final String othersE1 = "othersE1";
-    public static final String othersE2 = "othersE2";
-    public static final String othersE3 = "othersE3";
-    public static final String othersE4 = "othersE4";
-    public static final String othersE5 = "othersE5";
-    public static final String othersE6 = "othersE6";
-
-    public static int othersE1Completed = 0;
-    public static int othersE2Completed = 0;
-    public static int othersE3Completed = 0;
-    public static int othersE4Completed = 0;
-    public static int othersE5Completed = 0;
-    public static int othersE6Completed = 0;
-
-    public static final String[] othersKeys = {othersE1, othersE2, othersE3, othersE4, othersE5, othersE6};
-    public static final int[] othersValues = {othersE1Completed, othersE2Completed,
-            othersE3Completed, othersE4Completed, othersE5Completed, othersE6Completed};
+//    //Values, passed as extra for determing which menu to construct. Notes from main activity
+//    private static final int selfMenu = 1;
+//    private static final int othersMenu = 2;
+//    private static final int natureMenu = 3;
+//    private static final int societyMenu = 4;
 
 
     @Override
@@ -124,7 +55,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        int menuCategory = extras.getInt("menu_category");
+        menuCategory = extras.getInt("menu_category");
 
         setMenuDrawables(menuCategory);
         createExerciseMenu(menuCategory);
@@ -144,14 +75,25 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         if(menuCategory == MainActivity.othersMenu) {
 
-            checkForCompletedExercises(userOthersProgress,othersKeys, othersValues);
-            onClickListeners(mOtherExerciseImages, mOtherExerciseStrings);
+            setTitle(R.string.others_menu_title);
+
+            Exercise mOthersExercise = new Exercise();
+
+            checkForCompletedExercises(mOthersExercise.userOthersProgress,
+                    mOthersExercise.getOthersKeys(), mOthersExercise.getOthersValues());
+
+            onClickListeners(mOthersExercise.getOtherExerciseImages(), mOthersExercise.getOtherExerciseStrings());
         }
 
         if(menuCategory == MainActivity.natureMenu) {
+            setTitle(R.string.nature_menu_title);
 
-            checkForCompletedExercises(userNatureProgress, natureKeys, natureValues);
-            onClickListeners(mNatureExerciseImages, mNatureExerciseStrings);
+            Exercise mNatureExercise = new Exercise();
+
+            checkForCompletedExercises(mNatureExercise.userNatureProgress,
+                    mNatureExercise.getNatureKeys(), mNatureExercise.getNatureValues());
+
+            onClickListeners(mNatureExercise.getNatureExerciseImages(), mNatureExercise.getNatureExerciseStrings());
         }
 
         if(menuCategory == MainActivity.societyMenu) {
@@ -160,25 +102,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 //            onClickListeners(null, null);
         }
 
-        //I can never get these switch statements to work for some reason..
-//        switch (menuCategory){
-//            case 1:
-//                //            checkForCompletedExercises(null,null, null);
-////            onClickListeners(null, null);
-//
-//            case 2:
-//                checkForCompletedExercises(userOthersProgress,othersKeys, othersValues);
-//                onClickListeners(mOtherExerciseImages, mOtherExerciseStrings);
-//
-//            case 3:
-//                checkForCompletedExercises(userNatureProgress, natureKeys, natureValues);
-//                onClickListeners(mNatureExerciseImages, mNatureExerciseStrings);
-//
-//            case 4:
-//                //            checkForCompletedExercises(null,null, null);
-////            onClickListeners(null, null);
-//
-//        }
 
     }
 
@@ -187,11 +110,10 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     }
 
-
-
     private void checkForCompletedExercises(String exerciseCategory, String[] exerciseKeys, int[] exerciseValues) {
 
-        mSharedPreferences = getApplicationContext().getSharedPreferences(exerciseCategory, MODE_PRIVATE); //Polymorph this
+        //Sets color of stars for each exercise.
+        SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(exerciseCategory, MODE_PRIVATE); //Polymorph this
 
         //Order of these arrays is very important... must be maintained.
 //        String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
@@ -204,7 +126,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         int i = 0;
         while(i < exerciseKeys.length) {
-            int lightUpStar = mSharedPreferences.getInt(exerciseKeys[i], exerciseValues[i]);
+            int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], exerciseValues[i]);
 
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);
@@ -229,7 +151,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 startExercise1.putExtra(exerciseImageView, exerciseImages.get("exercise1_image"));
                 startExercise1.putExtra(exerciseTextView, exerciseStrings.get("exercise1_text"));
                 startExercise1.putExtra(exerciseNumber,1);
+                startExercise1.putExtra(exerciseCategory, menuCategory);
                 startActivity(startExercise1);
+
             }
         });
 
@@ -241,6 +165,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 startExercise2.putExtra(exerciseImageView, exerciseImages.get("exercise2_image"));
                 startExercise2.putExtra(exerciseTextView, exerciseStrings.get("exercise2_text"));
                 startExercise2.putExtra(exerciseNumber,2);
+                startExercise2.putExtra(exerciseCategory, menuCategory);
                 startActivity(startExercise2);
 
             }
@@ -257,7 +182,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mToDoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(ExerciseMenuActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

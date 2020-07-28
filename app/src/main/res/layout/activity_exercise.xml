@@ -10,7 +10,7 @@
     android:background="@color/nature_primary">
 
     <ImageView
-        android:id="@+id/natureE1_ImageView"
+        android:id="@+id/ExerciseActivity_ImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
@@ -20,13 +20,13 @@
 
         android:layout_marginTop="8dp"
 
-        app:layout_constraintBottom_toTopOf="@id/natureE1_TextView"
+        app:layout_constraintBottom_toTopOf="@id/ExerciseActivity_TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.prush.typedtextview.TypedTextView
-        android:id="@+id/natureE1_TypedTextView"
+        android:id="@+id/ExerciseActivity_TypedTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -40,15 +40,15 @@
         app:play_keystrokes_audio="false"
 
         android:layout_marginBottom="12dp"
-        app:layout_constraintTop_toTopOf="@id/natureE1_TextView"
+        app:layout_constraintTop_toTopOf="@id/ExerciseActivity_TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/natureTransitionToReflections_LinearLayout">
+        app:layout_constraintBottom_toTopOf="@id/ExerciseStartQuestions_LinearLayout">
 
     </com.prush.typedtextview.TypedTextView>
 
     <!-- Place holder TextView -->
-    <TextView android:id="@+id/natureE1_TextView"
+    <TextView android:id="@+id/ExerciseActivity_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -62,14 +62,14 @@
         android:layout_marginBottom="12dp"
         android:layout_marginTop="12dp"
 
-        app:layout_constraintTop_toBottomOf="@id/natureE1_ImageView"
+        app:layout_constraintTop_toBottomOf="@id/ExerciseActivity_ImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/natureTransitionToReflections_LinearLayout"
+        app:layout_constraintBottom_toTopOf="@id/ExerciseStartQuestions_LinearLayout"
         />
 
     <LinearLayout
-        android:id="@+id/natureTransitionToReflections_LinearLayout"
+        android:id="@+id/ExerciseStartQuestions_LinearLayout"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_weight="1"
@@ -78,15 +78,15 @@
         android:orientation="vertical"
 
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@id/natureBottomActionBar_E1"
+        app:layout_constraintBottom_toTopOf="@id/ExerciseActivityBottomActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/natureE1_TextView"
+        app:layout_constraintTop_toBottomOf="@id/ExerciseActivity_TextView"
 
         >
 
         <ImageView
-            android:id="@+id/startNatureReflections_ImageView"
+            android:id="@+id/ExerciseStartQuestions_ImageView"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
@@ -99,7 +99,7 @@
 
     <!-- Nature bottom ActionBar -->
     <LinearLayout
-        android:id="@+id/natureBottomActionBar_E1"
+        android:id="@+id/ExerciseActivityBottomActionBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
 
@@ -114,7 +114,7 @@
 
 
         <ImageView
-            android:id="@+id/natureHomeButton_E1"
+            android:id="@+id/ExerciseActivityHomeButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
@@ -124,7 +124,7 @@
             />
 
         <ImageView
-            android:id="@+id/natureToDoButton_E1"
+            android:id="@+id/ExerciseActivityToDoButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
 

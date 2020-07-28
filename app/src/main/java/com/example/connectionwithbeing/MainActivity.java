@@ -25,18 +25,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.HashMap;
+
+import model.Exercise;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Declaring all Views
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private LinearLayout mHomeButtonBar;
-    private ImageView mHomeButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
+    private ImageView mHomeButton, mToDoButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
     private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
     //Shared Preferences for the number of exercises completed, and menu creation
     public SharedPreferences mSharedPreferences;
-    public static final String userActivityProgress = "exercises_completed";
 
     //Keys
     public static final String selfProgress = "self_progress";
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //IMPLEMENTING ALL VIEWS
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
+        mToDoButton = findViewById(R.id.homeToDoButton);
 
         mSelfImageView = findViewById(R.id.selfImageView);
         mOthersImageView = findViewById(R.id.othersImageView);
@@ -84,8 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //**************************************************************************************************
 //SETTING UP SHARED PREFERENCES
 
-          mSharedPreferences = getApplicationContext().getSharedPreferences(userActivityProgress, MODE_PRIVATE);
-          final SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+          mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
           setProgressStars();
           playProgressAnimation();
 //**************************************************************************************************
@@ -160,6 +163,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, R.string.home_button_toast,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -241,10 +251,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void playProgressAnimation() {
         Intent playAnimation = getIntent();
         int i = playAnimation.getIntExtra("play_animation",0);
-        if(i == 1) {
+        int j = playAnimation.getIntExtra("exercise_category",0);
 
+        HashMap<Integer, Integer> stars = new HashMap<>();
+        stars.put(selfMenu, R.id.selfStar);
+        stars.put(othersMenu, R.id.othersStar);
+        stars.put(natureMenu, R.id.natureStar);
+        stars.put(societyMenu, R.id.societyStar);
+
+
+        if(i == 1) {
             //Rotates the stars
-            ImageView natureStarImage = findViewById(R.id.natureStar);
+            ImageView natureStarImage = findViewById(stars.get(j));
             Animation rotateAnimation =
                     AnimationUtils.loadAnimation(getApplicationContext(),
                             R.anim.rotate);

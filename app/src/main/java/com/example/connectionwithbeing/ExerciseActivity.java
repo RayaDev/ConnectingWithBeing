@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class ExerciseActivity extends AppCompatActivity {
 
-    private ImageView mStartNatureReflections;
+    private ImageView mStartQuestions;
     private ImageView mHomeButton, mExerciseImage;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
@@ -42,26 +42,27 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageView);
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextView);
         int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber); //Coming from the menu activity.
+        int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategory);
 
         //Declare Views, and Set resources from extras.
-        mExerciseImage = findViewById(R.id.natureE1_ImageView);
+        mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
 
-        mTypedTextView = findViewById(R.id.natureE1_TypedTextView);
+        mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
 
-        mPlaceHolderTextView = findViewById(R.id.natureE1_TextView);
+        mPlaceHolderTextView = findViewById(R.id.ExerciseActivity_TextView);
         mPlaceHolderTextView.setText(exerciseText);
 
         //Reflections Button
-        mStartNatureReflections = findViewById(R.id.startNatureReflections_ImageView);
-        mHomeButton = findViewById(R.id.natureHomeButton_E1);
+        mStartQuestions = findViewById(R.id.ExerciseStartQuestions_ImageView);
+        mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
 
-        onClickListeners(exerciseText, exerciseNumber);
+        onClickListeners(exerciseText, exerciseNumber, exerciseType);
 
     }
 
-    private void onClickListeners(int exerciseText, final int exerciseNumber) {
+    private void onClickListeners(int exerciseText, final int exerciseNumber, final int exerciseType) {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +73,7 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
-        mStartNatureReflections.setOnClickListener(new View.OnClickListener() {
+        mStartQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -86,6 +87,7 @@ public class ExerciseActivity extends AppCompatActivity {
                                 //Need intents here with extras for the questions!
                                 Intent startQuestions = new Intent(ExerciseActivity.this, QuestionActivity.class);
                                 startQuestions.putExtra(ExerciseMenuActivity.exerciseNumber, exerciseNumber);
+                                startQuestions.putExtra(ExerciseMenuActivity.exerciseCategory, exerciseType);
                                 startActivity(startQuestions);
                             }
                         })
@@ -94,7 +96,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                mStartNatureReflections.clearAnimation();
+                                mStartQuestions.clearAnimation();
 
                             }
                         })
@@ -132,7 +134,7 @@ public class ExerciseActivity extends AppCompatActivity {
         Animation animation1 =
                 AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.blink);
-        mStartNatureReflections.startAnimation(animation1);
+        mStartQuestions.startAnimation(animation1);
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
