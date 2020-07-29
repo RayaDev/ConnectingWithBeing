@@ -389,18 +389,18 @@ public class QuestionActivity extends AppCompatActivity {
             case 1:
 
                 questions = Question.natureE1Questions;
-                mQuestions1.setText(questions[1]);
-                mQuestions2.setText(questions[2]);
-                mQuestions3.setText(questions[3]);
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
 
                 break;
 
             case 2:
 
                 questions = Question.natureE2Questions;
-                mQuestions1.setText(questions[1] +"Test");
-                mQuestions2.setText(questions[2] + "Testt");
-                mQuestions3.setText(questions[3] + "testtt");
+                mQuestions1.setText(questions[0] +"Test");
+                mQuestions2.setText(questions[1] + "Testt");
+                mQuestions3.setText(questions[2] + "testtt");
 
                 break;
 

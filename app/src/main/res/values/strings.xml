@@ -7,6 +7,7 @@
     <string name = "close">close toggle</string>
     <string name="home_button_toast">You are already home!</string>
     <string name="exercise_completed_default">"X 0/6"</string>
+    <string name = "question_default_string">Question goes here</string>
 
     <string name="exercise1_center_text_string">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>
     <string name="exercise2_center_text_string">Pick an artistic medium you are not comfortable with and just create. Try not to judge or compare yourself to others!</string>

@@ -28,7 +28,7 @@
             android:layout_weight="1"
 
             android:gravity="center"
-            android:text="@string/nature_e1_q1_text"
+            android:text="@string/question_default_string"
             android:textSize="20sp"
             android:fontFamily="@font/nature_questions_font"
             />
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
-            android:text="@string/nature_e1_q2_text"
+            android:text="@string/question_default_string"
             android:textSize="20sp"
             android:gravity="center"
             android:fontFamily="@font/nature_questions_font"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
-            android:text="@string/nature_e1_q3_text"
+            android:text="@string/question_default_string"
             android:textSize="20sp"
             android:gravity="center"
             android:fontFamily="@font/nature_questions_font"/>
