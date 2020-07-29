@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
           mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
           setProgressStars();
           playProgressAnimation();
+
 //**************************************************************************************************
 // Action Bar and Navigation
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToggle.syncState();
         mDrawerLayout.closeDrawers();
 
-        setOnClickListeners();
+        onClickListeners();
 
         if (getIntent().getBooleanExtra("EXIT", false)) {
             finish();
@@ -119,13 +120,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //End of onCreate()
 
     //On click methods for home menu items
-    private void setOnClickListeners() {
-
+    private void onClickListeners() {
 
         mSelfImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Intent startSelfMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
+                startSelfMenu.putExtra(menuCategory, selfMenu);
+                startActivity(startSelfMenu);
             }
         });
 
@@ -152,6 +155,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mSocietyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent startSocietyMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
+                startSocietyMenu.putExtra(menuCategory, societyMenu);
+                startActivity(startSocietyMenu);
 
             }
         });
@@ -223,7 +230,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(id == R.id.introduction_item){
-
 
             mDrawerLayout.closeDrawers();
             Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();

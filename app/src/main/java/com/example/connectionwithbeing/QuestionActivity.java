@@ -15,15 +15,18 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import model.Exercise;
+import model.Question;
 
 //AEQ for short hand notation.
 
 public class QuestionActivity extends AppCompatActivity {
 
-    private ImageView mHomeButton, mCompletedQuestions;
+    private ImageView mToDoButton, mHomeButton, mCompletedQuestions;
+    private TextView mQuestions1, mQuestions2, mQuestions3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +39,30 @@ public class QuestionActivity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
         Bundle extras = getIntent().getExtras();
-        final int exerciseNumber = (int)extras.get(ExerciseMenuActivity.exerciseNumber);
+        final int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
         final int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategory);
 
-        mHomeButton = findViewById(R.id.natureHomeButton_EQ1);
-        mCompletedQuestions = findViewById(R.id.natureQ1Completed_ImageView);
+        mHomeButton = findViewById(R.id.questionHomeButton);
+        mToDoButton = findViewById(R.id.questionToDoButton);
+        mCompletedQuestions = findViewById(R.id.questionCompleted_ImageView);
+
+        mQuestions1 = findViewById(R.id.questionActivity_Q1);
+        mQuestions2 = findViewById(R.id.questionActivity_Q2);
+        mQuestions3 = findViewById(R.id.questionActivity_Q3);
 
 
+        setQuestions(exerciseNumber, exerciseType);
+        onClickListeners(exerciseNumber, exerciseType);
 
-       mCompletedQuestions.setOnClickListener(new View.OnClickListener() {
+    }
+
+
+    private void onClickListeners(int i, int j) {
+
+        final int exerciseNumber = i;
+        final int exerciseType = j;
+
+        mCompletedQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -61,7 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 //Returns to the home screen and activates an animation on the stars.
                                 Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                                returnHome.putExtra("play_animation",1);
+                                returnHome.putExtra("play_animation", 1);
                                 returnHome.putExtra("exercise_category", exerciseType);
                                 startActivity(returnHome);
                             }
@@ -104,11 +122,32 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
+    //Increments the number of nature exercises completed on the home menu.
     public void sharedPrefs1(int exerciseType) {
 
-        //Increments the number of nature exercises completed on the home menu.
+        if(exerciseType == 1) {
+
+            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+            MainActivity.selfCompletedInt = mSharedPreferences.getInt(MainActivity.selfProgress, MainActivity.selfCompletedInt);
+
+            MainActivity.selfCompletedInt += 1;
+
+            mSharedPreferencesEditor.putInt(MainActivity.selfProgress, MainActivity.selfCompletedInt);
+
+            mSharedPreferencesEditor.commit();
+
+        }
 
         if(exerciseType == 2) {
 
@@ -140,10 +179,53 @@ public class QuestionActivity extends AppCompatActivity {
 
         }
 
+        if(exerciseType == 1) {
+
+            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+            MainActivity.societyCompletedInt = mSharedPreferences.getInt(MainActivity.societyProgress, MainActivity.societyCompletedInt);
+
+            MainActivity.societyCompletedInt += 1;
+
+            mSharedPreferencesEditor.putInt(MainActivity.societyProgress, MainActivity.societyCompletedInt);
+
+            mSharedPreferencesEditor.commit();
+
+        }
+
     }
 
+    //Saves and sets the exercise progress star color to yellow on the nature menu.
     public void sharedPrefs2(int exerciseNumber, int exerciseType) {
-        //Saves and sets the exercise progress star color to yellow on the nature menu.
+
+
+        if (exerciseType == 1) {
+
+            SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userSelfProgress, MODE_PRIVATE);
+            SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+
+            switch (exerciseNumber) {
+
+                case 1:
+                    Exercise.selfE1Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 2:
+                    Exercise.selfE2Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE2, Exercise.selfE2Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                //case for each exercise
+
+            }
+        }
+
 
         if (exerciseType == 2) {
 
@@ -194,6 +276,170 @@ public class QuestionActivity extends AppCompatActivity {
 
                     //case for each exercise
             }
+        }
+
+        if (exerciseType == 4) {
+
+            SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userSocietyProgress, MODE_PRIVATE);
+            SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+
+            switch (exerciseNumber) {
+
+                case 1:
+                    Exercise.societyE1Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE1, Exercise.societyE1Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 2:
+                    Exercise.societyE2Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE2, Exercise.societyE2Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                //case for each exercise
+
+            }
+        }
+
+    }
+
+
+    //Set questions based on exercise.
+    private void setQuestions(int exerciseNumber, int exerciseType) {
+        //For example type = nature (3), and number = 4, so it would be the natureE4 exercise question set.
+        //Algorithm here?
+
+        switch (exerciseType) {
+            case 1:
+                setSelfQuestions(exerciseNumber);
+                break;
+
+            case 2:
+                setOthersQuestion(exerciseNumber);
+                break;
+
+            case 3:
+                setNatureQuestions(exerciseNumber);
+                break;
+
+            case 4:
+                setSocietyQuestions(exerciseNumber);
+        }
+
+
+    }
+
+    private void setSelfQuestions(int exerciseNumber) {
+
+        switch (exerciseNumber) {
+            case 1:
+
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
+        }
+
+    }
+
+    private void setOthersQuestion(int exerciseNumber) {
+
+        switch (exerciseNumber) {
+            case 1:
+
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
+        }
+
+    }
+
+    private void setNatureQuestions(int exerciseNumber) {
+
+        int[] questions;
+        switch (exerciseNumber) {
+            case 1:
+
+                questions = Question.natureE1Questions;
+                mQuestions1.setText(questions[1]);
+                mQuestions2.setText(questions[2]);
+                mQuestions3.setText(questions[3]);
+
+                break;
+
+            case 2:
+
+                questions = Question.natureE2Questions;
+                mQuestions1.setText(questions[1] +"Test");
+                mQuestions2.setText(questions[2] + "Testt");
+                mQuestions3.setText(questions[3] + "testtt");
+
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
+        }
+
+    }
+
+    private void setSocietyQuestions(int exerciseNumber) {
+
+        switch (exerciseNumber) {
+            case 1:
+
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
+                break;
         }
 
     }

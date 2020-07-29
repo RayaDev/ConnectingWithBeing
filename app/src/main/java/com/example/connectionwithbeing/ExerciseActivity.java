@@ -22,7 +22,7 @@ import com.prush.typedtextview.TypedTextView;
 public class ExerciseActivity extends AppCompatActivity {
 
     private ImageView mStartQuestions;
-    private ImageView mHomeButton, mExerciseImage;
+    private ImageView mHomeButton, mExerciseImage, mToDoButton;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
 
@@ -35,11 +35,11 @@ public class ExerciseActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
-        //Get Intents
+        //Get Intents all coming from the menu activity.
         Bundle extras = getIntent().getExtras();
         int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageView);
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextView);
-        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber); //Coming from the menu activity.
+        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategory);
 
         //Declare Views, and Set resources from extras.
@@ -55,6 +55,7 @@ public class ExerciseActivity extends AppCompatActivity {
         //Reflections Button
         mStartQuestions = findViewById(R.id.ExerciseStartQuestions_ImageView);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
+        mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
 
         onClickListeners(exerciseText, exerciseNumber, exerciseType);
 
@@ -68,6 +69,13 @@ public class ExerciseActivity extends AppCompatActivity {
                 Intent returnHome = new Intent(ExerciseActivity.this, MainActivity.class);
                 startActivity(returnHome);
 
+            }
+        });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
             }
         });
 

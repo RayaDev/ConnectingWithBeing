@@ -3,6 +3,7 @@ package com.example.connectionwithbeing;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import model.Exercise;
@@ -63,28 +65,42 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mStartExercise5 = findViewById(R.id.ExerciseMenuE5_ImageView);
         mStartExercise6 = findViewById(R.id.ExerciseMenuE6_ImageView);
 
+        //Using and ArrayList of objects here to set the image resource for each exercise button.
+        ArrayList<ImageView> mExerciseImageArray = new ArrayList<>();
+        mExerciseImageArray.add(mStartExercise1);
+        mExerciseImageArray.add(mStartExercise2);
+        mExerciseImageArray.add(mStartExercise3);
+        mExerciseImageArray.add(mStartExercise4);
+        mExerciseImageArray.add(mStartExercise5);
+        mExerciseImageArray.add(mStartExercise6);
+
 
         Bundle extras = getIntent().getExtras();
 
+
+        //Original intent that keeps track of which category the user is currently in.
         menuCategory = extras.getInt("menu_category");
 
-        setMenuDrawables(menuCategory);
+        setMenuDrawables(menuCategory, mExerciseImageArray);
         createExerciseMenu(menuCategory);
 
 
     }
 
+    //Creates the actual exercises to be displayed to the user on the following screen.
     private void createExerciseMenu(int menuCategory) {
 
         if(menuCategory == MainActivity.selfMenu) {
 
-//            checkForCompletedExercises(null,null, null);
-//            onClickListeners(null, null);
+            Exercise mSelfExercise = new Exercise();
+
+            checkForCompletedExercises(mSelfExercise.userSelfProgress,
+                    mSelfExercise.getSelfKeys(), mSelfExercise.getSelfValues());
+
+            onClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getOtherExerciseStrings());
         }
 
         if(menuCategory == MainActivity.othersMenu) {
-
-            setTitle(R.string.others_menu_title);
 
             Exercise mOthersExercise = new Exercise();
 
@@ -95,7 +111,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         }
 
         if(menuCategory == MainActivity.natureMenu) {
-            setTitle(R.string.nature_menu_title);
 
             Exercise mNatureExercise = new Exercise();
 
@@ -106,26 +121,79 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         }
 
         if(menuCategory == MainActivity.societyMenu) {
+            Exercise mSocietyExercise = new Exercise();
 
-//            checkForCompletedExercises(null,null, null);
-//            onClickListeners(null, null);
+            checkForCompletedExercises(mSocietyExercise.userSocietyProgress,
+                    mSocietyExercise.getSocietyKeys(), mSocietyExercise.getSocietyValues());
+
+            onClickListeners(mSocietyExercise.getSocietyExerciseImages(), mSocietyExercise.getSocietyExerciseStrings());
+
         }
 
 
     }
 
-    //Sets the images for the menu.
-    private void setMenuDrawables(int menuCategory) {
+    //Sets the images for the exercises
+    private void setMenuDrawables(int menuCategory, ArrayList<ImageView> exerciseImageArray) {
         //Create references for all views
+
+        //Self Menu
+        if(menuCategory == 1) {
+
+            for (ImageView exercise: exerciseImageArray)
+            {
+                exercise.setImageResource(R.drawable.selfhomepng);
+            }
+
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary));
+            changeActionBarColor(R.color.design_default_color_primary_dark);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_dark));
+
+        }
 
         //Others Menu
         if(menuCategory == 2) {
-            mStartExercise1.setImageResource(R.drawable.societyhomepng);
-            mStartExercise2.setImageResource(R.drawable.othershomepng);
-            mScrollView.setBackgroundColor(getResources().getColor(R.color.topOfPhoneStatusBarColor));
 
-            changeActionBarColor(R.color.homeScreenActionbarColor);
+            for (ImageView exercise: exerciseImageArray)
+            {
+                exercise.setImageResource(R.drawable.othershomepng);
+            }
+
+            setTitle(R.string.others_menu_title);
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_variant));
+            changeActionBarColor(R.color.design_default_color_secondary_variant);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary_variant));
         }
+
+        //Nature Menu
+        if(menuCategory == 3) {
+
+            for (ImageView exercise: exerciseImageArray)
+            {
+                exercise.setImageResource(R.drawable.waterfall);
+
+            }
+
+            setTitle(R.string.nature_menu_title);
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+            changeActionBarColor(R.color.nature_primary_dark);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.nature_primary_dark));
+
+        }
+
+        if(menuCategory == 4){
+            for (ImageView exercise: exerciseImageArray)
+            {
+                exercise.setImageResource(R.drawable.societyhomepng);
+
+            }
+
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.myBlack));
+            changeActionBarColor(R.color.design_default_color_error);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_error));
+        }
+
+        //Society Menu
     }
 
     private void checkForCompletedExercises(String exerciseCategory, String[] exerciseKeys, int[] exerciseValues) {
