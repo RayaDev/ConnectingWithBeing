@@ -55,7 +55,6 @@ public class Exercise {
 
 
 
-
     //    public static SharedPreferences othersSharedPreferences;
     public static final String userOthersProgress = "others_exercises_completed";
 
@@ -97,6 +96,7 @@ public class Exercise {
 
 
 
+
     public static final String userSocietyProgress="self_exercises_completed";
 
     public static final String societyE1 = "societyE1";
@@ -121,7 +121,6 @@ public class Exercise {
     private static final int[] selfValues = {selfE1Completed, selfE2Completed, selfE3Completed, selfE4Completed,
     selfE5Completed, selfE6Completed};
 
-
     private static final HashMap<String, Integer> selfExerciseImages = new HashMap<>();
 
     static {
@@ -129,15 +128,12 @@ public class Exercise {
         selfExerciseImages.put(exercise2ImageKey, R.drawable.mirror);
     }
 
-
-
     private static final HashMap<String, Integer> selfExerciseStrings = new HashMap<>();
 
     static {
         selfExerciseStrings.put(exercise1StringKey, R.string.exercise2_center_text_string);
         selfExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q2_text);
     }
-
 
 
 
@@ -161,7 +157,6 @@ public class Exercise {
         otherExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q1_text);
 
     }
-
 
 
 
@@ -191,7 +186,6 @@ public class Exercise {
 
 
 
-
     private static final String[] societyKeys = {societyE1, societyE2, societyE3, societyE4, societyE5, societyE6};
     private static final int[] societyValues = {societyE1Completed, societyE2Completed, societyE3Completed, societyE4Completed,
             societyE5Completed, societyE6Completed};
@@ -212,6 +206,7 @@ public class Exercise {
 
 
 
+
     public static String[] getSocietyKeys() {
         return societyKeys;
     }
@@ -227,7 +222,6 @@ public class Exercise {
     public static HashMap<String, Integer> getSocietyExerciseStrings() {
         return societyExerciseStrings;
     }
-
 
     public static String[] getSelfKeys() {
         return selfKeys;

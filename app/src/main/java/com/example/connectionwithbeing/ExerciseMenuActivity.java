@@ -30,11 +30,12 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private ScrollView mScrollView;
 
     //Intent Extras for setting exercise UI Views
-    public static final String exerciseImageView = "exercise_image";
-    public static final String exerciseTextView = "exercise_text";
-    public static final String exerciseNumber = "exercise_number";
-    public static final String exerciseCategory = "exercise_category";
+    public static final String exerciseImageViewKey = "exercise_image";
+    public static final String exerciseTextViewKey = "exercise_text";
+    public static final String exerciseNumberKey = "exercise_number";
+    public static final String exerciseCategoryKey = "exercise_category";
     public static int menuCategory;
+
 
 //    //Values, passed as extra for determing which menu to construct. Notes from main activity ***
 //    private static final int selfMenu = 1;
@@ -226,10 +227,10 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startExercise1 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-                startExercise1.putExtra(exerciseImageView, exerciseImages.get("exercise1_image"));
-                startExercise1.putExtra(exerciseTextView, exerciseStrings.get("exercise1_text"));
-                startExercise1.putExtra(exerciseNumber,1);
-                startExercise1.putExtra(exerciseCategory, menuCategory);
+                startExercise1.putExtra(exerciseImageViewKey, exerciseImages.get("exercise1_image"));
+                startExercise1.putExtra(exerciseTextViewKey, exerciseStrings.get("exercise1_text"));
+                startExercise1.putExtra(exerciseNumberKey,1);
+                startExercise1.putExtra(exerciseCategoryKey, menuCategory);
                 startActivity(startExercise1);
 
             }
@@ -240,10 +241,10 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-                startExercise2.putExtra(exerciseImageView, exerciseImages.get("exercise2_image"));
-                startExercise2.putExtra(exerciseTextView, exerciseStrings.get("exercise2_text"));
-                startExercise2.putExtra(exerciseNumber,2);
-                startExercise2.putExtra(exerciseCategory, menuCategory);
+                startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get("exercise2_image"));
+                startExercise2.putExtra(exerciseTextViewKey, exerciseStrings.get("exercise2_text"));
+                startExercise2.putExtra(exerciseNumberKey,2);
+                startExercise2.putExtra(exerciseCategoryKey, menuCategory);
                 startActivity(startExercise2);
 
             }
