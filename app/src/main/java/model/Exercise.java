@@ -156,6 +156,7 @@ public class Exercise {
         otherExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q3_text);
         otherExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q1_text);
 
+
     }
 
 
@@ -202,6 +203,7 @@ public class Exercise {
     static {
         societyExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q2_text);
         societyExerciseStrings.put(exercise2StringKey, R.string.exercise2_center_text_string);
+        societyExerciseStrings.put(exercise3StringKey, R.string.society_e3_text);
     }
 
 
