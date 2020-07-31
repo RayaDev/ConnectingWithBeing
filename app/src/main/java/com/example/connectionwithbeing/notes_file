@@ -13,7 +13,8 @@ All other classes just call a constructor of that java class to make things easi
 
 Working TODO:
 
-
+Create a template exercise that replaces the views with random text and image resources
+    >See how dynamic it is.
 Add all String resources and link them to the model.
 Organize and clean up drawables
 Format alertDialogs on home screen. Make them look nicer

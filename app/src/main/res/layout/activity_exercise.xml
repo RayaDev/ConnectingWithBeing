@@ -9,6 +9,19 @@
 
     android:background="@color/nature_primary">
 
+    <TextView android:id="@+id/ExerciseActivityQuote_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ExerciseActivity_ImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+    </TextView>
+
     <ImageView
         android:id="@+id/ExerciseActivity_ImageView"
         android:layout_width="0dp"
@@ -21,7 +34,7 @@
         android:layout_marginTop="8dp"
 
         app:layout_constraintBottom_toTopOf="@id/ExerciseActivity_TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ExerciseActivity_TypedTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

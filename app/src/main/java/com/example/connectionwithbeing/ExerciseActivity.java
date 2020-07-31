@@ -37,10 +37,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
         //Get Intents all coming from the menu activity.
         Bundle extras = getIntent().getExtras();
-        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageView);
-        int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextView);
-        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
-        int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategory);
+        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
+        int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
+        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
+        int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         //Declare Views, and Set resources from extras.
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
@@ -92,8 +92,8 @@ public class ExerciseActivity extends AppCompatActivity {
 
                                 //Need intents here with extras for the questions!
                                 Intent startQuestions = new Intent(ExerciseActivity.this, QuestionActivity.class);
-                                startQuestions.putExtra(ExerciseMenuActivity.exerciseNumber, exerciseNumber);
-                                startQuestions.putExtra(ExerciseMenuActivity.exerciseCategory, exerciseType);
+                                startQuestions.putExtra(ExerciseMenuActivity.exerciseNumberKey, exerciseNumber);
+                                startQuestions.putExtra(ExerciseMenuActivity.exerciseCategoryKey, exerciseType);
                                 startActivity(startQuestions);
                             }
                         })
