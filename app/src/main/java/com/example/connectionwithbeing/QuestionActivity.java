@@ -39,8 +39,8 @@ public class QuestionActivity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
 
         Bundle extras = getIntent().getExtras();
-        final int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumber);
-        final int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategory);
+        final int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
+        final int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         mHomeButton = findViewById(R.id.questionHomeButton);
         mToDoButton = findViewById(R.id.questionToDoButton);

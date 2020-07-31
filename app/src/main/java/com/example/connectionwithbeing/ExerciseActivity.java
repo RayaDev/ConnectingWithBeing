@@ -25,6 +25,7 @@ public class ExerciseActivity extends AppCompatActivity {
     private ImageView mHomeButton, mExerciseImage, mToDoButton;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
+    private TextView mQuoteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         //Declare Views, and Set resources from extras.
+        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
+        mQuoteTextView.setText(R.string.society_e6_quote);
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
 
