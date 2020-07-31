@@ -1,25 +1,41 @@
 
 
-General TODO:
+
+General
 **Kotlin? AI..**
 Read/Scan Through entire android dev guide
 
-Credits
-Contact info
-Introduction
-Create all exercises/questions content
+
 
 Create a java class that just handles the functionality of the bottom action bar.
 All other classes just call a constructor of that java class to make things easier.
 
 
 Working TODO:
-Todolist menu is a scrolling list view?
-Create menu with scroll view for each catagory
-Bookmarks and Todolists classes/layouts
 
-Format alertDialogs on home screen
-    >On back gives option to exit or go to back to questions?
+
+Add all String resources and link them to the model.
+Organize and clean up drawables
+Format alertDialogs on home screen. Make them look nicer
+
+
+General TODO:
+
+Bookmarks and Todolists classes/layouts.. Probably not..
+>Generate random excise Yes
+
+Introduction
+
+Contacts
+
+Settings
+    > Color scheme options
+    > Font size options
+About
+
+Ads
+
+Publish
 
 
 
@@ -71,9 +87,6 @@ Functionality to see which exercises you have completed or not.
 A journal function for each exercise so you can reflect on each one.
 Store the reflection info in the app.
     > Use the user's notepad app?
-
-
-
 
 
 //1. Nature is center
