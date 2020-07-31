@@ -44,8 +44,9 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         //Declare Views, and Set resources from extras.
-        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
-        mQuoteTextView.setText(R.string.society_e6_quote);
+//        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
+//        mQuoteTextView.setText(R.string.society_e6_quote);
+
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
 
