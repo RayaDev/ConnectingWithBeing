@@ -30,7 +30,7 @@ public class ExerciseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise);
+        setContentView(R.layout.activity_exercise_linear);
 
         //Set Actionbar color
         ActionBar bar = getSupportActionBar();
@@ -44,8 +44,8 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         //Declare Views, and Set resources from extras.
-//        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
-//        mQuoteTextView.setText(R.string.society_e6_quote);
+        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
+        mQuoteTextView.setText(R.string.society_e6_quote);
 
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
@@ -130,6 +130,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             playBlinkAnimation();
+                            mQuoteTextView.setVisibility(View.VISIBLE);
                         }
                     }, 1750);
 
