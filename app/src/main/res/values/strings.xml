@@ -13,8 +13,73 @@
     <string name="exercise2_center_text_string">Pick an artistic medium you are not comfortable with and just create. Try not to judge or compare yourself to others!</string>
     <string name="exercise1_questions_button_string">Reflection</string>
 
+    <!-- Self Exercise Strings-->
+
+    <string name ="self_e1_title"></string>
+    <string name="self_e1_text"></string>
+    <string name="self_e1_q1_text"></string>
+    <string name="self_e1_q2_text"></string>
+    <string name="self_e1_q3_text"></string>
+
+    <string name="self_e2_text"></string>
+    <string name="self_e2_q1_text"></string>
+    <string name="self_e2_q2_text"></string>
+    <string name="self_e2_q3_text"></string>
+
+    <string name="self_e3_text"></string>
+    <string name="self_e3_q1_text"></string>
+    <string name="self_e3_q2_text"></string>
+    <string name="self_e3_q3_text"></string>
+
+    <string name="self_e4_text"></string>
+    <string name="self_e4_q1_text"></string>
+    <string name="self_e4_q2_text"></string>
+    <string name="self_e4_q3_text"></string>
+
+    <string name="self_e5_text"></string>
+    <string name="self_e5_q1_text"></string>
+    <string name="self_e5_q2_text"></string>
+    <string name="self_e5_q3_text"></string>
+
+    <string name="self_e6_text"></string>
+    <string name="self_e6_q1_text"></string>
+    <string name="self_e6_q2_text"></string>
+    <string name="self_e6_q3_text"></string>
+
+
     <!--Others Exercise Strings-->
     <string name = "others_menu_title">With Others...</string>
+
+    <string name="others_e1_text"></string>
+    <string name="others_e1_q1_text"></string>
+    <string name="others_e1_q2_text"></string>
+    <string name="others_e1_q3_text"></string>
+
+    <string name="others_e2_text"></string>
+    <string name="others_e2_q1_text"></string>
+    <string name="others_e2_q2_text"></string>
+    <string name="others_e2_q3_text"></string>
+
+    <string name="others_e3_text"></string>
+    <string name="others_e3_q1_text"></string>
+    <string name="others_e3_q2_text"></string>
+    <string name="others_e3_q3_text"></string>
+
+    <string name="others_e4_text"></string>
+    <string name="others_e4_q1_text"></string>
+    <string name="others_e4_q2_text"></string>
+    <string name="others_e4_q3_text"></string>
+
+    <string name="others_e5_text"></string>
+    <string name="others_e5_q1_text"></string>
+    <string name="others_e5_q2_text"></string>
+    <string name="others_e5_q3_text"></string>
+
+    <string name="others_e6_text"></string>
+    <string name="others_e6_q1_text"></string>
+    <string name="others_e6_q2_text"></string>
+    <string name="others_e6_q3_text"></string>
+
 
     <!--Nature Exercise Strings-->
     <string name = "nature_menu_title">With Nature...</string>
@@ -26,6 +91,64 @@ While you’re there take a long breath, and thank that tree for the air you are
     <string name="nature_e1_q1_text">Was it your first experience of hugging a tree? How did you feel?</string>
     <string name="nature_e1_q2_text">How do you feel about doing this exercise in public?</string>
     <string name="nature_e1_q3_text">What did this exercise bring you?</string>
+
+    <string name="nature_e2_text"></string>
+    <string name="nature_e2_q1_text"></string>
+    <string name="nature_e2_q2_text"></string>
+    <string name="nature_e2_q3_text"></string>
+
+    <string name="nature_e3_text"></string>
+    <string name="nature_e3_q1_text"></string>
+    <string name="nature_e3_q2_text"></string>
+    <string name="nature_e3_q3_text"></string>
+
+    <string name="nature_e4_text"></string>
+    <string name="nature_e4_q1_text"></string>
+    <string name="nature_e4_q2_text"></string>
+    <string name="nature_e4_q3_text"></string>
+
+    <string name="nature_e5_text"></string>
+    <string name="nature_e5_q1_text"></string>
+    <string name="nature_e5_q2_text"></string>
+    <string name="nature_e5_q3_text"></string>
+
+    <string name="nature_e6_text"></string>
+    <string name="nature_e6_q1_text"></string>
+    <string name="nature_e6_q2_text"></string>
+    <string name="nature_e6_q3_text"></string>
+
+    <!-- Society Exercises Strings -->
+
+
+    <string name="society_e1_text"></string>
+    <string name="society_e1_q1_text"></string>
+    <string name="society_e1_q2_text"></string>
+    <string name="society_e1_q3_text"></string>
+
+    <string name="society_e2_text"></string>
+    <string name="society_e2_q1_text"></string>
+    <string name="society_e2_q2_text"></string>
+    <string name="society_e2_q3_text"></string>
+
+    <string name="society_e3_text"></string>
+    <string name="society_e3_q1_text"></string>
+    <string name="society_e3_q2_text"></string>
+    <string name="society_e3_q3_text"></string>
+
+    <string name="society_e4_text"></string>
+    <string name="society_e4_q1_text"></string>
+    <string name="society_e4_q2_text"></string>
+    <string name="society_e4_q3_text"></string>
+
+    <string name="society_e5_text"></string>
+    <string name="society_e5_q1_text"></string>
+    <string name="society_e5_q2_text"></string>
+    <string name="society_e5_q3_text"></string>
+
+    <string name="society_e6_text"></string>
+    <string name="society_e6_q1_text"></string>
+    <string name="society_e6_q2_text"></string>
+    <string name="society_e6_q3_text"></string>
 
 
 </resources>
