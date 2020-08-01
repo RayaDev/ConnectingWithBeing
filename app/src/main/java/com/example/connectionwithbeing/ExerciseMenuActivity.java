@@ -106,7 +106,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             checkForCompletedExercises(mSelfExercise.userSelfProgress,
                     mSelfExercise.getSelfKeys(), mSelfExercise.getSelfValues());
 
-            onClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getOtherExerciseStrings());
+            onClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getSelfExerciseStrings());
         }
 
         if(menuCategory == MainActivity.othersMenu) {

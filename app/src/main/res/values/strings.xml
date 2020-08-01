@@ -197,8 +197,8 @@ While you’re there take a long breath, and thank that tree for the air you are
     <string name ="society_e5_title">A Little Earth for Charity</string>
     <string name="society_e5_quote"></string>
     <string name="society_e5_text">Sign up to make a small monthly donation (about the cost of a lunch, whatever you can afford) to a charity that advocates for a cause that you support. Any cause will do! A monthly donation makes you a real member of these organizations.</string>
-    <string name="society_e5_q1_text">Question placeholder</string>
-    <string name="society_e5_q2_text">Question placeholder</string>
+    <string name="society_e5_q1_text">Question placeholder. Create question.</string>
+    <string name="society_e5_q2_text">Question placeholder. Create question</string>
     <string name="society_e5_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name ="society_e6_title">Volunteer</string>
