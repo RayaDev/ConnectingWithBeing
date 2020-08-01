@@ -130,8 +130,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             onClickListeners(mSocietyExercise.getSocietyExerciseImages(), mSocietyExercise.getSocietyExerciseStrings());
 
         }
-
-
     }
 
     //Sets the images for the exercises
@@ -146,6 +144,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exercise.setImageResource(R.drawable.selfhomepng);
             }
 
+            setTitle(R.string.self_menu_title);
             mScrollView.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary));
             changeActionBarColor(R.color.design_default_color_primary_dark);
             mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_dark));
@@ -189,6 +188,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             }
 
+            setTitle(R.string.society_menu_title);
             mScrollView.setBackgroundColor(getResources().getColor(R.color.myBlack));
             changeActionBarColor(R.color.design_default_color_error);
             mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_error));

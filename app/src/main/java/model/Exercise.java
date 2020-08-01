@@ -224,35 +224,35 @@ public class Exercise {
 
 
 
-    public static String[] getSocietyKeys() {
+    public String[] getSocietyKeys() {
         return societyKeys;
     }
 
-    public static int[] getSocietyValues() {
+    public int[] getSocietyValues() {
         return societyValues;
     }
 
-    public static HashMap<String, Integer> getSocietyExerciseImages() {
+    public HashMap<String, Integer> getSocietyExerciseImages() {
         return societyExerciseImages;
     }
 
-    public static HashMap<String, Integer> getSocietyExerciseStrings() {
+    public HashMap<String, Integer> getSocietyExerciseStrings() {
         return societyExerciseStrings;
     }
 
-    public static String[] getSelfKeys() {
+    public String[] getSelfKeys() {
         return selfKeys;
     }
 
-    public static int[] getSelfValues() {
+    public int[] getSelfValues() {
         return selfValues;
     }
 
-    public static HashMap<String, Integer> getSelfExerciseImages() {
+    public HashMap<String, Integer> getSelfExerciseImages() {
         return selfExerciseImages;
     }
 
-    public static HashMap<String, Integer> getSelfExerciseStrings() {
+    public HashMap<String, Integer> getSelfExerciseStrings() {
         return selfExerciseStrings;
     }
 
