@@ -12,7 +12,7 @@ All other classes just call a constructor of that java class to make things easi
 
 
 Working TODO:
-
+Move all keys into their appropriate model files? Don't have keys in the controller classes?
 Create exercise title extras
     > Hashmap of all exercise titles.
 Organize and clean up drawables
@@ -20,6 +20,7 @@ Format alertDialogs on home screen. Make them look nicer
 
 
 General TODO:
+
 
 Bookmarks and Todolists classes/layouts.. Probably not..
 >Generate random excise Yes
