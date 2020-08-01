@@ -133,6 +133,10 @@ public class Exercise {
     static {
         selfExerciseStrings.put(exercise1StringKey, R.string.exercise2_center_text_string);
         selfExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q2_text);
+        selfExerciseStrings.put(exercise3StringKey, R.string.self_e3_text);
+        selfExerciseStrings.put(exercise4StringKey, R.string.self_e4_text);
+        selfExerciseStrings.put(exercise5StringKey, R.string.self_e5_text);
+        selfExerciseStrings.put(exercise6StringKey, R.string.self_e6_text);
     }
 
 
@@ -155,6 +159,10 @@ public class Exercise {
     static {
         otherExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q3_text);
         otherExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q1_text);
+        otherExerciseStrings.put(exercise3StringKey, R.string.others_e3_text);
+        otherExerciseStrings.put(exercise4StringKey, R.string.others_e4_text);
+        otherExerciseStrings.put(exercise5StringKey, R.string.others_e5_text);
+        otherExerciseStrings.put(exercise6StringKey, R.string.others_e6_text);
 
 
     }
@@ -181,6 +189,10 @@ public class Exercise {
     static {
         natureExerciseStrings.put(exercise1StringKey, R.string.exercise1_center_text_string);
         natureExerciseStrings.put(exercise2StringKey, R.string.exercise2_center_text_string);
+        natureExerciseStrings.put(exercise3StringKey, R.string.nature_e3_text);
+        natureExerciseStrings.put(exercise4StringKey, R.string.nature_e4_text);
+        natureExerciseStrings.put(exercise5StringKey, R.string.nature_e5_text);
+        natureExerciseStrings.put(exercise6StringKey, R.string.nature_e6_text);
 
     }
 
@@ -204,6 +216,9 @@ public class Exercise {
         societyExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q2_text);
         societyExerciseStrings.put(exercise2StringKey, R.string.exercise2_center_text_string);
         societyExerciseStrings.put(exercise3StringKey, R.string.society_e3_text);
+        societyExerciseStrings.put(exercise4StringKey,R.string.society_e4_text);
+        societyExerciseStrings.put(exercise4StringKey,R.string.society_e5_text);
+        societyExerciseStrings.put(exercise4StringKey,R.string.society_e6_text);
     }
 
 
