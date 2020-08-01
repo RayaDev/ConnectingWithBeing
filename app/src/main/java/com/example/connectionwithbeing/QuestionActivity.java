@@ -22,6 +22,12 @@ import model.Exercise;
 import model.Question;
 
 //AEQ for short hand notation.
+ /*
+ Self = 1
+ Others = 2
+ Nature = 3
+ Society = 4
+*/
 
 public class QuestionActivity extends AppCompatActivity {
 

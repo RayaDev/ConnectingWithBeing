@@ -19,6 +19,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.prush.typedtextview.TypedTextView;
 
+import model.Exercise;
+
+ /*
+ Self = 1
+ Others = 2
+ Nature = 3
+ Society = 4
+*/
+
 public class ExerciseActivity extends AppCompatActivity {
 
     private ImageView mStartQuestions;
@@ -65,6 +74,7 @@ public class ExerciseActivity extends AppCompatActivity {
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
         mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
 
+        setExerciseTitle(exerciseType, exerciseNumber);
         onClickListeners(exerciseText, exerciseNumber, exerciseType);
 
     }
@@ -141,6 +151,26 @@ public class ExerciseActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    private void setExerciseTitle(int exerciseType, int exerciseNumber) {
+
+        switch(exerciseType) {
+            case 1:
+                setTitle(Exercise.selfExerciseTitles[exerciseNumber-1]);
+
+                break;
+            case 2:
+                setTitle(Exercise.othersExerciseTitles[exerciseNumber-1]);
+                break;
+            case 3:
+                setTitle(Exercise.natureExerciseTitles[exerciseNumber-1]);
+                break;
+            case 4:
+                setTitle(Exercise.societyExerciseTitles[exerciseNumber-1]);
+                break;
+        }
 
     }
 

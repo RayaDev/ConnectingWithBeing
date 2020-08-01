@@ -17,8 +17,8 @@
     <string name = "self_menu_title">With Self…</string>
 
     <string name ="self_e1_title">Create For the Experience</string>
-    <string name="self_e1_quote">Pick an artistic medium you are not comfortable with and just try … Create!</string>
-    <string name="self_e1_text"></string>
+    <string name="self_e1_quote"></string>
+    <string name="self_e1_text">Pick an artistic medium you are not comfortable with and just try … Create!</string>
     <string name="self_e1_q1_text">Were you scared at all to start creating? Did you judge yourself? Why or why not?</string>
     <string name="self_e1_q2_text">Did you have a preconception of what is good art? What does creativity mean to you?</string>
     <string name="self_e1_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>

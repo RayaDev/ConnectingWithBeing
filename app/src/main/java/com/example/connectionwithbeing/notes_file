@@ -12,18 +12,21 @@ All other classes just call a constructor of that java class to make things easi
 
 
 Working TODO:
-Move all keys into their appropriate model files? Don't have keys in the controller classes?
-Create exercise title extras
-    > Hashmap of all exercise titles.
+
+
 Organize and clean up drawables
 Format alertDialogs on home screen. Make them look nicer
 
+Specific TODO:
 
-General TODO:
-
+Move all keys into their appropriate model files? Don't have keys in the controller classes?
 
 Bookmarks and Todolists classes/layouts.. Probably not..
->Generate random excise Yes
+    >Generate random excise Yes..
+    > Just home button for exercise and questions on bottom actionbar
+        > A shuffle exercise button on the home screen
+
+General TODO:
 
 Introduction
 
@@ -32,6 +35,8 @@ Contacts
 Settings
     > Color scheme options
     > Font size options
+    > Disable/Enable Animation, Sounds
+
 About
 
 Ads

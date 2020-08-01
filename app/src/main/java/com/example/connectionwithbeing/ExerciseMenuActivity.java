@@ -19,6 +19,13 @@ import java.util.HashMap;
 
 import model.Exercise;
 
+ /*
+ Self = 1
+ Others = 2
+ Nature = 3
+ Society = 4
+*/
+
 public class ExerciseMenuActivity extends AppCompatActivity {
 
     //Views for the custom bottom navigation

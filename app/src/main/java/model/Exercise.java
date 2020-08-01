@@ -10,6 +10,13 @@ import java.util.HashMap;
 
 //Model class holding all Exercise data.
 
+ /*
+ Self = 1
+ Others = 2
+ Nature = 3
+ Society = 4
+*/
+
 public class Exercise {
 
     //Default constructor
@@ -25,6 +32,7 @@ public class Exercise {
     public static final String exercise4ImageKey = "exercise4_image";
     public static final String exercise5ImageKey  = "exercise5_image";
     public static final String exercise6ImageKey = "exercise6_image";
+
 
     public static final String exercise1StringKey = "exercise1_text";
     public static final String exercise2StringKey = "exercise2_text";
@@ -95,8 +103,6 @@ public class Exercise {
     public static int natureE6Completed = 0;
 
 
-
-
     public static final String userSocietyProgress="self_exercises_completed";
 
     public static final String societyE1 = "societyE1";
@@ -115,6 +121,9 @@ public class Exercise {
 
 
 
+
+    public static final int[] selfExerciseTitles = {R.string.self_e1_title, R.string.self_e2_title, R.string.self_e3_title,
+    R.string.self_e4_title, R.string.self_e5_title, R.string.self_e6_title};
 
     private static final String[] selfKeys = {selfE1, selfE2, selfE3, selfE4, selfE5, selfE6};
 
@@ -141,6 +150,8 @@ public class Exercise {
 
 
 
+    public static final int[] othersExerciseTitles = {R.string.others_e1_title, R.string.others_e2_title,
+            R.string.others_e3_title,R.string.others_e4_title, R.string.others_e5_title, R.string.others_e6_title};
 
     private static final String[] othersKeys = {othersE1, othersE2, othersE3, othersE4, othersE5, othersE6};
 
@@ -169,6 +180,8 @@ public class Exercise {
 
 
 
+    public static final int[] natureExerciseTitles = {R.string.nature_e1_title,R.string.nature_e2_title, R.string.nature_e3_title,
+            R.string.nature_e4_title, R.string.nature_e5_title, R.string.nature_e6_title};
 
     private final String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
 
@@ -199,6 +212,9 @@ public class Exercise {
 
 
 
+    public static int[] societyExerciseTitles = {R.string.society_e1_title, R.string.society_e2_title, R.string.society_e3_title,
+            R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
+
     private static final String[] societyKeys = {societyE1, societyE2, societyE3, societyE4, societyE5, societyE6};
     private static final int[] societyValues = {societyE1Completed, societyE2Completed, societyE3Completed, societyE4Completed,
             societyE5Completed, societyE6Completed};
@@ -217,8 +233,8 @@ public class Exercise {
         societyExerciseStrings.put(exercise2StringKey, R.string.society_e2_text);
         societyExerciseStrings.put(exercise3StringKey, R.string.society_e3_text);
         societyExerciseStrings.put(exercise4StringKey,R.string.society_e4_text);
-        societyExerciseStrings.put(exercise4StringKey,R.string.society_e5_text);
-        societyExerciseStrings.put(exercise4StringKey,R.string.society_e6_text);
+        societyExerciseStrings.put(exercise5StringKey,R.string.society_e5_text);
+        societyExerciseStrings.put(exercise6StringKey,R.string.society_e6_text);
     }
 
 
