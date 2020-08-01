@@ -13,9 +13,8 @@ All other classes just call a constructor of that java class to make things easi
 
 Working TODO:
 
-Bugs:
-Self and Others exercise text is the same
-Missing questions on societyE5
+    Bugs TODO:
+    Society completed count not updating. Linked to self for some reason.
 
 Organize and clean up drawables
 Format alertDialogs on home screen. Make them look nicer
