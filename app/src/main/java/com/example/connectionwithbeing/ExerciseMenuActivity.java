@@ -34,6 +34,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     public static final String exerciseTextViewKey = "exercise_text";
     public static final String exerciseNumberKey = "exercise_number";
     public static final String exerciseCategoryKey = "exercise_category";
+    public static final String exerciseTitleKey = "exercise_title";
     public static int menuCategory;
 
 
@@ -227,9 +228,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startExercise1 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-                startExercise1.putExtra(exerciseImageViewKey, exerciseImages.get("exercise1_image"));
-                startExercise1.putExtra(exerciseTextViewKey, exerciseStrings.get("exercise1_text"));
-                startExercise1.putExtra(exerciseNumberKey,1);
+                startExercise1.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise1ImageKey)); //This intent as a hashmap of exercise images as its value.
+                startExercise1.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise1StringKey));
+                startExercise1.putExtra(exerciseNumberKey,1); //Eventually passed to the QuestionActivity
                 startExercise1.putExtra(exerciseCategoryKey, menuCategory);
                 startActivity(startExercise1);
 
@@ -241,11 +242,67 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-                startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get("exercise2_image"));
-                startExercise2.putExtra(exerciseTextViewKey, exerciseStrings.get("exercise2_text"));
+                startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise2ImageKey));
+                startExercise2.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise2StringKey));
                 startExercise2.putExtra(exerciseNumberKey,2);
                 startExercise2.putExtra(exerciseCategoryKey, menuCategory);
                 startActivity(startExercise2);
+
+            }
+        });
+
+        mStartExercise3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent startExercise3 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
+//                startExercise3.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise3ImageKey));
+                startExercise3.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise3StringKey));
+                startExercise3.putExtra(exerciseNumberKey,3);
+                startExercise3.putExtra(exerciseCategoryKey, menuCategory);
+                startActivity(startExercise3);
+
+            }
+        });
+
+        mStartExercise4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent startExercise4 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
+//                startExercise4.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise4ImageKey));
+                startExercise4.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise4StringKey));
+                startExercise4.putExtra(exerciseNumberKey,4);
+                startExercise4.putExtra(exerciseCategoryKey, menuCategory);
+                startActivity(startExercise4);
+
+            }
+        });
+
+        mStartExercise5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent startExercise5 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
+//                startExercise5.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise5ImageKey));
+                startExercise5.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise5StringKey));
+                startExercise5.putExtra(exerciseNumberKey,5);
+                startExercise5.putExtra(exerciseCategoryKey, menuCategory);
+                startActivity(startExercise5);
+
+            }
+        });
+
+        mStartExercise6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent startExercise6 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
+//                startExercise6.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise6ImageKey));
+                startExercise6.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise6StringKey));
+                startExercise6.putExtra(exerciseNumberKey,6);
+                startExercise6.putExtra(exerciseCategoryKey, menuCategory);
+                startActivity(startExercise6);
 
             }
         });

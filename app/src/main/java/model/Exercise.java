@@ -131,8 +131,8 @@ public class Exercise {
     private static final HashMap<String, Integer> selfExerciseStrings = new HashMap<>();
 
     static {
-        selfExerciseStrings.put(exercise1StringKey, R.string.exercise2_center_text_string);
-        selfExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q2_text);
+        selfExerciseStrings.put(exercise1StringKey, R.string.self_e1_text);
+        selfExerciseStrings.put(exercise2StringKey, R.string.self_e2_text);
         selfExerciseStrings.put(exercise3StringKey, R.string.self_e3_text);
         selfExerciseStrings.put(exercise4StringKey, R.string.self_e4_text);
         selfExerciseStrings.put(exercise5StringKey, R.string.self_e5_text);
@@ -157,8 +157,8 @@ public class Exercise {
     private static final HashMap<String, Integer> otherExerciseStrings = new HashMap<>();
 
     static {
-        otherExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q3_text);
-        otherExerciseStrings.put(exercise2StringKey, R.string.nature_e1_q1_text);
+        otherExerciseStrings.put(exercise1StringKey, R.string.others_e1_text);
+        otherExerciseStrings.put(exercise2StringKey, R.string.others_e2_text);
         otherExerciseStrings.put(exercise3StringKey, R.string.others_e3_text);
         otherExerciseStrings.put(exercise4StringKey, R.string.others_e4_text);
         otherExerciseStrings.put(exercise5StringKey, R.string.others_e5_text);
@@ -187,8 +187,8 @@ public class Exercise {
     private static final HashMap<String, Integer> natureExerciseStrings = new HashMap<>();
 
     static {
-        natureExerciseStrings.put(exercise1StringKey, R.string.exercise1_center_text_string);
-        natureExerciseStrings.put(exercise2StringKey, R.string.exercise2_center_text_string);
+        natureExerciseStrings.put(exercise1StringKey, R.string.nature_e1_text);
+        natureExerciseStrings.put(exercise2StringKey, R.string.nature_e2_text);
         natureExerciseStrings.put(exercise3StringKey, R.string.nature_e3_text);
         natureExerciseStrings.put(exercise4StringKey, R.string.nature_e4_text);
         natureExerciseStrings.put(exercise5StringKey, R.string.nature_e5_text);
@@ -213,8 +213,8 @@ public class Exercise {
     private static final HashMap<String, Integer> societyExerciseStrings = new HashMap<>();
 
     static {
-        societyExerciseStrings.put(exercise1StringKey, R.string.nature_e1_q2_text);
-        societyExerciseStrings.put(exercise2StringKey, R.string.exercise2_center_text_string);
+        societyExerciseStrings.put(exercise1StringKey, R.string.society_e1_text);
+        societyExerciseStrings.put(exercise2StringKey, R.string.society_e2_text);
         societyExerciseStrings.put(exercise3StringKey, R.string.society_e3_text);
         societyExerciseStrings.put(exercise4StringKey,R.string.society_e4_text);
         societyExerciseStrings.put(exercise4StringKey,R.string.society_e5_text);

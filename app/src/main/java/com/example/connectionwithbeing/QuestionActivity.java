@@ -79,7 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 //Returns to the home screen and activates an animation on the stars.
                                 Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                                returnHome.putExtra("play_animation", 1);
+                                returnHome.putExtra("play_animation", 1); //Could turn these keys into variables?
                                 returnHome.putExtra("exercise_category", exerciseType);
                                 startActivity(returnHome);
                             }
@@ -196,7 +196,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    //Saves and sets the exercise progress star color to yellow on the nature menu.
+    //Saves and sets the exercise progress star color to yellow on the exercise menu.
     public void sharedPrefs2(int exerciseNumber, int exerciseType) {
 
 
@@ -221,6 +221,40 @@ public class QuestionActivity extends AppCompatActivity {
                     mSharedPreferencesEditor2.commit();
                     break;
 
+                case 3:
+
+                    Exercise.selfE3Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE3, Exercise.selfE3Completed);
+
+                    mSharedPreferencesEditor2.commit();
+
+                    break;
+
+                case 4:
+
+                    Exercise.selfE4Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE4, Exercise.selfE4Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 5:
+
+                    Exercise.selfE5Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE5, Exercise.selfE5Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 6:
+
+                    Exercise.selfE6Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.selfE6, Exercise.selfE6Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+
                 //case for each exercise
 
             }
@@ -244,6 +278,34 @@ public class QuestionActivity extends AppCompatActivity {
                 case 2:
                     Exercise.othersE2Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.othersE2, Exercise.othersE2Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 3:
+                    Exercise.othersE3Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.othersE3, Exercise.othersE3Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 4:
+                    Exercise.othersE4Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.othersE4, Exercise.othersE4Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 5:
+                    Exercise.othersE5Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.othersE5, Exercise.othersE5Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 6:
+                    Exercise.othersE6Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.othersE6, Exercise.othersE6Completed);
 
                     mSharedPreferencesEditor2.commit();
                     break;
@@ -274,6 +336,34 @@ public class QuestionActivity extends AppCompatActivity {
                     mSharedPreferencesEditor2.commit();
                     break;
 
+                case 3:
+                    Exercise.natureE3Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.natureE3, Exercise.natureE3Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 4:
+                    Exercise.natureE4Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.natureE4, Exercise.natureE4Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 5:
+                    Exercise.natureE5Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.natureE5, Exercise.natureE5Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 6:
+                    Exercise.natureE6Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.natureE6, Exercise.natureE6Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
                     //case for each exercise
             }
         }
@@ -299,13 +389,41 @@ public class QuestionActivity extends AppCompatActivity {
                     mSharedPreferencesEditor2.commit();
                     break;
 
+                case 3:
+                    Exercise.societyE3Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE3, Exercise.societyE3Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 4:
+                    Exercise.societyE4Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE4, Exercise.societyE4Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+                case 5:
+                    Exercise.societyE5Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE5, Exercise.societyE5Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
+
+                case 6:
+                    Exercise.societyE6Completed = 1; //Right here is where the intent needs to be passed to.
+                    mSharedPreferencesEditor2.putInt(Exercise.societyE6, Exercise.societyE6Completed);
+
+                    mSharedPreferencesEditor2.commit();
+                    break;
+
                 //case for each exercise
 
             }
         }
 
     }
-
 
     //Set questions based on exercise.
     private void setQuestions(int exerciseNumber, int exerciseType) {
@@ -334,24 +452,55 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void setSelfQuestions(int exerciseNumber) {
 
+        int[] questions;
         switch (exerciseNumber) {
             case 1:
+
+                questions = Question.selfE1Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
 
                 break;
 
             case 2:
+
+                questions = Question.selfE2Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 3:
+
+                questions = Question.selfE3Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 4:
+
+                questions = Question.selfE4Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 5:
+
+                questions = Question.selfE5Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 6:
+
+                questions = Question.selfE6Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
         }
 
@@ -359,24 +508,55 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void setOthersQuestion(int exerciseNumber) {
 
+        int[] questions;
         switch (exerciseNumber) {
             case 1:
+
+                questions = Question.othersE1Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
 
                 break;
 
             case 2:
+
+                questions = Question.othersE2Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 3:
+
+                questions = Question.othersE3Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 4:
+
+                questions = Question.othersE4Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 5:
+
+                questions = Question.othersE5Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
 
             case 6:
+
+                questions = Question.othersE6Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
                 break;
         }
 
@@ -441,24 +621,60 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void setSocietyQuestions(int exerciseNumber) {
 
+        int[] questions;
         switch (exerciseNumber) {
             case 1:
+
+                questions = Question.societyE1Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
 
                 break;
 
             case 2:
+
+                questions = Question.societyE2Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
+
                 break;
 
             case 3:
+
+                questions = Question.societyE3Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
+
                 break;
 
             case 4:
+
+                questions = Question.societyE4Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
+
                 break;
 
             case 5:
+
+                questions = Question.societyE5Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
+
                 break;
 
             case 6:
+
+                questions = Question.societyE6Questions;
+                mQuestions1.setText(questions[0]);
+                mQuestions2.setText(questions[1]);
+                mQuestions3.setText(questions[2]);
+
                 break;
         }
 

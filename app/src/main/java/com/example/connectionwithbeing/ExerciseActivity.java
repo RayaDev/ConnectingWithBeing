@@ -38,17 +38,21 @@ public class ExerciseActivity extends AppCompatActivity {
 
         //Get Intents all coming from the menu activity.
         Bundle extras = getIntent().getExtras();
-        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
+//        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
         int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
+//        int exerciseTitle = (int) extras.get(ExerciseMenuActivity.exerciseTitleKey);
 
         //Declare Views, and Set resources from extras.
+
+//        setTitle(exerciseTitle);
         mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
         mQuoteTextView.setText(R.string.society_e6_quote);
 
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
-        mExerciseImage.setImageResource(exerciseImage);
+//        mExerciseImage.setImageResource(exerciseImage);
+        mExerciseImage.setImageResource(R.drawable.star); //Just a test image to see if all the strings are working
 
         mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
