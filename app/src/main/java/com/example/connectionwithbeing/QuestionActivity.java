@@ -136,11 +136,11 @@ public class QuestionActivity extends AppCompatActivity {
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            MainActivity.selfCompletedInt = mSharedPreferences.getInt(MainActivity.selfProgress, MainActivity.selfCompletedInt);
+            Exercise.selfCompletedInt = mSharedPreferences.getInt(MainActivity.selfProgress, Exercise.selfCompletedInt);
 
-            MainActivity.selfCompletedInt += 1;
+            Exercise.selfCompletedInt += 1;
 
-            mSharedPreferencesEditor.putInt(MainActivity.selfProgress, MainActivity.selfCompletedInt);
+            mSharedPreferencesEditor.putInt(MainActivity.selfProgress, Exercise.selfCompletedInt);
 
             mSharedPreferencesEditor.commit();
 
@@ -151,11 +151,11 @@ public class QuestionActivity extends AppCompatActivity {
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            MainActivity.othersCompletedInt = mSharedPreferences.getInt(MainActivity.othersProgress, MainActivity.othersCompletedInt);
+            Exercise.othersCompletedInt = mSharedPreferences.getInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-            MainActivity.othersCompletedInt += 1;
+            Exercise.othersCompletedInt += 1;
 
-            mSharedPreferencesEditor.putInt(MainActivity.othersProgress, MainActivity.othersCompletedInt);
+            mSharedPreferencesEditor.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
             mSharedPreferencesEditor.commit();
 
@@ -166,11 +166,11 @@ public class QuestionActivity extends AppCompatActivity {
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            MainActivity.natureCompletedInt = mSharedPreferences.getInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+            Exercise.natureCompletedInt = mSharedPreferences.getInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-            MainActivity.natureCompletedInt += 1;
+            Exercise.natureCompletedInt += 1;
 
-            mSharedPreferencesEditor.putInt(MainActivity.natureProgress, MainActivity.natureCompletedInt);
+            mSharedPreferencesEditor.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
             mSharedPreferencesEditor.commit();
 
@@ -181,11 +181,11 @@ public class QuestionActivity extends AppCompatActivity {
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            MainActivity.societyCompletedInt = mSharedPreferences.getInt(MainActivity.societyProgress, MainActivity.societyCompletedInt);
+            Exercise.societyCompletedInt = mSharedPreferences.getInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-            MainActivity.societyCompletedInt += 1;
+            Exercise.societyCompletedInt += 1;
 
-            mSharedPreferencesEditor.putInt(MainActivity.societyProgress, MainActivity.societyCompletedInt);
+            mSharedPreferencesEditor.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
             mSharedPreferencesEditor.commit();
 

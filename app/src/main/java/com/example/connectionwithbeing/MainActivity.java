@@ -3,7 +3,6 @@ package com.example.connectionwithbeing;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -44,21 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //Keys
     public static final String selfProgress = "self_progress";
-    public static final String othersProgress = "others_progress";
-    public static final String natureProgress = "nature_progress";
-    public static final String societyProgress= "society_progress";
-
-    //Values
-    public static int natureCompletedInt, othersCompletedInt, selfCompletedInt, societyCompletedInt;
-
-    //Keys
-    public static final String menuCategory = "menu_category";
-
-    //Values, passed as extra for determining which menu to construct.
-    public static final int selfMenu = 1;
-    public static final int othersMenu = 2;
-    public static final int natureMenu = 3;
-    public static final int societyMenu = 4;
 
 
     @Override
@@ -129,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
 
                 Intent startSelfMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
-                startSelfMenu.putExtra(menuCategory, selfMenu);
+                startSelfMenu.putExtra(Exercise.menuCategory, Exercise.selfMenu);
                 startActivity(startSelfMenu);
             }
         });
@@ -138,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent startOthersMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
-                startOthersMenu.putExtra(menuCategory, othersMenu);
+                startOthersMenu.putExtra(Exercise.menuCategory, Exercise.othersMenu);
                 startActivity(startOthersMenu);
             }
         });
@@ -148,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 Intent startNatureMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
 
-                startNatureMenu.putExtra(menuCategory, natureMenu);
+                startNatureMenu.putExtra(Exercise.menuCategory, Exercise.natureMenu);
                 //Pass the appropriate extras through the intent to build the menu layout.
                 startActivity(startNatureMenu);
             }
@@ -159,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
 
                 Intent startSocietyMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
-                startSocietyMenu.putExtra(menuCategory, societyMenu);
+                startSocietyMenu.putExtra(Exercise.menuCategory, Exercise.societyMenu);
                 startActivity(startSocietyMenu);
 
             }
@@ -252,10 +236,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int j = playAnimation.getIntExtra("exercise_category",0);
 
         HashMap<Integer, Integer> stars = new HashMap<>();
-        stars.put(selfMenu, R.id.selfStar);
-        stars.put(othersMenu, R.id.othersStar);
-        stars.put(natureMenu, R.id.natureStar);
-        stars.put(societyMenu, R.id.societyStar);
+        stars.put(Exercise.selfMenu, R.id.selfStar);
+        stars.put(Exercise.othersMenu, R.id.othersStar);
+        stars.put(Exercise.natureMenu, R.id.natureStar);
+        stars.put(Exercise.societyMenu, R.id.societyStar);
 
 
         if(i == 1) {
@@ -283,25 +267,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setProgressStars() {
 
         //Need this for all categories.
-        int stars = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
+        int stars = mSharedPreferences.getInt(Exercise.natureProgress, Exercise.natureCompletedInt);
         Log.i("StarsNature", stars+"");
         String progressStars = "X "+ stars+"/6";
         mNatureTextView = findViewById(R.id.natureCompletedTextView);
         mNatureTextView.setText(progressStars);
 
-        stars = mSharedPreferences.getInt(othersProgress, othersCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.othersProgress, Exercise.othersCompletedInt);
         Log.i("StarsOthers", stars+"");
         progressStars = "X "+ stars+"/6";
         mOthersTextView = findViewById(R.id.othersCompletedTextView);
         mOthersTextView.setText(progressStars);
 
-        stars = mSharedPreferences.getInt(selfProgress, selfCompletedInt);
+        stars = mSharedPreferences.getInt(selfProgress, Exercise.selfCompletedInt);
         Log.i("StarsSelf", stars+"");
         progressStars = "X "+ stars+ "/6";
         mSelfTextView = findViewById(R.id.selfCompletedTextView);
         mSelfTextView.setText(progressStars);
 
-        stars = mSharedPreferences.getInt(societyProgress, societyCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.societyProgress, Exercise.societyCompletedInt);
         Log.i("StarsSociety", stars+"");
         progressStars = "X "+ stars+"/6";
         mSocietyTextView = findViewById(R.id.societyCompletedTextView);

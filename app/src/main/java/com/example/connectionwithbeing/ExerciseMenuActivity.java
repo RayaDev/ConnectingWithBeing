@@ -3,7 +3,6 @@ package com.example.connectionwithbeing;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -100,7 +99,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     //Creates the actual exercises to be displayed to the user on the following screen.
     private void createExerciseMenu(int menuCategory) {
 
-        if(menuCategory == MainActivity.selfMenu) {
+        if(menuCategory == Exercise.selfMenu) {
 
             Exercise mSelfExercise = new Exercise();
 
@@ -110,7 +109,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             onClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getSelfExerciseStrings());
         }
 
-        if(menuCategory == MainActivity.othersMenu) {
+        if(menuCategory == Exercise.othersMenu) {
 
             Exercise mOthersExercise = new Exercise();
 
@@ -120,7 +119,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             onClickListeners(mOthersExercise.getOtherExerciseImages(), mOthersExercise.getOtherExerciseStrings());
         }
 
-        if(menuCategory == MainActivity.natureMenu) {
+        if(menuCategory == Exercise.natureMenu) {
 
             Exercise mNatureExercise = new Exercise();
 
@@ -130,7 +129,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             onClickListeners(mNatureExercise.getNatureExerciseImages(), mNatureExercise.getNatureExerciseStrings());
         }
 
-        if(menuCategory == MainActivity.societyMenu) {
+        if(menuCategory == Exercise.societyMenu) {
             Exercise mSocietyExercise = new Exercise();
 
             checkForCompletedExercises(mSocietyExercise.userSocietyProgress,

@@ -14,19 +14,24 @@ Working TODO:
 
 General TODO:
 
-
 Design Stuff
     > Update color theme for each category.
     > Resize menu icon images.
+    > Exercise Activity feels kind of crammed. Add Margin.
+        > Make sure placeholder text is setting correctly.
+
+Exercise EditText for recording answers to questions
+
+On main menu bottom action bar, home, button, and then Generate Random Exercise.
 
 Create a quote activity that shows a quote, with a little spinning loader icon
-    > Before the menu? Probably. That way the user gets a new quote every time they load the menu.
+    > Before the exercise menu? Probably. That way the user gets a new quote every time they load the menu.
+    > Or when transitioning to the questions. So that the user has food for thought. <<<
 
 Format alertDialogs on home screen. Make them look nicer
 
-Shared Preferences for taking notes by text on the phone for each question.
-
 Redo questions layout as a linear
+
 Clean up onCreate methods.
 
 Introduction Activity
@@ -45,8 +50,6 @@ About
 Ads
 
 Publish
-
-Move all keys into their appropriate model files? Don't have keys in the controller classes?
 
 Bookmarks and Todolists classes/layouts.. Probably not..
     >Generate random excise Yes..

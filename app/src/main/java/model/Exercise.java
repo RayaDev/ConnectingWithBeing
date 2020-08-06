@@ -19,11 +19,29 @@ import java.util.HashMap;
 
 public class Exercise {
 
+    public static final String othersProgress = "others_progress";
+    public static final String natureProgress = "nature_progress";
+    public static final String societyProgress= "society_progress";
+    //Keys
+    public static final String menuCategory = "menu_category";
+    //Values, passed as extra for determining which menu to construct.
+    public static final int selfMenu = 1;
+    public static final int othersMenu = 2;
+    public static final int natureMenu = 3;
+    public static final int societyMenu = 4;
+    //Values
+    public static int natureCompletedInt;
+    public static int othersCompletedInt;
+    public static int selfCompletedInt;
+    public static int societyCompletedInt;
+
     //Default constructor
     public Exercise() {}
 
-    //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category.
+    //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category. And exercise completion count.
     public static final String userActivityProgress = "exercises_completed"; //This is the main references key for all shared prefs.
+
+
 
     //Keys for building static HashMaps
     public static final String exercise1ImageKey = "exercise1_image";
