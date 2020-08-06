@@ -48,7 +48,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         //Get Intents all coming from the menu activity.
         Bundle extras = getIntent().getExtras();
-//        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
+        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
         int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
@@ -61,8 +61,8 @@ public class ExerciseActivity extends AppCompatActivity {
         mQuoteTextView.setText(R.string.society_e6_quote);
 
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
-//        mExerciseImage.setImageResource(exerciseImage);
-        mExerciseImage.setImageResource(R.drawable.guistar); //Just a test image to see if all the strings are working
+        mExerciseImage.setImageResource(exerciseImage);
+//        mExerciseImage.setImageResource(R.drawable.guistar); //Just a test image to see if all the strings are working
 
         mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
@@ -122,6 +122,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         mTypedTextView.bringToFront(); //Needed for formatting the typed text. Otherwise gets lost in the background text.
 
+        //Used for triggering actions when the text is done typing.
         mTypedTextView.setOnCharacterTypedListener(new TypedTextView.OnCharacterTypedListener() {
             @Override
             public void onCharacterTyped(char character, int index) {
@@ -131,7 +132,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             playBlinkAnimation();
-                            mQuoteTextView.setVisibility(View.VISIBLE);
+//                            mQuoteTextView.setVisibility(View.VISIBLE);  //Used for causing the quote to appear on the exercise activity. Not really needed
                         }
                     }, 1750);
 

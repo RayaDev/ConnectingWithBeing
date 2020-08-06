@@ -86,7 +86,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-
+        //Coming from the mainActivity.
         //Original intent that keeps track of which category the user is currently in.
         menuCategory = extras.getInt("menu_category");
 
@@ -150,7 +150,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.selfhomemenuimage);
+                exercise.setImageResource(R.drawable.selfexercisemenuimage);
             }
 
             setTitle(R.string.self_menu_title);
@@ -165,7 +165,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.othershomemenuimage);
+                exercise.setImageResource(R.drawable.othersexercisemenuimage);
             }
 
             setTitle(R.string.others_menu_title);
@@ -179,7 +179,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.naturehomemenuimage);
+                exercise.setImageResource(R.drawable.natureexercisemenuimage);
 
             }
 
@@ -193,7 +193,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == 4){
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.societyhomemenuimage);
+                exercise.setImageResource(R.drawable.societyexercisemenuimage);
 
             }
 
@@ -262,7 +262,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise3 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-//                startExercise3.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise3ImageKey));
+                startExercise3.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise3ImageKey));
                 startExercise3.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise3StringKey));
                 startExercise3.putExtra(exerciseNumberKey,3);
                 startExercise3.putExtra(exerciseCategoryKey, menuCategory);
@@ -276,7 +276,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise4 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-//                startExercise4.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise4ImageKey));
+                startExercise4.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise4ImageKey));
                 startExercise4.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise4StringKey));
                 startExercise4.putExtra(exerciseNumberKey,4);
                 startExercise4.putExtra(exerciseCategoryKey, menuCategory);
@@ -290,7 +290,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise5 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-//                startExercise5.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise5ImageKey));
+                startExercise5.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise5ImageKey));
                 startExercise5.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise5StringKey));
                 startExercise5.putExtra(exerciseNumberKey,5);
                 startExercise5.putExtra(exerciseCategoryKey, menuCategory);
@@ -304,7 +304,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent startExercise6 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-//                startExercise6.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise6ImageKey));
+                startExercise6.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise6ImageKey));
                 startExercise6.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise6StringKey));
                 startExercise6.putExtra(exerciseNumberKey,6);
                 startExercise6.putExtra(exerciseCategoryKey, menuCategory);

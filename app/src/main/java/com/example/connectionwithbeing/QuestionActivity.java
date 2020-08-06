@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -84,6 +85,9 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 //Exercise type and number are passed through the whole app along intents.. Maybe there's a better way to do this?
                                 sharedPrefs1(exerciseType); //Increments menu completed count
+
+                                Log.i("Type", exerciseType +"");
+
                                 sharedPrefs2(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
@@ -172,7 +176,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         }
 
-        if(exerciseType == 1) {
+        if(exerciseType == 4) {
 
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();

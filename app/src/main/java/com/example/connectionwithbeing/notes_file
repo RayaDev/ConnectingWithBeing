@@ -1,39 +1,34 @@
 
-
-
-General
-**Kotlin? AI..**
+General TODO:
+**Kotlin? Learn AI..**
 Read/Scan Through entire android dev guide
 
 
 
-Create a java class that just handles the functionality of the bottom action bar.
-All other classes just call a constructor of that java class to make things easier.
-
 
 Working TODO:
 
-    Bugs TODO:
-    Society completed count not updating. Linked to self for some reason.
 
-Organize and clean up drawables
-Format alertDialogs on home screen. Make them look nicer
 
-Specific TODO:
 
-Move all keys into their appropriate model files? Don't have keys in the controller classes?
-
-Bookmarks and Todolists classes/layouts.. Probably not..
-    >Generate random excise Yes..
-    > Just home button for exercise and questions on bottom actionbar
-        > A shuffle exercise button on the home screen
 
 General TODO:
+
+Update color theme for each category.
+
+Create a quote activity that shows a quote, with a little spinning loader icon
+    > Before the menu? Probably. That way the user gets a new quote every time they load the menu.
+
+Format alertDialogs on home screen. Make them look nicer
+
+Shared Preferences for taking notes by text on the phone for each question.
 
 Redo questions layout as a linear
 Clean up onCreate methods.
 
-Introduction
+Introduction Activity
+
+Loading/Welcome Screen
 
 Contacts
 
@@ -48,15 +43,24 @@ Ads
 
 Publish
 
+Move all keys into their appropriate model files? Don't have keys in the controller classes?
+
+Bookmarks and Todolists classes/layouts.. Probably not..
+    >Generate random excise Yes..
+    > Just home button for exercise and questions on bottom actionbar
+        > A shuffle exercise button on the home screen
+
 
 
 ******///// CWB Notes File \\\\\******
 
-General Notes:
+General Notes and Thoughts:
 
 How to change all variable access modifiers in bulk? Hot keys?
     >Ex change all the private, or back to public
 
+Create a java class that just handles the functionality of the bottom action bar.
+All other classes just call a constructor of that java class to make things easier.
 
 ***************************************************************************************************
 New Concepts:

@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.closeDrawers();
 
         onClickListeners();
+        bottomNavButtonsListeners();
 
         if (getIntent().getBooleanExtra("EXIT", false)) {
             finish();
@@ -282,21 +284,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Need this for all categories.
         int stars = mSharedPreferences.getInt(natureProgress, natureCompletedInt);
+        Log.i("StarsNature", stars+"");
         String progressStars = "X "+ stars+"/6";
         mNatureTextView = findViewById(R.id.natureCompletedTextView);
         mNatureTextView.setText(progressStars);
 
         stars = mSharedPreferences.getInt(othersProgress, othersCompletedInt);
+        Log.i("StarsOthers", stars+"");
         progressStars = "X "+ stars+"/6";
         mOthersTextView = findViewById(R.id.othersCompletedTextView);
         mOthersTextView.setText(progressStars);
 
         stars = mSharedPreferences.getInt(selfProgress, selfCompletedInt);
-        progressStars = "X "+ stars+"/6";
+        Log.i("StarsSelf", stars+"");
+        progressStars = "X "+ stars+ "/6";
         mSelfTextView = findViewById(R.id.selfCompletedTextView);
         mSelfTextView.setText(progressStars);
 
         stars = mSharedPreferences.getInt(societyProgress, societyCompletedInt);
+        Log.i("StarsSociety", stars+"");
         progressStars = "X "+ stars+"/6";
         mSocietyTextView = findViewById(R.id.societyCompletedTextView);
         mSocietyTextView.setText(progressStars);
@@ -308,8 +314,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
 
-                Intent returnHome = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(returnHome);
+//                Intent returnHome = new Intent(MainActivity.this, MainActivity.class);
+//                startActivity(returnHome);
+                Toast.makeText(MainActivity.this, "You are already home!", Toast.LENGTH_SHORT).show();
 
             }
         });
