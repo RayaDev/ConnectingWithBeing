@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import model.Exercise;
 
 public class ExerciseActivity extends AppCompatActivity {
 
-    private ImageView mStartQuestions;
+    private LinearLayout mStartQuestions;
     private ImageView mHomeButton, mExerciseImage, mToDoButton;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
@@ -70,7 +71,7 @@ public class ExerciseActivity extends AppCompatActivity {
         mPlaceHolderTextView.setText(exerciseText);
 
         //Reflections Button
-        mStartQuestions = findViewById(R.id.ExerciseStartQuestions_ImageView);
+        mStartQuestions = findViewById(R.id.ExerciseStartQuestions_LinearLayout);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
         mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
 

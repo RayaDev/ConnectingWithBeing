@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,8 @@ import model.Question;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    private ImageView mToDoButton, mHomeButton, mCompletedQuestions;
+    private ImageView mToDoButton, mHomeButton;
+    private LinearLayout mCompletedQuestions;
     private TextView mQuestions1, mQuestions2, mQuestions3;
 
     @Override
@@ -50,7 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         mHomeButton = findViewById(R.id.questionHomeButton);
         mToDoButton = findViewById(R.id.questionToDoButton);
-        mCompletedQuestions = findViewById(R.id.questionCompleted_ImageView);
+        mCompletedQuestions = findViewById(R.id.questionCompleteReflections_LinearLayout);
 
         mQuestions1 = findViewById(R.id.questionActivity_Q1);
         mQuestions2 = findViewById(R.id.questionActivity_Q2);
