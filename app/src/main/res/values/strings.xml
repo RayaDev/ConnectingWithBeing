@@ -189,7 +189,7 @@ While you’re there take a long breath, and thank that tree for the air you are
 
     <string name ="society_e4_title">Kindness on the Street</string>
     <string name="society_e4_quote"></string>
-    <string name="society_e4_text">Give a panhandler some change or food. Ask them their name, and wish them a good day.</string>
+    <string name="society_e4_text">Give a person in need some change or food. Ask them their name, and wish them a good day.</string>
     <string name="society_e4_q1_text">What was their reaction? Did their demeanor change once you asked for their name?</string>
     <string name="society_e4_q2_text">How did you feel after the interaction was over? Was there a sense of doing some good?</string>
     <string name="society_e4_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
