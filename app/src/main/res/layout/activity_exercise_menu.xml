@@ -58,7 +58,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
                   android:layout_weight="50"
 
@@ -69,7 +69,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -103,7 +103,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
 
                   android:layout_weight="50"
@@ -116,7 +116,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -148,7 +148,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
                   android:layout_weight="50"
 
@@ -160,7 +160,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -194,7 +194,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
                   android:layout_weight="50"
 
@@ -206,7 +206,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -239,7 +239,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
                   android:layout_weight="50"
 
@@ -251,7 +251,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -284,7 +284,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
 
-                  android:src="@drawable/leaves"
+                  android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
                   android:layout_weight="50"
 
@@ -296,7 +296,7 @@
                   android:layout_width="34dp"
                   android:layout_height="34dp"
 
-                  android:src="@drawable/greystar"
+                  android:src="@drawable/guigreystar"
                   android:layout_gravity="center"
                   />
           </LinearLayout>
@@ -328,7 +328,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/home"
+            android:src="@drawable/guihome"
             android:layout_gravity="center"
             android:layout_weight="1"
             />
@@ -338,7 +338,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/todolist"
+            android:src="@drawable/guitodolist"
             android:layout_gravity="center"
             android:layout_weight="1"
             />

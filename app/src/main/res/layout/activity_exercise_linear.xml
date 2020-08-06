@@ -120,14 +120,12 @@
 
         >
 
-        <ImageView
-            android:id="@+id/ExerciseStartQuestions_ImageView"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Click to Continue"/>
 
-            android:src="@drawable/naturequestionbuttonimage" />
 
     </LinearLayout>
 
@@ -146,7 +144,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/home"
+            android:src="@drawable/guihome"
             android:layout_gravity="center"
             android:layout_weight="1"
             />
@@ -156,7 +154,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/todolist"
+            android:src="@drawable/guitodolist"
             android:layout_gravity="center"
             android:layout_weight="1"
             />

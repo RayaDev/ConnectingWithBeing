@@ -61,22 +61,22 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:orientation="vertical"
+            android:background="@drawable/roundedbutton"
 
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginBottom="12dp"
+
             app:layout_constraintBottom_toTopOf="@id/questionBottomActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
             >
-
-            <ImageView
-                android:id="@+id/questionCompleted_ImageView"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="12dp"
-
-                android:src="@drawable/mirror" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Click to Continue"/>
 
         </LinearLayout>
 
@@ -102,7 +102,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/bookmark"
+            android:src="@drawable/guibookmark"
             android:layout_gravity="center"
             android:layout_weight="1"/>
 
@@ -111,7 +111,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/home"
+            android:src="@drawable/guihome"
             android:layout_gravity="center"
             android:layout_weight="1"
             />
@@ -121,7 +121,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
 
-            android:src="@drawable/todolist"
+            android:src="@drawable/guitodolist"
             android:layout_gravity="center"
             android:layout_weight="1"
             />

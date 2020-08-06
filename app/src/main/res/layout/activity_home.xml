@@ -58,7 +58,7 @@
                         android:id="@+id/selfImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:src="@drawable/yoga" />
+                        android:src="@drawable/selfhomemenuimage" />
 
                     <!--Self Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -81,7 +81,7 @@
                                 android:id="@+id/selfStar"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
-                                android:src="@drawable/star"
+                                android:src="@drawable/guistar"
 
                                 android:layout_weight="1"
                                 />
@@ -134,7 +134,7 @@
                         android:id="@+id/natureImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:src="@drawable/waterfall" />
+                        android:src="@drawable/naturehomemenuimage" />
 
                     <!--Nature Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -157,7 +157,7 @@
                                 android:id="@+id/natureStar"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
-                                android:src="@drawable/star"
+                                android:src="@drawable/guistar"
 
                                 android:layout_weight="1"
                                 />
@@ -232,7 +232,7 @@
                         android:id="@+id/othersImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:src="@drawable/othershomepng" />
+                        android:src="@drawable/othershomemenuimage" />
 
                     <!--Others Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -255,7 +255,7 @@
                                 android:id="@+id/othersStar"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
-                                android:src="@drawable/star"
+                                android:src="@drawable/guistar"
 
                                 android:layout_weight="1"
                                 />
@@ -309,7 +309,7 @@
                         android:id="@+id/societyImageView"
                         android:layout_width="124dp"
                         android:layout_height="124dp"
-                        android:src="@drawable/societyhomepng" />
+                        android:src="@drawable/societyhomemenuimage" />
 
                     <!--Society Completed Exercises Layout-->
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -332,7 +332,7 @@
                                 android:id="@+id/societyStar"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
-                                android:src="@drawable/star"
+                                android:src="@drawable/guistar"
 
                                 android:layout_weight="1"
                                 />
@@ -382,7 +382,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
 
-                    android:src="@drawable/home"
+                    android:src="@drawable/guihome"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     />
@@ -392,7 +392,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
 
-                    android:src="@drawable/todolist"
+                    android:src="@drawable/guitodolist"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     />
