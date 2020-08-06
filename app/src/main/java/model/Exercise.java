@@ -133,8 +133,12 @@ public class Exercise {
     private static final HashMap<String, Integer> selfExerciseImages = new HashMap<>();
 
     static {
-        selfExerciseImages.put(exercise1ImageKey, R.drawable.selfhomepng);
-        selfExerciseImages.put(exercise2ImageKey, R.drawable.mirror);
+        selfExerciseImages.put(exercise1ImageKey, R.drawable.selfexerciseoneimage);
+        selfExerciseImages.put(exercise2ImageKey, R.drawable.selfexercisetwoimage);
+        selfExerciseImages.put(exercise3ImageKey, R.drawable.selfexercisethreeimage);
+        selfExerciseImages.put(exercise4ImageKey, R.drawable.selfexercisefourimage);
+        selfExerciseImages.put(exercise5ImageKey, R.drawable.selfexercisefiveimage);
+        selfExerciseImages.put(exercise6ImageKey, R.drawable.selfexercisesiximage);
     }
 
     private static final HashMap<String, Integer> selfExerciseStrings = new HashMap<>();
@@ -161,8 +165,12 @@ public class Exercise {
     private static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
 
     static {
-        otherExerciseImages.put(exercise1ImageKey, R.drawable.cwblogotest);
-        otherExerciseImages.put(exercise2ImageKey, R.drawable.othershomepng);
+        otherExerciseImages.put(exercise1ImageKey, R.drawable.othersexerciseoneimage);
+        otherExerciseImages.put(exercise2ImageKey, R.drawable.othersexercisetwoimage);
+        otherExerciseImages.put(exercise3ImageKey, R.drawable.othersexercisethreeimage);
+        otherExerciseImages.put(exercise4ImageKey, R.drawable.othersexercisefourimage);
+        otherExerciseImages.put(exercise5ImageKey, R.drawable.othersexercisefiveimage);
+        otherExerciseImages.put(exercise6ImageKey, R.drawable.othersexercisesiximage);
     }
 
     private static final HashMap<String, Integer> otherExerciseStrings = new HashMap<>();
@@ -174,8 +182,6 @@ public class Exercise {
         otherExerciseStrings.put(exercise4StringKey, R.string.others_e4_text);
         otherExerciseStrings.put(exercise5StringKey, R.string.others_e5_text);
         otherExerciseStrings.put(exercise6StringKey, R.string.others_e6_text);
-
-
     }
 
 
@@ -193,8 +199,12 @@ public class Exercise {
     private static final HashMap<String, Integer> natureExerciseImages = new HashMap<>();
 
     static {
-        natureExerciseImages.put(exercise1ImageKey, R.drawable.bigtree);
-        natureExerciseImages.put(exercise2ImageKey, R.drawable.bookmark);
+        natureExerciseImages.put(exercise1ImageKey, R.drawable.natureexerciseoneimage);
+        natureExerciseImages.put(exercise2ImageKey, R.drawable.natureexercisetwoimage);
+        natureExerciseImages.put(exercise3ImageKey, R.drawable.natureexercisethreeimage);
+        natureExerciseImages.put(exercise4ImageKey, R.drawable.natureexercisefourimage);
+        natureExerciseImages.put(exercise5ImageKey, R.drawable.natureexercisefive);
+        natureExerciseImages.put(exercise6ImageKey, R.drawable.natureexercisesiximage);
     }
 
     private static final HashMap<String, Integer> natureExerciseStrings = new HashMap<>();
@@ -211,7 +221,6 @@ public class Exercise {
 
 
 
-
     public static int[] societyExerciseTitles = {R.string.society_e1_title, R.string.society_e2_title, R.string.society_e3_title,
             R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
 
@@ -222,8 +231,12 @@ public class Exercise {
     private static final HashMap<String, Integer> societyExerciseImages = new HashMap<>();
 
     static {
-        societyExerciseImages.put(exercise1ImageKey, R.drawable.yoga);
-        societyExerciseImages.put(exercise2ImageKey, R.drawable.greenroundbutton);
+        societyExerciseImages.put(exercise1ImageKey, R.drawable.societyexerciseoneimage);
+        societyExerciseImages.put(exercise2ImageKey, R.drawable.societyexercisetwoimage);
+        societyExerciseImages.put(exercise3ImageKey, R.drawable.societyexercisethreeimage);
+        societyExerciseImages.put(exercise4ImageKey, R.drawable.societyexercisefourimage);
+        societyExerciseImages.put(exercise5ImageKey, R.drawable.societyexercisefiveimage);
+        societyExerciseImages.put(exercise6ImageKey, R.drawable.societyexercisesiximage);
     }
 
     private static final HashMap<String, Integer> societyExerciseStrings = new HashMap<>();

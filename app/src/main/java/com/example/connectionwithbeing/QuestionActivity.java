@@ -59,6 +59,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         setQuestions(exerciseNumber, exerciseType);
         onClickListeners(exerciseNumber, exerciseType);
+        bottomNavButtonsListeners();
 
     }
 
@@ -98,7 +99,7 @@ public class QuestionActivity extends AppCompatActivity {
                                 mCompletedQuestions.clearAnimation();
                             }
                         })
-                        .setIcon(R.drawable.star)
+                        .setIcon(R.drawable.guistar)
                         .show();
             }
         });
@@ -118,22 +119,6 @@ public class QuestionActivity extends AppCompatActivity {
         }, 3000);
 
 
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                startActivity(returnHome);
-
-            }
-        });
-
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
 
     }
 
@@ -684,6 +669,25 @@ public class QuestionActivity extends AppCompatActivity {
                 break;
         }
 
+    }
+
+    private void bottomNavButtonsListeners() {
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+                startActivity(returnHome);
+
+            }
+        });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.

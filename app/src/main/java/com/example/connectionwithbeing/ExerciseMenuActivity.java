@@ -92,6 +92,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         setMenuDrawables(menuCategory, mExerciseImageArray);
         createExerciseMenu(menuCategory);
+        bottomNavButtonsListeners();
 
 
     }
@@ -149,7 +150,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.selfhomepng);
+                exercise.setImageResource(R.drawable.selfhomemenuimage);
             }
 
             setTitle(R.string.self_menu_title);
@@ -164,7 +165,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.othershomepng);
+                exercise.setImageResource(R.drawable.othershomemenuimage);
             }
 
             setTitle(R.string.others_menu_title);
@@ -178,7 +179,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.waterfall);
+                exercise.setImageResource(R.drawable.naturehomemenuimage);
 
             }
 
@@ -192,7 +193,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == 4){
             for (ImageView exercise: exerciseImageArray)
             {
-                exercise.setImageResource(R.drawable.societyhomepng);
+                exercise.setImageResource(R.drawable.societyhomemenuimage);
 
             }
 
@@ -219,7 +220,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);
-                mStar.setImageResource(R.drawable.star);
+                mStar.setImageResource(R.drawable.guistar);
             }
 
             i++;
@@ -227,9 +228,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     }
 
-
     private void onClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
-
 
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -314,11 +313,20 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void changeActionBarColor(int color) {
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
+    }
+
+    private void bottomNavButtonsListeners() {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent returnHome = new Intent(ExerciseMenuActivity.this, MainActivity.class);
                 startActivity(returnHome);
+
             }
         });
 
@@ -328,9 +336,5 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Toast.makeText(ExerciseMenuActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void changeActionBarColor(int color) {
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
 }

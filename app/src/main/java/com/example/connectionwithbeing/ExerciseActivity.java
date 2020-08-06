@@ -61,7 +61,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
 //        mExerciseImage.setImageResource(exerciseImage);
-        mExerciseImage.setImageResource(R.drawable.star); //Just a test image to see if all the strings are working
+        mExerciseImage.setImageResource(R.drawable.guistar); //Just a test image to see if all the strings are working
 
         mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
@@ -76,26 +76,12 @@ public class ExerciseActivity extends AppCompatActivity {
 
         setExerciseTitle(exerciseType, exerciseNumber);
         onClickListeners(exerciseText, exerciseNumber, exerciseType);
+        bottomNavButtonsListeners();
 
     }
 
     private void onClickListeners(int exerciseText, final int exerciseNumber, final int exerciseType) {
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent returnHome = new Intent(ExerciseActivity.this, MainActivity.class);
-                startActivity(returnHome);
-
-            }
-        });
-
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         mStartQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +110,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
                             }
                         })
-                        .setIcon(R.drawable.star)
+                        .setIcon(R.drawable.guistar)
                         .show();
 
             }
@@ -182,6 +168,24 @@ public class ExerciseActivity extends AppCompatActivity {
         mStartQuestions.startAnimation(animation1);
     }
 
+    private void bottomNavButtonsListeners() {
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent returnHome = new Intent(ExerciseActivity.this, MainActivity.class);
+                startActivity(returnHome);
+
+            }
+        });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

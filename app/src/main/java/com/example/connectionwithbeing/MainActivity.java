@@ -163,20 +163,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        mHomeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, R.string.home_button_toast,Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
     }
 
 //**************************************************************************************************
@@ -317,6 +303,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void bottomNavButtonsListeners() {
+        mHomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent returnHome = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(returnHome);
+
+            }
+        });
+
+        mToDoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     //Exits the app if the back button is pressed from the home screen.
     @Override
     public void onBackPressed()

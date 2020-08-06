@@ -36,7 +36,6 @@
         android:layout_height="0dp"
 
         android:adjustViewBounds="true"
-        android:src="@drawable/bigtree"
         android:scaleType="fitCenter"
 
         android:layout_marginTop="8dp"
