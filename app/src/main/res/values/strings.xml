@@ -172,7 +172,7 @@ While you’re there take a long breath, and thank that tree for the air you are
 </string>
     <string name="society_e1_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e2_title">Hard Food for Midas</string>
+    <string name ="society_e2_title">The Role of Money</string>
     <string name="society_e2_quote"></string>
     <string name="society_e2_text">Think of your relationship with money. Focus on your feelings around it, and your initial emotional reaction to your current financial situation.</string>
     <string name="society_e2_q1_text">What is more important to you than money? What would you not give up for any price in the world?</string>
@@ -194,14 +194,14 @@ While you’re there take a long breath, and thank that tree for the air you are
     <string name="society_e4_q2_text">How did you feel after the interaction was over? Was there a sense of doing some good?</string>
     <string name="society_e4_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e5_title">A Little Earth for Charity</string>
+    <string name ="society_e5_title">Every Bit Counts</string>
     <string name="society_e5_quote"></string>
     <string name="society_e5_text">Sign up to make a small monthly donation (about the cost of a lunch, whatever you can afford) to a charity that advocates for a cause that you support. Any cause will do! A monthly donation makes you a real member of these organizations.</string>
-    <string name="society_e5_q1_text">Question placeholder. Create question.</string>
-    <string name="society_e5_q2_text">Question placeholder. Create question</string>
+    <string name="society_e5_q1_text">How do you feel about giving to a cause on a regular basis?</string>
+    <string name="society_e5_q2_text">Do you think you’ll participate or become more involved with the issue over time?</string>
     <string name="society_e5_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e6_title">Volunteer</string>
+    <string name ="society_e6_title">Do Good Works</string>
     <string name="society_e6_quote">"“What is the essence of life? To serve others and to do good.”
     -Aristotle""</string>
     <string name="society_e6_text">A tried and true classic to feel good and meet great people! Find a cause and organization you care about, and volunteer for a day. Even if it’s just once, you certainly won’t forget the experience.</string>
