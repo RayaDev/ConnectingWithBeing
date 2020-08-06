@@ -29,11 +29,12 @@
           android:layout_marginTop="16dp"
 
           >
-
+        <!-- Layout for notes on resizing-->
           <LinearLayout
               android:id="@+id/ExerciseMenuE1_LinearLayout"
               android:layout_width="125dp"
               android:layout_height="125dp"
+
 
               android:orientation="vertical"
               android:layout_marginEnd="32dp"
@@ -44,30 +45,36 @@
               >
 
               <TextView
-                  android:layout_width="wrap_content"
+                  android:layout_width="match_parent"
                   android:layout_height="wrap_content"
 
                   android:text="#1"
                   android:textSize="18sp"
                   android:textColor="@color/nature_primary_dark"
 
-                  android:layout_gravity="center_horizontal"/>
+
+                  android:gravity="center_horizontal"
+
+                  />
 
               <ImageView
-                  android:id="@+id/ExerciseMenuE1_ImageView"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/ExerciseMenuE1_ImageView"
+
 
                   android:src="@drawable/natureexercisemenuimage"
                   android:scaleType="fitCenter"
-                  android:layout_weight="50"
+                  android:layout_weight="5"
 
                   android:layout_margin="8dp"/>
 
               <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
                   android:id="@+id/ExerciseMenuE1Star_ImageView"
-                  android:layout_width="34dp"
-                  android:layout_height="34dp"
+
+                  android:layout_weight="10"
 
                   android:src="@drawable/guigreystar"
                   android:layout_gravity="center"

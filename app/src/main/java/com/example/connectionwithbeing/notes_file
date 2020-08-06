@@ -14,7 +14,10 @@ Working TODO:
 
 General TODO:
 
-Update color theme for each category.
+
+Design Stuff
+    > Update color theme for each category.
+    > Resize menu icon images.
 
 Create a quote activity that shows a quote, with a little spinning loader icon
     > Before the menu? Probably. That way the user gets a new quote every time they load the menu.
