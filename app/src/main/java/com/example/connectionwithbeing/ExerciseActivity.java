@@ -57,8 +57,8 @@ public class ExerciseActivity extends AppCompatActivity {
         //Declare Views, and Set resources from extras.
 
 //        setTitle(exerciseTitle);
-        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
-        mQuoteTextView.setText(R.string.society_e6_quote);
+//        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
+//        mQuoteTextView.setText(R.string.society_e6_quote);
 
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
