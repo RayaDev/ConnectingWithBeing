@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     }
                 })
-                .setIcon(R.drawable.star)
+                .setIcon(R.drawable.guistar)
                 .show();
     }
 
