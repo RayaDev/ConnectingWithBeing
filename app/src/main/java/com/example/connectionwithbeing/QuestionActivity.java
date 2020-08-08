@@ -84,17 +84,16 @@ public class QuestionActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Exercise type and number are passed through the whole app along intents.. Maybe there's a better way to do this?
-//                                sharedPrefs1(exerciseType); //Increments menu completed count
 
                                 Log.i("Type", exerciseType +"");
 
                                 sharedPrefs2(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
-                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                                returnHome.putExtra("play_animation", 1); //Could turn these keys into variables?
-                                returnHome.putExtra("exercise_category", exerciseType);
-                                startActivity(returnHome);
+//                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+//                                returnHome.putExtra("play_animation", 1);
+//                                returnHome.putExtra("exercise_category", exerciseType);
+//                                startActivity(returnHome);
                             }
                         })
 
@@ -128,70 +127,6 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    //Increments the number of nature exercises completed on the home menu.
-    public void sharedPrefs1(int exerciseType) {
-
-        if(exerciseType == 1) {
-
-            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
-            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-            Exercise.selfCompletedInt = mSharedPreferences.getInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-
-            Exercise.selfCompletedInt += 1;
-
-            mSharedPreferencesEditor.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-
-            mSharedPreferencesEditor.commit();
-
-        }
-
-        if(exerciseType == 2) {
-
-            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
-            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-            Exercise.othersCompletedInt = mSharedPreferences.getInt(Exercise.othersProgress, Exercise.othersCompletedInt);
-
-            Exercise.othersCompletedInt += 1;
-
-            mSharedPreferencesEditor.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
-
-            mSharedPreferencesEditor.commit();
-
-        }
-
-
-        if(exerciseType == 3) {
-            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
-            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-            Exercise.natureCompletedInt = mSharedPreferences.getInt(Exercise.natureProgress, Exercise.natureCompletedInt);
-
-            Exercise.natureCompletedInt += 1;
-
-            mSharedPreferencesEditor.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
-
-            mSharedPreferencesEditor.commit();
-
-        }
-
-        if(exerciseType == 4) {
-
-            SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
-            SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-            Exercise.societyCompletedInt = mSharedPreferences.getInt(Exercise.societyProgress, Exercise.societyCompletedInt);
-
-            Exercise.societyCompletedInt += 1;
-
-            mSharedPreferencesEditor.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
-
-            mSharedPreferencesEditor.commit();
-
-        }
-
-    }
 
     //Saves and sets the exercise progress star color to yellow on the exercise menu.
     public void sharedPrefs2(int exerciseNumber, int exerciseType) {
@@ -204,7 +139,7 @@ public class QuestionActivity extends AppCompatActivity {
 
             switch (exerciseNumber) {
 
-                case 1: //This fixed the star bug!
+                case 1: //This fixed the star bug! Replicate.
                     Log.i("QASE1C", Exercise.selfE1Completed +"");
                     if(Exercise.selfE1Completed == 0) {
                         Exercise.selfCompletedInt++;
@@ -212,6 +147,21 @@ public class QuestionActivity extends AppCompatActivity {
 
                         Exercise.selfE1Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+
+                        //Cuases the anmiation to play only if the exercise has been completed
+                        Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+                        returnHome.putExtra("play_animation", 1);
+                        returnHome.putExtra("exercise_category", exerciseType);
+                        startActivity(returnHome);
+                    }
+
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+                        returnHome.putExtra("play_animation", 0);
+                        returnHome.putExtra("exercise_category", exerciseType);
+                        startActivity(returnHome);
                     }
 
                     mSharedPreferencesEditor2.commit();
