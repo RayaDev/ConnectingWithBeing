@@ -19,17 +19,22 @@ import java.util.HashMap;
 
 public class Exercise {
 
+    //Keys for referencing completed number on main menu.
     public static final String othersProgress = "others_progress";
     public static final String natureProgress = "nature_progress";
     public static final String societyProgress= "society_progress";
+    public static final String selfProgress = "self_progress";
+
     //Keys
     public static final String menuCategory = "menu_category";
+
     //Values, passed as extra for determining which menu to construct.
     public static final int selfMenu = 1;
     public static final int othersMenu = 2;
     public static final int natureMenu = 3;
     public static final int societyMenu = 4;
-    //Values
+
+    //Values for setting completed number on main menu.
     public static int natureCompletedInt;
     public static int othersCompletedInt;
     public static int selfCompletedInt;
@@ -58,8 +63,6 @@ public class Exercise {
     public static final String exercise4StringKey = "exercise4_text";
     public static final String exercise5StringKey  = "exercise5_text";
     public static final String exercise6StringKey = "exercise6_text";
-
-
 
 
     public static final String userSelfProgress="self_exercises_completed";

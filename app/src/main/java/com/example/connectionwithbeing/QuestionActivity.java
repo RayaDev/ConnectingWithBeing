@@ -84,7 +84,7 @@ public class QuestionActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Exercise type and number are passed through the whole app along intents.. Maybe there's a better way to do this?
-                                sharedPrefs1(exerciseType); //Increments menu completed count
+//                                sharedPrefs1(exerciseType); //Increments menu completed count
 
                                 Log.i("Type", exerciseType +"");
 
@@ -136,11 +136,11 @@ public class QuestionActivity extends AppCompatActivity {
             SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            Exercise.selfCompletedInt = mSharedPreferences.getInt(MainActivity.selfProgress, Exercise.selfCompletedInt);
+            Exercise.selfCompletedInt = mSharedPreferences.getInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
             Exercise.selfCompletedInt += 1;
 
-            mSharedPreferencesEditor.putInt(MainActivity.selfProgress, Exercise.selfCompletedInt);
+            mSharedPreferencesEditor.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
             mSharedPreferencesEditor.commit();
 
@@ -204,9 +204,15 @@ public class QuestionActivity extends AppCompatActivity {
 
             switch (exerciseNumber) {
 
-                case 1:
-                    Exercise.selfE1Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+                case 1: //This fixed the star bug!
+                    Log.i("QASE1C", Exercise.selfE1Completed +"");
+                    if(Exercise.selfE1Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+
+                        Exercise.selfE1Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+                    }
 
                     mSharedPreferencesEditor2.commit();
                     break;
@@ -214,6 +220,9 @@ public class QuestionActivity extends AppCompatActivity {
                 case 2:
                     Exercise.selfE2Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.selfE2, Exercise.selfE2Completed);
+
+                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                    Exercise.selfCompletedInt++;
 
                     mSharedPreferencesEditor2.commit();
                     break;
@@ -223,6 +232,9 @@ public class QuestionActivity extends AppCompatActivity {
                     Exercise.selfE3Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.selfE3, Exercise.selfE3Completed);
 
+                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                    Exercise.selfCompletedInt++;
+
                     mSharedPreferencesEditor2.commit();
 
                     break;
@@ -231,24 +243,33 @@ public class QuestionActivity extends AppCompatActivity {
 
                     Exercise.selfE4Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.selfE4, Exercise.selfE4Completed);
+                    Exercise.selfCompletedInt++;
 
+                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
                     mSharedPreferencesEditor2.commit();
+
                     break;
 
                 case 5:
 
                     Exercise.selfE5Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.selfE5, Exercise.selfE5Completed);
+                    Exercise.selfCompletedInt++;
 
+                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
                     mSharedPreferencesEditor2.commit();
+
                     break;
 
                 case 6:
 
                     Exercise.selfE6Completed = 1; //Right here is where the intent needs to be passed to.
                     mSharedPreferencesEditor2.putInt(Exercise.selfE6, Exercise.selfE6Completed);
+                    Exercise.selfCompletedInt++;
 
+                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
                     mSharedPreferencesEditor2.commit();
+
                     break;
 
 

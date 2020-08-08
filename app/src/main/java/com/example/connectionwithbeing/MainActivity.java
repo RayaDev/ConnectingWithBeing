@@ -41,9 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Shared Preferences for the number of exercises completed, and menu creation
     public SharedPreferences mSharedPreferences;
 
-    //Keys
-    public static final String selfProgress = "self_progress";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -285,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             playProgressAnimation();
 
 
-        stars = mSharedPreferences.getInt(selfProgress, Exercise.selfCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.selfProgress, Exercise.selfCompletedInt);
         Log.i("StarsSelf", stars+"");
 
             progressStars = "X " + stars + "/6";
