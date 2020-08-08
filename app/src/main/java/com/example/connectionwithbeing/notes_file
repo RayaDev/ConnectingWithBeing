@@ -18,9 +18,8 @@ Redo the design for transition button for exercise activity
 
 Design Stuff
     > Update color theme for each category.
-    > Resize menu icon images.
-    > Exercise Activity feels kind of crammed. Add Margin.
-        > Make sure placeholder text is setting correctly.
+    > Proofread all Strings.
+        > Length of questions, typos, punctuation, ect.
 
 Exercise EditText for recording answers to questions
 

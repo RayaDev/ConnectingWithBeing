@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
           mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
           setProgressStars();
-          playProgressAnimation();
+//          playProgressAnimation();
 
 //**************************************************************************************************
 // Action Bar and Navigation
@@ -267,29 +267,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setProgressStars() {
 
         //Need this for all categories.
+
         int stars = mSharedPreferences.getInt(Exercise.natureProgress, Exercise.natureCompletedInt);
-        Log.i("StarsNature", stars+"");
-        String progressStars = "X "+ stars+"/6";
-        mNatureTextView = findViewById(R.id.natureCompletedTextView);
-        mNatureTextView.setText(progressStars);
+        if(stars <= 6) {
+            Log.i("StarsNature", stars + "");
+            String progressStars = "X " + stars + "/6";
+            mNatureTextView = findViewById(R.id.natureCompletedTextView);
+            mNatureTextView.setText(progressStars);
+            playProgressAnimation();
+        }
 
         stars = mSharedPreferences.getInt(Exercise.othersProgress, Exercise.othersCompletedInt);
-        Log.i("StarsOthers", stars+"");
-        progressStars = "X "+ stars+"/6";
-        mOthersTextView = findViewById(R.id.othersCompletedTextView);
-        mOthersTextView.setText(progressStars);
+        if(stars <= 6) {
+            Log.i("StarsOthers", stars + "");
+            String progressStars = "X " + stars + "/6";
+            mOthersTextView = findViewById(R.id.othersCompletedTextView);
+            mOthersTextView.setText(progressStars);
+            playProgressAnimation();
+        }
 
         stars = mSharedPreferences.getInt(selfProgress, Exercise.selfCompletedInt);
         Log.i("StarsSelf", stars+"");
-        progressStars = "X "+ stars+ "/6";
-        mSelfTextView = findViewById(R.id.selfCompletedTextView);
-        mSelfTextView.setText(progressStars);
+        if(stars <= 6) {
+            String progressStars = "X " + stars + "/6";
+            mSelfTextView = findViewById(R.id.selfCompletedTextView);
+            mSelfTextView.setText(progressStars);
+            playProgressAnimation();
+        }
 
         stars = mSharedPreferences.getInt(Exercise.societyProgress, Exercise.societyCompletedInt);
         Log.i("StarsSociety", stars+"");
-        progressStars = "X "+ stars+"/6";
-        mSocietyTextView = findViewById(R.id.societyCompletedTextView);
-        mSocietyTextView.setText(progressStars);
+        if(stars <= 6) {
+            String progressStars = "X " + stars + "/6";
+            mSocietyTextView = findViewById(R.id.societyCompletedTextView);
+            mSocietyTextView.setText(progressStars);
+            playProgressAnimation();
+        }
 
     }
 
