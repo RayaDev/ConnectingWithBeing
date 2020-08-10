@@ -87,13 +87,13 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 Log.i("Type", exerciseType +"");
 
-                                sharedPrefs2(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
+                                int playAnimation = sharedPrefs2(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
-//                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-//                                returnHome.putExtra("play_animation", 1);
-//                                returnHome.putExtra("exercise_category", exerciseType);
-//                                startActivity(returnHome);
+                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+                                returnHome.putExtra("play_animation", playAnimation);
+                                returnHome.putExtra("exercise_category", exerciseType);
+                                startActivity(returnHome);
                             }
                         })
 
@@ -128,8 +128,8 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
 
-    //Saves and sets the exercise progress star color to yellow on the exercise menu.
-    public void sharedPrefs2(int exerciseNumber, int exerciseType) {
+    //Saves and sets the exercise progress star color to yellow on the exercise menu. Returns an int to trigger the play animation.
+    public int sharedPrefs2(int exerciseNumber, int exerciseType) {
 
 
         if (exerciseType == 1) {
@@ -147,80 +147,111 @@ public class QuestionActivity extends AppCompatActivity {
 
                         Exercise.selfE1Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                        //Cuases the anmiation to play only if the exercise has been completed
-                        Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                        returnHome.putExtra("play_animation", 1);
-                        returnHome.putExtra("exercise_category", exerciseType);
-                        startActivity(returnHome);
+                       return 1;
                     }
 
                     else {
 
                         //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
-                        Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                        returnHome.putExtra("play_animation", 0);
-                        returnHome.putExtra("exercise_category", exerciseType);
-                        startActivity(returnHome);
+                        return 0;
                     }
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
 
                 case 2:
-                    Exercise.selfE2Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE2, Exercise.selfE2Completed);
+                    if(Exercise.selfE2Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-                    Exercise.selfCompletedInt++;
+                        Exercise.selfE2Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE2, Exercise.selfE2Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        return 1;
+                    }
+
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        return 0;
+                    }
 
                 case 3:
 
-                    Exercise.selfE3Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE3, Exercise.selfE3Completed);
+                    if(Exercise.selfE3Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-                    Exercise.selfCompletedInt++;
+                        Exercise.selfE3Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE3, Exercise.selfE3Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    mSharedPreferencesEditor2.commit();
+                        return 1;
+                    }
 
-                    break;
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        return 0;
+                    }
 
                 case 4:
 
-                    Exercise.selfE4Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE4, Exercise.selfE4Completed);
-                    Exercise.selfCompletedInt++;
+                    if(Exercise.selfE4Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-                    mSharedPreferencesEditor2.commit();
+                        Exercise.selfE4Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE4, Exercise.selfE4Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    break;
+                        return 1;
+                    }
+
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        return 0;
+                    }
 
                 case 5:
 
-                    Exercise.selfE5Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE5, Exercise.selfE5Completed);
-                    Exercise.selfCompletedInt++;
+                    if(Exercise.selfE5Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-                    mSharedPreferencesEditor2.commit();
+                        Exercise.selfE5Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE5, Exercise.selfE5Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    break;
+                        return 1;
+                    }
+
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        return 0;
+                    }
 
                 case 6:
 
-                    Exercise.selfE6Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.selfE6, Exercise.selfE6Completed);
-                    Exercise.selfCompletedInt++;
+                    if(Exercise.selfE6Completed == 0) {
+                        Exercise.selfCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                    mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
-                    mSharedPreferencesEditor2.commit();
+                        Exercise.selfE6Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE6Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    break;
+                        return 1;
+                    }
+
+                    else {
+
+                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        return 0;
+                    }
 
 
                 //case for each exercise
@@ -390,7 +421,7 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         }
-
+        return 0; //Default return for method.
     }
 
     //Set questions based on exercise.
