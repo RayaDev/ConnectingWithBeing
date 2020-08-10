@@ -87,7 +87,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 Log.i("Type", exerciseType +"");
 
-                                int playAnimation = sharedPrefs2(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
+                                int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 
                                 //Returns to the home screen and activates an animation on the stars.
                                 Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
@@ -129,9 +129,10 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     //Saves and sets the exercise progress star color to yellow on the exercise menu. Returns an int to trigger the play animation.
-    public int sharedPrefs2(int exerciseNumber, int exerciseType) {
+    //Would prefer this to not have duplicated code for each category.
+    public int setSharedPreferences(int exerciseNumber, int exerciseType) {
 
-
+        //Self
         if (exerciseType == 1) {
 
             SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userSelfProgress, MODE_PRIVATE);
@@ -139,22 +140,22 @@ public class QuestionActivity extends AppCompatActivity {
 
             switch (exerciseNumber) {
 
-                case 1: //This fixed the star bug! Replicate.
-                    Log.i("QASE1C", Exercise.selfE1Completed +"");
+                case 1:
+
                     if(Exercise.selfE1Completed == 0) {
                         Exercise.selfCompletedInt++;
                         mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
-                        Exercise.selfE1Completed = 1;
+                        Exercise.selfE1Completed = 1; //Saves progress of the exercise, and allows the star color to be set.
                         mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
                         mSharedPreferencesEditor2.commit();
 
-                       return 1;
+                       return 1; //Returns 1 to trigger the animation on the Main Activity.
                     }
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+                        //Otherwise exercise is already completed, return home with out an animation, and make no changes to data.
                         return 0;
                     }
 
@@ -173,7 +174,7 @@ public class QuestionActivity extends AppCompatActivity {
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
+
                         return 0;
                     }
 
@@ -192,7 +193,6 @@ public class QuestionActivity extends AppCompatActivity {
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
                         return 0;
                     }
 
@@ -211,7 +211,6 @@ public class QuestionActivity extends AppCompatActivity {
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
                         return 0;
                     }
 
@@ -230,7 +229,6 @@ public class QuestionActivity extends AppCompatActivity {
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
                         return 0;
                     }
 
@@ -249,17 +247,13 @@ public class QuestionActivity extends AppCompatActivity {
 
                     else {
 
-                        //Otherwise return home with out an animation. Clean all this up. Gross place to call this.
                         return 0;
                     }
-
-
-                //case for each exercise
 
             }
         }
 
-
+        //Others
         if (exerciseType == 2) {
 
             SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userOthersProgress, MODE_PRIVATE);
@@ -268,52 +262,117 @@ public class QuestionActivity extends AppCompatActivity {
             switch (exerciseNumber) {
 
                 case 1:
-                    Exercise.othersE1Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE1, Exercise.othersE1Completed);
+                    if(Exercise.othersE1Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE1Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE1, Exercise.othersE1Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 2:
-                    Exercise.othersE2Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE2, Exercise.othersE2Completed);
+                    if(Exercise.othersE2Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE2Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE2, Exercise.othersE2Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 3:
-                    Exercise.othersE3Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE3, Exercise.othersE3Completed);
+                    if(Exercise.othersE3Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE3Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE3, Exercise.othersE3Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 4:
-                    Exercise.othersE4Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE4, Exercise.othersE4Completed);
+                    if(Exercise.othersE4Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE4Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE4, Exercise.othersE4Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 5:
-                    Exercise.othersE5Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE5, Exercise.othersE5Completed);
+                    if(Exercise.othersE5Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE5Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE5, Exercise.othersE5Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 6:
-                    Exercise.othersE6Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.othersE6, Exercise.othersE6Completed);
+                    if(Exercise.othersE6Completed == 0) {
+                        Exercise.othersCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersProgress, Exercise.othersCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.othersE6Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.othersE6, Exercise.othersE6Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                //case for each exercise
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
             }
         }
 
+        //Nature
         if(exerciseType == 3) {
 
             SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userNatureProgress, MODE_PRIVATE);
@@ -322,51 +381,117 @@ public class QuestionActivity extends AppCompatActivity {
             switch (exerciseNumber) {
 
                 case 1:
-                    Exercise.natureE1Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE1, Exercise.natureE1Completed);
+                    if(Exercise.natureE1Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE1Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE1, Exercise.natureE1Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 2:
-                    Exercise.natureE2Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE2, Exercise.natureE2Completed);
+                    if(Exercise.natureE2Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE2Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE2, Exercise.natureE2Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 3:
-                    Exercise.natureE3Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE3, Exercise.natureE3Completed);
+                    if(Exercise.natureE3Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE3Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE3, Exercise.natureE3Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 4:
-                    Exercise.natureE4Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE4, Exercise.natureE4Completed);
+                    if(Exercise.natureE4Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE4Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE4, Exercise.natureE4Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 5:
-                    Exercise.natureE5Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE5, Exercise.natureE5Completed);
+                    if(Exercise.natureE5Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE5Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE5, Exercise.natureE5Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 6:
-                    Exercise.natureE6Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.natureE6, Exercise.natureE6Completed);
+                    if(Exercise.natureE6Completed == 0) {
+                        Exercise.natureCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureProgress, Exercise.natureCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.natureE6Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.natureE6, Exercise.natureE6Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                    //case for each exercise
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
+
             }
         }
 
+        //Society
         if (exerciseType == 4) {
 
             SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userSocietyProgress, MODE_PRIVATE);
@@ -375,56 +500,120 @@ public class QuestionActivity extends AppCompatActivity {
             switch (exerciseNumber) {
 
                 case 1:
-                    Exercise.societyE1Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE1, Exercise.societyE1Completed);
+                    if(Exercise.societyE1Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE3Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE3, Exercise.societyE3Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 2:
-                    Exercise.societyE2Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE2, Exercise.societyE2Completed);
+                    if(Exercise.societyE2Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE2Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE2, Exercise.societyE2Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 3:
-                    Exercise.societyE3Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE3, Exercise.societyE3Completed);
+                    if(Exercise.societyE3Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE3Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE3, Exercise.societyE3Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 4:
-                    Exercise.societyE4Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE4, Exercise.societyE4Completed);
+                    if(Exercise.societyE4Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE4Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE4, Exercise.societyE4Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
                 case 5:
-                    Exercise.societyE5Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE5, Exercise.societyE5Completed);
+                    if(Exercise.societyE5Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE5Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE5, Exercise.societyE5Completed);
+                        mSharedPreferencesEditor2.commit();
+
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
 
                 case 6:
-                    Exercise.societyE6Completed = 1; //Right here is where the intent needs to be passed to.
-                    mSharedPreferencesEditor2.putInt(Exercise.societyE6, Exercise.societyE6Completed);
+                    if(Exercise.societyE6Completed == 0) {
+                        Exercise.societyCompletedInt++;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                    mSharedPreferencesEditor2.commit();
-                    break;
+                        Exercise.societyE6Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE6, Exercise.societyE6Completed);
+                        mSharedPreferencesEditor2.commit();
 
-                //case for each exercise
+                        return 1;
+                    }
+
+                    else {
+
+
+                        return 0;
+                    }
 
             }
         }
         return 0; //Default return for method.
     }
 
-    //Set questions based on exercise.
+    //Set questions based on exercise category.
     private void setQuestions(int exerciseNumber, int exerciseType) {
         //For example type = nature (3), and number = 4, so it would be the natureE4 exercise question set.
         //Algorithm here?
