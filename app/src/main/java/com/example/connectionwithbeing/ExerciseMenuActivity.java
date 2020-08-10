@@ -106,7 +106,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             checkForCompletedExercises(mSelfExercise.userSelfProgress,
                     mSelfExercise.getSelfKeys(), mSelfExercise.getSelfValues());
 
-            onClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getSelfExerciseStrings());
+            setOnClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getSelfExerciseStrings());
         }
 
         if(menuCategory == Exercise.othersMenu) {
@@ -116,7 +116,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             checkForCompletedExercises(mOthersExercise.userOthersProgress,
                     mOthersExercise.getOthersKeys(), mOthersExercise.getOthersValues());
 
-            onClickListeners(mOthersExercise.getOtherExerciseImages(), mOthersExercise.getOtherExerciseStrings());
+            setOnClickListeners(mOthersExercise.getOtherExerciseImages(), mOthersExercise.getOtherExerciseStrings());
         }
 
         if(menuCategory == Exercise.natureMenu) {
@@ -126,7 +126,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             checkForCompletedExercises(mNatureExercise.userNatureProgress,
                     mNatureExercise.getNatureKeys(), mNatureExercise.getNatureValues());
 
-            onClickListeners(mNatureExercise.getNatureExerciseImages(), mNatureExercise.getNatureExerciseStrings());
+            setOnClickListeners(mNatureExercise.getNatureExerciseImages(), mNatureExercise.getNatureExerciseStrings());
         }
 
         if(menuCategory == Exercise.societyMenu) {
@@ -135,7 +135,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             checkForCompletedExercises(mSocietyExercise.userSocietyProgress,
                     mSocietyExercise.getSocietyKeys(), mSocietyExercise.getSocietyValues());
 
-            onClickListeners(mSocietyExercise.getSocietyExerciseImages(), mSocietyExercise.getSocietyExerciseStrings());
+            setOnClickListeners(mSocietyExercise.getSocietyExerciseImages(), mSocietyExercise.getSocietyExerciseStrings());
 
         }
     }
@@ -227,7 +227,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     }
 
-    private void onClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
+    private void setOnClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
 
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override

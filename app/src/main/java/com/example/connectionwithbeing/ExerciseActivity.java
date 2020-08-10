@@ -76,12 +76,12 @@ public class ExerciseActivity extends AppCompatActivity {
         mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
 
         setExerciseTitle(exerciseType, exerciseNumber);
-        onClickListeners(exerciseText, exerciseNumber, exerciseType);
+        setOnClickListeners(exerciseText, exerciseNumber, exerciseType);
         bottomNavButtonsListeners();
 
     }
 
-    private void onClickListeners(int exerciseText, final int exerciseNumber, final int exerciseType) {
+    private void setOnClickListeners(int exerciseText, final int exerciseNumber, final int exerciseType) {
 
 
         mStartQuestions.setOnClickListener(new View.OnClickListener() {

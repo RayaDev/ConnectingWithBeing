@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToggle.syncState();
         mDrawerLayout.closeDrawers();
 
-        onClickListeners();
+        setOnClickListeners();
         bottomNavButtonsListeners();
 
         if (getIntent().getBooleanExtra("EXIT", false)) {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //End of onCreate()
 
     //On click methods for home menu items
-    private void onClickListeners() {
+    private void setOnClickListeners() {
 
         mSelfImageView.setOnClickListener(new View.OnClickListener() {
             @Override

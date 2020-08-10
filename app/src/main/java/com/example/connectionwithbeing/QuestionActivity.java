@@ -61,13 +61,13 @@ public class QuestionActivity extends AppCompatActivity {
 
 
         setQuestions(exerciseNumber, exerciseType);
-        onClickListeners(exerciseNumber, exerciseType);
+        setOnClickListeners(exerciseNumber, exerciseType);
         bottomNavButtonsListeners();
 
     }
 
 
-    private void onClickListeners(int i, int j) {
+    private void setOnClickListeners(int i, int j) {
 
         final int exerciseNumber = i;
         final int exerciseType = j;
