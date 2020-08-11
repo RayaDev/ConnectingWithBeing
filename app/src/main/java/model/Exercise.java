@@ -124,7 +124,7 @@ public class Exercise {
     public static int natureE6Completed = 0;
 
 
-    public static final String userSocietyProgress="self_exercises_completed";
+    public static final String userSocietyProgress="society_exercises_completed";
 
     public static final String societyE1 = "societyE1";
     public static final String societyE2 = "societyE2";

@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //**************************************************************************************************
 //Setting up Shared Preferences
 
-          mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+          mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE); //Working with a different set of sharedPrefs..
           setProgressStars();
 //          playProgressAnimation();
 
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             playProgressAnimation();
 
 
-        stars = mSharedPreferences.getInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.selfProgress, 0);
         Log.i("StarsSelf", stars+"");
 
             progressStars = "X " + stars + "/6";

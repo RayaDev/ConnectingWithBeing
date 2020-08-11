@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -103,6 +104,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             Exercise mSelfExercise = new Exercise();
 
+//            Log.i("SelfE1_EM", Exercise.selfE1Completed + "");
             checkForCompletedExercises(mSelfExercise.userSelfProgress,
                     mSelfExercise.getSelfKeys(), mSelfExercise.getSelfValues());
 
@@ -215,7 +217,10 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         int i = 0;
         while(i < exerciseKeys.length) {
-            int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], exerciseValues[i]);
+            int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], 0);
+            Log.i("SelfE1_EM", exerciseKeys[i] + "Key");
+            Log.i("SelfE1_EM", exerciseValues[i]+ "Value"); //These values don't matter. The data is only attached to the key. Its a HashMap rememeber.
+            Log.i("SelfE1_EM", lightUpStar + "Star");
 
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);

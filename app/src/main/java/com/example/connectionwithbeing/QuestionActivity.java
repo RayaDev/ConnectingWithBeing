@@ -137,17 +137,21 @@ public class QuestionActivity extends AppCompatActivity {
 
             SharedPreferences mSharedPreferences2 = getApplicationContext().getSharedPreferences(Exercise.userSelfProgress, MODE_PRIVATE);
             SharedPreferences.Editor mSharedPreferencesEditor2 = mSharedPreferences2.edit();
+            int selfE1Completed = mSharedPreferences2.getInt(Exercise.selfE1, 0);
 
             switch (exerciseNumber) {
 
                 case 1:
 
-                    if(Exercise.selfE1Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                    if(selfE1Completed == 0) {
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal = 1;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE1Completed = 1; //Saves progress of the exercise, and allows the star color to be set.
-                        mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE1Completed);
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE1, 1);
+
                         mSharedPreferencesEditor2.commit();
 
                        return 1; //Returns 1 to trigger the animation on the Main Activity.
@@ -162,8 +166,10 @@ public class QuestionActivity extends AppCompatActivity {
 
                 case 2:
                     if(Exercise.selfE2Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal++;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE2Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE2, Exercise.selfE2Completed);
@@ -181,8 +187,10 @@ public class QuestionActivity extends AppCompatActivity {
                 case 3:
 
                     if(Exercise.selfE3Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal++;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE3Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE3, Exercise.selfE3Completed);
@@ -199,8 +207,10 @@ public class QuestionActivity extends AppCompatActivity {
                 case 4:
 
                     if(Exercise.selfE4Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal++;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE4Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE4, Exercise.selfE4Completed);
@@ -217,8 +227,10 @@ public class QuestionActivity extends AppCompatActivity {
                 case 5:
 
                     if(Exercise.selfE5Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal++;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE5Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE5, Exercise.selfE5Completed);
@@ -235,8 +247,10 @@ public class QuestionActivity extends AppCompatActivity {
                 case 6:
 
                     if(Exercise.selfE6Completed == 0) {
-                        Exercise.selfCompletedInt++;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
+                        int completedExerciseTotal = mSharedPreferences2.getInt(Exercise.selfProgress, 0);
+                        completedExerciseTotal++;
+//                        Exercise.selfCompletedInt = completedExerciseTotal;
+                        mSharedPreferencesEditor2.putInt(Exercise.selfProgress, completedExerciseTotal);
 
                         Exercise.selfE6Completed = 1;
                         mSharedPreferencesEditor2.putInt(Exercise.selfE6, Exercise.selfE6Completed);
