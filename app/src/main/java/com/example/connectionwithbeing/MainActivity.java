@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
           mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE); //Working with a different set of sharedPrefs..
           setProgressStars();
-//          playProgressAnimation();
+          playProgressAnimation();
 
 //**************************************************************************************************
 // Action Bar and Navigation
@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             progressStars = "X " + stars + "/6";
             mOthersTextView = findViewById(R.id.othersCompletedTextView);
             mOthersTextView.setText(progressStars);
-            playProgressAnimation();
+
 
 
         stars = mSharedPreferences.getInt(Exercise.selfProgress, 0);
@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             progressStars = "X " + stars + "/6";
             mSelfTextView = findViewById(R.id.selfCompletedTextView);
             mSelfTextView.setText(progressStars);
-            playProgressAnimation();
+
 
         stars = mSharedPreferences.getInt(Exercise.societyProgress, 0);
         Log.i("StarsSociety", stars+"");
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             progressStars = "X " + stars + "/6";
             mSocietyTextView = findViewById(R.id.societyCompletedTextView);
             mSocietyTextView.setText(progressStars);
-            playProgressAnimation();
+
     }
 
     private void bottomNavButtonsListeners() {
