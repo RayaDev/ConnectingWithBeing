@@ -181,6 +181,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         }
 
+        //Society Menu
         if(menuCategory == 4){
             for (ImageView exercise: exerciseImageArray)
             {

@@ -147,7 +147,6 @@ public class ExerciseActivity extends AppCompatActivity {
         switch(exerciseType) {
             case 1:
                 setTitle(Exercise.selfExerciseTitles[exerciseNumber-1]);
-
                 break;
             case 2:
                 setTitle(Exercise.othersExerciseTitles[exerciseNumber-1]);

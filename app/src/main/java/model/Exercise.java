@@ -39,8 +39,6 @@ public class Exercise {
     //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category. And exercise completion count.
     public static final String userActivityProgress = "exercises_completed"; //This is the main references key for all shared prefs.
 
-
-
     //Keys for building static HashMaps
     public static final String exercise1ImageKey = "exercise1_image";
     public static final String exercise2ImageKey = "exercise2_image";
@@ -48,7 +46,6 @@ public class Exercise {
     public static final String exercise4ImageKey = "exercise4_image";
     public static final String exercise5ImageKey  = "exercise5_image";
     public static final String exercise6ImageKey = "exercise6_image";
-
 
     public static final String exercise1StringKey = "exercise1_text";
     public static final String exercise2StringKey = "exercise2_text";
@@ -72,16 +69,12 @@ public class Exercise {
     public static final String othersE5CompletedKey = "othersE5";
     public static final String othersE6CompletedKey = "othersE6";
 
-
-
-    //Keys
     public static  final String natureE1CompletedKey = "natureE1";
     public static final String natureE2CompletedKey = "natureE2";
     public static final String natureE3CompletedKey = "natureE3";
     public static final String natureE4CompletedKey = "natureE4";
     public static final String natureE5CompletedKey = "natureE5";
     public static final String natureE6CompletedKey = "natureE6";
-
 
     public static final String societyE1CompletedKey = "societyE1";
     public static final String societyE2CompletedKey = "societyE2";
@@ -126,7 +119,7 @@ public class Exercise {
     public static final int[] othersExerciseTitles = {R.string.others_e1_title, R.string.others_e2_title,
             R.string.others_e3_title,R.string.others_e4_title, R.string.others_e5_title, R.string.others_e6_title};
 
-    public static final String[] othersKeys = {othersE1CompletedKey, othersE2CompletedKey, othersE3CompletedKey, othersE4CompletedKey, othersE5CompletedKey, othersE1CompletedKey};
+    public static final String[] othersKeys = {othersE1CompletedKey, othersE2CompletedKey, othersE3CompletedKey, othersE4CompletedKey, othersE5CompletedKey, othersE6CompletedKey};
 
     public static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
 
@@ -189,7 +182,6 @@ public class Exercise {
             R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
 
     public static final String[] societyKeys = {societyE1CompletedKey, societyE2CompletedKey, societyE3CompletedKey, societyE4CompletedKey, societyE5CompletedKey, societyE6CompletedKey};
-
 
     public static final HashMap<String, Integer> societyExerciseImages = new HashMap<>();
 

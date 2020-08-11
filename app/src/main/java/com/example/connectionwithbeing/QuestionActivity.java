@@ -543,12 +543,12 @@ public class QuestionActivity extends AppCompatActivity {
         //Society
         if (exerciseType == 4) {
 
-            int societyE1Completed = mSharedPreferences.getInt(Exercise.natureE1CompletedKey, 0);
-            int societyE2Completed = mSharedPreferences.getInt(Exercise.natureE2CompletedKey, 0);
-            int societyE3Completed = mSharedPreferences.getInt(Exercise.natureE3CompletedKey, 0);
-            int societyE4Completed = mSharedPreferences.getInt(Exercise.natureE4CompletedKey, 0);
-            int societyE5Completed = mSharedPreferences.getInt(Exercise.natureE5CompletedKey, 0);
-            int societyE6Completed = mSharedPreferences.getInt(Exercise.natureE6CompletedKey, 0);
+            int societyE1Completed = mSharedPreferences.getInt(Exercise.societyE1CompletedKey, 0);
+            int societyE2Completed = mSharedPreferences.getInt(Exercise.societyE2CompletedKey, 0);
+            int societyE3Completed = mSharedPreferences.getInt(Exercise.societyE3CompletedKey, 0);
+            int societyE4Completed = mSharedPreferences.getInt(Exercise.societyE4CompletedKey, 0);
+            int societyE5Completed = mSharedPreferences.getInt(Exercise.societyE5CompletedKey, 0);
+            int societyE6Completed = mSharedPreferences.getInt(Exercise.societyE6CompletedKey, 0);
 
             switch (exerciseNumber) {
 
@@ -580,7 +580,7 @@ public class QuestionActivity extends AppCompatActivity {
                         mSharedPreferencesEditor.putInt(Exercise.societyProgress, completedExerciseTotal);
 
 
-                        mSharedPreferencesEditor.putInt(Exercise.societyE1CompletedKey, 1);
+                        mSharedPreferencesEditor.putInt(Exercise.societyE2CompletedKey, 1);
                         mSharedPreferencesEditor.commit();
 
                         return 1;
