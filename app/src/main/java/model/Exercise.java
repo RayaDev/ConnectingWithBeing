@@ -70,50 +70,23 @@ public class Exercise {
     public static final String selfE6CompletedKey = "selfE6";
 
 
+    public static final String othersE1CompletedKey = "othersE1";
+    public static final String othersE2CompletedKey = "othersE2";
+    public static final String othersE3CompletedKey = "othersE3";
+    public static final String othersE4CompletedKey = "othersE4";
+    public static final String othersE5CompletedKey = "othersE5";
+    public static final String othersE6CompletedKey = "othersE6";
 
 
-
-    //    public static SharedPreferences othersSharedPreferences;
-    public static final String userOthersProgress = "others_exercises_completed";
-
-    public static final String othersE1 = "othersE1";
-    public static final String othersE2 = "othersE2";
-    public static final String othersE3 = "othersE3";
-    public static final String othersE4 = "othersE4";
-    public static final String othersE5 = "othersE5";
-    public static final String othersE6 = "othersE6";
-
-    public static int othersE1Completed = 0;
-    public static int othersE2Completed = 0;
-    public static int othersE3Completed = 0;
-    public static int othersE4Completed = 0;
-    public static int othersE5Completed = 0;
-    public static int othersE6Completed = 0;
-
-
-
-
-    //    public static SharedPreferences natureSharedPreferences;
-    public static final String userNatureProgress = "nature_exercises_completed";
 
     //Keys
-    public static  final String natureE1 = "natureE1";
-    public static final String natureE2 = "natureE2";
-    public static final String natureE3 = "natureE3";
-    public static final String natureE4 = "natureE4";
-    public static final String natureE5 = "natureE5";
-    public static final String natureE6 = "natureE6";
+    public static  final String natureE1CompletedKey = "natureE1";
+    public static final String natureE2CompletedKey = "natureE2";
+    public static final String natureE3CompletedKey = "natureE3";
+    public static final String natureE4CompletedKey = "natureE4";
+    public static final String natureE5CompletedKey = "natureE5";
+    public static final String natureE6CompletedKey = "natureE6";
 
-    //Values
-    public static int natureE1Completed = 0;
-    public static int natureE2Completed = 0;
-    public static int natureE3Completed = 0;
-    public static int natureE4Completed = 0;
-    public static int natureE5Completed = 0;
-    public static int natureE6Completed = 0;
-
-
-    public static final String userSocietyProgress="society_exercises_completed";
 
     public static final String societyE1CompletedKey = "societyE1";
     public static final String societyE2CompletedKey = "societyE2";
@@ -158,7 +131,7 @@ public class Exercise {
     public static final int[] othersExerciseTitles = {R.string.others_e1_title, R.string.others_e2_title,
             R.string.others_e3_title,R.string.others_e4_title, R.string.others_e5_title, R.string.others_e6_title};
 
-    public static final String[] othersKeys = {othersE1, othersE2, othersE3, othersE4, othersE5, othersE6};
+    public static final String[] othersKeys = {othersE1CompletedKey, othersE2CompletedKey, othersE3CompletedKey, othersE4CompletedKey, othersE5CompletedKey, othersE1CompletedKey};
 
     public static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
 
@@ -187,10 +160,8 @@ public class Exercise {
     public static final int[] natureExerciseTitles = {R.string.nature_e1_title,R.string.nature_e2_title, R.string.nature_e3_title,
             R.string.nature_e4_title, R.string.nature_e5_title, R.string.nature_e6_title};
 
-    public static final String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
+    public static final String[] natureKeys = {natureE1CompletedKey, natureE2CompletedKey, natureE3CompletedKey, natureE4CompletedKey, natureE5CompletedKey, natureE6CompletedKey};
 
-    public static final int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
-            natureE4Completed, natureE5Completed, natureE6Completed};
 
     //HashMaps holding all drawable and String ids for exercises
 
@@ -247,46 +218,5 @@ public class Exercise {
         societyExerciseStrings.put(exercise6StringKey,R.string.society_e6_text);
     }
 
-
-
-
-    public String[] getSocietyKeys() {
-        return societyKeys;
-    }
-
-    public HashMap<String, Integer> getSocietyExerciseImages() {
-        return societyExerciseImages;
-    }
-
-    public HashMap<String, Integer> getSocietyExerciseStrings() {
-        return societyExerciseStrings;
-    }
-
-
-    public String[] getOthersKeys() {
-        return othersKeys;
-    }
-
-
-    public HashMap<String, Integer> getOtherExerciseStrings() {
-        return otherExerciseStrings;
-    }
-
-    public HashMap<String, Integer> getOtherExerciseImages() {
-        return otherExerciseImages;
-    }
-
-    public String[] getNatureKeys() {
-        return natureKeys;
-    }
-
-
-    public HashMap<String, Integer> getNatureExerciseImages() {
-        return natureExerciseImages;
-    }
-
-    public HashMap<String, Integer> getNatureExerciseStrings() {
-        return natureExerciseStrings;
-    }
 
 }

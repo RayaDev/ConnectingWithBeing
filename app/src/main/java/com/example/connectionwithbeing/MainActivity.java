@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Need this for all categories.
 
-        int stars = mSharedPreferences.getInt(Exercise.natureProgress, Exercise.natureCompletedInt);
+        int stars = mSharedPreferences.getInt(Exercise.natureProgress, 0);
 
             Log.i("StarsNature", stars + "");
             String progressStars = "X " + stars + "/6";
@@ -273,7 +273,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mNatureTextView.setText(progressStars);
 
 
-        stars = mSharedPreferences.getInt(Exercise.othersProgress, Exercise.othersCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.othersProgress, 0);
 
             Log.i("StarsOthers", stars + "");
             progressStars = "X " + stars + "/6";
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mSelfTextView.setText(progressStars);
             playProgressAnimation();
 
-        stars = mSharedPreferences.getInt(Exercise.societyProgress, Exercise.societyCompletedInt);
+        stars = mSharedPreferences.getInt(Exercise.societyProgress, 0);
         Log.i("StarsSociety", stars+"");
 
             progressStars = "X " + stars + "/6";

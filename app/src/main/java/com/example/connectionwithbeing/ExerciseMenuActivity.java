@@ -208,9 +208,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         int i = 0;
         while(i < exerciseKeys.length) {
             int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], 0);
-            Log.i("SelfE1_EM", exerciseKeys[i] + "Key");
-//            Log.i("SelfE1_EM", exerciseValues[i]+ "Value"); //These values don't matter. The data is only attached to the key. Its a HashMap rememeber.
-            Log.i("SelfE1_EM", lightUpStar + "Star");
 
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);
