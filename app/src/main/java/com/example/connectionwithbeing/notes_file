@@ -5,12 +5,9 @@ Read/Scan Through entire android dev guide
 
 
 
-
 Working TODO:
 
-Fixing star bug animation trigger in question activity. Cleaning up that code. Simplify and remove duplicate code.
-
-
+Redo Questions layout as a linear
 
 General TODO:
 
@@ -30,8 +27,6 @@ Create a quote activity that shows a quote, with a little spinning loader icon
     > Or when transitioning to the questions. So that the user has food for thought. <<<
 
 Format alertDialogs on home screen. Make them look nicer
-
-Redo questions layout as a linear
 
 Clean up onCreate methods.
 
