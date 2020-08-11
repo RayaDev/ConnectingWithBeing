@@ -102,37 +102,32 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         if(menuCategory == Exercise.selfMenu) {
 
-            Exercise mSelfExercise = new Exercise();
+            checkForCompletedExercises(Exercise.selfKeys);
 
-            checkForCompletedExercises(mSelfExercise.getSelfKeys(), mSelfExercise.getSelfValues());
-
-            setOnClickListeners(mSelfExercise.getSelfExerciseImages(), mSelfExercise.getSelfExerciseStrings());
+            setOnClickListeners(Exercise.selfExerciseImages, Exercise.selfExerciseStrings);
         }
 
         if(menuCategory == Exercise.othersMenu) {
 
-            Exercise mOthersExercise = new Exercise();
+            checkForCompletedExercises(Exercise.othersKeys);
 
-            checkForCompletedExercises(mOthersExercise.getOthersKeys(), mOthersExercise.getOthersValues());
-
-            setOnClickListeners(mOthersExercise.getOtherExerciseImages(), mOthersExercise.getOtherExerciseStrings());
+            setOnClickListeners(Exercise.otherExerciseImages, Exercise.otherExerciseStrings);
         }
 
         if(menuCategory == Exercise.natureMenu) {
 
-            Exercise mNatureExercise = new Exercise();
 
-            checkForCompletedExercises(mNatureExercise.getNatureKeys(), mNatureExercise.getNatureValues());
+            checkForCompletedExercises(Exercise.natureKeys);
 
-            setOnClickListeners(mNatureExercise.getNatureExerciseImages(), mNatureExercise.getNatureExerciseStrings());
+            setOnClickListeners(Exercise.natureExerciseImages, Exercise.natureExerciseStrings);
         }
 
         if(menuCategory == Exercise.societyMenu) {
-            Exercise mSocietyExercise = new Exercise();
 
-            checkForCompletedExercises(mSocietyExercise.getSocietyKeys(), mSocietyExercise.getSocietyValues());
 
-            setOnClickListeners(mSocietyExercise.getSocietyExerciseImages(), mSocietyExercise.getSocietyExerciseStrings());
+            checkForCompletedExercises(Exercise.societyKeys);
+
+            setOnClickListeners(Exercise.societyExerciseImages, Exercise.societyExerciseStrings);
 
         }
     }
@@ -202,7 +197,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         //Society Menu
     }
 
-    private void checkForCompletedExercises(String[] exerciseKeys, int[] exerciseValues) {
+    private void checkForCompletedExercises(String[] exerciseKeys) {
 
         //Sets color of stars for each exercise.
         SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
@@ -214,7 +209,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         while(i < exerciseKeys.length) {
             int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], 0);
             Log.i("SelfE1_EM", exerciseKeys[i] + "Key");
-            Log.i("SelfE1_EM", exerciseValues[i]+ "Value"); //These values don't matter. The data is only attached to the key. Its a HashMap rememeber.
+//            Log.i("SelfE1_EM", exerciseValues[i]+ "Value"); //These values don't matter. The data is only attached to the key. Its a HashMap rememeber.
             Log.i("SelfE1_EM", lightUpStar + "Star");
 
             if (lightUpStar == 1) {

@@ -1,8 +1,6 @@
 package model;
 
 
-import android.content.SharedPreferences;
-
 import com.example.connectionwithbeing.R;
 
 import java.util.HashMap;
@@ -64,22 +62,13 @@ public class Exercise {
     public static final String exercise5StringKey  = "exercise5_text";
     public static final String exercise6StringKey = "exercise6_text";
 
+    public static final String selfE1CompletedKey = "selfE1";
+    public static final String selfE2CompletedKey = "selfE2";
+    public static final String selfE3CompletedKey = "selfE3";
+    public static final String selfE4CompletedKey = "selfE4";
+    public static final String selfE5CompletedKey = "selfE5";
+    public static final String selfE6CompletedKey = "selfE6";
 
-    public static final String userSelfProgress="self_exercises_completed";
-
-    public static final String selfE1 = "selfE1";
-    public static final String selfE2 = "selfE2";
-    public static final String selfE3 = "selfE3";
-    public static final String selfE4 = "selfE4";
-    public static final String selfE5 = "selfE5";
-    public static final String selfE6 = "selfE6";
-
-    public static int selfE1Completed = 0;
-    public static int selfE2Completed = 0;
-    public static int selfE3Completed = 0;
-    public static int selfE4Completed = 0;
-    public static int selfE5Completed = 0;
-    public static int selfE6Completed = 0;
 
 
 
@@ -126,19 +115,12 @@ public class Exercise {
 
     public static final String userSocietyProgress="society_exercises_completed";
 
-    public static final String societyE1 = "societyE1";
-    public static final String societyE2 = "societyE2";
-    public static final String societyE3 = "societyE3";
-    public static final String societyE4 = "societyE4";
-    public static final String societyE5 = "societyE5";
-    public static final String societyE6 = "societyE6";
-
-    public static int societyE1Completed = 0;
-    public static int societyE2Completed = 0;
-    public static int societyE3Completed = 0;
-    public static int societyE4Completed = 0;
-    public static int societyE5Completed = 0;
-    public static int societyE6Completed = 0;
+    public static final String societyE1CompletedKey = "societyE1";
+    public static final String societyE2CompletedKey = "societyE2";
+    public static final String societyE3CompletedKey = "societyE3";
+    public static final String societyE4CompletedKey = "societyE4";
+    public static final String societyE5CompletedKey = "societyE5";
+    public static final String societyE6CompletedKey = "societyE6";
 
 
 
@@ -146,12 +128,10 @@ public class Exercise {
     public static final int[] selfExerciseTitles = {R.string.self_e1_title, R.string.self_e2_title, R.string.self_e3_title,
     R.string.self_e4_title, R.string.self_e5_title, R.string.self_e6_title};
 
-    private static final String[] selfKeys = {selfE1, selfE2, selfE3, selfE4, selfE5, selfE6};
+    public static final String[] selfKeys = {selfE1CompletedKey, selfE2CompletedKey, selfE3CompletedKey, selfE4CompletedKey, selfE5CompletedKey, selfE6CompletedKey};
 
-    private static final int[] selfValues = {selfE1Completed, selfE2Completed, selfE3Completed, selfE4Completed,
-    selfE5Completed, selfE6Completed};
 
-    private static final HashMap<String, Integer> selfExerciseImages = new HashMap<>();
+    public static final HashMap<String, Integer> selfExerciseImages = new HashMap<>();
 
     static {
         selfExerciseImages.put(exercise1ImageKey, R.drawable.selfexerciseoneimage);
@@ -162,7 +142,7 @@ public class Exercise {
         selfExerciseImages.put(exercise6ImageKey, R.drawable.selfexercisesiximage);
     }
 
-    private static final HashMap<String, Integer> selfExerciseStrings = new HashMap<>();
+    public static final HashMap<String, Integer> selfExerciseStrings = new HashMap<>();
 
     static {
         selfExerciseStrings.put(exercise1StringKey, R.string.self_e1_text);
@@ -178,12 +158,9 @@ public class Exercise {
     public static final int[] othersExerciseTitles = {R.string.others_e1_title, R.string.others_e2_title,
             R.string.others_e3_title,R.string.others_e4_title, R.string.others_e5_title, R.string.others_e6_title};
 
-    private static final String[] othersKeys = {othersE1, othersE2, othersE3, othersE4, othersE5, othersE6};
+    public static final String[] othersKeys = {othersE1, othersE2, othersE3, othersE4, othersE5, othersE6};
 
-    private static final int[] othersValues = {othersE1Completed, othersE2Completed,
-            othersE3Completed, othersE4Completed, othersE5Completed, othersE6Completed};
-
-    private static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
+    public static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
 
     static {
         otherExerciseImages.put(exercise1ImageKey, R.drawable.othersexerciseoneimage);
@@ -194,7 +171,7 @@ public class Exercise {
         otherExerciseImages.put(exercise6ImageKey, R.drawable.othersexercisesiximage);
     }
 
-    private static final HashMap<String, Integer> otherExerciseStrings = new HashMap<>();
+    public static final HashMap<String, Integer> otherExerciseStrings = new HashMap<>();
 
     static {
         otherExerciseStrings.put(exercise1StringKey, R.string.others_e1_text);
@@ -210,14 +187,14 @@ public class Exercise {
     public static final int[] natureExerciseTitles = {R.string.nature_e1_title,R.string.nature_e2_title, R.string.nature_e3_title,
             R.string.nature_e4_title, R.string.nature_e5_title, R.string.nature_e6_title};
 
-    private final String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
+    public static final String[] natureKeys = {natureE1, natureE2, natureE3, natureE4, natureE5, natureE6};
 
-    private final int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
+    public static final int[] natureValues = {natureE1Completed, natureE2Completed, natureE3Completed,
             natureE4Completed, natureE5Completed, natureE6Completed};
 
     //HashMaps holding all drawable and String ids for exercises
 
-    private static final HashMap<String, Integer> natureExerciseImages = new HashMap<>();
+    public static final HashMap<String, Integer> natureExerciseImages = new HashMap<>();
 
     static {
         natureExerciseImages.put(exercise1ImageKey, R.drawable.natureexerciseoneimage);
@@ -228,7 +205,7 @@ public class Exercise {
         natureExerciseImages.put(exercise6ImageKey, R.drawable.natureexercisesiximage);
     }
 
-    private static final HashMap<String, Integer> natureExerciseStrings = new HashMap<>();
+    public static final HashMap<String, Integer> natureExerciseStrings = new HashMap<>();
 
     static {
         natureExerciseStrings.put(exercise1StringKey, R.string.nature_e1_text);
@@ -245,11 +222,10 @@ public class Exercise {
     public static int[] societyExerciseTitles = {R.string.society_e1_title, R.string.society_e2_title, R.string.society_e3_title,
             R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
 
-    private static final String[] societyKeys = {societyE1, societyE2, societyE3, societyE4, societyE5, societyE6};
-    private static final int[] societyValues = {societyE1Completed, societyE2Completed, societyE3Completed, societyE4Completed,
-            societyE5Completed, societyE6Completed};
+    public static final String[] societyKeys = {societyE1CompletedKey, societyE2CompletedKey, societyE3CompletedKey, societyE4CompletedKey, societyE5CompletedKey, societyE6CompletedKey};
 
-    private static final HashMap<String, Integer> societyExerciseImages = new HashMap<>();
+
+    public static final HashMap<String, Integer> societyExerciseImages = new HashMap<>();
 
     static {
         societyExerciseImages.put(exercise1ImageKey, R.drawable.societyexerciseoneimage);
@@ -260,7 +236,7 @@ public class Exercise {
         societyExerciseImages.put(exercise6ImageKey, R.drawable.societyexercisesiximage);
     }
 
-    private static final HashMap<String, Integer> societyExerciseStrings = new HashMap<>();
+    public static final HashMap<String, Integer> societyExerciseStrings = new HashMap<>();
 
     static {
         societyExerciseStrings.put(exercise1StringKey, R.string.society_e1_text);
@@ -278,10 +254,6 @@ public class Exercise {
         return societyKeys;
     }
 
-    public int[] getSocietyValues() {
-        return societyValues;
-    }
-
     public HashMap<String, Integer> getSocietyExerciseImages() {
         return societyExerciseImages;
     }
@@ -290,29 +262,11 @@ public class Exercise {
         return societyExerciseStrings;
     }
 
-    public String[] getSelfKeys() {
-        return selfKeys;
-    }
-
-    public int[] getSelfValues() {
-        return selfValues;
-    }
-
-    public HashMap<String, Integer> getSelfExerciseImages() {
-        return selfExerciseImages;
-    }
-
-    public HashMap<String, Integer> getSelfExerciseStrings() {
-        return selfExerciseStrings;
-    }
 
     public String[] getOthersKeys() {
         return othersKeys;
     }
 
-    public int[] getOthersValues() {
-        return othersValues;
-    }
 
     public HashMap<String, Integer> getOtherExerciseStrings() {
         return otherExerciseStrings;
@@ -326,9 +280,6 @@ public class Exercise {
         return natureKeys;
     }
 
-    public int[] getNatureValues() {
-        return natureValues;
-    }
 
     public HashMap<String, Integer> getNatureExerciseImages() {
         return natureExerciseImages;
