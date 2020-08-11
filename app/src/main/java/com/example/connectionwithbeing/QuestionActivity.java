@@ -239,7 +239,7 @@ public class QuestionActivity extends AppCompatActivity {
                         mSharedPreferencesEditor2.putInt(Exercise.selfProgress, Exercise.selfCompletedInt);
 
                         Exercise.selfE6Completed = 1;
-                        mSharedPreferencesEditor2.putInt(Exercise.selfE1, Exercise.selfE6Completed);
+                        mSharedPreferencesEditor2.putInt(Exercise.selfE6, Exercise.selfE6Completed);
                         mSharedPreferencesEditor2.commit();
 
                         return 1;
@@ -504,8 +504,8 @@ public class QuestionActivity extends AppCompatActivity {
                         Exercise.societyCompletedInt++;
                         mSharedPreferencesEditor2.putInt(Exercise.societyProgress, Exercise.societyCompletedInt);
 
-                        Exercise.societyE3Completed = 1;
-                        mSharedPreferencesEditor2.putInt(Exercise.societyE3, Exercise.societyE3Completed);
+                        Exercise.societyE1Completed = 1;
+                        mSharedPreferencesEditor2.putInt(Exercise.societyE1, Exercise.societyE1Completed);
                         mSharedPreferencesEditor2.commit();
 
                         return 1;
