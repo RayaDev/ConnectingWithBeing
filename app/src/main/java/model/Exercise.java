@@ -32,11 +32,6 @@ public class Exercise {
     public static final int natureMenu = 3;
     public static final int societyMenu = 4;
 
-    //Values for setting completed number on main menu.
-    public static int natureCompletedInt;
-    public static int othersCompletedInt;
-    public static int selfCompletedInt;
-    public static int societyCompletedInt;
 
     //Default constructor
     public Exercise() {}
