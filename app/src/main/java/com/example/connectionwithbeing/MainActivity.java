@@ -179,10 +179,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
         }
 
-//        if(item.getItemId() == android.R.id.home) {
-//            finish();
-//        }
-
         return super.onOptionsItemSelected(item);
     }
 

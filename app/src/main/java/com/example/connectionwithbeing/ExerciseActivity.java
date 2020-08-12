@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -180,12 +181,7 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
-//        mToDoButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
     }
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override
@@ -195,7 +191,22 @@ public class ExerciseActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Back button clicked", Toast.LENGTH_SHORT).show();
                 super.onBackPressed(); //This replicates the hard back button on the phone. Could just replace this with an Intent
                 break;
+
+            case R.id.infoItem:
+                Toast.makeText(getApplicationContext(), "Exercise Category: \n" + "Exercise Number: ", Toast.LENGTH_LONG).show();
         }
+        return true;
+    }
+
+    //  Creates the right hand menu.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.exercise_menu, menu);
+//        android.app.ActionBar actionBar = getActionBar();
+//        actionBar.setIcon(R.drawable.guistar);
+
+
+
         return true;
     }
 
