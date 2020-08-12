@@ -17,6 +17,11 @@ import java.util.HashMap;
 
 public class Exercise {
 
+    public static final String exerciseImageViewKey = "exercise_image";
+    public static final String exerciseTextViewKey = "exercise_text";
+    public static final String exerciseNumberKey = "exercise_number";
+    public static final String exerciseCategoryKey = "exercise_category";
+
     //Keys for referencing completed number on main menu.
     public static final String othersProgress = "others_progress";
     public static final String natureProgress = "nature_progress";

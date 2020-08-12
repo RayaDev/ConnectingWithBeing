@@ -388,7 +388,7 @@
                     />
 
                 <ImageView
-                    android:id="@+id/homeToDoButton"
+                    android:id="@+id/homeShuffleButton"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/shuffleiconclearimage"

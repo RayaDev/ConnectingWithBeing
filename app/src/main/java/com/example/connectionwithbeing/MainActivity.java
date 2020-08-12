@@ -26,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import model.Exercise;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private LinearLayout mHomeButtonBar;
-    private ImageView mHomeButton, mToDoButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
+    private ImageView mHomeButton, mShuffleButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
     private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
     //Shared Preferences for the number of exercises completed, and menu creation
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
-        mToDoButton = findViewById(R.id.homeToDoButton);
+        mShuffleButton = findViewById(R.id.homeShuffleButton);
 
         mSelfImageView = findViewById(R.id.selfImageView);
         mOthersImageView = findViewById(R.id.othersImageView);
@@ -227,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //Various main activity methods for Shared preferences
 
 
-    public void playProgressAnimation() {
+    private void playProgressAnimation() {
         Intent playAnimation = getIntent();
         int i = playAnimation.getIntExtra("play_animation",0);
         int j = playAnimation.getIntExtra("exercise_category",0);
@@ -261,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    public void setProgressStars() {
+    private void setProgressStars() {
 
         //Need this for all categories.
 
@@ -299,6 +300,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void getRandomExercise() {
+        int[] categoryArray = {Exercise.selfMenu, Exercise.othersMenu, Exercise.natureMenu, Exercise.societyMenu};
+        Random r = new Random();
+        int randomExerciseCategory = r.nextInt(4);
+        Log.i("RInt", randomExerciseCategory+"");
+
+        if(categoryArray[randomExerciseCategory] == Exercise.selfMenu) {
+            Intent startExercise1 = new Intent(MainActivity.this, ExerciseActivity.class);
+            startExercise1.putExtra(Exercise.exerciseImageViewKey, Exercise.selfExerciseImages.get(Exercise.exercise1ImageKey)); //This intent as a hashmap of exercise images as its value.
+            startExercise1.putExtra(Exercise.exerciseTextViewKey, Exercise.selfExerciseStrings.get(Exercise.exercise1StringKey));
+            startExercise1.putExtra(Exercise.exerciseNumberKey, 1); //Eventually passed to the QuestionActivity
+            startExercise1.putExtra(Exercise.exerciseCategoryKey, Exercise.selfMenu);
+            startActivity(startExercise1);
+        }
+
+        else {
+
+            Intent startRandomMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
+
+            startRandomMenu.putExtra(Exercise.menuCategory, categoryArray[randomExerciseCategory]);
+            //Pass the appropriate extras through the intent to build the menu layout.
+            startActivity(startRandomMenu);
+        }
+
+
+    }
+
     private void bottomNavButtonsListeners() {
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -311,10 +339,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
+        mShuffleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Shuffle Button Clicked", Toast.LENGTH_SHORT).show();
+                getRandomExercise();
             }
         });
     }
