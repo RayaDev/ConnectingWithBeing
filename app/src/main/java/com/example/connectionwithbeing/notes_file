@@ -7,20 +7,19 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
+On main menu bottom action bar, home, button, and then Generate Random Exercise.
 
 
 General TODO:
 
-Redo the design for transition button for exercise activity
 
 Design Stuff
+    >Redo the design for transition button for exercise activity
     > Update color theme for each category.
     > Proofread all Strings.
         > Length of questions, typos, punctuation, ect.
 
-Exercise EditText for recording answers to questions
-
-On main menu bottom action bar, home, button, and then Generate Random Exercise.
+Exercise EditText for recording answers to questions?
 
 Create a quote activity that shows a quote, with a little spinning loader icon
     > Before the exercise menu? Probably. That way the user gets a new quote every time they load the menu.
@@ -47,7 +46,7 @@ Ads
 
 Publish
 
-Bookmarks and Todolists classes/layouts.. Probably not..
+Bookmarks and Todolists classes/layouts.. Probably not..?
     >Generate random excise Yes..
     > Just home button for exercise and questions on bottom actionbar
         > A shuffle exercise button on the home screen
