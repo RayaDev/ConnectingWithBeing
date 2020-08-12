@@ -138,15 +138,7 @@
             android:layout_weight="1"
             />
 
-        <ImageView
-            android:id="@+id/ExerciseActivityToDoButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
 
-            android:src="@drawable/guitodolist"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            />
     </LinearLayout>
 
 

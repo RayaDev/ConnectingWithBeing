@@ -63,7 +63,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         mHomeButtonBar = findViewById(R.id.ExerciseBottomActionBar_Menu);
         mHomeButton = findViewById(R.id.ExerciseHomeButton_Menu);
-        mToDoButton = findViewById(R.id.ExerciseToDoButton_Menu);
+//        mToDoButton = findViewById(R.id.ExerciseToDoButton_Menu);
 
         mScrollView = findViewById(R.id.ExerciseScrollView);
 
@@ -322,11 +322,11 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ExerciseMenuActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mToDoButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(ExerciseMenuActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }

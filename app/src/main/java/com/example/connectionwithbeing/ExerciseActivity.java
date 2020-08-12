@@ -73,7 +73,7 @@ public class ExerciseActivity extends AppCompatActivity {
         //Reflections Button
         mStartQuestions = findViewById(R.id.ExerciseStartQuestions_LinearLayout);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
-        mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
+//        mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
 
         setExerciseTitle(exerciseType, exerciseNumber);
         setOnClickListeners(exerciseText, exerciseNumber, exerciseType);
@@ -180,12 +180,12 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mToDoButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(ExerciseActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override

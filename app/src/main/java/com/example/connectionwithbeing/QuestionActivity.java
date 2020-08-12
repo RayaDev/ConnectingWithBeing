@@ -52,7 +52,7 @@ public class QuestionActivity extends AppCompatActivity {
         final int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         mHomeButton = findViewById(R.id.questionHomeButton);
-        mToDoButton = findViewById(R.id.questionToDoButton);
+//        mToDoButton = findViewById(R.id.questionToDoButton);
         mCompletedQuestions = findViewById(R.id.questionCompleteReflections_LinearLayout);
 
         mQuestions1 = findViewById(R.id.questionActivity_Q1);
@@ -944,12 +944,12 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        mToDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        mToDoButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
