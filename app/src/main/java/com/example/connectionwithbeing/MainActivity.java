@@ -304,25 +304,78 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int[] categoryArray = {Exercise.selfMenu, Exercise.othersMenu, Exercise.natureMenu, Exercise.societyMenu};
         Random r = new Random();
         int randomExerciseCategory = r.nextInt(4);
+        int randomExerciseNumber = r.nextInt(5)+1;
         Log.i("RInt", randomExerciseCategory+"");
+        Log.i("RInt", randomExerciseNumber+"");
 
-        if(categoryArray[randomExerciseCategory] == Exercise.selfMenu) {
-            Intent startExercise1 = new Intent(MainActivity.this, ExerciseActivity.class);
-            startExercise1.putExtra(Exercise.exerciseImageViewKey, Exercise.selfExerciseImages.get(Exercise.exercise1ImageKey)); //This intent as a hashmap of exercise images as its value.
-            startExercise1.putExtra(Exercise.exerciseTextViewKey, Exercise.selfExerciseStrings.get(Exercise.exercise1StringKey));
-            startExercise1.putExtra(Exercise.exerciseNumberKey, 1); //Eventually passed to the QuestionActivity
-            startExercise1.putExtra(Exercise.exerciseCategoryKey, Exercise.selfMenu);
-            startActivity(startExercise1);
+        HashMap<String, Integer> exerciseImages = new HashMap<>();
+        HashMap<String,Integer> exerciseStrings = new HashMap<>();
+        String exerciseImageKey = "";
+        String exerciseStringKey = "";
+
+        //Sets up the images and strings for the random exercise.
+        switch(categoryArray[randomExerciseCategory]) {
+
+            case Exercise.selfMenu:
+                exerciseImages = Exercise.selfExerciseImages;
+                exerciseStrings = Exercise.selfExerciseStrings;
+                break;
+
+            case Exercise.othersMenu:
+                exerciseImages = Exercise.otherExerciseImages;
+                exerciseStrings = Exercise.otherExerciseStrings;
+                break;
+
+            case Exercise.natureMenu:
+                exerciseImages = Exercise.natureExerciseImages;
+                exerciseStrings = Exercise.natureExerciseStrings;
+                break;
+
+            case Exercise.societyMenu:
+                exerciseImages = Exercise.societyExerciseImages;
+                exerciseStrings = Exercise.societyExerciseStrings;
+                break;
         }
 
-        else {
+        //Set the keys needed to access the data for the random exercise.
+        switch (randomExerciseNumber) {
+            case 1:
+                exerciseImageKey = Exercise.exercise1ImageKey;
+                exerciseStringKey = Exercise.exercise1StringKey;
+                break;
 
-            Intent startRandomMenu = new Intent(MainActivity.this, ExerciseMenuActivity.class);
+            case 2:
+                exerciseImageKey = Exercise.exercise2ImageKey;
+                exerciseStringKey = Exercise.exercise2StringKey;
+                break;
 
-            startRandomMenu.putExtra(Exercise.menuCategory, categoryArray[randomExerciseCategory]);
-            //Pass the appropriate extras through the intent to build the menu layout.
-            startActivity(startRandomMenu);
+            case 3:
+                exerciseImageKey = Exercise.exercise3ImageKey;
+                exerciseStringKey = Exercise.exercise3StringKey;
+                break;
+
+            case 4:
+                exerciseImageKey = Exercise.exercise4ImageKey;
+                exerciseStringKey = Exercise.exercise4StringKey;
+                break;
+
+            case 5:
+                exerciseImageKey = Exercise.exercise5ImageKey;
+                exerciseStringKey = Exercise.exercise5StringKey;
+                break;
+
+            case 6:
+                exerciseImageKey = Exercise.exercise6ImageKey;
+                exerciseStringKey = Exercise.exercise6StringKey;
+                break;
         }
+
+        Intent startRandomExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+        startRandomExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImages.get(exerciseImageKey)); //This intent as a hashmap of exercise images as its value.
+        startRandomExercise.putExtra(Exercise.exerciseTextViewKey, exerciseStrings.get(exerciseStringKey));
+        startRandomExercise.putExtra(Exercise.exerciseNumberKey, randomExerciseNumber); //Eventually passed to the QuestionActivity
+        startRandomExercise.putExtra(Exercise.exerciseCategoryKey, categoryArray[randomExerciseCategory]);
+        startActivity(startRandomExercise);
 
 
     }
