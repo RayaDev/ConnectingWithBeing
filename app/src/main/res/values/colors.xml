@@ -11,13 +11,13 @@
     <color name= "homeScreenActionbarColor">#ffc400</color>
 
     <!-- All the colors for each exercise category-->
-    <color name="self_primary">#F44336</color>
-    <color name="self_primary_dark">#D32F2F</color>
-    <color name="self_primary_light">#FFCDD2</color>
-    <color name="self_accent">#FF4081</color>
+    <color name="self_primary">#FF9800</color>
+    <color name="self_primary_dark">#F57C00</color>
+    <color name="self_primary_light">#FFE0B2</color>
+    <color name="self_accent">#FF9800</color>
     <color name="self_primary_text">#212121</color>
     <color name="self_secondary_text">#757575</color>
-    <color name="self_icons">#FFFFFF</color>
+    <color name="self_icons">#212121</color>
     <color name="self_divider">#BDBDBD</color>
 
     <color name="others_primary">#2196F3</color>

@@ -145,9 +145,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
 
             setTitle(R.string.self_menu_title);
-            mScrollView.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary));
-            changeActionBarColor(R.color.design_default_color_primary_dark);
-            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_dark));
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.self_primary));
+            changeActionBarColor(R.color.self_primary_dark);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.self_primary_dark));
 
         }
 
@@ -160,9 +160,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
 
             setTitle(R.string.others_menu_title);
-            mScrollView.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_variant));
-            changeActionBarColor(R.color.design_default_color_secondary_variant);
-            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary_variant));
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.others_primary));
+            changeActionBarColor(R.color.others_primary_dark);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.others_primary_dark));
         }
 
         //Nature Menu
@@ -190,9 +190,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
 
             setTitle(R.string.society_menu_title);
-            mScrollView.setBackgroundColor(getResources().getColor(R.color.myBlack));
-            changeActionBarColor(R.color.design_default_color_error);
-            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.design_default_color_error));
+            mScrollView.setBackgroundColor(getResources().getColor(R.color.society_primary));
+            changeActionBarColor(R.color.society_primary_dark);
+            mHomeButtonBar.setBackgroundColor(getResources().getColor(R.color.society_primary_dark));
         }
 
         //Society Menu

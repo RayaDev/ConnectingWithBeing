@@ -32,6 +32,8 @@ import model.Exercise;
 
 public class ExerciseActivity extends AppCompatActivity {
 
+    private LinearLayout mBottomActionBar;
+    private LinearLayout mParentLayout;
     private LinearLayout mStartQuestions;
     private ImageView mHomeButton, mExerciseImage, mToDoButton;
     private TypedTextView mTypedTextView;
@@ -63,6 +65,8 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
         //Declare Views, and Set resources from extras.
+        mBottomActionBar = findViewById(R.id.ExerciseActivityBottomActionBar);
+        mParentLayout = findViewById(R.id.parent_layout);
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
 
@@ -79,6 +83,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
         setExerciseTitle(exerciseType, exerciseNumber);
+        setExerciseColors(exerciseType);
         setOnClickListeners(exerciseText, exerciseNumber, exerciseType);
         bottomNavButtonsListeners();
 
@@ -135,6 +140,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             playBlinkAnimation();
+
 //                            mQuoteTextView.setVisibility(View.VISIBLE);  //Used for causing the quote to appear on the exercise activity. Not really needed
                         }
                     }, 1750);
@@ -143,6 +149,51 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setExerciseColors(int exerciseType) {
+        switch(exerciseType) {
+            case 1:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.self_primary_text));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.self_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.self_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.self_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));
+
+                break;
+            case 2:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.others_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.others_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.others_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.others_primary_dark)));
+
+                break;
+            case 3:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.nature_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.nature_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+
+                break;
+            case 4:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.society_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.society_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.society_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
+
+
+                break;
+        }
     }
 
     private void setExerciseTitle(int exerciseType, int exerciseNumber) {
