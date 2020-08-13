@@ -9,8 +9,6 @@
 
     android:background="@color/nature_primary">
 
-
-
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,8 +17,8 @@
 
     <ImageView
         android:id="@+id/ExerciseActivity_ImageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
 
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
@@ -32,11 +30,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
          />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ExerciseText_ConstraintLayout"
@@ -67,7 +63,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-
         </com.prush.typedtextview.TypedTextView>
 
     <!-- Place holder TextView -->
@@ -91,11 +86,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <LinearLayout
         android:id="@+id/ExerciseStartQuestions_LinearLayout"
@@ -106,6 +99,7 @@
         android:gravity="center"
 
         android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
 
         >
 
@@ -114,7 +108,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Click to Continue"/>
-
 
     </LinearLayout>
 
@@ -137,9 +130,6 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             />
-
-
     </LinearLayout>
-
 
 </LinearLayout>
