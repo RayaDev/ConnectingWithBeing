@@ -32,11 +32,17 @@ import model.Exercise;
 
 public class ExerciseActivity extends AppCompatActivity {
 
+    private LinearLayout mBottomActionBar;
+    private LinearLayout mParentLayout;
     private LinearLayout mStartQuestions;
     private ImageView mHomeButton, mExerciseImage, mToDoButton;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
     private TextView mQuoteTextView;
+
+    //For info button on top action bar.
+    private int categoryID;
+    private int exerciseNumberRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,17 +59,17 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
         int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
-//        int exerciseTitle = (int) extras.get(ExerciseMenuActivity.exerciseTitleKey);
+
+        exerciseNumberRef = exerciseNumber;
+        categoryID = exerciseType;
+
 
         //Declare Views, and Set resources from extras.
-
-//        setTitle(exerciseTitle);
-//        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
-//        mQuoteTextView.setText(R.string.society_e6_quote);
-
+        mBottomActionBar = findViewById(R.id.ExerciseActivityBottomActionBar);
+        mParentLayout = findViewById(R.id.parent_layout);
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
-//        mExerciseImage.setImageResource(R.drawable.guistar); //Just a test image to see if all the strings are working
+
 
         mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
@@ -74,9 +80,10 @@ public class ExerciseActivity extends AppCompatActivity {
         //Reflections Button
         mStartQuestions = findViewById(R.id.ExerciseStartQuestions_LinearLayout);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
-//        mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
+
 
         setExerciseTitle(exerciseType, exerciseNumber);
+        setExerciseColors(exerciseType);
         setOnClickListeners(exerciseText, exerciseNumber, exerciseType);
         bottomNavButtonsListeners();
 
@@ -133,6 +140,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             playBlinkAnimation();
+
 //                            mQuoteTextView.setVisibility(View.VISIBLE);  //Used for causing the quote to appear on the exercise activity. Not really needed
                         }
                     }, 1750);
@@ -141,6 +149,51 @@ public class ExerciseActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setExerciseColors(int exerciseType) {
+        switch(exerciseType) {
+            case 1:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.self_primary_text));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.self_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.self_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.self_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));
+
+                break;
+            case 2:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.others_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.others_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.others_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.others_primary_dark)));
+
+                break;
+            case 3:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.nature_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.nature_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+
+                break;
+            case 4:
+
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
+                mTypedTextView.setTextColor(getResources().getColor(R.color.myWhite));
+                mPlaceHolderTextView.setBackgroundColor(getResources().getColor(R.color.society_primary));
+                mPlaceHolderTextView.setTextColor(getResources().getColor(R.color.society_primary));
+                mBottomActionBar.setBackgroundColor(getResources().getColor(R.color.society_primary_dark));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
+
+
+                break;
+        }
     }
 
     private void setExerciseTitle(int exerciseType, int exerciseNumber) {
@@ -183,6 +236,32 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
     }
+
+    private String createCategoryString(int exerciseType) {
+
+        String exerciseCategory = "";
+
+        switch (exerciseType) {
+            case 1:
+                exerciseCategory = "Self";
+                break;
+
+            case 2:
+                exerciseCategory = "Others";
+                break;
+
+            case 3:
+                exerciseCategory = "Nature";
+                break;
+            case 4:
+                exerciseCategory = "Society";
+                break;
+
+        }
+
+        return  exerciseCategory;
+
+    }
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -193,7 +272,9 @@ public class ExerciseActivity extends AppCompatActivity {
                 break;
 
             case R.id.infoItem:
-                Toast.makeText(getApplicationContext(), "Exercise Category: \n" + "Exercise Number: ", Toast.LENGTH_LONG).show();
+                String exerciseCategory = createCategoryString(categoryID);
+                Toast.makeText(getApplicationContext(), "Exercise Category: " + exerciseCategory + "\n"
+                        + "Exercise Number: " + exerciseNumberRef, Toast.LENGTH_LONG).show();
         }
         return true;
     }

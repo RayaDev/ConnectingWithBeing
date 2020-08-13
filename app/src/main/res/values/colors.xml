@@ -10,7 +10,25 @@
     <color name= "homeScreenBackgroundColor">#FFE691</color>
     <color name= "homeScreenActionbarColor">#ffc400</color>
 
-    <!-- All the colors for each exercise actionbar-->
+    <!-- All the colors for each exercise category-->
+    <color name="self_primary">#FF9800</color>
+    <color name="self_primary_dark">#F57C00</color>
+    <color name="self_primary_light">#FFE0B2</color>
+    <color name="self_accent">#FF9800</color>
+    <color name="self_primary_text">#212121</color>
+    <color name="self_secondary_text">#757575</color>
+    <color name="self_icons">#212121</color>
+    <color name="self_divider">#BDBDBD</color>
+
+    <color name="others_primary">#2196F3</color>
+    <color name="others_primary_dark">#1976D2</color>
+    <color name="others_primary_light">#BBDEFB</color>
+    <color name="others_accent">#536DFE</color>
+    <color name="others_primary_text">#212121</color>
+    <color name="others_secondary_text">#757575</color>
+    <color name="others_icons">#FFFFFF</color>
+    <color name="others_divider">#BDBDBD</color>
+
     <color name="nature_primary">#4CAF50</color>
     <color name="nature_primary_dark">#388E3C</color>
     <color name="nature_primary_light">#C8E6C9</color>
@@ -19,6 +37,15 @@
     <color name="nature_secondary_text">#757575</color>
     <color name="nature_icons">#FFFFFF</color>
     <color name="nature_divider">#BDBDBD</color>
+
+    <color name="society_primary">#673AB7</color>
+    <color name="society_primary_dark">#512DA8</color>
+    <color name="society_primary_light">#D1C4E9</color>
+    <color name="society_accent">#E040FB</color>
+    <color name="society_primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="society_icons">#FFFFFF</color>
+    <color name="society_divider">#BDBDBD</color>
 
 
 </resources>

@@ -6,6 +6,31 @@
         <item name="colorPrimary">@color/homeScreenActionbarColor</item>
         <item name="colorPrimaryDark">@color/topOfPhoneStatusBarColor</item>
         <item name="colorAccent">@color/myBlack</item>
+
+    </style>
+
+    <style name="HomeActionBarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/homeScreenActionbarColor</item>
+    </style>
+
+    <style name="SelfTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/self_primary</item>
+        <item name="colorPrimaryDark">@color/self_primary_dark</item>
+        <item name="colorAccent">@color/self_accent</item>
+        <item name="android:textColor">@color/self_primary_text</item>
+        <item name="android:textColorSecondary">@color/self_secondary_text</item>
+        <item name="android:icon">@color/self_icons</item>
+        <item name="android:divider">@color/self_divider</item>
+    </style>
+
+    <style name="NatureTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/nature_primary</item>
+        <item name="colorPrimaryDark">@color/nature_primary_dark</item>
+        <item name="colorAccent">@color/nature_accent</item>
+        <item name="android:textColor">@color/nature_primary_text</item>
+        <item name="android:textColorSecondary">@color/nature_secondary_text</item>
+        <item name="android:icon">@color/nature_icons</item>
+        <item name="android:divider">@color/nature_divider</item>
     </style>
 
 </resources>

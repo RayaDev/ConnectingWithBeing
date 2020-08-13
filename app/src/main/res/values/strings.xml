@@ -65,8 +65,7 @@
 
     <string name="others_e1_title">Difference of Opinions</string>
     <string name="others_e1_quote"></string>
-    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen without giving your opinion. Maybe ask some probing questions like: What do you mean? Can you explain that idea further?
-Try to understand how they came to form their opinion, and how their circumstances and environment influenced their perspective."</string>
+    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen. Try to understand how they came to their conclusions. </string>
     <string name="others_e1_q1_text">What was your initial internal reaction to their points of view? How did you feel? Was it hard not to immediately try to counter their opinions?</string>
     <string name="others_e1_q2_text">Did you gain any new perspectives on the matter? Could you feel empathy with someone you disagree with?</string>
     <string name="others_e1_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
