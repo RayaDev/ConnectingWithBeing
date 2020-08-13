@@ -38,6 +38,10 @@ public class ExerciseActivity extends AppCompatActivity {
     private TextView mPlaceHolderTextView;
     private TextView mQuoteTextView;
 
+    //For info button on top action bar.
+    private int categoryID;
+    private int exerciseNumberRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,17 +57,15 @@ public class ExerciseActivity extends AppCompatActivity {
         int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
         int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
         int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
-//        int exerciseTitle = (int) extras.get(ExerciseMenuActivity.exerciseTitleKey);
+
+        exerciseNumberRef = exerciseNumber;
+        categoryID = exerciseType;
+
 
         //Declare Views, and Set resources from extras.
-
-//        setTitle(exerciseTitle);
-//        mQuoteTextView = findViewById(R.id.ExerciseActivityQuote_TextView);
-//        mQuoteTextView.setText(R.string.society_e6_quote);
-
         mExerciseImage = findViewById(R.id.ExerciseActivity_ImageView);
         mExerciseImage.setImageResource(exerciseImage);
-//        mExerciseImage.setImageResource(R.drawable.guistar); //Just a test image to see if all the strings are working
+
 
         mTypedTextView = findViewById(R.id.ExerciseActivity_TypedTextView);
         mTypedTextView.setTypedText(exerciseText);
@@ -74,7 +76,7 @@ public class ExerciseActivity extends AppCompatActivity {
         //Reflections Button
         mStartQuestions = findViewById(R.id.ExerciseStartQuestions_LinearLayout);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
-//        mToDoButton = findViewById(R.id.ExerciseActivityToDoButton);
+
 
         setExerciseTitle(exerciseType, exerciseNumber);
         setOnClickListeners(exerciseText, exerciseNumber, exerciseType);
@@ -183,6 +185,32 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
     }
+
+    private String createCategoryString(int exerciseType) {
+
+        String exerciseCategory = "";
+
+        switch (exerciseType) {
+            case 1:
+                exerciseCategory = "Self";
+                break;
+
+            case 2:
+                exerciseCategory = "Others";
+                break;
+
+            case 3:
+                exerciseCategory = "Nature";
+                break;
+            case 4:
+                exerciseCategory = "Society";
+                break;
+
+        }
+
+        return  exerciseCategory;
+
+    }
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -193,7 +221,9 @@ public class ExerciseActivity extends AppCompatActivity {
                 break;
 
             case R.id.infoItem:
-                Toast.makeText(getApplicationContext(), "Exercise Category: \n" + "Exercise Number: ", Toast.LENGTH_LONG).show();
+                String exerciseCategory = createCategoryString(categoryID);
+                Toast.makeText(getApplicationContext(), "Exercise Category: " + exerciseCategory + "\n"
+                        + "Exercise Number: " + exerciseNumberRef, Toast.LENGTH_LONG).show();
         }
         return true;
     }
