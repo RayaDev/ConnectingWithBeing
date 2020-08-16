@@ -54,7 +54,7 @@ public class QuestionActivity extends AppCompatActivity {
         mHomeButton = findViewById(R.id.QuestionActivity_HomeButton);
 
         mCompletedQuestions = findViewById(R.id.QuestionActivity_CompleteReflections_LinearLayout);
-        mParentLayout =(LinearLayout) findViewById(R.id.QuoteActivity_ParentLayout);
+//        mParentLayout =(LinearLayout)findViewById(R.id.QuoteActivity_ParentLayout);
         mBottomActivityBar = findViewById(R.id.QuestionActivity_BottomActionBar);
 
         mQuestions1 = findViewById(R.id.QuestionActivity_Q1);
@@ -133,25 +133,25 @@ public class QuestionActivity extends AppCompatActivity {
     private void setQuestionActivityColors(int exerciseType){
         switch (exerciseType) {
             case 1:
-                mParentLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
+//                mParentLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));
                 mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.self_primary_dark));
                 break;
 
             case 2:
-                mParentLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
+//                mParentLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.others_primary_dark)));
                 mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.others_primary_dark));
                 break;
 
             case 3:
-                mParentLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+//                mParentLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
                 mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.nature_primary_dark));
                 break;
 
             case 4:
-                mParentLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
+//                mParentLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
                 mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.society_primary_dark));
                 break;
