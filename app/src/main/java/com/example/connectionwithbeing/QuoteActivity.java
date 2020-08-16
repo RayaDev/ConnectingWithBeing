@@ -3,20 +3,16 @@ package com.example.connectionwithbeing;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import model.Exercise;
-
 public class QuoteActivity extends AppCompatActivity {
     private ProgressBar mProgressBar;
     private int i = 0;
     private TextView mTextView;
-    private Handler hdlr = new Handler();
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +26,7 @@ public class QuoteActivity extends AppCompatActivity {
                 while (i < 100) {
                     i += 1;
                     // Update the progress bar and display the current value in text view
-                    hdlr.post(new Runnable() {
+                    mHandler.post(new Runnable() {
                         public void run() {
                             mProgressBar.setProgress(i);
                             mTextView.setText(i + "/" + mProgressBar.getMax());

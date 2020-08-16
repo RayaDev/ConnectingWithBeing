@@ -10,7 +10,11 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuoteActivity"></activity>
+        <activity android:name=".QuoteActivity"
+            android:label="Quote Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            ></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
