@@ -34,7 +34,7 @@ import model.Question;
 public class QuestionActivity extends AppCompatActivity {
 
     private ImageView mToDoButton, mHomeButton;
-    private LinearLayout mCompletedQuestions;
+    private LinearLayout mCompletedQuestions, mParentLayout, mBottomActivityBar;
     private TextView mQuestions1, mQuestions2, mQuestions3;
 
     @Override
@@ -51,13 +51,15 @@ public class QuestionActivity extends AppCompatActivity {
         final int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
         final int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
-        mHomeButton = findViewById(R.id.questionHomeButton);
-//        mToDoButton = findViewById(R.id.questionToDoButton);
-        mCompletedQuestions = findViewById(R.id.questionCompleteReflections_LinearLayout);
+        mHomeButton = findViewById(R.id.QuestionActivity_HomeButton);
 
-        mQuestions1 = findViewById(R.id.questionActivity_Q1);
-        mQuestions2 = findViewById(R.id.questionActivity_Q2);
-        mQuestions3 = findViewById(R.id.questionActivity_Q3);
+        mCompletedQuestions = findViewById(R.id.QuestionActivity_CompleteReflections_LinearLayout);
+        mParentLayout =(LinearLayout) findViewById(R.id.QuoteActivity_ParentLayout);
+        mBottomActivityBar = findViewById(R.id.QuestionActivity_BottomActionBar);
+
+        mQuestions1 = findViewById(R.id.QuestionActivity_Q1);
+        mQuestions2 = findViewById(R.id.QuestionActivity_Q2);
+        mQuestions3 = findViewById(R.id.QuestionActivity_Q3);
 
 
         setQuestionActivityColors(exerciseType);
@@ -131,6 +133,28 @@ public class QuestionActivity extends AppCompatActivity {
     private void setQuestionActivityColors(int exerciseType){
         switch (exerciseType) {
             case 1:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));
+                mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.self_primary_dark));
+                break;
+
+            case 2:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.others_primary_dark)));
+                mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.others_primary_dark));
+                break;
+
+            case 3:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
+                mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.nature_primary_dark));
+                break;
+
+            case 4:
+                mParentLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
+                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
+                mBottomActivityBar.setBackgroundColor(getResources().getColor(R.color.society_primary_dark));
+                break;
 
         }
     }
@@ -950,12 +974,6 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-//        mToDoButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(QuestionActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 
     //When back button on actionbar is pressed, returns to the previous activity which has not been destroyed.

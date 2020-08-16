@@ -121,8 +121,6 @@ public class QuoteActivity extends AppCompatActivity {
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
                 break;
 
-
-
         }
     }
 

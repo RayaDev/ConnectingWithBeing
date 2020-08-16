@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/QuestionActivity_ParentLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -11,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-
         android:orientation="vertical"
         android:layout_margin="8dp"
         android:layout_weight="1"
@@ -20,7 +20,7 @@
         >
 
         <TextView
-            android:id="@+id/questionActivity_Q1"
+            android:id="@+id/QuestionActivity_Q1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -32,7 +32,7 @@
             />
 
         <TextView
-            android:id="@+id/questionActivity_Q2"
+            android:id="@+id/QuestionActivity_Q2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             />
 
         <TextView
-            android:id="@+id/questionActivity_Q3"
+            android:id="@+id/QuestionActivity_Q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -55,7 +55,7 @@
             android:fontFamily="@font/nature_questions_font"/>
 
         <LinearLayout
-            android:id="@+id/questionCompleteReflections_LinearLayout"
+            android:id="@+id/QuestionActivity_CompleteReflections_LinearLayout"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:orientation="vertical"
@@ -65,7 +65,7 @@
             android:gravity="center"
             android:layout_marginBottom="12dp"
 
-            app:layout_constraintBottom_toTopOf="@id/questionBottomActionBar"
+            app:layout_constraintBottom_toTopOf="@id/QuestionActivity_BottomActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
@@ -80,22 +80,20 @@
 
     </LinearLayout>
 
-    <!-- Nature bottom Action Bar -->
+    <!-- Question Activity bottom Action Bar -->
     <LinearLayout
-        android:id="@+id/questionBottomActionBar"
+        android:id="@+id/QuestionActivity_BottomActionBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
 
         android:orientation="horizontal"
         android:background="@color/nature_primary_dark"
         android:layout_gravity="bottom"
-
-
         >
 
 
         <ImageView
-            android:id="@+id/questionHomeButton"
+            android:id="@+id/QuestionActivity_HomeButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
 
