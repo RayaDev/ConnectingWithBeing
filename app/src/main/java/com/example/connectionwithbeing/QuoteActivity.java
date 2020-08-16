@@ -64,19 +64,14 @@ public class QuoteActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                progressThread.interrupt();
+
                 stopThread();
                 startExercise();
                 finish();
 
             }
         });
-//        try {
-//            progressThread.join();
-//            startExercise();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
     }
 
     public void stopThread()
