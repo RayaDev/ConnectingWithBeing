@@ -60,6 +60,7 @@ public class QuestionActivity extends AppCompatActivity {
         mQuestions3 = findViewById(R.id.questionActivity_Q3);
 
 
+        setQuestionActivityColors(exerciseType);
         setQuestions(exerciseNumber, exerciseType);
         setOnClickListeners(exerciseNumber, exerciseType);
         bottomNavButtonsListeners();
@@ -127,10 +128,15 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
+    private void setQuestionActivityColors(int exerciseType){
+        switch (exerciseType) {
+            case 1:
 
+        }
+    }
     //Saves and sets the exercise progress star color to yellow on the exercise menu. Returns an int to trigger the play animation.
     //Would prefer this to not have duplicated code for each category.
-    public int setSharedPreferences(int exerciseNumber, int exerciseType) {
+    private int setSharedPreferences(int exerciseNumber, int exerciseType) {
 
         //Self
         SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);

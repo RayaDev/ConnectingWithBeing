@@ -63,7 +63,6 @@ public class ExerciseActivity extends AppCompatActivity {
         exerciseNumberRef = exerciseNumber;
         categoryID = exerciseType;
 
-
         //Declare Views, and Set resources from extras.
         mBottomActionBar = findViewById(R.id.ExerciseActivityBottomActionBar);
         mParentLayout = findViewById(R.id.parent_layout);
