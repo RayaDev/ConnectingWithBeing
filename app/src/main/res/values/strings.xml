@@ -3,41 +3,41 @@
 
 
     <!-- Main Activity Strings-->
-    <string name = "open">open toggle</string>
-    <string name = "close">close toggle</string>
+    <string name="open">open toggle</string>
+    <string name="close">close toggle</string>
     <string name="home_button_toast">You are already home!</string>
     <string name="exercise_completed_default">"X 0/6"</string>
-    <string name = "question_default_string">Question goes here</string>
+    <string name="question_default_string">Question goes here</string>
 
     <string name="exercise1_center_text_string">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>
     <string name="exercise2_center_text_string">Pick an artistic medium you are not comfortable with and just create. Try not to judge or compare yourself to others!</string>
     <string name="exercise1_questions_button_string">Reflection</string>
 
     <!-- Self Exercise Strings-->
-    <string name = "self_menu_title">With Self…</string>
+    <string name="self_menu_title">With Self…</string>
 
-    <string name ="self_e1_title">Create For the Experience</string>
+    <string name="self_e1_title">Create For the Experience</string>
     <string name="self_e1_quote"></string>
     <string name="self_e1_text">Pick an artistic medium you are not comfortable with and just try … Create!</string>
     <string name="self_e1_q1_text">Were you scared at all to start creating? Did you judge yourself? Why or why not?</string>
     <string name="self_e1_q2_text">Did you have a preconception of what is good art? What does creativity mean to you?</string>
     <string name="self_e1_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="self_e2_title">Dance, Dance, Dance!</string>
+    <string name="self_e2_title">Dance, Dance, Dance!</string>
     <string name="self_e2_quote"></string>
     <string name="self_e2_text">Be alone. Listen to your favorite songs and dance to them anyway you want!</string>
     <string name="self_e2_q1_text">How comfortable were you about moving your body to the music? What parts of your body did you move the most?</string>
     <string name="self_e2_q2_text">Did you think at all while you were dancing? Did you lose track of time? How long did you dance for?</string>
     <string name="self_e2_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="self_e3_title">Dreams Are What We’re Made Of</string>
+    <string name="self_e3_title">Dreams Are What We’re Made Of</string>
     <string name="self_e3_quote"></string>
     <string name="self_e3_text">What were your dreams for the future (about what or who you wanted to be) when you were younger? And what are your dreams right now?</string>
     <string name="self_e3_q1_text">How similar or different were your dreams when you were young to ones you have today?</string>
     <string name="self_e3_q2_text">What influenced your dreams when you were younger? What influences your current dreams now?</string>
     <string name="self_e3_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="self_e4_title">Defining Yourself</string>
+    <string name="self_e4_title">Defining Yourself</string>
     <string name="self_e4_quote"></string>
     <string name="self_e4_text">Write down a list of single words that define you until you can’t easily think of anymore. Don’t overthink it, write whatever comes to your mind.</string>
     <string name="self_e4_q1_text">Could you categorize the words that describe you into: hobbies, values, roles, qualities …
@@ -45,14 +45,14 @@
     <string name="self_e4_q2_text">At what point could you no longer describe yourself? What final words did you land on?</string>
     <string name="self_e4_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="self_e5_title">Surf Your Vibe</string>
+    <string name="self_e5_title">Surf Your Vibe</string>
     <string name="self_e5_quote"></string>
     <string name="self_e5_text">What is your favorite hobby? Take some time today (or as soon as you can!) to participate in your favorite activity.</string>
     <string name="self_e5_q1_text">What do you like best about your hobby? Try to describe the different aspects of the activity that you enjoy.</string>
     <string name="self_e5_q2_text">Would you like to do it more? What stops you if that’s the case? Could you make the time somewhere?</string>
     <string name="self_e5_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="self_e6_title">Your Story</string>
+    <string name="self_e6_title">Your Story</string>
     <string name="self_e6_quote"></string>
     <string name="self_e6_text">Let’s pretend there is a book about your life. How would the cover look? What would the title of the book be? What about the names of the different chapters?</string>
     <string name="self_e6_q1_text">What genre is your story? Drama? Mystery? Romance? Adventure? Tragedy? Comedy?</string>
@@ -61,7 +61,7 @@
 
 
     <!--Others Exercise Strings-->
-    <string name = "others_menu_title">With Others...</string>
+    <string name="others_menu_title">With Others...</string>
 
     <string name="others_e1_title">Difference of Opinions</string>
     <string name="others_e1_quote"></string>
@@ -108,7 +108,7 @@
 
 
     <!--Nature Exercise Strings-->
-    <string name = "nature_menu_title">With Nature...</string>
+    <string name="nature_menu_title">With Nature...</string>
 
     <string name="nature_e1_title">Hug A Tree!</string>
     <string name="nature_e1_quote"></string>
@@ -161,9 +161,9 @@ While you’re there take a long breath, and thank that tree for the air you are
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
     <!-- Society Exercises Strings -->
-    <string name = "society_menu_title">With Society...</string>
+    <string name="society_menu_title">With Society...</string>
 
-    <string name ="society_e1_title">Disconnect and Unplug</string>
+    <string name="society_e1_title">Disconnect and Unplug</string>
     <string name="society_e1_quote"></string>
     <string name="society_e1_text">Try to spend just one day (safely!) without your phone. Bonus points if you are actually still in the city, and not in the woods somewhere.</string>
     <string name="society_e1_q1_text">What was your initial reaction? Did you feel stress?  Freedom?</string>
@@ -171,14 +171,14 @@ While you’re there take a long breath, and thank that tree for the air you are
 </string>
     <string name="society_e1_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e2_title">The Role of Money</string>
+    <string name="society_e2_title">The Role of Money</string>
     <string name="society_e2_quote"></string>
     <string name="society_e2_text">Think of your relationship with money. Focus on your feelings around it, and your initial emotional reaction to your current financial situation.</string>
     <string name="society_e2_q1_text">What is more important to you than money? What would you not give up for any price in the world?</string>
     <string name="society_e2_q2_text">What would you consider “enough”? How big would your bank account have to be that when you see it, you feel safe and free to take opportunities?</string>
     <string name="society_e2_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e3_title">Represent Local</string>
+    <string name="society_e3_title">Represent Local</string>
     <string name="society_e3_quote"></string>
     <string name="society_e3_text">"Local and state governments often have a much bigger effect on your life than federal. Attend a local city council meeting, or watch a session of your state congress.
         Attempt to meet your city council or state government representative. Is there any important local issue you could talk with them about?"</string>
@@ -186,21 +186,21 @@ While you’re there take a long breath, and thank that tree for the air you are
     <string name="society_e3_q2_text">Did you like your representative? How could you work with them to address the issues you feel concerned about?</string>
     <string name="society_e3_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e4_title">Kindness on the Street</string>
+    <string name="society_e4_title">Kindness on the Street</string>
     <string name="society_e4_quote"></string>
     <string name="society_e4_text">Give a person in need some change or food. Ask them their name, and wish them a good day.</string>
     <string name="society_e4_q1_text">What was their reaction? Did their demeanor change once you asked for their name?</string>
     <string name="society_e4_q2_text">How did you feel after the interaction was over? Was there a sense of doing some good?</string>
     <string name="society_e4_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e5_title">Every Bit Counts</string>
+    <string name="society_e5_title">Every Bit Counts</string>
     <string name="society_e5_quote"></string>
     <string name="society_e5_text">Sign up to make a small monthly donation (about the cost of a lunch, whatever you can afford) to a charity that advocates for a cause that you support. Any cause will do! A monthly donation makes you a real member of these organizations.</string>
     <string name="society_e5_q1_text">How do you feel about giving to a cause on a regular basis?</string>
     <string name="society_e5_q2_text">Do you think you’ll participate or become more involved with the issue over time?</string>
     <string name="society_e5_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name ="society_e6_title">Do Good Works</string>
+    <string name="society_e6_title">Do Good Works</string>
     <string name="society_e6_quote">"“What is the essence of life? To serve others and to do good.”
     -Aristotle""</string>
     <string name="society_e6_text">A tried and true classic to feel good and meet great people! Find a cause and organization you care about, and volunteer for a day. Even if it’s just once, you certainly won’t forget the experience.</string>

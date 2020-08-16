@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
@@ -225,11 +226,19 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startExercise1 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
-                startExercise1.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise1ImageKey)); //This intent as a hashmap of exercise images as its value.
-                startExercise1.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise1StringKey));
-                startExercise1.putExtra(exerciseNumberKey,1); //Eventually passed to the QuestionActivity
-                startExercise1.putExtra(exerciseCategoryKey, menuCategory);
+
+                Bundle exerciseExtras = new Bundle();
+                exerciseExtras.putInt(exerciseImageViewKey, exerciseImages.get(Exercise.exercise1ImageKey));
+                exerciseExtras.putInt(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise1StringKey));
+                exerciseExtras.putInt(exerciseNumberKey,1);
+                exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
+
+                Intent startExercise1 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
+//                startExercise1.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise1ImageKey)); //This intent as a hashmap of exercise images as its value.
+//                startExercise1.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise1StringKey));
+//                startExercise1.putExtra(exerciseNumberKey,1); //Eventually passed to the QuestionActivity
+//                startExercise1.putExtra(exerciseCategoryKey, menuCategory);
+                startExercise1.putExtras(exerciseExtras);
                 startActivity(startExercise1);
 
             }
@@ -238,6 +247,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mStartExercise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, ExerciseActivity.class);
                 startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise2ImageKey));
@@ -306,6 +316,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         });
 
     }
+
 
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));

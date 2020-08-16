@@ -10,7 +10,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".QuoteActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -19,23 +19,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Exercise Menus -->
+        </activity> <!-- Exercise Menus -->
         <activity
             android:name=".ExerciseMenuActivity"
             android:label="Menu Activity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <!-- Exercises Activities -->
+            android:screenOrientation="portrait" /> <!-- Exercises Activities -->
         <activity
             android:name=".ExerciseActivity"
             android:label="Exercise Activity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
-
-        <!-- Questions Activities -->
+            android:screenOrientation="portrait" /> <!-- Questions Activities -->
         <activity
             android:name=".QuestionActivity"
             android:label="Question Activity"
