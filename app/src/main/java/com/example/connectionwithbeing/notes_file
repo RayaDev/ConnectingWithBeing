@@ -4,10 +4,12 @@ Long Term TODO:
 Read/Scan Through entire android dev guide
 
 
-
 Working TODO:
 
-   > Update color theme for each category.
+Create a quote activity that shows a quote, with a little spinning loader icon
+    > Before the exercise menu? Probably. That way the user gets a new quote every time they load the menu.
+    > Or when transitioning to the questions. So that the user has food for thought. <<<
+
 
 General TODO:
 
@@ -18,10 +20,6 @@ Design Stuff
         > Length of questions, typos, punctuation, ect.
 
 Exercise EditText for recording answers to questions?
-
-Create a quote activity that shows a quote, with a little spinning loader icon
-    > Before the exercise menu? Probably. That way the user gets a new quote every time they load the menu.
-    > Or when transitioning to the questions. So that the user has food for thought. <<<
 
 Format alertDialogs on home screen. Make them look nicer
 
