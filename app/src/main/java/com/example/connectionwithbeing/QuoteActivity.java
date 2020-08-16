@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class QuoteActivity extends AppCompatActivity {
@@ -17,7 +16,6 @@ public class QuoteActivity extends AppCompatActivity {
     private Handler mHandler = new Handler();
     private Button mButton;
     private boolean exitThread;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +47,15 @@ public class QuoteActivity extends AppCompatActivity {
                     }
                 }
 
-                startExercise();
+                if(exitThread == false) {
+                    startExercise();
+                }
+
+                else {
+                    finish();
+                }
+
+                finish();
             }
         });
 
@@ -61,9 +67,8 @@ public class QuoteActivity extends AppCompatActivity {
 //                progressThread.interrupt();
                 stopThread();
                 startExercise();
-                onPause();
-                onDestroy();
-//                finish();
+                finish();
+
             }
         });
 //        try {
