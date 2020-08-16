@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import model.Exercise;
+
 public class QuoteActivity extends AppCompatActivity {
 
     private ConstraintLayout mConstraintLayout;
@@ -46,7 +48,7 @@ public class QuoteActivity extends AppCompatActivity {
                     mHandler.post(new Runnable() {
                         public void run() {
                             mProgressBar.setProgress(i);
-                            mTextView.setText(i + "/" + mProgressBar.getMax());
+//                            mTextView.setText(i + "/" + mProgressBar.getMax());
                         }
                     });
                     try {
@@ -92,31 +94,49 @@ public class QuoteActivity extends AppCompatActivity {
         Intent exerciseIntent = getIntent();
         Bundle exerciseExtras = exerciseIntent.getExtras();
         int category = exerciseExtras.getInt(ExerciseMenuActivity.exerciseCategoryKey);
+        int exerciseNumber = exerciseExtras.getInt(ExerciseMenuActivity.exerciseNumberKey);
 
-        setActivityColors(category);
+
+        setActivityColorsAndQuotes(category, exerciseNumber);
 
 
     }
 
-    private void setActivityColors(int category) {
+    private void setActivityColorsAndQuotes(int category, int exerciseNumber) {
+
+        int[] exerciseQuotes;
 
         switch (category) {
             case 1:
+                exerciseQuotes = Exercise.selfQuotes;
+                mTextView.setText(exerciseQuotes[exerciseNumber-1]);
+
                 mConstraintLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));
+
                 break;
 
-                case 2:
+            case 2:
+                exerciseQuotes = Exercise.othersQuotes;
+                mTextView.setText(exerciseQuotes[exerciseNumber-1]);
+
                 mConstraintLayout.setBackgroundColor(getResources().getColor(R.color.others_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.others_primary_dark)));
+
                 break;
 
-                case 3:
+            case 3:
+                exerciseQuotes = Exercise.natureQuotes;
+                mTextView.setText(exerciseQuotes[exerciseNumber-1]);
+
                 mConstraintLayout.setBackgroundColor(getResources().getColor(R.color.nature_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
                 break;
 
-                case 4:
+            case 4:
+                exerciseQuotes = Exercise.societyQuotes;
+                mTextView.setText(exerciseQuotes[exerciseNumber-1]);
+
                 mConstraintLayout.setBackgroundColor(getResources().getColor(R.color.society_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.society_primary_dark)));
                 break;

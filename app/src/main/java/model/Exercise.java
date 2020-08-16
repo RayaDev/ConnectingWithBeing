@@ -191,7 +191,6 @@ public class Exercise {
     }
 
 
-
     public static int[] societyExerciseTitles = {R.string.society_e1_title, R.string.society_e2_title, R.string.society_e3_title,
             R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
 
