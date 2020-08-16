@@ -94,6 +94,9 @@ public class Exercise {
     public static final int[] selfExerciseTitles = {R.string.self_e1_title, R.string.self_e2_title, R.string.self_e3_title,
     R.string.self_e4_title, R.string.self_e5_title, R.string.self_e6_title};
 
+    public static final int[] selfQuotes = {R.string.self_e1_quote, R.string.self_e2_quote, R.string.self_e3_quote,
+            R.string.self_e4_quote, R.string.self_e5_quote, R.string.self_e6_quote};
+
     public static final String[] selfKeys = {selfE1CompletedKey, selfE2CompletedKey, selfE3CompletedKey, selfE4CompletedKey, selfE5CompletedKey, selfE6CompletedKey};
 
 
@@ -124,6 +127,9 @@ public class Exercise {
     public static final int[] othersExerciseTitles = {R.string.others_e1_title, R.string.others_e2_title,
             R.string.others_e3_title,R.string.others_e4_title, R.string.others_e5_title, R.string.others_e6_title};
 
+    public static final int[] othersQuotes = {R.string.others_e1_quote,R.string.others_e2_quote, R.string.others_e3_quote,
+            R.string.others_e4_quote, R.string.others_e5_quote, R.string.others_e6_quote};
+
     public static final String[] othersKeys = {othersE1CompletedKey, othersE2CompletedKey, othersE3CompletedKey, othersE4CompletedKey, othersE5CompletedKey, othersE6CompletedKey};
 
     public static final HashMap<String, Integer> otherExerciseImages = new HashMap<>();
@@ -152,6 +158,9 @@ public class Exercise {
 
     public static final int[] natureExerciseTitles = {R.string.nature_e1_title,R.string.nature_e2_title, R.string.nature_e3_title,
             R.string.nature_e4_title, R.string.nature_e5_title, R.string.nature_e6_title};
+
+    public static final int[] natureQuotes = {R.string.nature_e1_quote,R.string.nature_e2_quote, R.string.nature_e3_quote,
+            R.string.nature_e4_quote, R.string.nature_e5_quote, R.string.nature_e6_quote,};
 
     public static final String[] natureKeys = {natureE1CompletedKey, natureE2CompletedKey, natureE3CompletedKey, natureE4CompletedKey, natureE5CompletedKey, natureE6CompletedKey};
 
@@ -185,6 +194,9 @@ public class Exercise {
 
     public static int[] societyExerciseTitles = {R.string.society_e1_title, R.string.society_e2_title, R.string.society_e3_title,
             R.string.society_e4_title, R.string.society_e5_title, R.string.society_e6_title};
+
+    public static int[] societyQuotes = {R.string.society_e1_quote, R.string.society_e2_quote, R.string.society_e3_quote,
+            R.string.society_e4_quote, R.string.society_e5_quote, R.string.society_e6_quote};
 
     public static final String[] societyKeys = {societyE1CompletedKey, societyE2CompletedKey, societyE3CompletedKey, societyE4CompletedKey, societyE5CompletedKey, societyE6CompletedKey};
 

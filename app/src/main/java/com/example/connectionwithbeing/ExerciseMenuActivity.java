@@ -349,7 +349,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     }
 
-
     public void changeActionBarColor(int color) {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(color)));
     }
@@ -365,11 +364,5 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
-//        mToDoButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(ExerciseMenuActivity.this, "To Do Button Clicked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 }
