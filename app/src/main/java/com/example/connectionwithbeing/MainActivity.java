@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        startWelcomeActivity();
+
+
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
@@ -426,5 +429,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 //**************************************************************************************************
+
+    private void startWelcomeActivity() {
+        Intent welcomeActivity = new Intent(MainActivity.this, WelcomeActivity.class);
+        startActivity(welcomeActivity);
+    }
 
 }
