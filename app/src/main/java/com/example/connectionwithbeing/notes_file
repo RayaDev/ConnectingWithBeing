@@ -8,30 +8,24 @@ Working TODO:
 
 Introduction Activity
 
-Loading/Welcome Screen
 
 General TODO:
 
 Finish finding and adding quote string resources.
 
 Design Stuff
-    >Redo the design for transition button for exercise activity
+    > Improve Alert Dialogs
+    > Improve welcome screen
+    > Redo the design for transition button for exercise activity
     > Proofread all Strings.
         > Length of questions, typos, punctuation, ect.
 
-Exercise EditText for recording answers to questions?
-
-Format alertDialogs on home screen. Make them look nicer
-
 Clean up onCreate methods.
-
 
 Contacts
 
 Settings
-    > Color scheme options
     > Font size options
-    > Disable/Enable Animation, Sounds
 
 About
 
