@@ -6,13 +6,13 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
-Create a quote activity that shows a quote, with a little spinning loader icon
-    > Before the exercise menu? Probably. That way the user gets a new quote every time they load the menu.
-    > Or when transitioning to the questions. So that the user has food for thought. <<<
+Introduction Activity
 
+Loading/Welcome Screen
 
 General TODO:
 
+Finish finding and adding quote string resources.
 
 Design Stuff
     >Redo the design for transition button for exercise activity
@@ -25,9 +25,6 @@ Format alertDialogs on home screen. Make them look nicer
 
 Clean up onCreate methods.
 
-Introduction Activity
-
-Loading/Welcome Screen
 
 Contacts
 
