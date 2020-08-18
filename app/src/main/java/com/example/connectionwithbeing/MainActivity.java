@@ -409,7 +409,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // The dialog is automatically dismissed when a dialog button is clicked.
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        moveTaskToBack(true);
+//                        moveTaskToBack(true);
+//                        finish();
+                        finishAffinity();
                     }
                 })
 
