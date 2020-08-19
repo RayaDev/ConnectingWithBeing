@@ -8,6 +8,7 @@ Working TODO:
 
 Bookmark activity
     > Just a bookmark icon that saves a single exercise for future reference.
+    > On main activity, and exercise activity bottom bar.
 
 General TODO:
 
@@ -15,9 +16,10 @@ Quote Screen Updates
     > Finish finding and adding quote string resources.
     > Shuffle button displays quote.
 
+Introduction Screen Updates
+    > Include UI directions, as well as philosophical background.
+
 Design Stuff
-    > Update Introduction
-        > Include UI directions, as well as philosophical background.
     > Improve Alert Dialogs
     > Improve welcome screen
     > Redo the design for transition button for exercise activity
@@ -36,12 +38,6 @@ About
 Ads
 
 Publish
-
-Bookmarks and Todolists classes/layouts.. Probably not..?
-    >Generate random excise Yes..
-    > Just home button for exercise and questions on bottom actionbar
-        > A shuffle exercise button on the home screen
-
 
 
 ******///// CWB Notes File \\\\\******
