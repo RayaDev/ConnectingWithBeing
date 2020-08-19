@@ -50,9 +50,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        if(savedInstanceState != null) {
-            Exercise.mainActivityBackBoolean = savedInstanceState.getBoolean(Exercise.mainActivityBackKey);
-        }
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
@@ -416,10 +413,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed()
     {
-        if(Exercise.mainActivityBackBoolean == true) {
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("Exit")
-                    .setMessage("Close the App or Return to Last Activity?")
+                    .setMessage("Close the App?")
 
                     // Specifying a listener allows you to take an action before dismissing the dialog.
                     // The dialog is automatically dismissed when a dialog button is clicked.
@@ -435,23 +431,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     .setNegativeButton("Return", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            MainActivity.super.onBackPressed();
+
                         }
                     })
                     .setIcon(R.drawable.guistar)
                     .show();
-        }
-        else{
-            super.onBackPressed();
-        }
+
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-
-        super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean(Exercise.mainActivityBackKey, true);
-    }
 
 
 //**************************************************************************************************

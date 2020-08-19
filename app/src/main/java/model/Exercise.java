@@ -45,8 +45,6 @@ public class Exercise {
     public static final String userActivityProgress = "exercises_completed"; //This is the main references key for all exercise related preferences.
     public static final String generalPreferencesKey = "general_prefs"; //Main reference for general user interface preferences.
     public static final String introCompletedKey = "intro_complete";
-    public static final String mainActivityBackKey ="fist_call";
-    public static Boolean mainActivityBackBoolean = false;
 
     //Keys for building static HashMaps
     public static final String exercise1ImageKey = "exercise1_image";
