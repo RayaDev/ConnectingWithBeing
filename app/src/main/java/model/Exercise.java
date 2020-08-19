@@ -43,6 +43,7 @@ public class Exercise {
 
     //Shared Preferences for the Exercise Menu. Controls yellow star on completion for each category. And exercise completion count.
     public static final String userActivityProgress = "exercises_completed"; //This is the main references key for all shared prefs.
+    public static final String generalPreferencesKey = "gui_prefs";
 
     //Keys for building static HashMaps
     public static final String exercise1ImageKey = "exercise1_image";
