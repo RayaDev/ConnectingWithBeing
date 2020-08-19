@@ -124,9 +124,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mCompletedQuestions.startAnimation(blinkAnimation);
 
             }
-        }, 3000);
-
-
+        }, 10000);
 
     }
 
