@@ -142,7 +142,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
 //                            mQuoteTextView.setVisibility(View.VISIBLE);  //Used for causing the quote to appear on the exercise activity. Not really needed
                         }
-                    }, 1750);
+                    }, 5000);
 
                 }
             }
