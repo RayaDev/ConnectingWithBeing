@@ -25,18 +25,22 @@ public class IntroductionActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
 
-        mViewPager = (ViewPager)findViewById(R.id.IntroductionActivity_ViewPager);
-        mSkipButton = (Button)findViewById(R.id.IntroductionActivity_SkipButton);
-        mNextButton = (Button)findViewById(R.id.IntroductionActivity_NextButton);
+        mViewPager = (ViewPager) findViewById(R.id.IntroductionActivity_ViewPager);
+        mSkipButton = (Button) findViewById(R.id.IntroductionActivity_SkipButton);
+        mNextButton = (Button) findViewById(R.id.IntroductionActivity_NextButton);
 
-        FragmentStatePagerAdapter adapter = new FragmentStatePagerAdapter (getSupportFragmentManager()) {
+        FragmentStatePagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 switch (position) {
-                    case 0 : return new IntroductionFragment1();
-                    case 1 : return new IntroductionFragment2();
-                    case 2 : return new IntroductionFragment3();
-                    default: return null;
+                    case 0:
+                        return new IntroductionFragment1();
+                    case 1:
+                        return new IntroductionFragment2();
+                    case 2:
+                        return new IntroductionFragment3();
+                    default:
+                        return null;
                 }
             }
 
@@ -51,7 +55,7 @@ public class IntroductionActivity extends FragmentActivity {
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                if(position == 2){
+                if (position == 2) {
                     mSkipButton.setVisibility(View.GONE);
                     mNextButton.setText("Done");
                 } else {
@@ -71,7 +75,7 @@ public class IntroductionActivity extends FragmentActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mViewPager.getCurrentItem() == 2) { // The last screen
+                if (mViewPager.getCurrentItem() == 2) { // The last screen
                     finishIntroduction();
                 } else {
                     mViewPager.setCurrentItem(
@@ -89,7 +93,7 @@ public class IntroductionActivity extends FragmentActivity {
                 getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
 
         // Set introduction_complete to true
-        preferences.edit().putBoolean(Exercise.introCompletedKey,true).apply();
+        preferences.edit().putBoolean(Exercise.introCompletedKey, true).apply();
 
         // Launch the main Activity, called MainActivity
         Intent main = new Intent(this, MainActivity.class);
@@ -97,5 +101,19 @@ public class IntroductionActivity extends FragmentActivity {
 
         // Close the IntroductionActivity
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        SharedPreferences preferences =
+                getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
+        boolean introCompleted = preferences.getBoolean(Exercise.introCompletedKey, false);
+        if(introCompleted == true) {
+            Intent startMainActivity = new Intent(IntroductionActivity.this, MainActivity.class);
+            startActivity(startMainActivity);
+        }
+        else {
+
+        }
     }
 }

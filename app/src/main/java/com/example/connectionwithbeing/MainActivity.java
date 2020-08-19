@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if(savedInstanceState != null) {
+            Exercise.mainActivityBackBoolean = savedInstanceState.getBoolean(Exercise.mainActivityBackKey);
+        }
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
@@ -413,30 +416,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed()
     {
+        if(Exercise.mainActivityBackBoolean == true) {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Exit")
+                    .setMessage("Close the App or Return to Last Activity?")
 
-        new AlertDialog.Builder(MainActivity.this)
-                .setTitle("Exit")
-                .setMessage("Close the App?")
-
-                // Specifying a listener allows you to take an action before dismissing the dialog.
-                // The dialog is automatically dismissed when a dialog button is clicked.
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+                    // Specifying a listener allows you to take an action before dismissing the dialog.
+                    // The dialog is automatically dismissed when a dialog button is clicked.
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
 //                        moveTaskToBack(true);
 //                        finish();
-                        finishAffinity();
-                    }
-                })
+                            finishAffinity();
+                        }
+                    })
 
-                // A null listener allows the button to dismiss the dialog and take no further action.
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                    // A null listener allows the button to dismiss the dialog and take no further action.
+                    .setNegativeButton("Return", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.super.onBackPressed();
+                        }
+                    })
+                    .setIcon(R.drawable.guistar)
+                    .show();
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
 
-                    }
-                })
-                .setIcon(R.drawable.guistar)
-                .show();
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean(Exercise.mainActivityBackKey, true);
     }
 
 
