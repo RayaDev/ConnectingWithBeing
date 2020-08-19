@@ -60,12 +60,33 @@ public class IntroductionActivity extends FragmentActivity {
                 }
             }
         });
+
+        mSkipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishIntroduction();
+            }
+        });
+
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mViewPager.getCurrentItem() == 2) { // The last screen
+                    finishIntroduction();
+                } else {
+                    mViewPager.setCurrentItem(
+                            mViewPager.getCurrentItem() + 1,
+                            true
+                    );
+                }
+            }
+        });
     }
 
-    private void finishOnboarding() {
+    private void finishIntroduction() {
         // Get the shared preferences
         SharedPreferences preferences =
-                getApplicationContext().getSharedPreferences(Exercise.generalPreferencesString, MODE_PRIVATE);
+                getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
 
         // Set onboarding_complete to true
         preferences.edit()
