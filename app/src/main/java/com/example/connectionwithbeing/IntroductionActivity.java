@@ -83,20 +83,20 @@ public class IntroductionActivity extends FragmentActivity {
         });
     }
 
+
     private void finishIntroduction() {
         // Get the shared preferences
         SharedPreferences preferences =
                 getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
 
-        // Set onboarding_complete to true
-        preferences.edit()
-                .putBoolean("onboarding_complete",true).apply();
+        // Set introduction_complete to true
+        preferences.edit().putBoolean(Exercise.introCompletedKey,true).apply();
 
         // Launch the main Activity, called MainActivity
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
 
-        // Close the OnboardingActivity
+        // Close the IntroductionActivity
         finish();
     }
 }

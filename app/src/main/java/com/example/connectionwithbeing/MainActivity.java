@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //Setting up Shared Preferences
 
           mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE); //Working with a different set of sharedPrefs..
+
           setProgressStars();
           playProgressAnimation();
 
