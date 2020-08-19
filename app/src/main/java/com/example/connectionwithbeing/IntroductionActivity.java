@@ -83,7 +83,6 @@ public class IntroductionActivity extends FragmentActivity {
         });
     }
 
-
     private void finishIntroduction() {
         // Get the shared preferences
         SharedPreferences preferences =

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -200,6 +202,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             mDrawerLayout.closeDrawers();
             Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
+
+           new Handler().postDelayed(new Runnable() {
+               @Override
+               public void run() {
+                   Intent startIntroduction = new Intent(MainActivity.this, IntroductionActivity.class);
+                   startActivity(startIntroduction);
+                   finish();
+               }
+           },500);
+
         }
 
         if(id == R.id.credits_item) {

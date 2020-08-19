@@ -6,7 +6,8 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
-Introduction Activity
+Bookmark activity
+    > Just a bookmark icon that saves a single exercise for future reference.
 
 
 General TODO:
@@ -14,6 +15,8 @@ General TODO:
 Finish finding and adding quote string resources.
 
 Design Stuff
+    > Update Introduction
+        > Include UI directions, as well as philosophical background.
     > Improve Alert Dialogs
     > Improve welcome screen
     > Redo the design for transition button for exercise activity
