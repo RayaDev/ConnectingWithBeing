@@ -10,14 +10,15 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity"
+        <activity android:name=".IntroductionActivity"></activity>
+        <activity
+            android:name=".WelcomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".QuoteActivity"
@@ -26,8 +27,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-        </activity> <!-- Exercise Menus -->
+            android:screenOrientation="portrait"></activity> <!-- Exercise Menus -->
         <activity
             android:name=".ExerciseMenuActivity"
             android:label="Menu Activity"
