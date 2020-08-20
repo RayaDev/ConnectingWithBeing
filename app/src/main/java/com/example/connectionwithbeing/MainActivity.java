@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private LinearLayout mHomeButtonBar;
-    private ImageView mHomeButton, mShuffleButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
+    private ImageView mHomeButton, mBookmarkButton, mShuffleButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
     private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
     //Shared Preferences for the number of exercises completed, and menu creation
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
         mShuffleButton = findViewById(R.id.homeShuffleButton);
+        mBookmarkButton = findViewById(R.id.homeBookmarkButton);
 
         mSelfImageView = findViewById(R.id.selfImageView);
         mOthersImageView = findViewById(R.id.othersImageView);
@@ -422,6 +423,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Shuffle Button Clicked", Toast.LENGTH_SHORT).show();
                 getRandomExercise();
+            }
+        });
+
+        mBookmarkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Loading Bookmarked Exercise", Toast.LENGTH_SHORT).show();
+                loadBookmarkedExercise();
             }
         });
     }
