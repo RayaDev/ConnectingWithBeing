@@ -262,6 +262,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 saveBookmarkedExercise();
+                                Toast.makeText(ExerciseActivity.this, "Saved!", Toast.LENGTH_SHORT).show();
                             }
                         })
 

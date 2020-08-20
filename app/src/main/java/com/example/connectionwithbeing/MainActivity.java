@@ -398,12 +398,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
         int exerciseType = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTypeKey, 0);
 
-        Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
-        startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
-        startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
-        startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
-        startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
-        startActivity(startBookmarkedExercise);
+        if(exerciseImage != 0 && exerciseText != 0 && exerciseNumber !=0 && exerciseType !=0) {
+            Toast.makeText(MainActivity.this, "Your Bookmarked Exercise", Toast.LENGTH_SHORT).show();
+
+            Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+            startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
+            startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
+            startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
+            startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
+            startActivity(startBookmarkedExercise);
+
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Your bookmark is empty!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void bottomNavButtonsListeners() {
@@ -429,7 +437,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mBookmarkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Loading Bookmarked Exercise", Toast.LENGTH_SHORT).show();
                 loadBookmarkedExercise();
             }
         });
@@ -453,7 +460,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     })
 
                     // A null listener allows the button to dismiss the dialog and take no further action.
-                    .setNegativeButton("Return", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
@@ -468,9 +475,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //**************************************************************************************************
 
-    private void startWelcomeActivity() {
-        Intent welcomeActivity = new Intent(MainActivity.this, WelcomeActivity.class);
-        startActivity(welcomeActivity);
-    }
+
 
 }
