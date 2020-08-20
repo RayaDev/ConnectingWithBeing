@@ -379,6 +379,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
+
         Intent startRandomExercise = new Intent(MainActivity.this, ExerciseActivity.class);
         startRandomExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImages.get(exerciseImageKey)); //This intent as a hashmap of exercise images as its value.
         startRandomExercise.putExtra(Exercise.exerciseTextViewKey, exerciseStrings.get(exerciseStringKey));
@@ -387,6 +388,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(startRandomExercise);
 
 
+    }
+
+    private void loadBookmarkedExercise() {
+        mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExerciseKey, MODE_PRIVATE);
+        int exerciseImage = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseImageKey, 0);
+        int exerciseText = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTextKey, 0);
+        int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
+        int exerciseType = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTypeKey, 0);
+
+        Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+        startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
+        startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
+        startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
+        startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
+        startActivity(startBookmarkedExercise);
     }
 
     private void bottomNavButtonsListeners() {
