@@ -36,7 +36,7 @@ public class ExerciseActivity extends AppCompatActivity {
     private LinearLayout mBottomActionBar;
     private LinearLayout mParentLayout;
     private LinearLayout mStartQuestions;
-    private ImageView mHomeButton, mExerciseImage, mToDoButton;
+    private ImageView mHomeButton, mExerciseImage, mBookmarkButton;
     private TypedTextView mTypedTextView;
     private TextView mPlaceHolderTextView;
     private TextView mQuoteTextView;
@@ -44,6 +44,10 @@ public class ExerciseActivity extends AppCompatActivity {
     //For info button on top action bar.
     private int categoryID;
     private int exerciseNumberRef;
+    private int exerciseImage;
+    private int exerciseText;
+    private int exerciseNumber;
+    private int exerciseType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +60,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
         //Get Intents all coming from the menu activity.
         Bundle extras = getIntent().getExtras();
-        int exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
-        int exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
-        int exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
-        int exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
+        exerciseImage = (int) extras.get(ExerciseMenuActivity.exerciseImageViewKey);
+        exerciseText = (int) extras.get(ExerciseMenuActivity.exerciseTextViewKey);
+        exerciseNumber = (int) extras.get(ExerciseMenuActivity.exerciseNumberKey);
+        exerciseType = (int) extras.get(ExerciseMenuActivity.exerciseCategoryKey);
 
         exerciseNumberRef = exerciseNumber;
         categoryID = exerciseType;
@@ -80,6 +84,7 @@ public class ExerciseActivity extends AppCompatActivity {
         //Reflections Button
         mStartQuestions = findViewById(R.id.ExerciseStartQuestions_LinearLayout);
         mHomeButton = findViewById(R.id.ExerciseActivityHomeButton);
+        mBookmarkButton = findViewById(R.id.ExerciseActivityBookmarkButton);
 
 
         setExerciseTitle(exerciseType, exerciseNumber);
@@ -228,18 +233,12 @@ public class ExerciseActivity extends AppCompatActivity {
         SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExercisePreferencesKey, MODE_PRIVATE);
         SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
+        mSharedPreferencesEditor.putInt(Exercise.bookmarkedExerciseImageKey, exerciseImage);
+        mSharedPreferencesEditor.putInt(Exercise.bookmarkedExerciseTextKey, exerciseText);
+        mSharedPreferencesEditor.putInt(Exercise.bookmarkedExerciseNumberKey, exerciseNumber);
+        mSharedPreferencesEditor.putInt(Exercise.bookmarkedExerciseTypeKey, exerciseType);
+        mSharedPreferencesEditor.commit();
 
-        int exerciseImage = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseImageKey, 0);
-        int exerciseText = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTextKey, 0);
-        int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
-        int exerciseType = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTypeKey, 0);
-
-//        Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
-//        startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
-//        startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
-//        startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
-//        startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
-//        startActivity(startBookmarkedExercise);
     }
 
     private void bottomNavButtonsListeners() {
@@ -250,6 +249,32 @@ public class ExerciseActivity extends AppCompatActivity {
                 Intent returnHome = new Intent(ExerciseActivity.this, MainActivity.class);
                 startActivity(returnHome);
 
+            }
+        });
+
+        mBookmarkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(ExerciseActivity.this)
+                        .setTitle("Bookmark Exercise")
+                        .setMessage("Save this exercise for later?")
+
+                        .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                saveBookmarkedExercise();
+                            }
+                        })
+
+                        // A null listener allows the button to dismiss the dialog and take no further action.
+                        .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+
+                            }
+                        })
+                        .setIcon(R.drawable.guistar)
+                        .show();
             }
         });
 
