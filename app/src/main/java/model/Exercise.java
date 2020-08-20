@@ -46,6 +46,12 @@ public class Exercise {
     public static final String generalPreferencesKey = "general_prefs"; //Main reference for general user interface preferences.
     public static final String introCompletedKey = "intro_complete";
 
+    public static final String bookmarkedExercisePreferencesKey = "bookmarked_exercise";
+    public static final String bookmarkedExerciseImageKey = "bookmarked_exercise_image_key";
+    public static final String bookmarkedExerciseTextKey = "bookmarked_exercise_text_key";
+    public static final String bookmarkedExerciseNumberKey = "bookmarked_exercise_number_key";
+    public static final String bookmarkedExerciseTypeKey = "bookmarked_exercise_type_key";
+
     //Keys for building static HashMaps
     public static final String exercise1ImageKey = "exercise1_image";
     public static final String exercise2ImageKey = "exercise2_image";

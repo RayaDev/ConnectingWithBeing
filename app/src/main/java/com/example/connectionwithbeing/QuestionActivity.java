@@ -53,7 +53,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         mHomeButton = findViewById(R.id.QuestionActivity_HomeButton);
 
-        mCompletedQuestions = findViewById(R.id.QuestionActivity_CompleteReflections_LinearLayout);
+        mCompletedQuestions = findViewById(R.id.QuestionActivity_Finish_LinearLayout);
 //        mParentLayout =(LinearLayout)findViewById(R.id.QuoteActivity_ParentLayout);
         mBottomActivityBar = findViewById(R.id.QuestionActivity_BottomActionBar);
 
@@ -124,9 +124,7 @@ public class QuestionActivity extends AppCompatActivity {
                 mCompletedQuestions.startAnimation(blinkAnimation);
 
             }
-        }, 3000);
-
-
+        }, 10000);
 
     }
 

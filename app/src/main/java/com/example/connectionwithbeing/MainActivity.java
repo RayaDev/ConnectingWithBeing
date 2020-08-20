@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private LinearLayout mHomeButtonBar;
-    private ImageView mHomeButton, mShuffleButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
+    private ImageView mHomeButton, mBookmarkButton, mShuffleButton, mSelfImageView, mOthersImageView, mSocietyImageView, mNatureImageView;
     private TextView mSelfTextView, mOthersTextView, mSocietyTextView, mNatureTextView;
 
     //Shared Preferences for the number of exercises completed, and menu creation
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
         mHomeButton = findViewById(R.id.homeHomeButton); //The actual button itself.
         mShuffleButton = findViewById(R.id.homeShuffleButton);
+        mBookmarkButton = findViewById(R.id.homeBookmarkButton);
 
         mSelfImageView = findViewById(R.id.selfImageView);
         mOthersImageView = findViewById(R.id.othersImageView);
@@ -379,6 +380,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
+
         Intent startRandomExercise = new Intent(MainActivity.this, ExerciseActivity.class);
         startRandomExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImages.get(exerciseImageKey)); //This intent as a hashmap of exercise images as its value.
         startRandomExercise.putExtra(Exercise.exerciseTextViewKey, exerciseStrings.get(exerciseStringKey));
@@ -387,6 +389,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(startRandomExercise);
 
 
+    }
+
+    private void loadBookmarkedExercise() {
+        mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExercisePreferencesKey, MODE_PRIVATE);
+        int exerciseImage = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseImageKey, 0);
+        int exerciseText = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTextKey, 0);
+        int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
+        int exerciseType = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTypeKey, 0);
+
+        if(exerciseImage != 0 && exerciseText != 0 && exerciseNumber !=0 && exerciseType !=0) {
+            Toast.makeText(MainActivity.this, "Your Bookmarked Exercise", Toast.LENGTH_SHORT).show();
+
+            Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+            startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
+            startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
+            startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
+            startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
+            startActivity(startBookmarkedExercise);
+
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Your bookmark is empty!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void bottomNavButtonsListeners() {
@@ -406,6 +431,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Shuffle Button Clicked", Toast.LENGTH_SHORT).show();
                 getRandomExercise();
+            }
+        });
+
+        mBookmarkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadBookmarkedExercise();
             }
         });
     }
@@ -428,7 +460,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     })
 
                     // A null listener allows the button to dismiss the dialog and take no further action.
-                    .setNegativeButton("Return", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
@@ -443,9 +475,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //**************************************************************************************************
 
-    private void startWelcomeActivity() {
-        Intent welcomeActivity = new Intent(MainActivity.this, WelcomeActivity.class);
-        startActivity(welcomeActivity);
-    }
+
 
 }
