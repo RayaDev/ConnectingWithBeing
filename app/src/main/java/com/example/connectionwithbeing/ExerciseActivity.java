@@ -2,6 +2,7 @@ package com.example.connectionwithbeing;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -220,6 +221,25 @@ public class ExerciseActivity extends AppCompatActivity {
                 AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.blink);
         mStartQuestions.startAnimation(animation1);
+    }
+
+    private void saveBookmarkedExercise() {
+
+        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExercisePreferencesKey, MODE_PRIVATE);
+        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+
+        int exerciseImage = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseImageKey, 0);
+        int exerciseText = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTextKey, 0);
+        int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
+        int exerciseType = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTypeKey, 0);
+
+//        Intent startBookmarkedExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+//        startBookmarkedExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImage);
+//        startBookmarkedExercise.putExtra(Exercise.exerciseTextViewKey, exerciseText);
+//        startBookmarkedExercise.putExtra(Exercise.exerciseNumberKey, exerciseNumber);
+//        startBookmarkedExercise.putExtra(Exercise.exerciseCategoryKey, exerciseType);
+//        startActivity(startBookmarkedExercise);
     }
 
     private void bottomNavButtonsListeners() {
