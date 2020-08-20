@@ -6,9 +6,8 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
-Bookmark activity
-    > Just a bookmark icon that saves a single exercise for future reference.
-    > On main activity, and exercise activity bottom bar.
+Introduction Screen Updates
+    > Include UI directions, as well as philosophical background.
 
 General TODO:
 
@@ -18,8 +17,6 @@ Quote Screen Updates
     > Finish finding and adding quote string resources.
     > Shuffle button displays quote.
 
-Introduction Screen Updates
-    > Include UI directions, as well as philosophical background.
 
 Design Stuff
     > Set blink animation slower for questions. What feels right.
