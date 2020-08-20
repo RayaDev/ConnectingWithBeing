@@ -11,10 +11,12 @@ Introduction Screen Updates
 
 General TODO:
 
+
 Screen Orientations for all Activities
 
 Quote Screen Updates
     > Finish finding and adding quote string resources.
+    > Add Assumptions text to quote screen.
     > Shuffle button displays quote.
 
 
@@ -22,7 +24,6 @@ Design Stuff
     > Set blink animation slower for questions. What feels right.
     > Improve Alert Dialogs
     > Improve welcome screen
-    > Redo the design for transition button for exercise activity
     > Proofread all Strings.
         > Length of questions, typos, punctuation, ect.
 
