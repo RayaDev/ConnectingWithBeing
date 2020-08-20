@@ -46,7 +46,7 @@ public class Exercise {
     public static final String generalPreferencesKey = "general_prefs"; //Main reference for general user interface preferences.
     public static final String introCompletedKey = "intro_complete";
 
-    public static final String bookmarkedExerciseKey = "bookmarked_exercise";
+    public static final String bookmarkedExercisePreferencesKey = "bookmarked_exercise";
     public static final String bookmarkedExerciseImageKey = "bookmarked_exercise_image_key";
     public static final String bookmarkedExerciseTextKey = "bookmarked_exercise_text_key";
     public static final String bookmarkedExerciseNumberKey = "bookmarked_exercise_number_key";

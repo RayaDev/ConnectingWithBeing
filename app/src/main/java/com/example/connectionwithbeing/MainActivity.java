@@ -391,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadBookmarkedExercise() {
-        mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExerciseKey, MODE_PRIVATE);
+        mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.bookmarkedExercisePreferencesKey, MODE_PRIVATE);
         int exerciseImage = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseImageKey, 0);
         int exerciseText = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseTextKey, 0);
         int exerciseNumber = (int) mSharedPreferences.getInt(Exercise.bookmarkedExerciseNumberKey, 0);
