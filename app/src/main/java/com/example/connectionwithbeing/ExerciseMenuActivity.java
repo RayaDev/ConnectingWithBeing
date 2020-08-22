@@ -696,7 +696,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                         completed = mSharedPreferences.getInt(Exercise.natureE3CompletedKey,0);
 
                         if(completed == 1) {
-                            mSharedPreferencesEditor.putInt(Exercise.selfE3CompletedKey, 0);
+                            mSharedPreferencesEditor.putInt(Exercise.natureE3CompletedKey, 0);
                             mSharedPreferencesEditor.commit();
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
