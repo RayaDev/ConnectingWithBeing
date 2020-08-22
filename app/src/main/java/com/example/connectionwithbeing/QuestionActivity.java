@@ -314,9 +314,7 @@ public class QuestionActivity extends AppCompatActivity {
             int othersE5Completed = mSharedPreferences.getInt(Exercise.othersE5CompletedKey, 0);
             int othersE6Completed = mSharedPreferences.getInt(Exercise.othersE6CompletedKey, 0);
 
-
             switch (exerciseNumber) {
-
                 case 1:
                     if(othersE1Completed == 0) {
                         int completedExerciseTotal = mSharedPreferences.getInt(Exercise.othersProgress, 0);
@@ -332,7 +330,6 @@ public class QuestionActivity extends AppCompatActivity {
                     }
 
                     else {
-
 
                         return 0;
                     }
