@@ -38,7 +38,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private ImageView mHomeButton, mToDoButton;
 
     //Image Views for the UI Activity "Menu"
-    private ImageView mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private LinearLayout mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private ImageView mStartExercise1Image, mStartExercise2Image, mStartExercise3Image,
+            mStartExercise4Image, mStartExercise5Image, mStartExercise6Image;
     private ScrollView mScrollView;
 
     //Intent Extras for setting exercise UI Views
@@ -72,21 +74,28 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         mScrollView = findViewById(R.id.ExerciseScrollView);
 
-        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_ImageView);
-        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_ImageView);
-        mStartExercise3 = findViewById(R.id.ExerciseMenuE3_ImageView);
-        mStartExercise4 = findViewById(R.id.ExerciseMenuE4_ImageView);
-        mStartExercise5 = findViewById(R.id.ExerciseMenuE5_ImageView);
-        mStartExercise6 = findViewById(R.id.ExerciseMenuE6_ImageView);
+        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_LinearLayout);
+        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_LinearLayout);
+        mStartExercise3 = findViewById(R.id.ExerciseMenuE3_LinearLayout);
+        mStartExercise4 = findViewById(R.id.ExerciseMenuE4_LinearLayout);
+        mStartExercise5 = findViewById(R.id.ExerciseMenuE5_LinearLayout);
+        mStartExercise6 = findViewById(R.id.ExerciseMenuE6_LinearLayout);
+
+        mStartExercise1Image = findViewById(R.id.ExerciseMenuE1_ImageView);
+        mStartExercise2Image = findViewById(R.id.ExerciseMenuE2_ImageView);
+        mStartExercise3Image = findViewById(R.id.ExerciseMenuE3_ImageView);
+        mStartExercise4Image = findViewById(R.id.ExerciseMenuE4_ImageView);
+        mStartExercise5Image = findViewById(R.id.ExerciseMenuE5_ImageView);
+        mStartExercise6Image = findViewById(R.id.ExerciseMenuE6_ImageView);
 
         //Using and ArrayList of objects here to set the image resource for each exercise button.
         ArrayList<ImageView> mExerciseImageArray = new ArrayList<>();
-        mExerciseImageArray.add(mStartExercise1);
-        mExerciseImageArray.add(mStartExercise2);
-        mExerciseImageArray.add(mStartExercise3);
-        mExerciseImageArray.add(mStartExercise4);
-        mExerciseImageArray.add(mStartExercise5);
-        mExerciseImageArray.add(mStartExercise6);
+        mExerciseImageArray.add(mStartExercise1Image);
+        mExerciseImageArray.add(mStartExercise2Image);
+        mExerciseImageArray.add(mStartExercise3Image);
+        mExerciseImageArray.add(mStartExercise4Image);
+        mExerciseImageArray.add(mStartExercise5Image);
+        mExerciseImageArray.add(mStartExercise6Image);
 
 
         Bundle extras = getIntent().getExtras();
@@ -107,14 +116,14 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         if(menuCategory == Exercise.selfMenu) {
 
-            checkForCompletedExercises(Exercise.selfKeys, menuCategory);
+            checkForCompletedExercises(Exercise.selfKeys);
 
             setOnClickListeners(Exercise.selfExerciseImages, Exercise.selfExerciseStrings);
         }
 
         if(menuCategory == Exercise.othersMenu) {
 
-            checkForCompletedExercises(Exercise.othersKeys, menuCategory);
+            checkForCompletedExercises(Exercise.othersKeys);
 
             setOnClickListeners(Exercise.otherExerciseImages, Exercise.otherExerciseStrings);
         }
@@ -122,7 +131,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == Exercise.natureMenu) {
 
 
-            checkForCompletedExercises(Exercise.natureKeys, menuCategory);
+            checkForCompletedExercises(Exercise.natureKeys);
 
             setOnClickListeners(Exercise.natureExerciseImages, Exercise.natureExerciseStrings);
         }
@@ -130,7 +139,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == Exercise.societyMenu) {
 
 
-            checkForCompletedExercises(Exercise.societyKeys, menuCategory);
+            checkForCompletedExercises(Exercise.societyKeys);
 
             setOnClickListeners(Exercise.societyExerciseImages, Exercise.societyExerciseStrings);
 
@@ -203,7 +212,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         //Society Menu
     }
 
-    private void checkForCompletedExercises(String[] exerciseKeys, int menuCategory) {
+    private void checkForCompletedExercises(String[] exerciseKeys) {
 
         //Sets color of stars for each exercise.
         SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
