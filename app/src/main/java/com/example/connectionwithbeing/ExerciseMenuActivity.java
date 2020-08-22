@@ -212,7 +212,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 R.id.ExerciseMenuE4Star_ImageView, R.id.ExerciseMenuE5Star_ImageView, R.id.ExerciseMenuE6Star_ImageView};
 
         int i = 0;
-        int completedCount = 0;
+//        int completedCount = 0;
         while(i < exerciseKeys.length) {
             int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], 0);
 
@@ -220,37 +220,37 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);
                 mStar.setImageResource(R.drawable.guistar);
-                completedCount++;
+//                completedCount++;
             }
 
             i++;
         }
 
-        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
-        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
-
-        switch (menuCategory) {
-            case 1:
-               mSharedPreferencesEditor.putInt(Exercise.selfProgress, completedCount);
-               mSharedPreferencesEditor.commit();
-               break;
-
-            case 2:
-                mSharedPreferencesEditor.putInt(Exercise.othersProgress, completedCount);
-                mSharedPreferencesEditor.commit();
-                break;
-
-            case 3:
-                mSharedPreferencesEditor.putInt(Exercise.natureProgress, completedCount);
-                mSharedPreferencesEditor.commit();
-                break;
-
-            case 4:
-                mSharedPreferencesEditor.putInt(Exercise.societyProgress, completedCount);
-                mSharedPreferencesEditor.commit();
-                break;
-
-        }
+//        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+//        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+//
+//        switch (menuCategory) {
+//            case 1:
+//               mSharedPreferencesEditor.putInt(Exercise.selfProgress, completedCount);
+//               mSharedPreferencesEditor.commit();
+//               break;
+//
+//            case 2:
+//                mSharedPreferencesEditor.putInt(Exercise.othersProgress, completedCount);
+//                mSharedPreferencesEditor.commit();
+//                break;
+//
+//            case 3:
+//                mSharedPreferencesEditor.putInt(Exercise.natureProgress, completedCount);
+//                mSharedPreferencesEditor.commit();
+//                break;
+//
+//            case 4:
+//                mSharedPreferencesEditor.putInt(Exercise.societyProgress, completedCount);
+//                mSharedPreferencesEditor.commit();
+//                break;
+//
+//        }
 
     }
 
