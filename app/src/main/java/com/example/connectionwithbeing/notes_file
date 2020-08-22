@@ -3,16 +3,16 @@ Long Term TODO:
 **Kotlin? Learn AI..**
 Read/Scan Through entire android dev guide
 
-
 Working TODO:
 
-Introduction Screen Updates
-    > Include UI directions, as well as philosophical background.
 
 
 General TODO:
 
 Screen Orientations for all Activities
+
+Introduction Screen Updates
+    > Include UI directions, as well as philosophical background.
 
 Quote Screen Updates
     > Finish finding and adding quote string resources.
@@ -36,9 +36,6 @@ Settings
     > Font size options
 
 About
-
-Ads
-    > Display ads after reflections have been completed.
 
 Publish
 
