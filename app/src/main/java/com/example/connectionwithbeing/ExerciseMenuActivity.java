@@ -1,18 +1,22 @@
 package com.example.connectionwithbeing;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -34,7 +38,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private ImageView mHomeButton, mToDoButton;
 
     //Image Views for the UI Activity "Menu"
-    private ImageView mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private LinearLayout mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private ImageView mStartExercise1Image, mStartExercise2Image, mStartExercise3Image,
+            mStartExercise4Image, mStartExercise5Image, mStartExercise6Image;
     private ScrollView mScrollView;
 
     //Intent Extras for setting exercise UI Views
@@ -68,21 +74,28 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         mScrollView = findViewById(R.id.ExerciseScrollView);
 
-        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_ImageView);
-        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_ImageView);
-        mStartExercise3 = findViewById(R.id.ExerciseMenuE3_ImageView);
-        mStartExercise4 = findViewById(R.id.ExerciseMenuE4_ImageView);
-        mStartExercise5 = findViewById(R.id.ExerciseMenuE5_ImageView);
-        mStartExercise6 = findViewById(R.id.ExerciseMenuE6_ImageView);
+        mStartExercise1 = findViewById(R.id.ExerciseMenuE1_LinearLayout);
+        mStartExercise2 = findViewById(R.id.ExerciseMenuE2_LinearLayout);
+        mStartExercise3 = findViewById(R.id.ExerciseMenuE3_LinearLayout);
+        mStartExercise4 = findViewById(R.id.ExerciseMenuE4_LinearLayout);
+        mStartExercise5 = findViewById(R.id.ExerciseMenuE5_LinearLayout);
+        mStartExercise6 = findViewById(R.id.ExerciseMenuE6_LinearLayout);
+
+        mStartExercise1Image = findViewById(R.id.ExerciseMenuE1_ImageView);
+        mStartExercise2Image = findViewById(R.id.ExerciseMenuE2_ImageView);
+        mStartExercise3Image = findViewById(R.id.ExerciseMenuE3_ImageView);
+        mStartExercise4Image = findViewById(R.id.ExerciseMenuE4_ImageView);
+        mStartExercise5Image = findViewById(R.id.ExerciseMenuE5_ImageView);
+        mStartExercise6Image = findViewById(R.id.ExerciseMenuE6_ImageView);
 
         //Using and ArrayList of objects here to set the image resource for each exercise button.
         ArrayList<ImageView> mExerciseImageArray = new ArrayList<>();
-        mExerciseImageArray.add(mStartExercise1);
-        mExerciseImageArray.add(mStartExercise2);
-        mExerciseImageArray.add(mStartExercise3);
-        mExerciseImageArray.add(mStartExercise4);
-        mExerciseImageArray.add(mStartExercise5);
-        mExerciseImageArray.add(mStartExercise6);
+        mExerciseImageArray.add(mStartExercise1Image);
+        mExerciseImageArray.add(mStartExercise2Image);
+        mExerciseImageArray.add(mStartExercise3Image);
+        mExerciseImageArray.add(mStartExercise4Image);
+        mExerciseImageArray.add(mStartExercise5Image);
+        mExerciseImageArray.add(mStartExercise6Image);
 
 
         Bundle extras = getIntent().getExtras();
@@ -219,6 +232,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             i++;
         }
 
+
     }
 
     private void setOnClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
@@ -240,6 +254,16 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
+        mStartExercise1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 1);
+                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise" + 1, Toast.LENGTH_SHORT).show();
+                return true;
+
+            }
+        });
+
         mStartExercise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -250,15 +274,19 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseNumberKey,2);
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
-
-
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise2ImageKey));
-//                startExercise2.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise2StringKey));
-//                startExercise2.putExtra(exerciseNumberKey,2);
-//                startExercise2.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise2.putExtras(exerciseExtras);
                 startActivity(startExercise2);
+
+            }
+        });
+
+        mStartExercise2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 2);
+                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise" + 2, Toast.LENGTH_SHORT).show();
+                return true;
 
             }
         });
@@ -274,13 +302,18 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise3 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise3.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise3ImageKey));
-//                startExercise3.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise3StringKey));
-//                startExercise3.putExtra(exerciseNumberKey,3);
-//                startExercise3.putExtra(exerciseCategoryKey, menuCategory);
-
                 startExercise3.putExtras(exerciseExtras);
                 startActivity(startExercise3);
+
+            }
+        });
+
+        mStartExercise3.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 3);
+//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
+                return true;
 
             }
         });
@@ -296,12 +329,18 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise4 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise4.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise4ImageKey));
-//                startExercise4.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise4StringKey));
-//                startExercise4.putExtra(exerciseNumberKey,4);
-//                startExercise4.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise4.putExtras(exerciseExtras);
                 startActivity(startExercise4);
+
+            }
+        });
+
+        mStartExercise4.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 4);
+//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
+                return true;
 
             }
         });
@@ -317,12 +356,18 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise5 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise5.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise5ImageKey));
-//                startExercise5.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise5StringKey));
-//                startExercise5.putExtra(exerciseNumberKey,5);
-//                startExercise5.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise5.putExtras(exerciseExtras);
                 startActivity(startExercise5);
+
+            }
+        });
+
+        mStartExercise5.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 5);
+//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
+                return true;
 
             }
         });
@@ -337,12 +382,18 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise6 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise6.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise6ImageKey));
-//                startExercise6.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise6StringKey));
-//                startExercise6.putExtra(exerciseNumberKey,6);
-//                startExercise6.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise6.putExtras(exerciseExtras);
                 startActivity(startExercise6);
+
+            }
+        });
+
+        mStartExercise6.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startUndoStarsDialog(menuCategory, 6);
+//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
+                return true;
 
             }
         });
@@ -364,5 +415,450 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void startUndoStarsDialog(final int menuCategory, final int exerciseNumber) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ExerciseMenuActivity.this);
+        builder.setTitle("Reset this exercise.");
+        builder.setMessage("Do you want to reset your progress star for the exercise?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        undoStars(menuCategory, exerciseNumber);
+
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+            }
+        });
+        builder.setIcon(R.drawable.guistar);
+        builder.show();// A null listener allows the button to dismiss the dialog and take no further action.
+
+
+    }
+
+    private void undoStars(int exerciseCategory, int exerciseNumber) {
+
+        final SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+        final SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+        switch (exerciseCategory) {
+            //Self
+            case 1:
+                switch (exerciseNumber) {
+                    case 1:
+                        int completed = mSharedPreferences.getInt(Exercise.selfE1CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE1CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 2:
+                        completed = mSharedPreferences.getInt(Exercise.selfE2CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE2CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 3:
+                        completed = mSharedPreferences.getInt(Exercise.selfE3CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE3CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 4:
+                        completed = mSharedPreferences.getInt(Exercise.selfE4CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE4CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 5:
+                        completed = mSharedPreferences.getInt(Exercise.selfE5CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE5CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 6:
+                        completed = mSharedPreferences.getInt(Exercise.selfE6CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE6CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+                }
+                break;
+
+            //Others
+            case 2:
+                switch (exerciseNumber) {
+                    case 1:
+                        int completed = mSharedPreferences.getInt(Exercise.othersE1CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE1CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 2:
+                        completed = mSharedPreferences.getInt(Exercise.othersE2CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE2CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 3:
+                        completed = mSharedPreferences.getInt(Exercise.othersE3CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE3CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 4:
+                        completed = mSharedPreferences.getInt(Exercise.othersE4CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE4CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 5:
+                        completed = mSharedPreferences.getInt(Exercise.othersE5CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE5CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 6:
+                        completed = mSharedPreferences.getInt(Exercise.othersE6CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.othersE6CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+                }
+                break;
+
+            //Nature
+            case 3:
+                switch (exerciseNumber) {
+                    case 1:
+                        int completed = mSharedPreferences.getInt(Exercise.natureE1CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.natureE1CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 2:
+                        completed = mSharedPreferences.getInt(Exercise.natureE2CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.natureE2CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 3:
+                        completed = mSharedPreferences.getInt(Exercise.natureE3CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE3CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 4:
+                        completed = mSharedPreferences.getInt(Exercise.natureE4CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.natureE4CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 5:
+                        completed = mSharedPreferences.getInt(Exercise.natureE5CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.natureE5CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 6:
+                        completed = mSharedPreferences.getInt(Exercise.natureE6CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.natureE6CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+                }
+                break;
+
+            //Society
+            case 4:
+                switch (exerciseNumber) {
+                    case 1:
+                        int completed = mSharedPreferences.getInt(Exercise.societyE1CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.societyE1CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 2:
+                        completed = mSharedPreferences.getInt(Exercise.societyE2CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.selfE2CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 3:
+                        completed = mSharedPreferences.getInt(Exercise.societyE3CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.societyE3CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 4:
+                        completed = mSharedPreferences.getInt(Exercise.societyE4CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.societyE4CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 5:
+                        completed = mSharedPreferences.getInt(Exercise.societyE5CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.societyE5CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+
+                    case 6:
+                        completed = mSharedPreferences.getInt(Exercise.societyE6CompletedKey,0);
+
+                        if(completed == 1) {
+                            mSharedPreferencesEditor.putInt(Exercise.societyE6CompletedKey, 0);
+                            mSharedPreferencesEditor.commit();
+
+                            ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
+                            mStar.setImageResource(R.drawable.guigreystar);
+                        }
+                        else {
+                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                        }
+                        break;
+                }
+                break;
+
+        }
     }
 }

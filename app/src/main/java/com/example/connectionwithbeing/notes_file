@@ -3,45 +3,41 @@ Long Term TODO:
 **Kotlin? Learn AI..**
 Read/Scan Through entire android dev guide
 
-
 Working TODO:
 
-Bookmark activity
-    > Just a bookmark icon that saves a single exercise for future reference.
-    > On main activity, and exercise activity bottom bar.
+Contacts
+About
+
+Settings
+    > Font size options
+    > Switch into 8bit mod.
+    > Reset stars.
+        > On long click of exercise menu, reset stars?
+
 
 General TODO:
 
-Screen Orientations for all Activities
-
-Quote Screen Updates
-    > Finish finding and adding quote string resources.
-    > Shuffle button displays quote.
+Integrate AdMob
 
 Introduction Screen Updates
     > Include UI directions, as well as philosophical background.
 
+Quote Screen Updates
+    > Finish finding and adding quote string resources.
+    > Add Assumptions text to quote screen.
+    > Shuffle button displays quote.
+
 Design Stuff
     > Set blink animation slower for questions. What feels right.
+    > Add grey out exercises to the exercise menu. Implies future updates.
     > Improve Alert Dialogs
     > Improve welcome screen
-    > Redo the design for transition button for exercise activity
     > Proofread all Strings.
         > Length of questions, typos, punctuation, ect.
 
 Clean up onCreate methods.
 
-Contacts
-
-Settings
-    > Font size options
-
-About
-
-Ads
-
 Publish
-
 
 ******///// CWB Notes File \\\\\******
 
