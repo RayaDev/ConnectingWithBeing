@@ -276,37 +276,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Need this for all categories.
 
-        int stars = mSharedPreferences.getInt(Exercise.natureProgress, 0);
+        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+//        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
 
-            Log.i("StarsNature", stars + "");
-            String progressStars = "X " + stars + "/6";
-            mNatureTextView = findViewById(R.id.natureCompletedTextView);
-            mNatureTextView.setText(progressStars);
+        int selfE1Completed = mSharedPreferences.getInt(Exercise.selfE1CompletedKey, 0);
+        int selfE2Completed = mSharedPreferences.getInt(Exercise.selfE2CompletedKey, 0);
+        int selfE3Completed = mSharedPreferences.getInt(Exercise.selfE3CompletedKey, 0);
+        int selfE4Completed = mSharedPreferences.getInt(Exercise.selfE4CompletedKey, 0);
+        int selfE5Completed = mSharedPreferences.getInt(Exercise.selfE5CompletedKey, 0);
+        int selfE6Completed = mSharedPreferences.getInt(Exercise.selfE6CompletedKey, 0);
 
+        int[] selfCompletedArray = {selfE1Completed, selfE2Completed, selfE3Completed,
+                selfE4Completed, selfE5Completed, selfE6Completed};
 
-        stars = mSharedPreferences.getInt(Exercise.othersProgress, 0);
+        int completedExerciseCount = 0;
+        for(int i : selfCompletedArray) {
+            if (i == 1){
+                completedExerciseCount++;
+            }
+        }
 
-            Log.i("StarsOthers", stars + "");
-            progressStars = "X " + stars + "/6";
-            mOthersTextView = findViewById(R.id.othersCompletedTextView);
-            mOthersTextView.setText(progressStars);
-
-
-
-        stars = mSharedPreferences.getInt(Exercise.selfProgress, 0);
-        Log.i("StarsSelf", stars+"");
-
-            progressStars = "X " + stars + "/6";
+        Log.i("StarsSelf", completedExerciseCount+"");
+//
+            String progressStars = "X " + completedExerciseCount + "/6";
             mSelfTextView = findViewById(R.id.selfCompletedTextView);
             mSelfTextView.setText(progressStars);
 
-
-        stars = mSharedPreferences.getInt(Exercise.societyProgress, 0);
-        Log.i("StarsSociety", stars+"");
-
-            progressStars = "X " + stars + "/6";
-            mSocietyTextView = findViewById(R.id.societyCompletedTextView);
-            mSocietyTextView.setText(progressStars);
+//        int stars = mSharedPreferences.getInt(Exercise.natureProgress, 0);
+//
+//
+//
+//            Log.i("StarsNature", stars + "");
+//            String progressStars = "X " + stars + "/6";
+//            mNatureTextView = findViewById(R.id.natureCompletedTextView);
+//            mNatureTextView.setText(progressStars);
+//
+//
+//        stars = mSharedPreferences.getInt(Exercise.othersProgress, 0);
+//
+//            Log.i("StarsOthers", stars + "");
+//            progressStars = "X " + stars + "/6";
+//            mOthersTextView = findViewById(R.id.othersCompletedTextView);
+//            mOthersTextView.setText(progressStars);
+//
+//
+//
+//        stars = mSharedPreferences.getInt(Exercise.selfProgress, 0);
+//        Log.i("StarsSelf", stars+"");
+//
+//            progressStars = "X " + stars + "/6";
+//            mSelfTextView = findViewById(R.id.selfCompletedTextView);
+//            mSelfTextView.setText(progressStars);
+//
+//
+//        stars = mSharedPreferences.getInt(Exercise.societyProgress, 0);
+//        Log.i("StarsSociety", stars+"");
+//
+//            progressStars = "X " + stars + "/6";
+//            mSocietyTextView = findViewById(R.id.societyCompletedTextView);
+//            mSocietyTextView.setText(progressStars);
 
     }
 

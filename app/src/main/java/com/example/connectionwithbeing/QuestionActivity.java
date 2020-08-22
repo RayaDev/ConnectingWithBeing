@@ -174,11 +174,13 @@ public class QuestionActivity extends AppCompatActivity {
             int selfE5Completed = mSharedPreferences.getInt(Exercise.selfE5CompletedKey, 0);
             int selfE6Completed = mSharedPreferences.getInt(Exercise.selfE6CompletedKey, 0);
 
-            int[] selfCompletedArray = {selfE1Completed, selfE2Completed, selfE3Completed, selfE4Completed, selfE5Completed, selfE6Completed};
+            int[] selfCompletedArray = {selfE1Completed, selfE2Completed, selfE3Completed,
+                    selfE4Completed, selfE5Completed, selfE6Completed};
 
             switch (exerciseNumber) {
 
                 case 1:
+
 
                     if(selfE1Completed == 0) {
 //                        int completedExerciseTotal = mSharedPreferences.getInt(Exercise.selfProgress, 0);
@@ -300,14 +302,6 @@ public class QuestionActivity extends AppCompatActivity {
                     }
             }
 
-            int completedExerciseCount = 0;
-            for(int i : selfCompletedArray) {
-                if (i == 1){
-                    completedExerciseCount++;
-                }
-            }
-
-            mSharedPreferencesEditor.putInt(Exercise.selfProgress, completedExerciseCount);
         }
 
         //Others
