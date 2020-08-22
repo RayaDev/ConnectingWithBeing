@@ -1,18 +1,22 @@
 package com.example.connectionwithbeing;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -103,14 +107,14 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         if(menuCategory == Exercise.selfMenu) {
 
-            checkForCompletedExercises(Exercise.selfKeys);
+            checkForCompletedExercises(Exercise.selfKeys, menuCategory);
 
             setOnClickListeners(Exercise.selfExerciseImages, Exercise.selfExerciseStrings);
         }
 
         if(menuCategory == Exercise.othersMenu) {
 
-            checkForCompletedExercises(Exercise.othersKeys);
+            checkForCompletedExercises(Exercise.othersKeys, menuCategory);
 
             setOnClickListeners(Exercise.otherExerciseImages, Exercise.otherExerciseStrings);
         }
@@ -118,7 +122,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == Exercise.natureMenu) {
 
 
-            checkForCompletedExercises(Exercise.natureKeys);
+            checkForCompletedExercises(Exercise.natureKeys, menuCategory);
 
             setOnClickListeners(Exercise.natureExerciseImages, Exercise.natureExerciseStrings);
         }
@@ -126,7 +130,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         if(menuCategory == Exercise.societyMenu) {
 
 
-            checkForCompletedExercises(Exercise.societyKeys);
+            checkForCompletedExercises(Exercise.societyKeys, menuCategory);
 
             setOnClickListeners(Exercise.societyExerciseImages, Exercise.societyExerciseStrings);
 
@@ -199,7 +203,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         //Society Menu
     }
 
-    private void checkForCompletedExercises(String[] exerciseKeys) {
+    private void checkForCompletedExercises(String[] exerciseKeys, int menuCategory) {
 
         //Sets color of stars for each exercise.
         SharedPreferences exerciseSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
@@ -208,15 +212,44 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 R.id.ExerciseMenuE4Star_ImageView, R.id.ExerciseMenuE5Star_ImageView, R.id.ExerciseMenuE6Star_ImageView};
 
         int i = 0;
+        int completedCount = 0;
         while(i < exerciseKeys.length) {
             int lightUpStar = exerciseSharedPreferences.getInt(exerciseKeys[i], 0);
+
 
             if (lightUpStar == 1) {
                 ImageView mStar = findViewById(exerciseStarImageViews[i]);
                 mStar.setImageResource(R.drawable.guistar);
+                completedCount++;
             }
 
             i++;
+        }
+
+        SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+        SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+        switch (menuCategory) {
+            case 1:
+               mSharedPreferencesEditor.putInt(Exercise.selfProgress, completedCount);
+               mSharedPreferencesEditor.commit();
+               break;
+
+            case 2:
+                mSharedPreferencesEditor.putInt(Exercise.othersProgress, completedCount);
+                mSharedPreferencesEditor.commit();
+                break;
+
+            case 3:
+                mSharedPreferencesEditor.putInt(Exercise.natureProgress, completedCount);
+                mSharedPreferencesEditor.commit();
+                break;
+
+            case 4:
+                mSharedPreferencesEditor.putInt(Exercise.societyProgress, completedCount);
+                mSharedPreferencesEditor.commit();
+                break;
+
         }
 
     }
@@ -240,6 +273,16 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             }
         });
 
+        mStartExercise1.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                longClickTest();
+//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
+                return true;
+
+            }
+        });
+
         mStartExercise2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -250,13 +293,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseNumberKey,2);
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
-
-
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise2.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise2ImageKey));
-//                startExercise2.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise2StringKey));
-//                startExercise2.putExtra(exerciseNumberKey,2);
-//                startExercise2.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise2.putExtras(exerciseExtras);
                 startActivity(startExercise2);
 
@@ -274,11 +311,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise3 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise3.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise3ImageKey));
-//                startExercise3.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise3StringKey));
-//                startExercise3.putExtra(exerciseNumberKey,3);
-//                startExercise3.putExtra(exerciseCategoryKey, menuCategory);
-
                 startExercise3.putExtras(exerciseExtras);
                 startActivity(startExercise3);
 
@@ -296,10 +328,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise4 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise4.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise4ImageKey));
-//                startExercise4.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise4StringKey));
-//                startExercise4.putExtra(exerciseNumberKey,4);
-//                startExercise4.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise4.putExtras(exerciseExtras);
                 startActivity(startExercise4);
 
@@ -317,10 +345,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise5 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise5.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise5ImageKey));
-//                startExercise5.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise5StringKey));
-//                startExercise5.putExtra(exerciseNumberKey,5);
-//                startExercise5.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise5.putExtras(exerciseExtras);
                 startActivity(startExercise5);
 
@@ -337,10 +361,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 exerciseExtras.putInt(exerciseCategoryKey, menuCategory);
 
                 Intent startExercise6 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
-//                startExercise6.putExtra(exerciseImageViewKey, exerciseImages.get(Exercise.exercise6ImageKey));
-//                startExercise6.putExtra(exerciseTextViewKey, exerciseStrings.get(Exercise.exercise6StringKey));
-//                startExercise6.putExtra(exerciseNumberKey,6);
-//                startExercise6.putExtra(exerciseCategoryKey, menuCategory);
                 startExercise6.putExtras(exerciseExtras);
                 startActivity(startExercise6);
 
@@ -363,6 +383,62 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    private void longClickTest() {
+        final SharedPreferences mSharedPreferences = getApplicationContext().getSharedPreferences(Exercise.userActivityProgress, MODE_PRIVATE);
+        final SharedPreferences.Editor mSharedPreferencesEditor = mSharedPreferences.edit();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ExerciseMenuActivity.this);
+        builder.setTitle("Reset this exercise.");
+        builder.setMessage("Do you want to reset your progress star for the exercise?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        int exerciseCategory = menuCategory;
+                        int exerciseNumber = 1;
+
+                        switch (exerciseCategory) {
+                            //Self
+                            case 1:
+                                switch (exerciseNumber) {
+                                    case 1:
+                                        int completed = mSharedPreferences.getInt(Exercise.selfE1CompletedKey,0);
+
+                                        if(completed == 1) {
+                                            mSharedPreferencesEditor.putInt(Exercise.selfE1CompletedKey, 0);
+                                            int stars = mSharedPreferences.getInt(Exercise.selfProgress, 0);
+                                            mSharedPreferencesEditor.putInt(Exercise.selfProgress, stars - 1);
+                                            mSharedPreferencesEditor.commit();
+                                            ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
+                                            mStar.setImageResource(R.drawable.guigreystar);
+                                        }
+                                        else {
+                                            Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
+
+                                        }
+                                }
+
+                        }
+
+                    }
+                });
+            }
+        });
+        builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+            }
+        });
+        builder.setIcon(R.drawable.guistar);
+        builder.show();// A null listener allows the button to dismiss the dialog and take no further action.
+
 
     }
 }

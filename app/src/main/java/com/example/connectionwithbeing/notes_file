@@ -5,11 +5,19 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
+Contacts
+About
+
+Settings
+    > Font size options
+    > Switch into 8bit mod.
+    > Reset stars.
+        > On long click of exercise menu, reset stars?
 
 
 General TODO:
 
-Screen Orientations for all Activities
+Integrate AdMob
 
 Introduction Screen Updates
     > Include UI directions, as well as philosophical background.
@@ -18,7 +26,6 @@ Quote Screen Updates
     > Finish finding and adding quote string resources.
     > Add Assumptions text to quote screen.
     > Shuffle button displays quote.
-
 
 Design Stuff
     > Set blink animation slower for questions. What feels right.
@@ -30,15 +37,7 @@ Design Stuff
 
 Clean up onCreate methods.
 
-Contacts
-
-Settings
-    > Font size options
-
-About
-
 Publish
-
 
 ******///// CWB Notes File \\\\\******
 
