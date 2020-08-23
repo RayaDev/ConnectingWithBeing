@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
-        getSupportActionBar().setTitle("Connection With..."); //Sets the title to be blank on create.
+        getSupportActionBar().setTitle(R.string.main_activity_title); //Sets the title to be blank on create.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mHomeButtonBar.setElevation(100);
@@ -180,6 +181,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(item.getItemId() == R.id.settingsItem) {
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
         }
 
@@ -200,8 +210,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            new Handler().postDelayed(new Runnable() {
                @Override
                public void run() {
-                   Intent startIntroduction = new Intent(MainActivity.this, IntroductionActivity.class);
-                   startActivity(startIntroduction);
+                   Intent startMenuActivity = new Intent(MainActivity.this, IntroductionActivity.class);
+                   startActivity(startMenuActivity);
                    finish();
                }
            },500);
@@ -211,16 +221,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.credits_item) {
 
             mDrawerLayout.closeDrawers();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, CreditsActivity.class);
+                    startActivity(startMenuActivity);
+                    finish();
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "Credits item clicked", Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.about_item) {
             mDrawerLayout.closeDrawers();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.contacts_item) {
             mDrawerLayout.closeDrawers();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, ContactActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
         }
 
@@ -507,6 +544,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                        moveTaskToBack(true);
 //                        finish();
                             finishAffinity();
+
+
                         }
                     })
 
@@ -522,10 +561,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        setProgressStars();
+
+    }
 
 
 //**************************************************************************************************
-
-
 
 }
