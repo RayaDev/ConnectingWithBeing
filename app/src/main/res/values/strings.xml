@@ -3,6 +3,12 @@
 
 
     <!-- Main Activity Strings-->
+    <string name = "main_activity_title">Connection With...</string>
+    <string name= "about_activity_title">About</string>
+    <string name = "contact_activity_title">Contacts</string>
+    <string name = "settings_activity_title">Settings</string>
+    <string name = "credits_activity_title">Credits</string>
+
     <string name="open">open toggle</string>
     <string name="close">close toggle</string>
     <string name="home_button_toast">You are already home!</string>

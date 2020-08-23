@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Action bar settings.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Adds functionality back button
-        getSupportActionBar().setTitle("Connection With..."); //Sets the title to be blank on create.
+        getSupportActionBar().setTitle(R.string.main_activity_title); //Sets the title to be blank on create.
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mHomeButtonBar.setElevation(100);
