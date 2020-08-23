@@ -235,7 +235,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             i++;
         }
 
-
     }
 
     private void setOnClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) {
