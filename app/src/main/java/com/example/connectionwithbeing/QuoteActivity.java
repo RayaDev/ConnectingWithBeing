@@ -96,9 +96,7 @@ public class QuoteActivity extends AppCompatActivity {
         int category = exerciseExtras.getInt(ExerciseMenuActivity.exerciseCategoryKey);
         int exerciseNumber = exerciseExtras.getInt(ExerciseMenuActivity.exerciseNumberKey);
 
-
         setActivityColorsAndQuotes(category, exerciseNumber);
-
 
     }
 

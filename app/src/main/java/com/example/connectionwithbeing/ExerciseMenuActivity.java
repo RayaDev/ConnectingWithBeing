@@ -261,7 +261,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 startUndoStarsDialog(menuCategory, 1);
-                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise" + 1, Toast.LENGTH_SHORT).show();
                 return true;
 
             }
@@ -288,7 +287,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 startUndoStarsDialog(menuCategory, 2);
-                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise" + 2, Toast.LENGTH_SHORT).show();
                 return true;
 
             }
@@ -315,7 +313,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 startUndoStarsDialog(menuCategory, 3);
-//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
                 return true;
 
             }
@@ -342,7 +339,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 startUndoStarsDialog(menuCategory, 4);
-//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
                 return true;
 
             }
@@ -369,7 +365,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 startUndoStarsDialog(menuCategory, 5);
-//                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
                 return true;
 
             }
