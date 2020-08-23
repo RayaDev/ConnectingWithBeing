@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -180,6 +181,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(item.getItemId() == R.id.settingsItem) {
+            Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(startMenuActivity);
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
         }
 
@@ -200,8 +203,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            new Handler().postDelayed(new Runnable() {
                @Override
                public void run() {
-                   Intent startIntroduction = new Intent(MainActivity.this, IntroductionActivity.class);
-                   startActivity(startIntroduction);
+                   Intent startMenuActivity = new Intent(MainActivity.this, IntroductionActivity.class);
+                   startActivity(startMenuActivity);
                    finish();
                }
            },500);
@@ -216,11 +219,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.about_item) {
             mDrawerLayout.closeDrawers();
+            Intent startMenuActivity = new Intent(MainActivity.this, AboutActivity.class);
+            startActivity(startMenuActivity);
             Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.contacts_item) {
             mDrawerLayout.closeDrawers();
+            Intent startMenuActivity = new Intent(MainActivity.this, ContactActivity.class);
+            startActivity(startMenuActivity);
             Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
         }
 
@@ -531,7 +538,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 //**************************************************************************************************
-
-
 
 }
