@@ -522,6 +522,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        setProgressStars();
+
+    }
 
 
 //**************************************************************************************************

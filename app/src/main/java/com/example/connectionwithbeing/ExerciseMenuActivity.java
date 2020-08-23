@@ -781,7 +781,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                         completed = mSharedPreferences.getInt(Exercise.societyE2CompletedKey,0);
 
                         if(completed == 1) {
-                            mSharedPreferencesEditor.putInt(Exercise.selfE2CompletedKey, 0);
+                            mSharedPreferencesEditor.putInt(Exercise.societyE2CompletedKey, 0);
                             mSharedPreferencesEditor.commit();
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
