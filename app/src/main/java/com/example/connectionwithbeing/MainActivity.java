@@ -181,8 +181,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if(item.getItemId() == R.id.settingsItem) {
-            Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
-            startActivity(startMenuActivity);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
         }
 
@@ -214,20 +221,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.credits_item) {
 
             mDrawerLayout.closeDrawers();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, CreditsActivity.class);
+                    startActivity(startMenuActivity);
+                    finish();
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "Credits item clicked", Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.about_item) {
             mDrawerLayout.closeDrawers();
-            Intent startMenuActivity = new Intent(MainActivity.this, AboutActivity.class);
-            startActivity(startMenuActivity);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.contacts_item) {
             mDrawerLayout.closeDrawers();
-            Intent startMenuActivity = new Intent(MainActivity.this, ContactActivity.class);
-            startActivity(startMenuActivity);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent startMenuActivity = new Intent(MainActivity.this, ContactActivity.class);
+                    startActivity(startMenuActivity);
+                }
+            },500);
+
             Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
         }
 
@@ -514,6 +544,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                        moveTaskToBack(true);
 //                        finish();
                             finishAffinity();
+
+
                         }
                     })
 
