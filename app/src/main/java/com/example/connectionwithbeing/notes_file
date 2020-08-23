@@ -5,33 +5,26 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
-Contacts
-About
-Settings
-    > Font size options
-    > Switch into 8bit mod.
-
-Fix back button bug from activities.
+> Add grey out exercises to the exercise menu. Implies future updates.
+Integrate AdMob
 
 General TODO:
-
-Integrate AdMob
 
 Introduction Screen Updates
     > Include UI directions, as well as philosophical background.
 
 Quote Screen Updates
     > Finish finding and adding quote string resources.
-    > Add Assumptions text to quote screen.
     > Shuffle button displays quote.
+
+About, Contacts, Credits, Settings Updates
 
 Design Stuff
     > Set blink animation slower for questions. What feels right.
-    > Add grey out exercises to the exercise menu. Implies future updates.
     > Improve Alert Dialogs
     > Improve welcome screen
     > Proofread all Strings.
-        > Length of questions, typos, punctuation, ect.
+        > Exercise content, Length of questions, typos, punctuation, ect.
 
 Clean up onCreate methods.
 

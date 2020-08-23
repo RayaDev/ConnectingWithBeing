@@ -2,6 +2,7 @@
 <resources>
 
     <!--General App colors -->
+    <color name="myGrey">#919191</color>
     <color name= "textColor">#070707</color>
     <color name="myWhite">#FFFFFF</color>
     <color name= "myBlack">#070707</color>

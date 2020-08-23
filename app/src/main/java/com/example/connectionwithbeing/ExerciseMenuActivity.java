@@ -38,7 +38,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
     private ImageView mHomeButton, mToDoButton;
 
     //Image Views for the UI Activity "Menu"
-    private LinearLayout mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5, mStartExercise6;
+    private LinearLayout mStartExercise1, mStartExercise2, mStartExercise3, mStartExercise4, mStartExercise5,
+            mStartExercise6, mStartExercise7, mStartExercise8;
     private ImageView mStartExercise1Image, mStartExercise2Image, mStartExercise3Image,
             mStartExercise4Image, mStartExercise5Image, mStartExercise6Image;
     private ScrollView mScrollView;
@@ -80,6 +81,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         mStartExercise4 = findViewById(R.id.ExerciseMenuE4_LinearLayout);
         mStartExercise5 = findViewById(R.id.ExerciseMenuE5_LinearLayout);
         mStartExercise6 = findViewById(R.id.ExerciseMenuE6_LinearLayout);
+        mStartExercise7 = findViewById(R.id.ExerciseMenuE7_LinearLayout);
+        mStartExercise8 = findViewById(R.id.ExerciseMenuE8_LinearLayout);
 
         mStartExercise1Image = findViewById(R.id.ExerciseMenuE1_ImageView);
         mStartExercise2Image = findViewById(R.id.ExerciseMenuE2_ImageView);
@@ -235,7 +238,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     }
 
-    private void setOnClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) { //HashMap here?
+    private void setOnClickListeners(final HashMap<String, Integer> exerciseImages, final HashMap<String,Integer> exerciseStrings) {
 
         mStartExercise1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -395,6 +398,20 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 //                Toast.makeText(ExerciseMenuActivity.this, "Long clicked exercise 1", Toast.LENGTH_SHORT).show();
                 return true;
 
+            }
+        });
+
+        mStartExercise7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ExerciseMenuActivity.this, "Work In Progress! \nMore Exercises To Come!",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        mStartExercise8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ExerciseMenuActivity.this, "Work In Progress! \nMore Exercises To Come!",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -860,5 +877,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 break;
 
         }
+
+        Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
     }
 }
