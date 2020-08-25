@@ -34,12 +34,7 @@ public class IntroductionActivity extends FragmentActivity {
 //        mSkipButton = (Button) findViewById(R.id.IntroductionActivity_SkipButton);
         mNextButton = findViewById(R.id.IntroductionNext_LinearLayout);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(IntroductionActivity.this, "Scroll down for more info \nClick next arrow or swipe to continue", Toast.LENGTH_LONG).show();
-            }
-        },3000);
+       instructionToastMessage();
 
 
         FragmentStatePagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
@@ -132,5 +127,22 @@ public class IntroductionActivity extends FragmentActivity {
         else {
 
         }
+    }
+
+    private void instructionToastMessage() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(IntroductionActivity.this, "Click next arrow or swipe to continue", Toast.LENGTH_LONG).show();
+            }
+        },4000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(IntroductionActivity.this, "Scroll down for more info", Toast.LENGTH_LONG).show();
+
+            }
+        },12000);
     }
 }
