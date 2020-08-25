@@ -9,10 +9,11 @@
 
     <TextView
         android:id="@+id/QuoteActivity_TextView"
-        android:text="Quote Text Place Holder"
+        android:text="@string/quote_text_placeholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textSize="32sp"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
 
         android:minHeight="50dp"
-        android:minWidth="200dp"
+        android:minWidth="250dp"
         android:max="100"
 
         android:indeterminate="false"
@@ -42,6 +43,7 @@
         android:id="@+id/QuoteActivity_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Skip"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

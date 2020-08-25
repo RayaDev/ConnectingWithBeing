@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -17,7 +19,8 @@ public class IntroductionActivity extends FragmentActivity {
 
     private ViewPager mViewPager;
     private Button mSkipButton;
-    private Button mNextButton;
+    private LinearLayout mNextButton;
+    private View mNextButton2;
 
 
     @Override
@@ -26,18 +29,25 @@ public class IntroductionActivity extends FragmentActivity {
         setContentView(R.layout.activity_introduction);
 
         mViewPager = (ViewPager) findViewById(R.id.IntroductionActivity_ViewPager);
-        mSkipButton = (Button) findViewById(R.id.IntroductionActivity_SkipButton);
-        mNextButton = (Button) findViewById(R.id.IntroductionActivity_NextButton);
+//        mSkipButton = (Button) findViewById(R.id.IntroductionActivity_SkipButton);
+        mNextButton = findViewById(R.id.IntroductionNext_LinearLayout);
+
+
+
 
         FragmentStatePagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
+//                        mNextButton = findViewById(R.id.IntroductionNext_LinearLayout);
                         return new IntroductionFragment1();
                     case 1:
+//                        mNextButton = (LinearLayout) findViewById(R.id.ExerciseMenuE1_LinearLayout);
+
                         return new IntroductionFragment2();
                     case 2:
+                        mNextButton = (LinearLayout) findViewById(R.id.selfLinearLayout);
                         return new IntroductionFragment3();
                     default:
                         return null;
@@ -52,25 +62,25 @@ public class IntroductionActivity extends FragmentActivity {
 
         mViewPager.setAdapter(adapter);
 
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                if (position == 2) {
-                    mSkipButton.setVisibility(View.GONE);
-                    mNextButton.setText("Done");
-                } else {
-                    mSkipButton.setVisibility(View.VISIBLE);
-                    mNextButton.setText("Next");
-                }
-            }
-        });
+//        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                if (position == 2) {
+//                    mSkipButton.setVisibility(View.GONE);
+//                    mNextButton.setText("Done");
+//                } else {
+//                    mSkipButton.setVisibility(View.VISIBLE);
+//                    mNextButton.setText("Next");
+//                }
+//            }
+//        });
 
-        mSkipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finishIntroduction();
-            }
-        });
+//        mSkipButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finishIntroduction();
+//            }
+//        });
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
