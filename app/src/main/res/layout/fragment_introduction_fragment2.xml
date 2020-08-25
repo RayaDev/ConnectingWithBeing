@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/homeScreenBackgroundColor">
-<LinearLayout
+
+    <LinearLayout
     android:id="@+id/UIIntoTextTop_LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -49,7 +50,7 @@
         >
 
         <LinearLayout
-            android:id="@+id/ExerciseMenuE1_LinearLayout_Intro"
+            android:id="@+id/UIIntroExerciseIcon_LinearLayout"
             android:layout_width="125dp"
             android:layout_height="125dp"
 
@@ -99,7 +100,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/natureLinearLayout"
+            android:id="@+id/UIIntroExerciseMenuIcon_LinearLayout"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,7 +109,7 @@
             >
 
             <TextView
-                android:id="@+id/natureTitleTextView"
+                android:id="@+id/UInatureTitleTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nature"
@@ -120,14 +121,14 @@
             </TextView>
 
             <ImageView
-                android:id="@+id/natureImageView"
+                android:id="@+id/UInatureImageView"
                 android:layout_width="124dp"
                 android:layout_height="124dp"
                 android:src="@drawable/naturehomemenuimage" />
 
             <!--Nature Completed Exercises Layout-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/completedNatureConstraintLayout"
+                android:id="@+id/UIcompletedNatureConstraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -144,7 +145,7 @@
 
 
                     <ImageView
-                        android:id="@+id/natureStar"
+                        android:id="@+id/UInatureStar"
                         android:layout_width="34dp"
                         android:layout_height="34dp"
                         android:src="@drawable/guistar"
@@ -153,7 +154,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/natureCompletedTextView"
+                        android:id="@+id/UInatureCompletedTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -176,69 +177,33 @@
     </GridLayout>
 
     <LinearLayout
-        android:id="@+id/UIIntroBottomHomeButtonBar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-
-        android:orientation="horizontal"
-        android:gravity="center"
-
-        android:layout_marginTop="16dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/UIInto_GridLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        >
-
-
-        <ImageView
-            android:id="@+id/UIIntroHomeHomeButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-            android:src="@drawable/guihome"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            />
-
-        <ImageView
-            android:id="@+id/UIIntroHomeBookmarkButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-            android:src="@drawable/guibookmark"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            />
-
-        <ImageView
-            android:id="@+id/UIIntroHomeShuffleButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/shuffleiconclearimage"
-
-
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/UIIntroIconText_LinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:orientation="vertical"
         android:layout_marginTop="16dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/UIIntroBottomHomeButtonBar"
+        app:layout_constraintTop_toBottomOf="@+id/UIInto_GridLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
         <TextView
+            android:id="@+id/UIIntroIconInfoTitle_TextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Icon Description"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/UIIntroIconText_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Click each icon for instructions."
+            />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
