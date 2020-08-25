@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.introduction_item){
 
             mDrawerLayout.closeDrawers();
-            Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
 
            new Handler().postDelayed(new Runnable() {
                @Override

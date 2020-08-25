@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Connection With Being</string>
+    <string name="app_name">Connecting With Being</string>
 
     <!-- Main Activity Strings-->
     <string name = "main_activity_title">Connection With...</string>

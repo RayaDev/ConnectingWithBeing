@@ -3,10 +3,12 @@ package com.example.connectionwithbeing;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -32,7 +34,12 @@ public class IntroductionActivity extends FragmentActivity {
 //        mSkipButton = (Button) findViewById(R.id.IntroductionActivity_SkipButton);
         mNextButton = findViewById(R.id.IntroductionNext_LinearLayout);
 
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(IntroductionActivity.this, "Scroll down for more info \nClick next arrow or swipe to continue", Toast.LENGTH_LONG).show();
+            }
+        },3000);
 
 
         FragmentStatePagerAdapter adapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
