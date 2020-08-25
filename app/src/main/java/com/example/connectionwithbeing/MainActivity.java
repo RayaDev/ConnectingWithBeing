@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(id == R.id.introduction_item){
 
             mDrawerLayout.closeDrawers();
-            Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "Introduction item clicked", Toast.LENGTH_SHORT).show();
 
            new Handler().postDelayed(new Runnable() {
                @Override
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
 
-        Intent startRandomExercise = new Intent(MainActivity.this, ExerciseActivity.class);
+        Intent startRandomExercise = new Intent(MainActivity.this, QuoteActivity.class);
         startRandomExercise.putExtra(Exercise.exerciseImageViewKey, exerciseImages.get(exerciseImageKey)); //This intent as a hashmap of exercise images as its value.
         startRandomExercise.putExtra(Exercise.exerciseTextViewKey, exerciseStrings.get(exerciseStringKey));
         startRandomExercise.putExtra(Exercise.exerciseNumberKey, randomExerciseNumber); //Eventually passed to the QuestionActivity

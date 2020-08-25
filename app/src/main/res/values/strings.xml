@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">ConnectionWithBeing</string>
-
+    <string name="app_name">Connecting With Being</string>
 
     <!-- Main Activity Strings-->
     <string name = "main_activity_title">Connection With...</string>
@@ -8,6 +7,7 @@
     <string name = "contact_activity_title">Contacts</string>
     <string name = "settings_activity_title">Settings</string>
     <string name = "credits_activity_title">Credits</string>
+    <string name = "quote_text_placeholder">\"Quotes For Each Exercise Go Here\"</string>
 
     <string name="open">open toggle</string>
     <string name="close">close toggle</string>
@@ -18,6 +18,27 @@
     <string name="exercise1_center_text_string">Go in nature by yourself with no predetermined route (or very minimal one) or length of time. What was the most exciting thing that happened during that walk? Were you thinking a lot? Or not at all? What was in your head?</string>
     <string name="exercise2_center_text_string">Pick an artistic medium you are not comfortable with and just create. Try not to judge or compare yourself to others!</string>
     <string name="exercise1_questions_button_string">Reflection</string>
+
+    <!-- Introduction Strings-->
+
+    <string name="introduction_text">"Based on environmental education and various philosophical concepts, this app invites you to explore your relationship with yourself, others, nature, and society. It aims at creating a deeper connection with the world inside and around you.
+
+Through exercises and introspective questions, you will be challenged to get out of your comfort zone and free yourself from some of the more hindering assumptions of Western culture. Focus on the process, there are no “good or bad answers”, it is all about your personal growth.
+
+These exercises involve you to take actions with yourself, others and nature. Therefore, be safe, responsible, and kind with any interaction towards yourself or the outside world! Remember to have fun and to be curious and open-minded!
+
+We humbly hope that this will make at least a slight difference in your life (even for a microsecond!), and that you’ll enjoy being part of the movement towards a more sustainable and compassionate world."</string>
+
+    <string name="ui_title">How To Use The App</string>
+    <string name="ui_instructions">The functionality of the app is pretty simple. All of the icons below can be clicked on for navigation. Click on each icon to learn more.</string>
+    <string name= "ui_menu_icon">Opens up the exercise menu for the selected category. In this case the category is Nature. The star count below the image keeps track of how many exercises you\'ve completed.</string>
+    <string name="ui_exercise_icon">Starts the selected exercise. When the exercise is completed the star turns gold. You can also long click the exercise to reset the star.</string>
+    <string name = "ui_home_icon">A basic home button that allows you to access the home menu.</string>
+    <string name="ui_shuffle_icon">The shuffle icon will randomly select and start an exercise for you.</string>
+    <string name="ui_bookmark_icon">The bookmark icon will save the current exercise for later, or load the saved exercise when on the home screen.</string>
+    <string name="ui_info_icon">The info icon will let you know which category and exercise you are currently on.</string>
+
+
 
     <!-- Self Exercise Strings-->
     <string name="self_menu_title">With Self…</string>

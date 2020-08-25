@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntroductionActivity">
+    tools:context=".IntroductionActivity"
+
+    android:background="@color/homeScreenBackgroundColor">
+
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="0dp"
@@ -12,42 +15,40 @@
         android:id="@+id/IntroductionActivity_ViewPager"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/IntroductionActivity_BottomActionBar"
+        app:layout_constraintBottom_toTopOf="@id/IntroductionNext_LinearLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
 
     </androidx.viewpager.widget.ViewPager>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:id="@+id/IntroductionActivity_BottomActionBar"
-        android:orientation="horizontal"
+    <LinearLayout
+        android:id="@+id/IntroductionNext_LinearLayout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/mandala"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:alpha="0.8"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
+
         >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Skip"
-            android:id="@+id/IntroductionActivity_SkipButton">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
-        </Button>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Next"
-            android:id="@+id/IntroductionActivity_NextButton">
-
-        </Button>
+            android:scaleType="centerCrop"
+            android:src="@drawable/guiforwardwhite"
+            android:alpha="0.8"/>
 
     </LinearLayout>
 
