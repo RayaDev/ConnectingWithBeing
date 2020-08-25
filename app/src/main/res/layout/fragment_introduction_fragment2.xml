@@ -1,23 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/homeScreenBackgroundColor">
+<LinearLayout
+    android:id="@+id/UIIntoTextTop_LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:orientation="vertical"
+    android:layout_marginTop="24dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp">
 
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="@string/ui_title"
-       android:gravity="center"/>
+    <TextView
+        android:id="@+id/UITitle_Intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ui_title"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="16dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ui_instructions"/>
+</LinearLayout>
 
     <GridLayout
+        android:id="@+id/UIInto_GridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="2"
         android:columnCount="2"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+
+        android:layout_marginTop="24dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/UIIntoTextTop_LinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
 
         <LinearLayout
             android:id="@+id/ExerciseMenuE1_LinearLayout_Intro"
@@ -28,6 +57,7 @@
 
             android:background="@drawable/roundedbutton"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="36dp"
 
             >
 
@@ -142,6 +172,73 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
     </GridLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/UIIntroBottomHomeButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/UIInto_GridLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/UIIntroHomeHomeButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/guihome"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/UIIntroHomeBookmarkButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/guibookmark"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:id="@+id/UIIntroHomeShuffleButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/shuffleiconclearimage"
+
+
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/UIIntroIconText_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/UIIntroBottomHomeButtonBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
