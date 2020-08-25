@@ -132,8 +132,9 @@ public class IntroductionActivity extends FragmentActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(IntroductionActivity.this, "Click next arrow or swipe to continue", Toast.LENGTH_LONG).show();
                 Toast.makeText(IntroductionActivity.this, "Scroll down for more info", Toast.LENGTH_LONG).show();
+                Toast.makeText(IntroductionActivity.this, "Click next arrow or swipe to continue", Toast.LENGTH_LONG).show();
+
             }
         }, 2500);
 
