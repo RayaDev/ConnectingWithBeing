@@ -478,6 +478,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -494,6 +495,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -510,6 +512,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -526,6 +529,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -542,6 +546,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -558,6 +563,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -579,6 +585,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -595,6 +602,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -611,6 +619,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -627,6 +636,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -643,6 +653,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -659,6 +670,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -680,6 +692,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -696,6 +709,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -712,6 +726,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -728,6 +743,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -744,6 +760,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -760,6 +777,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -781,6 +799,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE1Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -797,6 +816,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE2Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -813,6 +833,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE3Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -829,6 +850,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE4Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -845,6 +867,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE5Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -861,6 +884,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
                             ImageView mStar = findViewById(R.id.ExerciseMenuE6Star_ImageView);
                             mStar.setImageResource(R.drawable.guigreystar);
+                            Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(ExerciseMenuActivity.this, "Cannot reset an uncompleted exercise", Toast.LENGTH_SHORT).show();
@@ -872,6 +896,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         }
 
-        Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
     }
 }
