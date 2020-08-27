@@ -1,15 +1,18 @@
 package com.example.connectionwithbeing;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -88,8 +91,27 @@ public class IntroductionActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 if (mViewPager.getCurrentItem() == 2) { // The last screen
-                    finishIntroduction();
-                } else {
+                    new AlertDialog.Builder(IntroductionActivity.this)
+                            .setTitle("Introduction Completed!")
+                            .setMessage("Continue to the main menu?")
+
+                            .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finishIntroduction();
+                                }
+                            })
+
+                            // A null listener allows the button to dismiss the dialog and take no further action.
+                            .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            })
+                            .setIcon(R.drawable.guistar)
+                            .show();
+                }
+                else {
                     mViewPager.setCurrentItem(
                             mViewPager.getCurrentItem() + 1,
                             true
