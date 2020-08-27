@@ -18,8 +18,8 @@ public class IntroductionFragment3 extends Fragment {
         // Required empty public constructor
     }
 
-    private ImageView mIntroHomeIcon, mIntroBookmarkIcon, mIntroShuffleIcon;
-    private TextView mIntroIconText;
+    private ImageView mIntroHomeIcon, mIntroBookmarkIcon, mIntroShuffleIcon, mIntroInfoIcon;
+    private TextView mIntroIconText, mIntroIconTitle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +30,9 @@ public class IntroductionFragment3 extends Fragment {
         mIntroHomeIcon = view.findViewById(R.id.UIIntroHomeHomeButton);
         mIntroBookmarkIcon = view.findViewById(R.id.UIIntroHomeBookmarkButton);
         mIntroShuffleIcon = view.findViewById(R.id.UIIntroHomeShuffleButton);
+        mIntroInfoIcon = view.findViewById(R.id.UIIntroInfoButton);
         mIntroIconText = view.findViewById(R.id.UIIntroIconText_TextView2);
+        mIntroIconTitle= view.findViewById(R.id.UIIntroIconInfoTitle_TextView2);
 
         setOnclickListeners();
 
@@ -43,6 +45,7 @@ public class IntroductionFragment3 extends Fragment {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getContext(), "Menu Item Clicked", Toast.LENGTH_SHORT).show();
+                mIntroIconTitle.setText(R.string.ui_home_icon_title);
                 mIntroIconText.setText(R.string.ui_home_icon);
             }
         });
@@ -50,6 +53,7 @@ public class IntroductionFragment3 extends Fragment {
         mIntroBookmarkIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mIntroIconTitle.setText(R.string.ui_bookmark_icon_title);
                 mIntroIconText.setText(R.string.ui_bookmark_icon);
             }
         });
@@ -57,7 +61,16 @@ public class IntroductionFragment3 extends Fragment {
         mIntroShuffleIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mIntroIconTitle.setText(R.string.ui_shuffle_icon_title);
                 mIntroIconText.setText(R.string.ui_shuffle_icon);
+            }
+        });
+
+        mIntroInfoIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIntroIconTitle.setText(R.string.ui_info_icon_title);
+                mIntroIconText.setText(R.string.ui_info_icon);
             }
         });
 

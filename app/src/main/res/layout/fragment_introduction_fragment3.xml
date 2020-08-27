@@ -24,12 +24,13 @@
             android:layout_height="wrap_content"
             android:text="@string/ui_title"
             android:gravity="center"
-            android:textSize="25sp"
+            android:textSize="26sp"
             android:layout_marginBottom="16dp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/ui_instructions"/>
     </LinearLayout>
 
@@ -78,6 +79,16 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             />
+
+        <ImageView
+            android:id="@+id/UIIntroInfoButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/guiinfoitemimage"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -98,6 +109,7 @@
             android:layout_height="wrap_content"
             android:text="Icon Description"
             android:gravity="center_horizontal"
+            android:textSize="18sp"
             android:layout_marginBottom="16dp"/>
 
         <TextView
@@ -106,6 +118,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Click each icon for instructions."
+            android:textSize="18sp"
             />
 
     </LinearLayout>

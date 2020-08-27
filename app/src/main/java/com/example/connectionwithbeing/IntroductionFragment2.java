@@ -22,7 +22,7 @@ public class IntroductionFragment2 extends Fragment {
     }
 
     private LinearLayout mIntroExerciseIcon, mIntroMenuIcon;
-    private TextView mIntroIconText;
+    private TextView mIntroIconText, mIntroIconTitle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +33,7 @@ public class IntroductionFragment2 extends Fragment {
         mIntroMenuIcon = view.findViewById(R.id.UIIntroExerciseMenuIcon_LinearLayout);
         mIntroExerciseIcon = view.findViewById(R.id.UIIntroExerciseIcon_LinearLayout);
         mIntroIconText = view.findViewById(R.id.UIIntroIconText_TextView);
+        mIntroIconTitle= view.findViewById(R.id.UIIntroIconInfoTitle_TextView);
 
         setOnclickListeners();
 
@@ -46,6 +47,7 @@ public class IntroductionFragment2 extends Fragment {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(getContext(), "Menu Item Clicked", Toast.LENGTH_SHORT).show();
+                mIntroIconTitle.setText(R.string.ui_menu_icon_title);
                 mIntroIconText.setText(R.string.ui_menu_icon);
             }
         });
@@ -53,6 +55,7 @@ public class IntroductionFragment2 extends Fragment {
         mIntroExerciseIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mIntroIconTitle.setText(R.string.ui_exercise_icon_title);
                 mIntroIconText.setText(R.string.ui_exercise_icon);
             }
         });

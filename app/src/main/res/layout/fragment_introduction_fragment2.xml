@@ -24,13 +24,14 @@
         android:layout_height="wrap_content"
         android:text="@string/ui_title"
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="26sp"
         android:layout_marginBottom="16dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ui_instructions"/>
+        android:text="@string/ui_instructions"
+        android:textSize="18sp"/>
 </LinearLayout>
 
     <GridLayout
@@ -49,55 +50,6 @@
 
         >
 
-        <LinearLayout
-            android:id="@+id/UIIntroExerciseIcon_LinearLayout"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-
-            android:orientation="vertical"
-
-            android:background="@drawable/roundedbutton"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="36dp"
-
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="#1"
-                android:textSize="18sp"
-                android:textColor="@color/nature_primary_dark"
-
-
-                android:gravity="center_horizontal"
-
-                />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ExerciseMenuE1_ImageView"
-
-
-                android:src="@drawable/natureexercisemenuimage"
-                android:scaleType="fitCenter"
-                android:layout_weight="5"
-
-                android:layout_margin="8dp"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ExerciseMenuE1Star_ImageView_Intro"
-
-                android:layout_weight="10"
-
-                android:src="@drawable/guigreystar"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/UIIntroExerciseMenuIcon_LinearLayout"
@@ -174,6 +126,56 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/UIIntroExerciseIcon_LinearLayout"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+
+            android:orientation="vertical"
+
+            android:background="@drawable/roundedbutton"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="36dp"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="#1"
+                android:textSize="18sp"
+                android:textColor="@color/nature_primary_dark"
+
+
+                android:gravity="center_horizontal"
+
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ExerciseMenuE1_ImageView"
+
+
+                android:src="@drawable/natureexercisemenuimage"
+                android:scaleType="fitCenter"
+                android:layout_weight="5"
+
+                android:layout_margin="8dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ExerciseMenuE1Star_ImageView_Intro"
+
+                android:layout_weight="10"
+
+                android:src="@drawable/guigreystar"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
     </GridLayout>
 
     <LinearLayout
@@ -194,7 +196,8 @@
             android:layout_height="wrap_content"
             android:text="Icon Description"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/UIIntroIconText_TextView"
@@ -202,6 +205,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Click each icon for instructions."
+            android:textSize="18sp"
             />
 
     </LinearLayout>
