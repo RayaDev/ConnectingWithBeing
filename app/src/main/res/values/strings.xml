@@ -2,7 +2,7 @@
     <string name="app_name">Connecting With Being</string>
 
     <!-- Main Activity Strings-->
-    <string name = "main_activity_title">Connection With...</string>
+    <string name = "main_activity_title">Connecting With...</string>
     <string name= "about_activity_title">About</string>
     <string name = "contact_activity_title">Contacts</string>
     <string name = "settings_activity_title">Settings</string>
