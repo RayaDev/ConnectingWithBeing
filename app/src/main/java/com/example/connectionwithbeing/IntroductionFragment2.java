@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class IntroductionFragment2 extends Fragment {
 
     private LinearLayout mIntroExerciseIcon, mIntroMenuIcon;
     private TextView mIntroIconText, mIntroIconTitle;
+    private ScrollView mScrollView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +37,10 @@ public class IntroductionFragment2 extends Fragment {
         mIntroIconText = view.findViewById(R.id.UIIntroIconText_TextView);
         mIntroIconTitle= view.findViewById(R.id.UIIntroIconInfoTitle_TextView);
 
+        mScrollView = view.findViewById(R.id.Fragment2ScrollView);
+
+
+
         setOnclickListeners();
 
         return view;
@@ -46,9 +52,10 @@ public class IntroductionFragment2 extends Fragment {
         mIntroMenuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getContext(), "Menu Item Clicked", Toast.LENGTH_SHORT).show();
+
                 mIntroIconTitle.setText(R.string.ui_menu_icon_title);
                 mIntroIconText.setText(R.string.ui_menu_icon);
+//                mScrollView.fullScroll(View.FOCUS_DOWN);
             }
         });
 
@@ -57,6 +64,7 @@ public class IntroductionFragment2 extends Fragment {
             public void onClick(View v) {
                 mIntroIconTitle.setText(R.string.ui_exercise_icon_title);
                 mIntroIconText.setText(R.string.ui_exercise_icon);
+//                mScrollView.fullScroll(View.FOCUS_DOWN);
             }
         });
 
