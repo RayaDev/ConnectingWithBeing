@@ -13,14 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="32sp"
+        android:textSize="28sp"
 
         android:layout_marginBottom="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/QuoteActivityNextButton_LinearLayout"
       />
     <ProgressBar
         android:id="@+id/QuoteActivity_ProgressBar"
