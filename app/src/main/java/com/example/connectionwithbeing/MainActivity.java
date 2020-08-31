@@ -517,7 +517,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mShuffleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Shuffle Button Clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Shuffle Button Clicked", Toast.LENGTH_SHORT).show();
                 getRandomExercise();
             }
         });

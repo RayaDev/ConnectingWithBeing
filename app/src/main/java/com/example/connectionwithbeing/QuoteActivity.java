@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ public class QuoteActivity extends AppCompatActivity {
     private int i = 0;
     private TextView mTextView;
     private Handler mHandler = new Handler();
-    private Button mButton;
+    private LinearLayout mNextButton;
     private boolean exitThread;
 
     @Override
@@ -34,7 +35,7 @@ public class QuoteActivity extends AppCompatActivity {
         mConstraintLayout = findViewById(R.id.QuoteActivity_ParentLayout);
         mProgressBar = (ProgressBar) findViewById(R.id.QuoteActivity_ProgressBar);
         mTextView = (TextView) findViewById(R.id.QuoteActivity_TextView);
-        mButton = findViewById(R.id.QuoteActivity_Button);
+        mNextButton = findViewById(R.id.QuoteActivityNextButton_LinearLayout);
 
         setQuoteActivityViews();
 
@@ -73,7 +74,7 @@ public class QuoteActivity extends AppCompatActivity {
 
         progressThread.start();
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stopThread();
