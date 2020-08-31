@@ -6,15 +6,14 @@ Read/Scan Through entire android dev guide
 Working TODO:
 
 Introduction Screen Updates
-    > Include UI directions, as well as philosophical background.
+    > Add blinking animation, and make directions more obvious. Add text about question activity.
+
+Quote Screen Updates
+    > Finish adding quote string resources.
 
 General TODO:
 
 Integrate AdMob
-
-
-Quote Screen Updates
-    > Finish finding and adding quote string resources.
 
 About, Contacts, Credits, Settings Updates
 
