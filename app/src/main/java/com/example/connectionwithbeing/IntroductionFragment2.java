@@ -25,12 +25,16 @@ public class IntroductionFragment2 extends Fragment {
     }
 
     private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon;
+    private TextView mIntroIconTextView;
+
+    private int clickCount = 1;
 
     private int[] introImages = {R.id.UIIntroExerciseMenuIcon_LinearLayout, R.id.UIIntroExerciseIcon_LinearLayout,
             R.drawable.guihome, R.drawable.guibookmark, R.drawable.shuffleiconimage, R.drawable.guiinfoitemimage};
 
     int[] introText = {R.string.ui_menu_icon, R.string.ui_exercise_icon, R.string.ui_home_icon, R.string.ui_bookmark_icon,
             R.string.ui_shuffle_icon, R.string.ui_info_icon};
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,22 +44,71 @@ public class IntroductionFragment2 extends Fragment {
 
 
         mIntroLinearLayout = view.findViewById(R.id.IntroIconPlaceHolder_LinearLayout);
-        mIntroExerciseMenu = view.findViewById(introImages[1]);
-        mIntroExerciseIcon = view.findViewById(introImages[2]);
+        mIntroIconTextView = view.findViewById(R.id.IntroIconText_TextView);
+        mIntroExerciseMenu = view.findViewById(introImages[0]);
+        mIntroExerciseIcon = view.findViewById(introImages[1]);
 
 
-        setOnclickListeners();
+
+        mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setImageText();
+                clickCount++;
+            }
+        });
+
 
         return view;
 
     }
 
-    private void setOnclickListeners() {
+
+    private void setImageText() {
+
+        switch (clickCount) {
+            case 1:
+                mIntroExerciseMenu.setVisibility(View.VISIBLE);
+                mIntroExerciseIcon.setVisibility(View.GONE);
+                mIntroIconTextView.setText(introText[0]);
+                break;
 
 
-//        mIntroExerciseMenu.setVisibility(View.GONE);
-//        mIntroExerciseIcon.setVisibility(View.GONE);
-        mIntroLinearLayout.setBackgroundResource(introImages[5]);
+            case 2:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.VISIBLE);
+                mIntroIconTextView.setText(introText[1]);
+                break;
+
+            case 3:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.GONE);
+                mIntroLinearLayout.setBackgroundResource(introImages[2]);
+                mIntroIconTextView.setText(introText[2]);
+                break;
+
+            case 4:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.GONE);
+                mIntroLinearLayout.setBackgroundResource(introImages[3]);
+                mIntroIconTextView.setText(introText[3]);
+                break;
+
+            case 5:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.GONE);
+                mIntroLinearLayout.setBackgroundResource(introImages[4]);
+                mIntroIconTextView.setText(introText[4]);
+                break;
+
+            case 6:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.GONE);
+                mIntroLinearLayout.setBackgroundResource(introImages[5]);
+                mIntroIconTextView.setText(introText[5]);
+                break;
+
+        }
 
     }
 }
