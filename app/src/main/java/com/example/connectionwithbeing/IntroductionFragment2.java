@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.HashMap;
+
 
 public class IntroductionFragment2 extends Fragment {
 
@@ -22,9 +24,13 @@ public class IntroductionFragment2 extends Fragment {
         // Required empty public constructor
     }
 
-    private LinearLayout mIntroExerciseIcon, mIntroMenuIcon;
-    private TextView mIntroIconText, mIntroIconTitle;
-    private ScrollView mScrollView;
+    private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon;
+
+    private int[] introImages = {R.id.UIIntroExerciseMenuIcon_LinearLayout, R.id.UIIntroExerciseIcon_LinearLayout,
+            R.drawable.guihome, R.drawable.guibookmark, R.drawable.shuffleiconimage, R.drawable.guiinfoitemimage};
+
+    int[] introText = {R.string.ui_menu_icon, R.string.ui_exercise_icon, R.string.ui_home_icon, R.string.ui_bookmark_icon,
+            R.string.ui_shuffle_icon, R.string.ui_info_icon};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,13 +38,10 @@ public class IntroductionFragment2 extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_introduction_fragment2, container, false);
 
-        mIntroMenuIcon = view.findViewById(R.id.UIIntroExerciseMenuIcon_LinearLayout);
-        mIntroExerciseIcon = view.findViewById(R.id.UIIntroExerciseIcon_LinearLayout);
-        mIntroIconText = view.findViewById(R.id.UIIntroIconText_TextView);
-        mIntroIconTitle= view.findViewById(R.id.UIIntroIconInfoTitle_TextView);
 
-        mScrollView = view.findViewById(R.id.Fragment2ScrollView);
-
+        mIntroLinearLayout = view.findViewById(R.id.IntroIconPlaceHolder_LinearLayout);
+        mIntroExerciseMenu = view.findViewById(introImages[1]);
+        mIntroExerciseIcon = view.findViewById(introImages[2]);
 
 
         setOnclickListeners();
@@ -49,25 +52,10 @@ public class IntroductionFragment2 extends Fragment {
 
     private void setOnclickListeners() {
 
-        mIntroMenuIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                mIntroIconTitle.setText(R.string.ui_menu_icon_title);
-                mIntroIconText.setText(R.string.ui_menu_icon);
-//                mScrollView.fullScroll(View.FOCUS_DOWN);
-            }
-        });
-
-        mIntroExerciseIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mIntroIconTitle.setText(R.string.ui_exercise_icon_title);
-                mIntroIconText.setText(R.string.ui_exercise_icon);
-//                mScrollView.fullScroll(View.FOCUS_DOWN);
-            }
-        });
+//        mIntroExerciseMenu.setVisibility(View.GONE);
+//        mIntroExerciseIcon.setVisibility(View.GONE);
+        mIntroLinearLayout.setBackgroundResource(introImages[5]);
 
     }
-
 }

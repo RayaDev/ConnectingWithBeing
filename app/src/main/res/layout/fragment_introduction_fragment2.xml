@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/Fragment2ScrollView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -15,211 +7,154 @@
     android:background="@color/homeScreenBackgroundColor">
 
     <LinearLayout
-    android:id="@+id/UIIntoTextTop_LinearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:orientation="vertical"
-    android:layout_marginTop="24dp"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp">
+        android:id="@+id/UIIntroExerciseMenuIcon_LinearLayout"
 
-    <TextView
-        android:id="@+id/UITitle_Intro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_title"
-        android:gravity="center"
-        android:textSize="26sp"
-        android:layout_marginBottom="16dp"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ui_instructions"
-        android:textSize="18sp"/>
-</LinearLayout>
+        android:layout_weight="1"
+        android:orientation="vertical"
 
-    <GridLayout
-        android:id="@+id/UIInto_GridLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="2"
-        android:layout_gravity="center"
+        android:visibility="gone"
 
-        android:layout_marginTop="24dp"
-
-        app:layout_constraintTop_toBottomOf="@+id/UIIntoTextTop_LinearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
 
-
-        <LinearLayout
-            android:id="@+id/UIIntroExerciseMenuIcon_LinearLayout"
-
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/natureTitleTextView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
+            android:text="Nature"
+            android:background="@color/myWhite"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:textColor="@color/myBlack">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/natureImageView"
+            android:layout_width="124dp"
+            android:layout_height="124dp"
+            android:src="@drawable/naturehomemenuimage" />
+
+        <!--Nature Completed Exercises Layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/completedNatureConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             >
 
-            <TextView
-                android:id="@+id/UInatureTitleTextView"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nature"
-                android:background="@color/myWhite"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:textColor="@color/myBlack">
 
-            </TextView>
+                app:layout_constraintStart_toStartOf="@id/completedNatureConstraintLayout"
+                app:layout_constraintEnd_toEndOf="@id/completedNatureConstraintLayout"
+                app:layout_constraintBottom_toBottomOf="@id/completedNatureConstraintLayout">
 
-            <ImageView
-                android:id="@+id/UInatureImageView"
-                android:layout_width="124dp"
-                android:layout_height="124dp"
-                android:src="@drawable/naturehomemenuimage" />
 
-            <!--Nature Completed Exercises Layout-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/UIcompletedNatureConstraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                >
+                <ImageView
+                    android:id="@+id/natureStar"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/guistar"
 
-                <LinearLayout
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/natureCompletedTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    >
+
+                    android:text="@string/exercise_completed_default"
+                    android:textSize="12sp"
+                    android:textColor="@color/textColor"
+
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
 
 
-                    <ImageView
-                        android:id="@+id/UInatureStar"
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"
-                        android:src="@drawable/guistar"
+                    />
+            </LinearLayout>
 
-                        android:layout_weight="1"
-                        />
-
-                    <TextView
-                        android:id="@+id/UInatureCompletedTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="@string/exercise_completed_default"
-                        android:textSize="12sp"
-                        android:textColor="@color/textColor"
-
-                        android:layout_weight="1"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="8dp"
-
-
-                        />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/UIIntroExerciseIcon_LinearLayout"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-
-            android:orientation="vertical"
-
-            android:background="@drawable/roundedbutton"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="36dp"
-
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="#1"
-                android:textSize="18sp"
-                android:textColor="@color/nature_primary_dark"
-
-
-                android:gravity="center_horizontal"
-
-                />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ExerciseMenuE1_ImageView"
-
-
-                android:src="@drawable/natureexercisemenuimage"
-                android:scaleType="fitCenter"
-                android:layout_weight="5"
-
-                android:layout_margin="8dp"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ExerciseMenuE1Star_ImageView_Intro"
-
-                android:layout_weight="10"
-
-                android:src="@drawable/guigreystar"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
-
-    </GridLayout>
-
-    <LinearLayout
-        android:id="@+id/UIIntroIconText_LinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/UIInto_GridLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
-
-        <TextView
-            android:id="@+id/UIIntroIconInfoTitle_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Icon Description"
-            android:gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/UIIntroIconText_TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:text="Click each icon for instructions."
-            android:textSize="18sp"
-
-            android:layout_marginStart="12dp"
-
-            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/UIIntroExerciseIcon_LinearLayout"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+
+        android:orientation="vertical"
+
+        android:background="@drawable/roundedbutton"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="#1"
+            android:textSize="18sp"
+            android:textColor="@color/nature_primary_dark"
+
+
+            android:gravity="center_horizontal"
+
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ExerciseMenuE1_ImageView"
+
+
+            android:src="@drawable/natureexercisemenuimage"
+            android:scaleType="fitCenter"
+            android:layout_weight="5"
+
+            android:layout_margin="8dp"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ExerciseMenuE1Star_ImageView"
+
+            android:layout_weight="10"
+
+            android:src="@drawable/guigreystar"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/IntroIconPlaceHolder_LinearLayout"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
