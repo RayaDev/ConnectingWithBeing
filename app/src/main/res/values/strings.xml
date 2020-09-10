@@ -38,18 +38,19 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="ui_title">How To Use The App</string>
     <string name="ui_instructions">The functionality of the app is pretty simple. All of the icons below can be clicked on for navigation. Click on each icon to learn more.</string>
-    <string name= "ui_menu_icon">Opens up the exercise menu for the selected category. In this case the category is Nature. The star count below the image keeps track of how many exercises you\'ve completed.</string>
+    <string name= "ui_menu_icon">Opens up the Exercise Menu for the selected category. In this case the category is Nature. The star count below the image keeps track of how many exercises you\'ve completed.</string>
     <string name="ui_menu_icon_title">Open Exercise Menu Button</string>
-    <string name="ui_exercise_icon">Starts the selected exercise. When the exercise is completed the star turns gold. You can also long click the exercise to reset the star.</string>
+    <string name="ui_exercise_icon">Starts the Selected Exercise. When the exercise is completed the star turns gold. You can also long click the exercise to reset the star.</string>
     <string name="ui_exercise_icon_title">Start Exercise Button</string>
-    <string name = "ui_home_icon">A basic home button that allows you to access the home menu.</string>
+    <string name = "ui_home_icon">A basic Home Button that allows you to access the home menu from anywhere in the app.</string>
     <string name ="ui_home_icon_title">Home Button</string>
-    <string name="ui_shuffle_icon">The shuffle icon will randomly select and start an exercise for you.</string>
+    <string name="ui_shuffle_icon">The Shuffle Button will randomly select and start an exercise for you.</string>
     <string name ="ui_shuffle_icon_title">Shuffle Button</string>
-    <string name="ui_bookmark_icon">The bookmark icon will save the current exercise for later, or load the saved exercise when on the home screen.</string>
+    <string name="ui_bookmark_icon">The Bookmark Button will save the current exercise for later, or load the saved exercise when on the home screen.</string>
     <string name="ui_bookmark_icon_title">Bookmark Button</string>
-    <string name="ui_info_icon">The info icon will let you know which category and exercise you are currently on.</string>
+    <string name="ui_info_icon">The Info Button will let you know which category and exercise you are currently on.</string>
     <string name="ui_info_icon_title">Info Button</string>
+    <string name="ui_next_button_text">Your essential Next Button. Controls all forward navigation through the app.</string>
 
 
 
