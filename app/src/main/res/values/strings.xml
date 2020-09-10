@@ -37,7 +37,7 @@ These exercises involve you to take actions with yourself, others and nature. Th
 We humbly hope that this will make at least a slight difference in your life (even for a microsecond!), and that you’ll enjoy being part of the movement towards a more sustainable and compassionate world."</string>
 
     <string name="ui_title">How To Use The App</string>
-    <string name="ui_instructions">The functionality of the app is pretty simple. Navigation is controlled by a few key buttons. Click each blinking button to progress, then the read the description below.</string>
+    <string name="ui_instructions">The functionality of the app is pretty simple. Navigation is controlled by a few key buttons. Read the description below, then click each blinking icon to progress.</string>
     <string name= "ui_menu_icon">Opens up the Exercise Menu for the selected category. In this case the category is Nature. The star count below the image keeps track of how many exercises you\'ve completed.</string>
     <string name="ui_menu_icon_title">Open Exercise Menu Button</string>
     <string name="ui_exercise_icon">Starts the Selected Exercise. When the exercise is completed the star turns gold. You can also long click the exercise to reset the star.</string>

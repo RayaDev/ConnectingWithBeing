@@ -4,7 +4,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,6 +44,18 @@ public class IntroductionActivity2 extends AppCompatActivity {
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = findViewById(introImages[1]);
 
+
+//        Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+//        mIntroExerciseMenu.setAnimation(mBlink);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                mIntroExerciseMenu.setAnimation(mBlink);
+            }
+        }, 2000);
+
         mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +68,8 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
     private void setImageText() {
 
+        Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+
         switch (clickCount) {
             case 1:
                 mIntroExerciseMenu.setVisibility(View.VISIBLE);
@@ -62,44 +79,65 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
 
             case 2:
-                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseMenu.clearAnimation();
+
                 mIntroExerciseIcon.setVisibility(View.VISIBLE);
+                mIntroExerciseIcon.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[1]);
+
                 break;
 
             case 3:
                 mIntroExerciseMenu.setVisibility(View.INVISIBLE);
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.clearAnimation();
+
                 mIntroLinearLayout.setBackgroundResource(introImages[2]);
+                mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[2]);
+
                 break;
 
             case 4:
-                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+
                 mIntroLinearLayout.setBackgroundResource(introImages[3]);
+                mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[3]);
+
                 break;
 
             case 5:
-                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+
                 mIntroLinearLayout.setBackgroundResource(introImages[4]);
+                mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[4]);
+
                 break;
 
             case 6:
-                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+
                 mIntroLinearLayout.setBackgroundResource(introImages[5]);
+                mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[5]);
+
                 break;
 
             case 7:
-                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+
+                mIntroLinearLayout.clearAnimation();
                 mIntroLinearLayout.setVisibility(View.INVISIBLE);
+
                 mIntroNext2Button.setVisibility(View.VISIBLE);
+                mIntroNext2Button.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[6]);
 
                 mIntroNext2Button.setOnClickListener(new View.OnClickListener() {

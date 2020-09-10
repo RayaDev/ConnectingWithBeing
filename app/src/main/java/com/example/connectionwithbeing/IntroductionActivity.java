@@ -4,7 +4,10 @@ package com.example.connectionwithbeing;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +27,17 @@ public class IntroductionActivity extends AppCompatActivity {
 
         mNextLinearLayout = findViewById(R.id.IntroductionNext_LinearLayout);
 
+//        Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+//        mNextLinearLayout.setAnimation(mBlink);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+                mNextLinearLayout.setAnimation(mBlink);
+            }
+        }, 2000);
+
         mNextLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,10 +46,7 @@ public class IntroductionActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
-
 
     @Override
     public void onBackPressed() {
