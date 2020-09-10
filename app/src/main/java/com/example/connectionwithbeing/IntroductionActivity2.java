@@ -24,7 +24,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
             R.drawable.guihome, R.drawable.guibookmark, R.drawable.shuffleiconimage, R.drawable.guiinfoitemimage};
 
     int[] introText = {R.string.ui_menu_icon, R.string.ui_exercise_icon, R.string.ui_home_icon, R.string.ui_bookmark_icon,
-            R.string.ui_shuffle_icon, R.string.ui_info_icon};
+            R.string.ui_shuffle_icon, R.string.ui_info_icon, R.string.ui_next_button_text};
 
 
     @Override
@@ -39,7 +39,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
         mIntroExerciseMenu = findViewById(introImages[0]);
         mIntroIconTextView.setText(introText[0]);
-
         mIntroExerciseIcon = findViewById(introImages[1]);
 
         mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +100,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
                 mIntroLinearLayout.setVisibility(View.INVISIBLE);
                 mIntroNext2Button.setVisibility(View.VISIBLE);
+                mIntroIconTextView.setText(introText[6]);
 
                 mIntroNext2Button.setOnClickListener(new View.OnClickListener() {
                     @Override
