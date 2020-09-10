@@ -20,8 +20,9 @@ public class IntroductionFragment2 extends Fragment {
         // Required empty public constructor
     }
 
-    private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon, mIntroNext2Button;
+    private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon, mIntroNext2Button, mFirstIntroIcon;
     private TextView mIntroIconTextView;
+
 
 
     private int clickCount = 2;
@@ -48,15 +49,15 @@ public class IntroductionFragment2 extends Fragment {
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = view.findViewById(introImages[1]);
 
-//
-//        Animation animation1 =
-//                AnimationUtils.loadAnimation(getContext(),
-//                        R.anim.blink);
-//
-//        mIntroExerciseIcon.setAnimation(animation1);
 
-//        LinearLayout mNextButton = view.findViewById(R.id.IntroductionNext_LinearLayout);
-//        mNextButton.setVisibility(View.INVISIBLE);
+        Animation animation1 =
+                AnimationUtils.loadAnimation(getContext(),
+                        R.anim.blink);
+
+       mFirstIntroIcon = view.findViewById(R.id.UIIntroExerciseMenuIcon_LinearLayout);
+       mFirstIntroIcon.setAnimation(animation1);
+
+        mIntroNext2Button.setVisibility(View.INVISIBLE);
 
         mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +79,8 @@ public class IntroductionFragment2 extends Fragment {
                 AnimationUtils.loadAnimation(getContext(),
                         R.anim.blink);
 
+        mFirstIntroIcon.clearAnimation();
+
         switch (clickCount) {
             case 1:
                 mIntroExerciseMenu.setVisibility(View.VISIBLE);
@@ -97,6 +100,8 @@ public class IntroductionFragment2 extends Fragment {
             case 3:
                 mIntroExerciseMenu.setVisibility(View.INVISIBLE);
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.clearAnimation();
+                mIntroExerciseMenu.clearAnimation();
                 mIntroLinearLayout.setBackgroundResource(introImages[2]);
                 mIntroIconTextView.setText(introText[2]);
                 mIntroLinearLayout.setAnimation(animation1);
@@ -127,6 +132,10 @@ public class IntroductionFragment2 extends Fragment {
                 break;
 
             case 7:
+
+                mIntroLinearLayout.clearAnimation();
+                mIntroNext2Button.setVisibility(View.VISIBLE);
+
 
                 break;
         }

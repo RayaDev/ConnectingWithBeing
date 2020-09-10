@@ -8,7 +8,9 @@ Working TODO:
 Introduction Screen Updates
     > Add blinking animation, and make directions more obvious. Add text about question activity.
     > Intro on open slide should be more instructions than philosphy. No scrollView.
-    >
+    > Convert to Activity - Activity function. Silly to mix fragments when the whole app is activities
+        > Would make more sense for an employer too. Like why complicate the app? The swipe functionality
+           really accomplishes nothing.
 
 Quote Screen Updates
     > Finish adding quote string resources.
