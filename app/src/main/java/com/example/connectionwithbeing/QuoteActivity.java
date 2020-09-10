@@ -31,6 +31,7 @@ public class QuoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote);
+        getSupportActionBar().hide(); //Hides all action bars for quote activity. Makes it look cleaner.
 
         mConstraintLayout = findViewById(R.id.QuoteActivity_ParentLayout);
         mProgressBar = (ProgressBar) findViewById(R.id.QuoteActivity_ProgressBar);
@@ -109,6 +110,7 @@ public class QuoteActivity extends AppCompatActivity {
             case 1:
                 exerciseQuotes = Exercise.selfQuotes;
                 mTextView.setText(exerciseQuotes[exerciseNumber-1]);
+                mTextView.setTextColor(getResources().getColor(R.color.myBlack));
 
                 mConstraintLayout.setBackgroundColor(getResources().getColor(R.color.self_primary));
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.self_primary_dark)));

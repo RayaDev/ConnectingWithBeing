@@ -8,6 +8,7 @@
     <string name = "contact_activity_title">Contacts</string>
     <string name = "settings_activity_title">Settings</string>
     <string name = "credits_activity_title">Credits</string>
+    <string name = "quote_activity_title">Quote Activity</string>
     <string name = "quote_text_placeholder">\"Quotes For Each Exercise Go Here\"</string>
 
     <string name="open">open toggle</string>
