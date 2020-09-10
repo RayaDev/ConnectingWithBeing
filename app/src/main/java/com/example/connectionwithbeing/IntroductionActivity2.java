@@ -1,6 +1,7 @@
 package com.example.connectionwithbeing;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,14 @@ public class IntroductionActivity2 extends AppCompatActivity {
         mIntroExerciseMenu = findViewById(introImages[0]);
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = findViewById(introImages[1]);
+
+        mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setImageText();
+                clickCount++;
+            }
+        });
 
     }
 
