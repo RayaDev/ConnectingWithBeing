@@ -1,20 +1,16 @@
 package com.example.connectionwithbeing;
 
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-
-import java.util.HashMap;
 
 
 public class IntroductionFragment2 extends Fragment {
@@ -27,6 +23,7 @@ public class IntroductionFragment2 extends Fragment {
     private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon, mIntroNext2Button;
     private TextView mIntroIconTextView;
 
+
     private int clickCount = 2;
 
     private int[] introImages = {R.id.UIIntroExerciseMenuIcon_LinearLayout, R.id.UIIntroExerciseIcon_LinearLayout,
@@ -34,6 +31,7 @@ public class IntroductionFragment2 extends Fragment {
 
     int[] introText = {R.string.ui_menu_icon, R.string.ui_exercise_icon, R.string.ui_home_icon, R.string.ui_bookmark_icon,
             R.string.ui_shuffle_icon, R.string.ui_info_icon};
+
 
 
     @Override
@@ -50,6 +48,12 @@ public class IntroductionFragment2 extends Fragment {
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = view.findViewById(introImages[1]);
 
+//
+//        Animation animation1 =
+//                AnimationUtils.loadAnimation(getContext(),
+//                        R.anim.blink);
+//
+//        mIntroExerciseIcon.setAnimation(animation1);
 
 //        LinearLayout mNextButton = view.findViewById(R.id.IntroductionNext_LinearLayout);
 //        mNextButton.setVisibility(View.INVISIBLE);
@@ -70,10 +74,15 @@ public class IntroductionFragment2 extends Fragment {
 
     private void setImageText() {
 
+        Animation animation1 =
+                AnimationUtils.loadAnimation(getContext(),
+                        R.anim.blink);
+
         switch (clickCount) {
             case 1:
                 mIntroExerciseMenu.setVisibility(View.VISIBLE);
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroExerciseMenu.setAnimation(animation1);
                 mIntroIconTextView.setText(introText[0]);
                 break;
 
@@ -81,6 +90,7 @@ public class IntroductionFragment2 extends Fragment {
             case 2:
                 mIntroExerciseMenu.setVisibility(View.GONE);
                 mIntroExerciseIcon.setVisibility(View.VISIBLE);
+                mIntroExerciseIcon.setAnimation(animation1);
                 mIntroIconTextView.setText(introText[1]);
                 break;
 
@@ -89,6 +99,7 @@ public class IntroductionFragment2 extends Fragment {
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
                 mIntroLinearLayout.setBackgroundResource(introImages[2]);
                 mIntroIconTextView.setText(introText[2]);
+                mIntroLinearLayout.setAnimation(animation1);
                 break;
 
             case 4:
@@ -96,6 +107,7 @@ public class IntroductionFragment2 extends Fragment {
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
                 mIntroLinearLayout.setBackgroundResource(introImages[3]);
                 mIntroIconTextView.setText(introText[3]);
+                mIntroLinearLayout.setAnimation(animation1);
                 break;
 
             case 5:
@@ -103,6 +115,7 @@ public class IntroductionFragment2 extends Fragment {
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
                 mIntroLinearLayout.setBackgroundResource(introImages[4]);
                 mIntroIconTextView.setText(introText[4]);
+                mIntroLinearLayout.setAnimation(animation1);
                 break;
 
             case 6:
@@ -110,6 +123,7 @@ public class IntroductionFragment2 extends Fragment {
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
                 mIntroLinearLayout.setBackgroundResource(introImages[5]);
                 mIntroIconTextView.setText(introText[5]);
+                mIntroLinearLayout.setAnimation(animation1);
                 break;
 
             case 7:

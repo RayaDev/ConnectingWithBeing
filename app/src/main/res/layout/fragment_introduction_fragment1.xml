@@ -21,33 +21,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
+        android:text="~~~Welcome!~~~"
         android:gravity="center"
         android:textSize="36sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="~~~~~Mission Statement~~~~~"
-        android:layout_marginTop="10dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textSize="20sp"
         android:gravity="center"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/introduction_text"
-
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="36dp"
-        >
-    </TextView>
+        android:text="@string/intro_text_simple"
+        android:textSize="18sp"/>
 
 </LinearLayout>
 
