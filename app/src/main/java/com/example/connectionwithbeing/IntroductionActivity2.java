@@ -25,6 +25,13 @@ public class IntroductionActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_2);
 
+        mIntroLinearLayout = findViewById(R.id.IntroIconPlaceHolder_LinearLayout);
+        mIntroIconTextView = findViewById(R.id.IntroIconText_TextView);
+        mIntroNext2Button = findViewById(R.id.IntroductionNext2_LinearLayout);
+        mIntroExerciseMenu = findViewById(introImages[0]);
+        mIntroIconTextView.setText(introText[0]);
+        mIntroExerciseIcon = findViewById(introImages[1]);
+
     }
 
 }
