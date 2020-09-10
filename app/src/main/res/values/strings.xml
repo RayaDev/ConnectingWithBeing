@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Connecting With Being</string>
+    <string name="app_name">Be You</string>
 
     <!-- Main Activity Strings-->
     <string name = "main_activity_title">Connecting With...</string>
@@ -47,6 +47,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
 
     <!-- Self Exercise Strings-->
+    <string name="self_home_title">Self</string>
     <string name="self_menu_title">With Self…</string>
 
     <string name="self_e1_title">Create For the Experience</string>
@@ -112,6 +113,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
 
     <!--Others Exercise Strings-->
+    <string name="others_home_title">Others</string>
     <string name="others_menu_title">With Others...</string>
 
     <string name="others_e1_title">Difference of Opinions</string>
@@ -159,6 +161,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
 
     <!--Nature Exercise Strings-->
+    <string name="nature_home_title">Nature</string>
     <string name="nature_menu_title">With Nature...</string>
 
     <string name="nature_e1_title">Hug A Tree!</string>
@@ -217,6 +220,7 @@ While you’re there take a long breath, and thank that tree for the air you are
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
     <!-- Society Exercises Strings -->
+    <string name="society_home_title">Society</string>
     <string name="society_menu_title">With Society...</string>
 
     <string name="society_e1_title">Disconnect and Unplug</string>
