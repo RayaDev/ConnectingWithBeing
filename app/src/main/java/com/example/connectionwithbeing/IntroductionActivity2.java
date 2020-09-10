@@ -25,6 +25,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction_2);
+        setTitle("Introduction");
 
         mIntroLinearLayout = findViewById(R.id.IntroIconPlaceHolder_LinearLayout);
         mIntroIconTextView = findViewById(R.id.IntroIconText_TextView);

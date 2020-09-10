@@ -24,6 +24,12 @@
         <activity
             android:name=".IntroductionActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".IntroductionActivity2"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".IntroductionActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />

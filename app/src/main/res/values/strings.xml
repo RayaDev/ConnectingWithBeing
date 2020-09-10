@@ -2,6 +2,7 @@
     <string name="app_name">Be You</string>
 
     <!-- Main Activity Strings-->
+    <string name="welcome_screen_title">..~~**Be You**~~..</string>
     <string name = "main_activity_title">Connecting With...</string>
     <string name= "about_activity_title">About</string>
     <string name = "contact_activity_title">Contacts</string>
@@ -20,7 +21,7 @@
     <string name="exercise1_questions_button_string">Reflection</string>
 
     <!-- Introduction Strings-->
-    <string name="intro_text_simple">"Based on environmental education and various philosophical concepts, this app invites you to explore your relationship with yourself, others, nature, and society. It aims at creating a deeper connection with the world inside and around you.
+    <string name="intro_text_simple">"Based on environmental education and various philosophical concepts, Be You invites you to explore your relationship with yourself, others, nature, and society. It aims at creating a deeper connection with the world inside and around you.
 
 Through exercises and introspective questions, you will be challenged to get out of your comfort zone and examine some of the more hindering beliefs found in modern life. Focus on the process, there are no “good or bad answers”, it is all about your personal growth!
 
