@@ -43,4 +43,55 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
     }
 
+    private void setImageText() {
+
+        switch (clickCount) {
+            case 1:
+                mIntroExerciseMenu.setVisibility(View.VISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroIconTextView.setText(introText[0]);
+                break;
+
+
+            case 2:
+                mIntroExerciseMenu.setVisibility(View.GONE);
+                mIntroExerciseIcon.setVisibility(View.VISIBLE);
+                mIntroIconTextView.setText(introText[1]);
+                break;
+
+            case 3:
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroLinearLayout.setBackgroundResource(introImages[2]);
+                mIntroIconTextView.setText(introText[2]);
+                break;
+
+            case 4:
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroLinearLayout.setBackgroundResource(introImages[3]);
+                mIntroIconTextView.setText(introText[3]);
+                break;
+
+            case 5:
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroLinearLayout.setBackgroundResource(introImages[4]);
+                mIntroIconTextView.setText(introText[4]);
+                break;
+
+            case 6:
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroLinearLayout.setBackgroundResource(introImages[5]);
+                mIntroIconTextView.setText(introText[5]);
+                break;
+
+            case 7:
+
+                break;
+        }
+
+    }
+
 }
