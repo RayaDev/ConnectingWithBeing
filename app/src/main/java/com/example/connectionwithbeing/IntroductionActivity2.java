@@ -1,5 +1,6 @@
 package com.example.connectionwithbeing;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -30,8 +31,10 @@ public class IntroductionActivity2 extends AppCompatActivity {
         mIntroLinearLayout = findViewById(R.id.IntroIconPlaceHolder_LinearLayout);
         mIntroIconTextView = findViewById(R.id.IntroIconText_TextView);
         mIntroNext2Button = findViewById(R.id.IntroductionNext2_LinearLayout);
+
         mIntroExerciseMenu = findViewById(introImages[0]);
         mIntroIconTextView.setText(introText[0]);
+
         mIntroExerciseIcon = findViewById(introImages[1]);
 
         mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +92,18 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 break;
 
             case 7:
+                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
+                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+                mIntroLinearLayout.setVisibility(View.INVISIBLE);
+                mIntroNext2Button.setVisibility(View.VISIBLE);
+
+                mIntroNext2Button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent endIntro = new Intent(IntroductionActivity2.this, MainActivity.class);
+                        startActivity(endIntro);
+                    }
+                });
 
                 break;
         }
