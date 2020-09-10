@@ -33,8 +33,7 @@ public class IntroductionActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
-                mNextLinearLayout.setAnimation(mBlink);
+                playBlinkAnimation();
             }
         }, 2000);
 
@@ -56,9 +55,17 @@ public class IntroductionActivity extends AppCompatActivity {
         if (introCompleted == true) {
             Intent startMainActivity = new Intent(IntroductionActivity.this, MainActivity.class);
             startActivity(startMainActivity);
-        } else {
+        }
+        else {
 
         }
+    }
+
+    private void playBlinkAnimation(){
+
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        mNextLinearLayout.startAnimation(animation1);
+
     }
 
 }

@@ -44,15 +44,10 @@ public class IntroductionActivity2 extends AppCompatActivity {
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = findViewById(introImages[1]);
 
-
-//        Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
-//        mIntroExerciseMenu.setAnimation(mBlink);
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
-                mIntroExerciseMenu.setAnimation(mBlink);
+                playBlinkAnimation();
             }
         }, 2000);
 
@@ -100,9 +95,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 break;
 
             case 4:
-//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
-
                 mIntroLinearLayout.setBackgroundResource(introImages[3]);
                 mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[3]);
@@ -110,9 +102,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 break;
 
             case 5:
-//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
-
                 mIntroLinearLayout.setBackgroundResource(introImages[4]);
                 mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[4]);
@@ -120,9 +109,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 break;
 
             case 6:
-//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
-
                 mIntroLinearLayout.setBackgroundResource(introImages[5]);
                 mIntroLinearLayout.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[5]);
@@ -130,9 +116,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 break;
 
             case 7:
-//                mIntroExerciseMenu.setVisibility(View.INVISIBLE);
-//                mIntroExerciseIcon.setVisibility(View.INVISIBLE);
-
                 mIntroLinearLayout.clearAnimation();
                 mIntroLinearLayout.setVisibility(View.INVISIBLE);
 
@@ -165,7 +148,6 @@ public class IntroductionActivity2 extends AppCompatActivity {
                                 .show();
                     }
                 });
-
                 break;
         }
     }
@@ -184,6 +166,11 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
         // Close the IntroductionActivity
         finish();
+    }
+
+    private void playBlinkAnimation(){
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        mIntroExerciseMenu.startAnimation(animation1);
     }
 
 }
