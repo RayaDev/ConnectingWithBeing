@@ -36,22 +36,6 @@ public class IntroductionActivity extends AppCompatActivity {
 
     }
 
-    private void finishIntroduction() {
-        // Get the shared preferences
-        SharedPreferences preferences =
-                getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
-
-        // Set introduction_complete to true
-        preferences.edit().putBoolean(Exercise.introCompletedKey, true).apply();
-
-        // Launch the main Activity, called MainActivity
-        Intent main = new Intent(this, MainActivity.class);
-        startActivity(main);
-
-        // Close the IntroductionActivity
-        finish();
-    }
-
 
     @Override
     public void onBackPressed() {

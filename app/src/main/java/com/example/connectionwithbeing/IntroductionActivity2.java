@@ -1,12 +1,17 @@
 package com.example.connectionwithbeing;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import model.Exercise;
 
 public class IntroductionActivity2 extends AppCompatActivity {
 
@@ -100,14 +105,47 @@ public class IntroductionActivity2 extends AppCompatActivity {
                 mIntroNext2Button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent endIntro = new Intent(IntroductionActivity2.this, MainActivity.class);
-                        startActivity(endIntro);
+
+                        new AlertDialog.Builder(IntroductionActivity2.this)
+                                .setTitle("Introduction Completed!")
+                                .setMessage("Continue to the main menu?")
+
+                                .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finishIntroduction();
+                                    }
+                                })
+
+                                // A null listener allows the button to dismiss the dialog and take no further action.
+                                .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                })
+                                .setIcon(R.drawable.guistar)
+                                .show();
                     }
                 });
 
                 break;
         }
+    }
 
+    private void finishIntroduction() {
+        // Get the shared preferences
+        SharedPreferences preferences =
+                getApplicationContext().getSharedPreferences(Exercise.generalPreferencesKey, MODE_PRIVATE);
+
+        // Set introduction_complete to true
+        preferences.edit().putBoolean(Exercise.introCompletedKey, true).apply();
+
+        // Launch the main Activity, called MainActivity
+        Intent main = new Intent(this, MainActivity.class);
+        startActivity(main);
+
+        // Close the IntroductionActivity
+        finish();
     }
 
 }
