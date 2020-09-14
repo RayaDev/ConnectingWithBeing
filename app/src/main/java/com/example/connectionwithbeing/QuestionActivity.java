@@ -20,6 +20,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import model.Exercise;
 import model.Question;
 
@@ -36,11 +43,21 @@ public class QuestionActivity extends AppCompatActivity {
     private ImageView mToDoButton, mHomeButton;
     private LinearLayout mCompletedQuestions, mParentLayout, mBottomActivityBar;
     private TextView mQuestions1, mQuestions2, mQuestions3;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+                mInterstitialAd = new InterstitialAd(QuestionActivity.this);
+                mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
 
         // Sets the AEQ action bar to have the same color as AE action bar.
 //        Make sure the actionbar versions are the same.
@@ -90,13 +107,15 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 Log.i("Type", exerciseType +"");
 
-                                int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
+                                startInterstitialAd(exerciseNumber, exerciseType);
 
-                                //Returns to the home screen and activates an animation on the stars.
-                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
-                                returnHome.putExtra("play_animation", playAnimation);
-                                returnHome.putExtra("exercise_category", exerciseType);
-                                startActivity(returnHome);
+//                                int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
+//
+//                                //Returns to the home screen and activates an animation on the stars.
+//                                Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+//                                returnHome.putExtra("play_animation", playAnimation);
+//                                returnHome.putExtra("exercise_category", exerciseType);
+//                                startActivity(returnHome);
                             }
                         })
 
@@ -125,6 +144,45 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         }, 10000);
+
+    }
+
+    private void startInterstitialAd(final int exerciseNumber, final int exerciseType) {
+        if (mInterstitialAd.isLoaded()) {
+
+            mInterstitialAd.show();
+            mInterstitialAd.setAdListener(new AdListener() {
+
+                @Override
+                public void onAdClosed() {
+                    // Step 2.1: Load another ad
+
+                    mInterstitialAd = new InterstitialAd(QuestionActivity.this);
+                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+                    // Step 2.2: Start the new activity
+                    loadNextActivity(exerciseNumber, exerciseType);
+
+                }
+            });
+        }
+        else {
+            loadNextActivity(exerciseNumber, exerciseType);
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
+
+    }
+
+    private void loadNextActivity(int exerciseNumber, int exerciseType) {
+
+        int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
+
+        //Returns to the home screen and activates an animation on the stars.
+        Intent returnHome = new Intent(QuestionActivity.this, MainActivity.class);
+        returnHome.putExtra("play_animation", playAnimation);
+        returnHome.putExtra("exercise_category", exerciseType);
+        startActivity(returnHome);
 
     }
 
