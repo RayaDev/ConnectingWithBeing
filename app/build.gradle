@@ -5,8 +5,9 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.example.connectionwithbeing"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
