@@ -50,14 +50,10 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-                mInterstitialAd = new InterstitialAd(QuestionActivity.this);
-                mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            }
-        });
+
+        mInterstitialAd = new InterstitialAd(QuestionActivity.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         // Sets the AEQ action bar to have the same color as AE action bar.
 //        Make sure the actionbar versions are the same.
