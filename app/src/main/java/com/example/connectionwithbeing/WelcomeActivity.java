@@ -62,8 +62,6 @@ public class WelcomeActivity extends AppCompatActivity {
                     @Override
                     public void onInitializationComplete(InitializationStatus initializationStatus) {
 
-
-
                     }
                 });
             }

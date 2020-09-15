@@ -54,7 +54,6 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="ui_next_button_text">Your essential Next Button. Controls all forward navigation through the app.</string>
 
 
-
     <!-- Self Exercise Strings-->
     <string name="self_home_title">Self</string>
     <string name="self_menu_title">With Self…</string>
@@ -174,57 +173,82 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="nature_menu_title">With Nature...</string>
 
     <string name="nature_e1_title">Hug A Tree!</string>
-    <string name="nature_e1_quote">"Nature Quote One"</string>
-    <string name="nature_e1_text">"Find the most inspiring tree around your area, and give it a big hug.
 
-While you’re there take a long breath, and thank that tree for the air you are breathing."
+    <string name="nature_e1_quote">"\"Trees are poems the earth writes upon the sky\"
+
+        - Kahlil Gibran, Poet"
     </string>
-    <string name="nature_e1_q1_text">Was it your first experience of hugging a tree? How did you feel?</string>
-    <string name="nature_e1_q2_text">How do you feel about doing this exercise in public?</string>
+
+    <string name="nature_e1_text">"Follow your intuition and find a tree that inspires you (it doesn\’t have to be big, just find any tree that speaks to you). Close your eyes, take a deep long breath, and give the tree a big hug!…"</string>
+
+    <string name="nature_e1_q1_text">Was it your first experience of hugging a tree? Did you do it in a public space, why or why not?</string>
+    <string name="nature_e1_q2_text">It is said that hugging a tree helps to make you feel more calm and relaxed. Did you feel those benefits? Would you do it again?</string>
     <string name="nature_e1_q3_text">How did this exercise influence your connection to nature? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="nature_e2_title">Walk Solo in Nature</string>
-    <string name="nature_e2_quote">"\"The clearest way into the Universe is through a forest wilderness.\"
-- John Muir"</string>
-    <string name="nature_e2_text">Go in nature by yourself with no predetermined route (or very minimal one) or length of time.</string>
-    <string name="nature_e2_q1_text">What was the most exciting thing that happened during that walk?</string>
-    <string name="nature_e2_q2_text">Were you thinking a lot or not at all? What was in your head?</string>
+    <string name="nature_e2_title">Walk with Nature</string>
+
+    <string name="nature_e2_quote">"\"In every walk with nature one receives far more than he seeks.\"
+
+        - John Muir, Conservationist"
+    </string>
+
+    <string name="nature_e2_text">Go in nature by yourself with a very minimal predetermined route or length of time. Take your time and pay attention to small details (a mushroom growing, a bird singing, the pattern of a leaf, etc!)</string>
+
+    <string name="nature_e2_q1_text">How was your mindset during the walk? Were you thinking a lot or not at all? What were the thoughts in your head?</string>
+    <string name="nature_e2_q2_text">What was the most exciting thing that happened during that walk? Name one thing that you saw, smelled, heard, and touched.</string>
     <string name="nature_e2_q3_text">"How did this exercise influence your connection to nature?
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
-    <string name="nature_e3_title">Nature as a Child</string>
+    <string name="nature_e3_title">A Child of Nature</string>
 
-    <string name="nature_e3_quote">"\"And this, our life, exempt from public haunt, finds tongues in trees, books in the running brooks, sermons in stones, and good in everything.\"
--William Shakespeare"
+    <string name="nature_e3_quote">"\"All my life through, the new sights of Nature made me rejoice like a child.\"
+
+        - Marie Curie, Physicist"
 </string>
 
-    <string name="nature_e3_text">Try to remember a memory from your childhood that you felt particularly connected with nature. Where was it? Who were with you? What were you doing?</string>
+    <string name="nature_e3_text">Try to remember a memory from your childhood that you felt particularly connected with nature. Visualize it the best you can: Where was it? What were the elements of nature ? Who were you with? What were you doing?</string>
+
     <string name="nature_e3_q1_text">What was the importance of nature during your childhood?</string>
-    <string name="nature_e3_q2_text">How did this memory or that particular place shape the relationship that you now have with nature?</string>
+    <string name="nature_e3_q2_text">How did the memory or that particular place shape the relationship that you now have with nature?</string>
     <string name="nature_e3_q3_text">"How did this exercise influence your connection to nature?
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
-    <string name="nature_e4_title">Do the Earth a Favor!</string>
-    <string name="nature_e4_quote">"Society Exercise 4 Quote Holder"</string>
+    <string name="nature_e4_title">Do the Earth a Favor</string>
+
+    <string name="nature_e4_quote">"\"We have forgotten how to be good guests, how to walk lightly on the earth as its other creatures do.\"
+
+        - Barbara Ward, Economist"</string>
+
     <string name="nature_e4_text">Walk around your local park or neighborhood and pick up a single piece of trash (or more!) off the ground. Make sure it finds its way to the proper bin! (Remember to compost or recycle if you can.)</string>
-    <string name="nature_e4_q1_text">Did you notice a lot (or very little) trash where you were walking? What was your initial reaction to the presence of or lack of trash in your immediate surroundings?</string>
-    <string name="nature_e4_q2_text">How did you feel carrying around someone else’s trash? When it made it to the bin, what was the first feeling that you had?</string>
+
+    <string name="nature_e4_q1_text">Did you notice a lot (or very little) trash where you were walking? How do you feel about it? When it made it to the bin, what was the first feeling that you had?</string>
+    <string name="nature_e4_q2_text">Do you usually pick up trash off the ground? Why or not?</string>
     <string name="nature_e4_q3_text">"How did this exercise influence your connection to nature?
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
-    <string name="nature_e5_title">The Elements</string>
-    <string name="nature_e5_quote">"Nature Exercise 5 Quote Holder"</string>
+    <string name="nature_e5_title">Be In Your Elements</string>
+
+    <string name="nature_e5_quote">"\"One way to open your eyes is to ask yourself, "What if I had never seen this before? What if I knew I would never see it again?\"
+
+        - Rachel Carson, Biologist"</string>
+
     <string name="nature_e5_text">Connect mindfully with the four elements using all your senses. The four elements are Earth, Water, Fire and Air. For example, silence your thoughts, and stare at a lit candle, feel the soil with your bare feet, listen to the wind, and smell the ocean.</string>
+
     <string name="nature_e5_q1_text">Which element did you feel the most connected to? Why?</string>
     <string name="nature_e5_q2_text">Which sense did you naturally use the most to connect with each element?</string>
     <string name="nature_e5_q3_text">"How did this exercise influence your connection to nature?
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 
     <string name="nature_e6_title">Adopt a Pet Plant!</string>
-    <string name="nature_e6_quote">"Nature Exercise 6 Quote Holder"</string>
-    <string name="nature_e6_text">Find a small plant that is seeding in a park, or in the woods. Gently up root it, and grab some of the soil that it was growing in. Bring it home, put it into a cup or jar, try to identify the species and its basic needs, and see what happens! You now have a new friend!</string>
+
+    <string name="nature_e6_quote">"\"I grow plants for many reasons: to please my eye or to please my soul, to challenge the elements or to challenge my patience, for novelty or for nostalgia, but mostly for the joy in seeing them grow.\"
+
+        - David Hobson, Composer"</string>
+
+    <string name="nature_e6_text">Find a small plant that is seeding in a park, or in the woods. Gently up root it, and grab some of the soil that it was growing in. Bring it home, put it into a cup or jar, try to identify the species and its basic needs, and see what happens!</string>
+
     <string name="nature_e6_q1_text">Why did you choose this plant? What attracted you to that particular plant?</string>
-    <string name="nature_e6_q2_text">Do you feel any emotional connection with the plant now that it’s home? Did you give it a name?</string>
+    <string name="nature_e6_q2_text">Do you feel any emotional connection with the plant now that it’s home?</string>
     <string name="nature_e6_q3_text">"How did this exercise influence your connection to nature?
         Are there any insights or strong feelings that you will remember from this exercise?"</string>
 

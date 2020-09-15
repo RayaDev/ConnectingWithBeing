@@ -5,19 +5,15 @@ Read/Scan Through entire android dev guide
 
 Working TODO:
 
-Introduction Screen Updates
-    > Add blinking animation, and make directions more obvious. Add text about question activity.
-    > Intro on open slide should be more instructions than philosphy. No scrollView.
-    > Convert to Activity - Activity function. Silly to mix fragments when the whole app is activities
-        > Would make more sense for an employer too. Like why complicate the app? The swipe functionality
-           really accomplishes nothing.
+Working on Self.
 
-Quote Screen Updates
-    > Finish adding quote string resources.
+Updating quotes and all exercise. Final copy of content.
+Nature Complete
+
 
 General TODO:
 
-Integrate AdMob
+Finish and double check Integrate AdMob
 
 About, Contacts, Credits, Settings Updates
 
