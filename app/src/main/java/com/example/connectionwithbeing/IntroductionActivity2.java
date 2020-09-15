@@ -21,7 +21,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
     private LinearLayout mIntroLinearLayout, mIntroExerciseMenu, mIntroExerciseIcon, mIntroNext2Button;
     private TextView mIntroIconTextView;
 
-    private int clickCount = 2;
+    private int clickCount = 1;
 
     private int[] introImages = {R.id.UIIntroExerciseMenuIcon_LinearLayout, R.id.UIIntroExerciseIcon_LinearLayout,
             R.drawable.guihome, R.drawable.guibookmark, R.drawable.shuffleiconimage, R.drawable.guiinfoitemimage};
@@ -44,12 +44,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
         mIntroIconTextView.setText(introText[0]);
         mIntroExerciseIcon = findViewById(introImages[1]);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                playBlinkAnimation();
-            }
-        }, 2000);
+        setImageText();
 
         mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +64,8 @@ public class IntroductionActivity2 extends AppCompatActivity {
             case 1:
                 mIntroExerciseMenu.setVisibility(View.VISIBLE);
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
+
+                mIntroExerciseMenu.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[0]);
                 break;
 
