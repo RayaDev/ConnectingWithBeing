@@ -26,6 +26,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
@@ -44,12 +47,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //Shared Preferences for the number of exercises completed, and menu creation
     public SharedPreferences mSharedPreferences;
+    private InterstitialAd mInterstitialAd;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        loadTheAds();
 
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
@@ -474,7 +480,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startRandomExercise.putExtra(Exercise.exerciseTextViewKey, exerciseStrings.get(exerciseStringKey));
         startRandomExercise.putExtra(Exercise.exerciseNumberKey, randomExerciseNumber); //Eventually passed to the QuestionActivity
         startRandomExercise.putExtra(Exercise.exerciseCategoryKey, categoryArray[randomExerciseCategory]);
-        startActivity(startRandomExercise);
+
+
+        startInterstitialAd(startRandomExercise);
+//        startActivity(startRandomExercise);
 
 
     }
@@ -565,6 +574,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onResume(){
         super.onResume();
         setProgressStars();
+
+    }
+
+    private void loadTheAds() {
+        mInterstitialAd = new InterstitialAd(MainActivity.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
+    private void startInterstitialAd(final Intent exerciseIntent) {
+        if (mInterstitialAd.isLoaded()) {
+
+            mInterstitialAd.show();
+            mInterstitialAd.setAdListener(new AdListener() {
+
+                @Override
+                public void onAdClosed() {
+                    // Step 2.1: Load another ad
+
+//                    mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
+//                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    loadTheAds();
+
+                    // Step 2.2: Start the new activity
+                    startActivity(exerciseIntent);
+
+                }
+            });
+        }
+        else {
+            startActivity(exerciseIntent);
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
 
     }
 
