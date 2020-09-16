@@ -102,10 +102,10 @@ public class ExerciseActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new AlertDialog.Builder(ExerciseActivity.this)
-                        .setTitle("Continue to reflections..")
-                        .setMessage("Have you completed the exercise?")
+                        .setTitle(R.string.exercise_complete_title)
+                        .setMessage(R.string.exercise_complete_text)
 
-                        .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Need intents here with extras for the questions!
@@ -117,7 +117,7 @@ public class ExerciseActivity extends AppCompatActivity {
                         })
 
                         // A null listener allows the button to dismiss the dialog and take no further action.
-                        .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.take_more_time, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 mStartQuestions.clearAnimation();

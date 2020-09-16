@@ -8,11 +8,26 @@
     <string name = "contact_activity_title">Contacts</string>
     <string name = "settings_activity_title">Settings</string>
     <string name = "credits_activity_title">Credits</string>
-    <string name = "quote_activity_title">Quote Activity</string>
+    <string name = "quote_activity_title">Your Daily Quote</string>
     <string name = "quote_text_placeholder">\"Quotes For Each Exercise Go Here\"</string>
+    <string name = "questions_activity_title">Reflections</string>
+
+    <!--Alert Dialog Strings-->
+    <string name = "intro_complete_title">Introduction Completed!</string>
+    <string name = "intro_complete_text">Continue to the main menu?</string>
+
+    <string name = "exercise_complete_title">Continue to Reflections?</string>
+    <string name = "exercise_complete_text">Have you completed the exercise?</string>
+
+    <string name = "questions_complete_title">Finish Reflecting?</string>
+    <string name = "questions_complete_text">Have you thought about all the questions?</string>
+
+    <string name ="yes">Yes!</string>
+    <string name = "dismiss">Dismiss</string>
+    <string name ="take_more_time">Take more time</string>
 
     <string name="open">open toggle</string>
-    <string name="close">close toggle</string>
+    <string name="close">close toggle</string>>
     <string name="home_button_toast">You are already home!</string>
     <string name="exercise_completed_default">"X 0/6"</string>
     <string name="question_default_string">Question goes here</string>
@@ -72,7 +87,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="self_e2_quote">"\"Dancing is creating a sculpture that is visible only for a moment.\"
 
-        - Erol Ozan, Salsa Dancer"
+- Erol Ozan, Salsa Dancer"
 </string>
 
     <string name="self_e2_text">Be alone, create a comfortable space, and play your favorite songs. Dance to them anyway you want!</string>
@@ -84,7 +99,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="self_e3_title">Dreams Are What We’re Made Of</string>
     <string name="self_e3_quote">"\"So many of our dreams at first seem impossible, then they seem improbable, and then, when we summon the will, they soon become inevitable.\"
 
-        - Christopher Reeve, Actor"
+- Christopher Reeve, Actor"
 </string>
 
     <string name="self_e3_text">First, write down the dreams you had when you were younger, about what or who you wanted to become when you grow up. Then, write down your current dreams about what you want to do or become in the future. </string>
@@ -95,7 +110,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="self_e4_title">The Power of Words</string>
     <string name="self_e4_quote">"\"Your words become your world.\"
 
-        - Nadeem Kazi, Author"
+- Nadeem Kazi, Author"
 </string>
 
     <string name="self_e4_text">Write down a list of single words that define you until you can’t easily think of anymore. Don’t overthink it, write whatever comes to your mind.</string>
@@ -107,7 +122,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="self_e5_title">Surf Your Vibe</string>
     <string name="self_e5_quote">"\"We do not quit playing because we grow old; we grow old because we quit playing.\"
 
-        - Oliver Wendell Holmes Sr., Psychian"
+- Oliver Wendell Holmes Sr., Psychian"
 </string>
 
     <string name="self_e5_text">What is your favorite hobby? Take some time today (or as soon as you can!) to participate in your favorite activity.</string>
@@ -118,10 +133,10 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="self_e6_title">Your Story</string>
     <string name="self_e6_quote">"\"Your life becomes the story you tell yourself. Change the story you tell. Change your life.\"
 
-        - Karen Salmansohn, Author"
+- Karen Salmansohn, Author"
 </string>
 
-    <string name="self_e6_text">Let’s pretend you are the main character of a novel book and it is about your current life. What is the main plot / the central conflict? Who are your main allies and your main enemies? How would the cover look ? What would the title of the book be?</string>
+    <string name="self_e6_text">Let’s pretend you are the main character of a novel, and it is about your current life. What is the main plot, the central conflict? Who are your main allies and your main enemies? How would the cover look? What would the title of the book be?</string>
     <string name="self_e6_q1_text">Which elements of the story, if any, would you like to change? Why or why not?</string>
     <string name="self_e6_q2_text">What would the resolution of your book look like? How would the conflicts be resolved?</string>
     <string name="self_e6_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
@@ -183,7 +198,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e1_quote">"\"Trees are poems the earth writes upon the sky\"
 
-        - Kahlil Gibran, Poet"
+- Kahlil Gibran, Poet"
     </string>
 
     <string name="nature_e1_text">"Follow your intuition and find a tree that inspires you (it doesn\’t have to be big, just find any tree that speaks to you). Close your eyes, take a deep long breath, and give the tree a big hug!…"</string>
@@ -196,7 +211,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e2_quote">"\"In every walk with nature one receives far more than one seeks.\"
 
-        - John Muir, Conservationist"
+- John Muir, Conservationist"
     </string>
 
     <string name="nature_e2_text">Go in nature by yourself with a very minimal predetermined route or length of time. Take your time and pay attention to small details (a mushroom growing, a bird singing, the pattern of a leaf, etc!)</string>
@@ -210,7 +225,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e3_quote">"\"All my life through, the new sights of Nature made me rejoice like a child.\"
 
-        - Marie Curie, Physicist"
+- Marie Curie, Physicist"
 </string>
 
     <string name="nature_e3_text">Try to remember a memory from your childhood that you felt particularly connected with nature. Visualize it the best you can: Where was it? What were the elements of nature ? Who were you with? What were you doing?</string>
@@ -224,7 +239,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e4_quote">"\"We have forgotten how to be good guests, how to walk lightly on the earth as its other creatures do.\"
 
-        - Barbara Ward, Economist"</string>
+- Barbara Ward, Economist"</string>
 
     <string name="nature_e4_text">Walk around your local park or neighborhood and pick up a single piece of trash (or more!) off the ground. Make sure it finds its way to the proper bin! (Remember to compost or recycle if you can.)</string>
 
@@ -237,7 +252,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e5_quote">"\"One way to open your eyes is to ask yourself, "What if I had never seen this before? What if I knew I would never see it again?\"
 
-        - Rachel Carson, Biologist"</string>
+- Rachel Carson, Biologist"</string>
 
     <string name="nature_e5_text">Connect mindfully with the four elements using all your senses. The four elements are Earth, Water, Fire and Air. For example, silence your thoughts, and stare at a lit candle, feel the soil with your bare feet, listen to the wind, and smell the ocean.</string>
 
@@ -250,7 +265,7 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="nature_e6_quote">"\"I grow plants for many reasons: to please my eye or to please my soul, to challenge the elements or to challenge my patience, for novelty or for nostalgia, but mostly for the joy in seeing them grow.\"
 
-        - David Hobson, Composer"</string>
+- David Hobson, Composer"</string>
 
     <string name="nature_e6_text">Find a small plant that is seeding in a park, or in the woods. Gently up root it, and grab some of the soil that it was growing in. Bring it home, put it into a cup or jar, try to identify the species and its basic needs, and see what happens!</string>
 
@@ -302,7 +317,8 @@ We humbly hope that this will make at least a slight difference in your life (ev
 
     <string name="society_e6_title">Do Good Works</string>
     <string name="society_e6_quote">"\"What is the essence of life? To serve others and to do good.\"
--Aristotle"</string>
+
+-Aristotle, Philosopher"</string>
     <string name="society_e6_text">A tried and true classic to feel good and meet great people! Find a cause and organization you care about, and volunteer for a day. Even if it’s just once, you certainly won’t forget the experience.</string>
     <string name="society_e6_q1_text">Where did you choose to volunteer? What was the work like?</string>
     <string name="society_e6_q2_text">Did you build good relationships? Did you feel connected with the other volunteers? Your community as a whole?</string>

@@ -144,17 +144,17 @@ public class IntroductionActivity2 extends AppCompatActivity {
                     public void onClick(View v) {
 
                         new AlertDialog.Builder(IntroductionActivity2.this)
-                                .setTitle("Introduction Completed!")
-                                .setMessage("Continue to the main menu?")
+                                .setTitle(R.string.intro_complete_title)
+                                .setMessage(R.string.intro_complete_text)
 
-                                .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         finishIntroduction();
                                     }
                                 })
 
                                 // A null listener allows the button to dismiss the dialog and take no further action.
-                                .setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.dismiss, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 

@@ -49,6 +49,7 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+        setTitle(R.string.questions_activity_title);
 
 
         mInterstitialAd = new InterstitialAd(QuestionActivity.this);
@@ -93,10 +94,10 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new AlertDialog.Builder(QuestionActivity.this)
-                        .setTitle("Finish Reflecting..")
-                        .setMessage("Have you thought about all the questions?")
+                        .setTitle(R.string.questions_complete_title)
+                        .setMessage(R.string.questions_complete_text)
 
-                        .setPositiveButton("Yes!", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Exercise type and number are passed through the whole app along intents.. Maybe there's a better way to do this?
@@ -116,7 +117,7 @@ public class QuestionActivity extends AppCompatActivity {
                         })
 
                         // A null listener allows the button to dismiss the dialog and take no further action.
-                        .setNegativeButton("Take more time", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.take_more_time, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 mCompletedQuestions.clearAnimation();
