@@ -46,27 +46,46 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
         setImageText();
 
-        mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                setImageText();
-                clickCount++;
+            public void run() {
+
+                mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        clickCount++;
+                        setImageText();
+                    }
+                });
+
+                playBlinkAnimation();
+
+
             }
-        });
+        }, 2000);
+
+//        mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setImageText();
+//                clickCount++;
+//            }
+//        });
 
     }
 
     private void setImageText() {
 
-        Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        final Animation mBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
 
         switch (clickCount) {
             case 1:
                 mIntroExerciseMenu.setVisibility(View.VISIBLE);
                 mIntroExerciseIcon.setVisibility(View.INVISIBLE);
 
-                mIntroExerciseMenu.setAnimation(mBlink);
+//              mIntroExerciseMenu.setAnimation(mBlink);
                 mIntroIconTextView.setText(introText[0]);
+
                 break;
 
 
