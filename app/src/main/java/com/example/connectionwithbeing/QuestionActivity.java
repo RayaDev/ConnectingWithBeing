@@ -51,6 +51,8 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_questions);
         setTitle(R.string.questions_activity_title);
 
+        loadTheAds();
+
 
 //        mInterstitialAd = new InterstitialAd(QuestionActivity.this);
 //        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
@@ -104,9 +106,9 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 Log.i("Type", exerciseType +"");
 
-                                loadNextActivity(exerciseNumber, exerciseType);
+//                                loadNextActivity(exerciseNumber, exerciseType);
 
-//                                startInterstitialAd(exerciseNumber, exerciseType);
+                                startInterstitialAd(exerciseNumber, exerciseType);
 
 //                                int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 //
@@ -144,6 +146,12 @@ public class QuestionActivity extends AppCompatActivity {
             }
         }, 10000);
 
+    }
+
+    private void loadTheAds() {
+        mInterstitialAd = new InterstitialAd(QuestionActivity.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
     private void startInterstitialAd(final int exerciseNumber, final int exerciseType) {
