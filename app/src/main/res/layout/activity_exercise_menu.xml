@@ -7,7 +7,6 @@
     tools:context=".ExerciseMenuActivity"
     android:background="@color/nature_primary">
 
-
     <ScrollView
         android:id="@+id/ExerciseScrollView"
         android:layout_width="0dp"
