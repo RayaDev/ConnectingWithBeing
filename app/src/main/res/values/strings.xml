@@ -278,51 +278,61 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="society_home_title">Society</string>
     <string name="society_menu_title">With Society...</string>
 
-    <string name="society_e1_title">Disconnect and Unplug</string>
-    <string name="society_e1_quote">"Society Exercise 1 Quote Holder"</string>
-    <string name="society_e1_text">Try to spend just one day (safely!) without your phone. Bonus points if you are actually still in the city, and not in the woods somewhere.</string>
-    <string name="society_e1_q1_text">What was your initial reaction? Did you feel stress?  Freedom?</string>
-    <string name="society_e1_q2_text">When you got back on the grid, what was it like to use your device again?
-</string>
+    <string name="society_e1_title">The Virtual World</string>
+    <string name="society_e1_quote">"\"We no longer use technology, we live it.\"
+
+- Michiel Schwarz, Cultural thinker""</string>
+    <string name="society_e1_text">For one full day, be aware of your phone consumption. Take a count of each time you check your phone and see how many times you checked it by the end of the day.</string>
+    <string name="society_e1_q1_text">What prompts you to check your phone? The device itself (alert, etc)? Something to do to fill an empty moment?</string>
+    <string name="society_e1_q2_text">Of all the times that you check your phone, how many would you say were really necessary?</string>
     <string name="society_e1_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="society_e2_title">The Role of Money</string>
-    <string name="society_e2_quote">"Society Exercise 2 Quote Holder"</string>
+    <string name="society_e2_title">Our Attachment to Money</string>
+    <string name="society_e2_quote">"\"Money is a strange business. People who haven't got it aim for it strongly. People who have are full of troubles.\"
+
+- Ayrton Senna, Car Racer"
+    </string>
     <string name="society_e2_text">Think of your relationship with money. Focus on your feelings around it, and your initial emotional reaction to your current financial situation.</string>
     <string name="society_e2_q1_text">What is more important to you than money? What would you not give up for any price in the world?</string>
     <string name="society_e2_q2_text">What would you consider “enough”? How big would your bank account have to be that when you see it, you feel safe and free to take opportunities?</string>
     <string name="society_e2_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="society_e3_title">Represent Local</string>
-    <string name="society_e3_quote">"Society Exercise 3 Quote Holder"</string>
-    <string name="society_e3_text">"Local and state governments often have a much bigger effect on your life than federal. Attend a local city council meeting, or watch a session of your state congress.
-        Attempt to meet your city council or state government representative. Is there any important local issue you could talk with them about?"</string>
+    <string name="society_e3_title">Your Political Voice</string>
+    <string name="society_e3_quote">"\"Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has.\"
+
+- Margaret Mead, Anthropologist"</string>
+    <string name="society_e3_text">Local governments often have a much bigger effect on your life than federal. Attend a local city council meeting, and try to meet your representative (These events are open to the public in most cases!). Is there any important issue you could talk with your local representative or fellow citizens about?</string>
     <string name="society_e3_q1_text">What issues did they discuss? Was there anything about the process that stood out to you?</string>
     <string name="society_e3_q2_text">Did you like your representative? How could you work with them to address the issues you feel concerned about?</string>
     <string name="society_e3_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="society_e4_title">Kindness on the Street</string>
-    <string name="society_e4_quote">"Society Exercise 4 Quote Holder"</string>
-    <string name="society_e4_text">Give a person in need some change or food. Ask them their name, and wish them a good day.</string>
-    <string name="society_e4_q1_text">What was their reaction? Did their demeanor change once you asked for their name?</string>
-    <string name="society_e4_q2_text">How did you feel after the interaction was over? Was there a sense of doing some good?</string>
+    <string name="society_e4_title"> In the Shoes of…</string>
+    <string name="society_e4_quote">"\"There is no such thing as a single-issue struggle, because we do not live single-issue lives.\"
+
+-Audre Lorde, Feminist activist"
+    </string>
+    <string name="society_e4_text">Try to imagine yourself in someone else’s shoes : a person who is of a different ethnicity, sex, gender, socio-economic background, religion, sexual orientation, disability status, etc. You can think about somebody you know, or a fictional person. What would their daily lived experience feel like?</string>
+    <string name="society_e4_q1_text">What kind of invisible social structures and/or preconceptions are favorable or limiting for that person?</string>
+    <string name="society_e4_q2_text">What are the differences and similarities between you and the life of this other person?</string>
     <string name="society_e4_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name="society_e5_title">Every Bit Counts</string>
-    <string name="society_e5_quote">"Society Exercise 5 Quote Holder"</string>
-    <string name="society_e5_text">Sign up to make a small monthly donation (about the cost of a lunch, whatever you can afford) to a charity that advocates for a cause that you support. Any cause will do! A monthly donation makes you a real member of these organizations.</string>
-    <string name="society_e5_q1_text">How do you feel about giving to a cause on a regular basis?</string>
-    <string name="society_e5_q2_text">Do you think you’ll participate or become more involved with the issue over time?</string>
+    <string name="society_e5_quote">"\"It's vitally important to help each other. No, we can't walk in each other's shoes, but we can walk side-by-side and support each other.\"
+
+- Michele Sullivan, Social Impact Adviser"
+    </string>
+    <string name="society_e5_text">Sign up to make a small monthly donation (whatever you can afford) to a charity that advocates for a cause that you support. Use your heart and your head to make sure of the validity of the organization. A monthly donation makes you a real member of these organizations.</string>
+    <string name="society_e5_q1_text">How do you feel about giving to a cause on a regular basis? Do you feel more committed to it?</string>
+    <string name="society_e5_q2_text">Do you think you’ll participate or become more involved with the issue or the organization over time? How?</string>
     <string name="society_e5_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name="society_e6_title">Do Good Works</string>
-    <string name="society_e6_quote">"\"What is the essence of life? To serve others and to do good.\"
+    <string name="society_e6_quote">"\"Life’s most persistent and urgent question is, what are you doing for others?\"
 
--Aristotle, Philosopher"</string>
+- Martin Luther King Jr., Civil Rights Leader"</string>
     <string name="society_e6_text">A tried and true classic to feel good and meet great people! Find a cause and organization you care about, and volunteer for a day. Even if it’s just once, you certainly won’t forget the experience.</string>
     <string name="society_e6_q1_text">Where did you choose to volunteer? What was the work like?</string>
     <string name="society_e6_q2_text">Did you build good relationships? Did you feel connected with the other volunteers? Your community as a whole?</string>
     <string name="society_e6_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
-
 
 </resources>
