@@ -147,48 +147,63 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="others_menu_title">With Others...</string>
 
     <string name="others_e1_title">Difference of Opinions</string>
-    <string name="others_e1_quote">"Others Exercise 1 Quote Holder"</string>
-    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen. Try to understand how they came to their conclusions. </string>
+    <string name="others_e1_quote">"\"Most of all, differences of opinion are opportunities for learning.\"
+
+- Terry Tempest Williams, Educator</string>
+    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen without giving your opinion. Maybe ask some probing questions like: What do you mean? Can you explain that idea further?
+
+Try to understand how they came to form their opinion, and how their circumstances and environment influenced their perspective."
+</string>
+
     <string name="others_e1_q1_text">What was your initial internal reaction to their points of view? How did you feel? Was it hard not to immediately try to counter their opinions?</string>
     <string name="others_e1_q2_text">Did you gain any new perspectives on the matter? Could you feel empathy with someone you disagree with?</string>
     <string name="others_e1_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="others_e2_title">Handwriting a surprise-letter</string>
-    <string name="others_e2_quote">"Others Exercise 2 Quote Holder"</string>
-    <string name="others_e2_text">Think about someone you appreciate and value a lot. Take the time to hand write a letter to let them know why, and what you appreciate about them. There’s never too much love to share and receive. Stamp your letter, drop it off at the nearest post office, and away it goes!</string>
+    <string name="others_e2_title">Surprise-letter!</string>
+    <string name="others_e2_quote">"\"A letter always seemed to me like immortality because it is the mind alone without a corporeal friend.\"
+
+- Emily Dickinson, Poet</string>
+    <string name="others_e2_text">Think about someone you appreciate and value a lot! Take the time to hand write a letter to let them know why, and what you appreciate about them. Stamp your letter, drop it off at the nearest post office, and away it goes!</string>
     <string name="others_e2_q1_text">Did you feel a difference writing a letter by hand rather than email, text, or digital technologies?</string>
     <string name="others_e2_q2_text">What was the recipient\'s reaction to receiving the letter? Did they also find novelty in a handwritten letter?</string>
     <string name="others_e2_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name="others_e3_title">Different Small Talk</string>
-    <string name="others_e3_quote">"Others Exercise 3 Quote Holder"</string>
+    <string name="others_e3_quote">"\"I want to speak, to sing to total strangers. It’s my way of talking to the world.\"
+
+-Adrian Mitchell, Poet</string>
     <string name="others_e3_text">Next time you bump into a stranger or somebody you don’t know very well, (in the street, at your workplace, at the supermarket) switch from the typical “Hi! How are you?” to “Hi! So what was the best thing that happened in your day so far?”</string>
     <string name="others_e3_q1_text">What was the reaction of the person? What was his\her answer? What have you learned about that person?</string>
     <string name="others_e3_q2_text">And what about you? What is the best thing that happened to you today?</string>
     <string name="others_e3_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
 
-    <string name="others_e4_title">Meet your neighbors</string>
-    <string name="others_e4_quote">"Others Exercise 4 Quote Holder"</string>
-    <string name="others_e4_text">Do you know your neighbors? If you know your close neighbors, what about the ones two doors away ? Knock on their door and introduce yourself!</string>
+    <string name="others_e4_title">Howdy Neighbor!</string>
+    <string name="others_e4_quote">"\"Being a good neighbor is an art which make life richer.\"
+
+ - Gladys Taber, Author"</string>
+    <string name="others_e4_text">Do you know your neighbors? If you know your close neighbors, what about the ones two doors away ? Knock on their door and introduce yourself! Think about how you could offer them your help someday and vice versa.</string>
     <string name="others_e4_q1_text">Was it a short conversation or did it lead to something more than you were expecting?</string>
     <string name="others_e4_q2_text">When you see them out and about next time, will you wave and say hello if it feels good to do so?</string>
     <string name="others_e4_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="others_e5_title">The Elders</string>
-    <string name="others_e5_quote">"Others Exercise 5 Quote Holder"</string>
-    <string name="others_e5_text">Go to a retirement house and speak to an elderly person about his/her life. Ask them about their best childhood memories. What adventures did they have in their youth? Middle age?</string>
+    <string name="others_e5_title">Wisdom of the Ages</string>
+    <string name="others_e5_quote">"\"Every time an old person dies, a library burns to the ground.\"
+
+- African Proverb"
+</string>
+    <string name="others_e5_text">Speak to an elderly person in your social circle about their life. Ask them about their best childhood memories. What adventures did they have in their youth? Middle age?</string>
     <string name="others_e5_q1_text">How was your experience? What were the conversations about?</string>
     <string name="others_e5_q2_text">What is your perception of elderly people in your society? Did that perception change?</string>
     <string name="others_e5_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name="others_e6_title">Om mani padme hum..</string>
-    <string name="others_e6_quote">"Others Exercise 6 Quote Holder"</string>
-    <string name="others_e6_text">Attend a religious ceremony of a different faith than your own.</string>
-    <string name="others_e6_q1_text">"What have your other experiences with spiritual practices been like? How did you feel during this particular ceremony? How was it similar or different to your past experiences? What aspects of the ceremony did you find most enlightening?"</string>
-    <string name="others_e6_q2_text">How were your interactions with the community? Was there anyone you felt a special connection with?</string>
-    <string name="others_e6_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
+    <string name="others_e6_quote">"\"God enters by a private door into every individual.\"
 
+-Ralph Waldo Emerson, Philosopher"</string>
+    <string name="others_e6_text">Attend a religious ceremony of a different faith than your own. Look for ceremonies that are open to the public and go there with respect, an open-mind, and curiosity.</string>
+    <string name="others_e6_q1_text">What have your other experiences with spiritual practices been like?How was it similar or different to your past experiences? What aspects of the ceremony did you find most enlightening?</string>
+    <string name="others_e6_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <!--Nature Exercise Strings-->
     <string name="nature_home_title">Nature</string>
