@@ -154,7 +154,7 @@ Don’t overthink it, write whatever comes to your mind."</string>
     <string name="others_e1_quote">"\"Most of all, differences of opinion are opportunities for learning.\"
 
 - Terry Tempest Williams, Educator</string>
-    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen without giving your opinion. Maybe ask some probing questions like: What do you mean? Can you explain that idea further?
+    <string name="others_e1_text">"Find someone of your entourage that has a different political or social point of view of yours on a specific topic and just listen without giving your opinion.
 
 Try to understand how they came to form their opinion, and how their circumstances and environment influenced their perspective."
 </string>
@@ -164,7 +164,7 @@ Try to understand how they came to form their opinion, and how their circumstanc
     <string name="others_e1_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
     <string name="others_e2_title">Surprise-letter!</string>
-    <string name="others_e2_quote">"\"A letter always seemed to me like immortality because it is the mind alone without a corporeal friend.\"
+    <string name="others_e2_quote">"\"A letter always seemed to me like immortality, because it is the mind alone without a corporeal friend.\"
 
 - Emily Dickinson, Poet</string>
     <string name="others_e2_text">Think about someone you appreciate and value a lot! Take the time to hand write a letter to let them know why, and what you appreciate about them. Stamp your letter, drop it off at the nearest post office, and away it goes!</string>
@@ -177,7 +177,7 @@ Try to understand how they came to form their opinion, and how their circumstanc
 
 -Adrian Mitchell, Poet</string>
     <string name="others_e3_text">Next time you bump into a stranger or somebody you don’t know very well, (in the street, at your workplace, at the supermarket) switch from the typical “Hi! How are you?” to “Hi! So what was the best thing that happened in your day so far?”</string>
-    <string name="others_e3_q1_text">What was the reaction of the person? What was his\her answer? What have you learned about that person?</string>
+    <string name="others_e3_q1_text">What was the reaction of the person? What was their answer? What have you learned about that person?</string>
     <string name="others_e3_q2_text">And what about you? What is the best thing that happened to you today?</string>
     <string name="others_e3_q3_text">How did this exercise influence your connection with others? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
@@ -270,11 +270,13 @@ Try to understand how they came to form their opinion, and how their circumstanc
 
     <string name="nature_e5_title">Be In Your Elements</string>
 
-    <string name="nature_e5_quote">"\"One way to open your eyes is to ask yourself, "What if I had never seen this before? What if I knew I would never see it again?\"
+    <string name="nature_e5_quote">"\"One way to open your eyes is to ask yourself, \"What if I had never seen this before? What if I knew I would never see it again?\"
 
 - Rachel Carson, Biologist"</string>
 
-    <string name="nature_e5_text">Connect mindfully with the four elements using all your senses. The four elements are Earth, Water, Fire and Air. For example, silence your thoughts, and stare at a lit candle, feel the soil with your bare feet, listen to the wind, and smell the ocean.</string>
+    <string name="nature_e5_text">"Connect mindfully with the four elements using all your senses. The four elements are Earth, Water, Fire and Air.
+
+For example, silence your thoughts, and stare at a lit candle, feel the soil with your bare feet, listen to the wind, and smell the ocean."</string>
 
     <string name="nature_e5_q1_text">Which element did you feel the most connected to? Why?</string>
     <string name="nature_e5_q2_text">Which sense did you naturally use the most to connect with each element?</string>
@@ -301,8 +303,8 @@ Try to understand how they came to form their opinion, and how their circumstanc
     <string name="society_e1_title">The Virtual World</string>
     <string name="society_e1_quote">"\"We no longer use technology, we live it.\"
 
-- Michiel Schwarz, Cultural thinker""</string>
-    <string name="society_e1_text">For one full day, be aware of your phone consumption. Take a count of each time you check your phone and see how many times you checked it by the end of the day.</string>
+- Michiel Schwarz, Cultural Thinker""</string>
+    <string name="society_e1_text">For one full day, be aware of your phone usage. Take a count of each time you check your phone and see how many times you checked it by the end of the day.</string>
     <string name="society_e1_q1_text">What prompts you to check your phone? The device itself (alert, etc)? Something to do to fill an empty moment?</string>
     <string name="society_e1_q2_text">Of all the times that you check your phone, how many would you say were really necessary?</string>
     <string name="society_e1_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
@@ -321,7 +323,7 @@ Try to understand how they came to form their opinion, and how their circumstanc
     <string name="society_e3_quote">"\"Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has.\"
 
 - Margaret Mead, Anthropologist"</string>
-    <string name="society_e3_text">Local governments often have a much bigger effect on your life than federal. Attend a local city council meeting, and try to meet your representative (These events are open to the public in most cases!). Is there any important issue you could talk with your local representative or fellow citizens about?</string>
+    <string name="society_e3_text">Local governments often have a much bigger effect on your life than the national one. Attend a local city council meeting, and try to meet your representative. Is there any important issue you could talk with your local representative or fellow citizens about?</string>
     <string name="society_e3_q1_text">What issues did they discuss? Was there anything about the process that stood out to you?</string>
     <string name="society_e3_q2_text">Did you like your representative? How could you work with them to address the issues you feel concerned about?</string>
     <string name="society_e3_q3_text">How did this exercise influence your connection with society? Are there any insights or strong feelings that you will remember from this exercise?</string>
