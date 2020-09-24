@@ -96,13 +96,15 @@ We humbly hope that this will make at least a slight difference in your life (ev
     <string name="self_e2_q2_text">Did you think at all while you were dancing? How long did you dance for? Did you lose track of time?</string>
     <string name="self_e2_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
 
-    <string name="self_e3_title">Dreams Are What We’re Made Of</string>
+    <string name="self_e3_title">We’re Made Of Dreams</string>
     <string name="self_e3_quote">"\"So many of our dreams at first seem impossible, then they seem improbable, and then, when we summon the will, they soon become inevitable.\"
 
 - Christopher Reeve, Actor"
 </string>
 
-    <string name="self_e3_text">First, write down the dreams you had when you were younger, about what or who you wanted to become when you grow up. Then, write down your current dreams about what you want to do or become in the future. </string>
+    <string name="self_e3_text">"First, write down the dreams you had when you were younger, about what or who you wanted to become when you grow up.
+
+Then, write down your current dreams about what you want to do or become in the future."</string>
     <string name="self_e3_q1_text">Have you fulfilled some of your dreams from when you were younger?</string>
     <string name="self_e3_q2_text">How similar or different were the dreams from your younger days to the ones that you have now?</string>
     <string name="self_e3_q3_text">How did this exercise influence your connection with yourself? Are there any insights or strong feelings that you will remember from this exercise?</string>
@@ -113,7 +115,9 @@ We humbly hope that this will make at least a slight difference in your life (ev
 - Nadeem Kazi, Author"
 </string>
 
-    <string name="self_e4_text">Write down a list of single words that define you until you can’t easily think of anymore. Don’t overthink it, write whatever comes to your mind.</string>
+    <string name="self_e4_text">"Write down a list of single words that define you until you can’t easily think of anymore.
+
+Don’t overthink it, write whatever comes to your mind."</string>
 
     <string name="self_e4_q1_text">How many words did you end up with? What was the first and final word that you wrote to describe yourself?</string>
     <string name="self_e4_q2_text">Categorize the words that describe you. Do they fall into hobbies, values, roles you have in the society, qualities or physical characteristics? How many words do you have for each category?</string>
