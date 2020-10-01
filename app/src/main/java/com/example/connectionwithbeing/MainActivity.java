@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        loadTheAds();
+//        loadTheAds();
 
 //Implementing all views
         mHomeButtonBar = findViewById(R.id.bottomHomeButtonBar); //Used for controlling the functionality of the bottom home button bar.
@@ -304,6 +304,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             final float volume = (float) (1 - (Math.log(MAX_VOLUME - soundVolume) / Math.log(MAX_VOLUME)));
             mMediaPlayer.setVolume(volume, volume);
             mMediaPlayer.start();
+
+            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    loadTheAds();
+                }
+            });
+        }
+        else {
+            loadTheAds();
         }
 
     }
@@ -577,7 +587,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    private void loadTheAds() { //Loads for shuffle button
+    private void loadTheAds() { //Loads ad for shuffle button
         mInterstitialAd = new InterstitialAd(MainActivity.this);
      //   mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Add
         mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
