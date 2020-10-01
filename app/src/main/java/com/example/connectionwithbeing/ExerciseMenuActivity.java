@@ -923,8 +923,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     private void loadTheAds() {
         mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
- //       mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
+//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
+        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 

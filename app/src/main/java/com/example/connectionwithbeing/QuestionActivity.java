@@ -147,8 +147,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void loadTheAds() {
         mInterstitialAd = new InterstitialAd(QuestionActivity.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
-//        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/1822267880"); //Live Reflection Ad
+//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
+        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/1822267880"); //Live Reflection Ad
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
