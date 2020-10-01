@@ -589,8 +589,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void loadTheAds() { //Loads ad for shuffle button
         mInterstitialAd = new InterstitialAd(MainActivity.this);
-     //   mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Add
-        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Add
+//        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
