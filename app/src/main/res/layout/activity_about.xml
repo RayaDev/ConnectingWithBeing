@@ -5,11 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutActivity">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="8dp">
     <TextView
+        android:id="@+id/aboutString"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="About Activity Placeholder"
+        android:text="@string/about_string"
         android:gravity="center"/>
+</ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
