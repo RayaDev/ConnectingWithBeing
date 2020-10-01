@@ -2,9 +2,9 @@
     <string name="app_name">Be You</string>
 
     <!-- Main Activity Strings-->
-    <string name="welcome_screen_title">..~~**Be You**~~..</string>
+    <string name="welcome_screen_title">..~~**Engage**~~..</string>
     <string name = "main_activity_title">Connecting With...</string>
-    <string name= "about_activity_title">About</string>
+    <string name= "about_activity_title">About Engage With Being</string>
     <string name = "contact_activity_title">Contacts</string>
     <string name = "settings_activity_title">Settings</string>
     <string name = "credits_activity_title">Credits</string>
@@ -58,7 +58,10 @@ Toward a Transpersonal Ecology by Warwick Fox
 https://www.goodreads.com/book/show/2131870.Toward_a_Transpersonal_Ecology"
     </string>
 
-    <string name="contacts_string"></string>
+    <string name="contacts_string">"For more questions, comments, or more information, please email rayadevinfo@gmail.com.
+
+We’ll get back to you as soon as we can!"
+</string>
 
 
     <!--Alert Dialog Strings-->
