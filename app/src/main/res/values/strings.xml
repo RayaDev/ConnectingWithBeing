@@ -12,6 +12,12 @@
     <string name = "quote_text_placeholder">\"Quotes For Each Exercise Go Here\"</string>
     <string name = "questions_activity_title">Reflections</string>
 
+    <!-- Menu Strings -->
+    <string name="about_string"></string>
+    <string name="credits_string"></string>
+    <string name="contacts_string"></string>
+
+
     <!--Alert Dialog Strings-->
     <string name = "intro_complete_title">Introduction Completed!</string>
     <string name = "intro_complete_text">Continue to the main menu?</string>

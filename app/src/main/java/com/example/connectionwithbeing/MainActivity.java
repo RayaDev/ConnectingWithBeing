@@ -185,19 +185,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, version,Toast.LENGTH_SHORT ).show();
 
         }
-
-        if(item.getItemId() == R.id.settingsItem) {
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
-                    startActivity(startMenuActivity);
-                }
-            },500);
-
-            Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
-        }
+//
+//        if(item.getItemId() == R.id.settingsItem) {
+//
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    Intent startMenuActivity = new Intent(MainActivity.this, SettingsActivity.class);
+//                    startActivity(startMenuActivity);
+//                }
+//            },500);
+//
+//            Toast.makeText(this,"Settings go here in a group", Toast.LENGTH_SHORT).show();
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -577,9 +577,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    private void loadTheAds() {
+    private void loadTheAds() { //Loads for shuffle button
         mInterstitialAd = new InterstitialAd(MainActivity.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+     //   mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Add
+        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
