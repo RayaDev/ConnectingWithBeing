@@ -14,7 +14,28 @@
 
     <!-- Menu Strings -->
     <string name="about_string"></string>
-    <string name="credits_string"></string>
+
+    <string name="credits_string_1">All images provide by www.flaticon.com
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    </string>
+
+
+    <string name="credits_string_2">"Some of the books and other references that have influenced this App
+
+Philosophize This! By Steven West
+https://www.philosophizethis.org/
+
+Active Hope by Joanna Macy and Chris Johnstone
+https://www.activehope.info/
+
+Sacred Economics by Charles Eisenstein
+https://sacred-economics.com/
+
+Toward a Transpersonal Ecology by Warwick Fox
+https://www.goodreads.com/book/show/2131870.Toward_a_Transpersonal_Ecology"
+    </string>
+
     <string name="contacts_string"></string>
 
 
