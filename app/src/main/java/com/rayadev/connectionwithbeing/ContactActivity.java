@@ -1,29 +1,31 @@
-package com.example.connectionwithbeing;
+package com.rayadev.connectionwithbeing;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class AboutActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
-        setTitle(R.string.about_activity_title);
+        setContentView(R.layout.activity_contact);
+        setTitle(R.string.contact_activity_title);
 
-    }
+
+  }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent goHome = new Intent(AboutActivity.this, MainActivity.class);
+//                Toast.makeText(ContactActivity.this, "Contact Action Bar Back Pressed",
+//                        Toast.LENGTH_SHORT ).show();
+                Intent goHome = new Intent(ContactActivity.this, MainActivity.class);
                 startActivity(goHome);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -32,7 +34,8 @@ public class AboutActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent goHome = new Intent(AboutActivity.this, MainActivity.class);
+//        Toast.makeText(ContactActivity.this, " HardBack Pressed", Toast.LENGTH_SHORT ).show();
+        Intent goHome = new Intent(ContactActivity.this, MainActivity.class);
         startActivity(goHome);
 
     }

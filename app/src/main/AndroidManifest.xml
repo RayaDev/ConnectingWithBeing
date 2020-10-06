@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.connectionwithbeing">
+    package="com.rayadev.connectionwithbeing">
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,7 @@
             android:value="ca-app-pub-8727538144612368~6258021127"/>
 
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.rayadev.connectionwithbeing.WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -27,49 +27,49 @@
         </activity>
 
         <activity
-            android:name=".IntroductionActivity"
+            android:name="com.rayadev.connectionwithbeing.IntroductionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".IntroductionActivity2"
+            android:name="com.rayadev.connectionwithbeing.IntroductionActivity2"
             android:screenOrientation="portrait"
-            android:parentActivityName=".IntroductionActivity"/>
+            android:parentActivityName="com.rayadev.connectionwithbeing.IntroductionActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExerciseMenuActivity"
+            android:name="com.rayadev.connectionwithbeing.ExerciseMenuActivity"
             android:label="Menu Activity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".QuoteActivity"
+            android:name="com.rayadev.connectionwithbeing.QuoteActivity"
             android:label="Quote Activity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExerciseActivity"
+            android:name="com.rayadev.connectionwithbeing.ExerciseActivity"
             android:label="Exercise Activity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".QuestionActivity"
+            android:name="com.rayadev.connectionwithbeing.QuestionActivity"
             android:label="Question Activity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ContactActivity"
-            android:parentActivityName=".MainActivity"
+            android:name="com.rayadev.connectionwithbeing.ContactActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"
+            android:name="com.rayadev.connectionwithbeing.SettingsActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutActivity"
-            android:parentActivityName=".MainActivity"
+            android:name="com.rayadev.connectionwithbeing.AboutActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CreditsActivity"
-            android:parentActivityName=".MainActivity"
+        <activity android:name="com.rayadev.connectionwithbeing.CreditsActivity"
+            android:parentActivityName="com.rayadev.connectionwithbeing.MainActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data

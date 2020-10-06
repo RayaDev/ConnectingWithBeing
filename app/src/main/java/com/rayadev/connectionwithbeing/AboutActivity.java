@@ -1,20 +1,18 @@
-package com.example.connectionwithbeing;
+package com.rayadev.connectionwithbeing;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class CreditsActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_credits);
-        setTitle(R.string.credits_activity_title);
+        setContentView(R.layout.activity_about);
+        setTitle(R.string.about_activity_title);
 
     }
 
@@ -22,7 +20,7 @@ public class CreditsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent goHome = new Intent(CreditsActivity.this, MainActivity.class);
+                Intent goHome = new Intent(AboutActivity.this, MainActivity.class);
                 startActivity(goHome);
                 return true;
             default:
@@ -32,7 +30,7 @@ public class CreditsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent goHome = new Intent(CreditsActivity.this, MainActivity.class);
+        Intent goHome = new Intent(AboutActivity.this, MainActivity.class);
         startActivity(goHome);
 
     }

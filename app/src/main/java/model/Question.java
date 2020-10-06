@@ -1,6 +1,6 @@
 package model;
 
-import com.example.connectionwithbeing.R;
+import com.rayadev.connectionwithbeing.R;
 
 public class Question {
 

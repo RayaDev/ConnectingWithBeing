@@ -1,7 +1,6 @@
-package com.example.connectionwithbeing;
+package com.rayadev.connectionwithbeing;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;

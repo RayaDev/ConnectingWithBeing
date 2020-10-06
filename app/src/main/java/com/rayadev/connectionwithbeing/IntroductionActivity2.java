@@ -1,4 +1,4 @@
-package com.example.connectionwithbeing;
+package com.rayadev.connectionwithbeing;
 
 import android.content.DialogInterface;
 import android.content.Intent;

@@ -1,7 +1,7 @@
 package model;
 
 
-import com.example.connectionwithbeing.R;
+import com.rayadev.connectionwithbeing.R;
 
 import java.util.HashMap;
 
