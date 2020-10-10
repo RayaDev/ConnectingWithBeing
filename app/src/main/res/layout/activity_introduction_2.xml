@@ -34,10 +34,10 @@
         android:layout_marginTop="12dp"
         android:alpha="0.8"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IntroTypedTextView_Frag2"
+        app:layout_constraintBottom_toTopOf="@id/IntroIconText_TextView"
 
 
         >
