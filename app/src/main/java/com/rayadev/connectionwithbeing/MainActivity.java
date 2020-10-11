@@ -593,30 +593,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void startInterstitialAd(final Intent exerciseIntent) {
-        if (mInterstitialAd.isLoaded()) {
+        //Shuffle button crash fix.
+        try {
+            if (mInterstitialAd.isLoaded()) {
 
-            mInterstitialAd.show();
-            mInterstitialAd.setAdListener(new AdListener() {
+                mInterstitialAd.show();
+                mInterstitialAd.setAdListener(new AdListener() {
 
-                @Override
-                public void onAdClosed() {
-                    // Step 2.1: Load another ad
+                    @Override
+                    public void onAdClosed() {
+                        // Step 2.1: Load another ad
 
 //                    mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
 //                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 //                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                    loadTheAds();
+                        loadTheAds();
 
-                    // Step 2.2: Start the new activity
-                    startActivity(exerciseIntent);
+                        // Step 2.2: Start the new activity
+                        startActivity(exerciseIntent);
 
-                }
-            });
+                    }
+                });
+            } else {
+                startActivity(exerciseIntent);
+                Log.d("TAG1", "The interstitial wasn't loaded yet.");
+            }
         }
-        else {
+        catch(Exception e){
             startActivity(exerciseIntent);
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
+            Log.d("TAG2", "Catch:The interstitial wasn't loaded yet.");
         }
+
 
     }
 
