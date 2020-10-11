@@ -27,12 +27,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.HashMap;
 import java.util.Random;
 
 import model.Exercise;
+
+import static com.google.android.gms.ads.RequestConfiguration.MAX_AD_CONTENT_RATING_G;
+import static com.google.android.gms.ads.RequestConfiguration.MAX_AD_CONTENT_RATING_PG;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -586,6 +591,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadTheAds() { //Loads ad for shuffle button
+
         mInterstitialAd = new InterstitialAd(MainActivity.this);
 //        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Add
         mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
