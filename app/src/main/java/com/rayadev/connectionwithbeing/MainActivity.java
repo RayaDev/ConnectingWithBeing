@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             },500);
 
-            Toast.makeText(MainActivity.this, "Credits item clicked", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "Credits item clicked", Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.about_item) {
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             },500);
 
-            Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "About item clicked",Toast.LENGTH_SHORT).show();
         }
 
         if(id == R.id.contacts_item) {
@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             },500);
 
-            Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "Contacts item clicked",Toast.LENGTH_SHORT).show();
         }
 
         return true;
