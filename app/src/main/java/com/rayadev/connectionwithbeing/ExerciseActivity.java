@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.prush.typedtextview.TypedTextView;
 
 import model.Exercise;
@@ -49,11 +53,14 @@ public class ExerciseActivity extends AppCompatActivity {
     private int exerciseNumber;
     private int exerciseType;
 
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_linear);
 
+        loadTheAds();
         //Set Actionbar color
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
@@ -112,7 +119,9 @@ public class ExerciseActivity extends AppCompatActivity {
                                 Intent startQuestions = new Intent(ExerciseActivity.this, QuestionActivity.class);
                                 startQuestions.putExtra(ExerciseMenuActivity.exerciseNumberKey, exerciseNumber);
                                 startQuestions.putExtra(ExerciseMenuActivity.exerciseCategoryKey, exerciseType);
-                                startActivity(startQuestions);
+
+                                startInterstitialAd(startQuestions);
+//                                startActivity(startQuestions);
                             }
                         })
 
@@ -334,6 +343,41 @@ public class ExerciseActivity extends AppCompatActivity {
 
 
         return true;
+    }
+
+    private void loadTheAds() {
+        mInterstitialAd = new InterstitialAd(ExerciseActivity.this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
+//        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
+    private void startInterstitialAd(final Intent exerciseIntent) {
+        if (mInterstitialAd.isLoaded()) {
+
+            mInterstitialAd.show();
+            mInterstitialAd.setAdListener(new AdListener() {
+
+                @Override
+                public void onAdClosed() {
+                    // Step 2.1: Load another ad
+
+//                    mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
+//                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    loadTheAds();
+
+                    // Step 2.2: Start the new activity
+                    startActivity(exerciseIntent);
+
+                }
+            });
+        }
+        else {
+            startActivity(exerciseIntent);
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
+
     }
 
 }

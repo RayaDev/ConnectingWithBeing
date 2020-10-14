@@ -69,7 +69,7 @@ public class ExerciseMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_menu);
 
-        loadTheAds();
+//        loadTheAds();
 
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
@@ -258,9 +258,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise1 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise1.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise1);
+//                startInterstitialAd(startExercise1);
 
-//                startActivity(startExercise1);
+                startActivity(startExercise1);
 
             }
         });
@@ -287,8 +287,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise2 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise2.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise2);
-//                startActivity(startExercise2);
+//                startInterstitialAd(startExercise2);
+                startActivity(startExercise2);
 
             }
         });
@@ -315,8 +315,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise3 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise3.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise3);
-//                startActivity(startExercise3);
+//                startInterstitialAd(startExercise3);
+                startActivity(startExercise3);
 
             }
         });
@@ -343,8 +343,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise4 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise4.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise4);
-//                startActivity(startExercise4);
+//                startInterstitialAd(startExercise4);
+                startActivity(startExercise4);
 
             }
         });
@@ -371,8 +371,8 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise5 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise5.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise5);
-//                startActivity(startExercise5);
+//                startInterstitialAd(startExercise5);
+                startActivity(startExercise5);
 
             }
         });
@@ -398,9 +398,9 @@ public class ExerciseMenuActivity extends AppCompatActivity {
                 Intent startExercise6 = new Intent(ExerciseMenuActivity.this, QuoteActivity.class);
                 startExercise6.putExtras(exerciseExtras);
 
-                startInterstitialAd(startExercise6);
+//                startInterstitialAd(startExercise6);
 
-//                startActivity(startExercise6);
+                startActivity(startExercise6);
 
             }
         });
@@ -919,38 +919,38 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 //        Toast.makeText(ExerciseMenuActivity.this, "Exercise Reset", Toast.LENGTH_SHORT).show();
     }
 
-    private void loadTheAds() {
-        mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
-//        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
-        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-    }
-
-    private void startInterstitialAd(final Intent exerciseIntent) {
-        if (mInterstitialAd.isLoaded()) {
-
-            mInterstitialAd.show();
-            mInterstitialAd.setAdListener(new AdListener() {
-
-                @Override
-                public void onAdClosed() {
-                    // Step 2.1: Load another ad
-
-//                    mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
-//                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                    loadTheAds();
-
-                    // Step 2.2: Start the new activity
-                    startActivity(exerciseIntent);
-
-                }
-            });
-        }
-        else {
-            startActivity(exerciseIntent);
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-        }
-
-    }
+//    private void loadTheAds() {
+//        mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
+////        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); //Test Ad
+//        mInterstitialAd.setAdUnitId("ca-app-pub-8727538144612368/8398234778"); //Live Exercise Ad
+//        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//    }
+//
+//    private void startInterstitialAd(final Intent exerciseIntent) {
+//        if (mInterstitialAd.isLoaded()) {
+//
+//            mInterstitialAd.show();
+//            mInterstitialAd.setAdListener(new AdListener() {
+//
+//                @Override
+//                public void onAdClosed() {
+//                    // Step 2.1: Load another ad
+//
+////                    mInterstitialAd = new InterstitialAd(ExerciseMenuActivity.this);
+////                    mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+////                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                    loadTheAds();
+//
+//                    // Step 2.2: Start the new activity
+//                    startActivity(exerciseIntent);
+//
+//                }
+//            });
+//        }
+//        else {
+//            startActivity(exerciseIntent);
+//            Log.d("TAG", "The interstitial wasn't loaded yet.");
+//        }
+//
+//    }
 }
