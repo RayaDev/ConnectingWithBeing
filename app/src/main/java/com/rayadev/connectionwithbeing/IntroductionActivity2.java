@@ -62,7 +62,7 @@ public class IntroductionActivity2 extends AppCompatActivity {
 
 
             }
-        }, 2000);
+        }, 0);
 
 //        mIntroLinearLayout.setOnClickListener(new View.OnClickListener() {
 //            @Override
