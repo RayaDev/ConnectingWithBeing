@@ -56,20 +56,10 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
     private InterstitialAd mInterstitialAd;
 
-
-//    //Values, passed as extra for determing which menu to construct. Notes from main activity ***
-//    private static final int selfMenu = 1;
-//    private static final int othersMenu = 2;
-//    private static final int natureMenu = 3;
-//    private static final int societyMenu = 4;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_menu);
-
-//        loadTheAds();
 
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.nature_primary_dark)));
@@ -77,7 +67,6 @@ public class ExerciseMenuActivity extends AppCompatActivity {
 
         mHomeButtonBar = findViewById(R.id.ExerciseBottomActionBar_Menu);
         mHomeButton = findViewById(R.id.ExerciseHomeButton_Menu);
-//        mToDoButton = findViewById(R.id.ExerciseToDoButton_Menu);
 
         mScrollView = findViewById(R.id.ExerciseScrollView);
 
