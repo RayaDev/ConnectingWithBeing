@@ -495,8 +495,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startRandomExercise.putExtra(Exercise.exerciseCategoryKey, categoryArray[randomExerciseCategory]);
 
 
-        startInterstitialAd(startRandomExercise);
-//        startActivity(startRandomExercise);
+//        startInterstitialAd(startRandomExercise);
+        startActivity(startRandomExercise);
 
 
     }
