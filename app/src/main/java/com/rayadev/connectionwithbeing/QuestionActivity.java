@@ -102,9 +102,9 @@ public class QuestionActivity extends AppCompatActivity {
 
                                 Log.i("Type", exerciseType +"");
 
-//                                loadNextActivity(exerciseNumber, exerciseType);
+                                loadNextActivity(exerciseNumber, exerciseType);
 
-                                startInterstitialAd(exerciseNumber, exerciseType);
+//                                startInterstitialAd(exerciseNumber, exerciseType);
 
 //                                int playAnimation = setSharedPreferences(exerciseNumber, exerciseType); //Changes exercise star color on topic menu.
 //
